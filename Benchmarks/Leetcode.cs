@@ -77,4 +77,12 @@ public class Leetcode
         KWeakestRowsTest.KWeakestRows(ex1, 3);
         KWeakestRowsTest.KWeakestRows(ex2, 2);
     }
+
+    [Benchmark]
+    public void NumberOfSteps()
+    {
+        NumberOfStepsTest.NumberOfSteps(14);
+        NumberOfStepsTest.NumberOfSteps(8);
+        NumberOfStepsTest.NumberOfSteps(123);
+    }
 }
