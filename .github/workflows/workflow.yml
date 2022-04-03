@@ -39,8 +39,8 @@ jobs:
         id: test
         run: dotnet test --configuration Release
       
-      - name: Run benchmarks
+      - name: Run benchmarkdotnet
         id: benchmark
         run: |
           cd ./Benchmarks
-          dotnet run -c Release --memory --list tree
+          dotnet run --configuration Release --memory --filter Leetcode.Benchmarks*
