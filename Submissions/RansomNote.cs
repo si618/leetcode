@@ -1,7 +1,7 @@
 ﻿namespace Leetcode.Submissions;
 using NUnit.Framework;
 
-public class RansomNote
+public class RansomNoteTest
 {
     public static bool CanConstruct(string ransomNote, string magazine)
     {

@@ -27,9 +27,9 @@ public class Leetcode
     [Benchmark]
     public void RansomNote()
     {
-        Submissions.RansomNote.CanConstruct("b", "a");
-        Submissions.RansomNote.CanConstruct("ab", "aa");
-        Submissions.RansomNote.CanConstruct("aab", "aa");
+        RansomNoteTest.CanConstruct("b", "a");
+        RansomNoteTest.CanConstruct("ab", "aa");
+        RansomNoteTest.CanConstruct("aab", "aa");
     }
 
     [Benchmark]

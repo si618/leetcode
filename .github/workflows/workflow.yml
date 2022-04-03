@@ -43,4 +43,4 @@ jobs:
         id: benchmark
         run: |
           cd ./Benchmarks
-          dotnet run -c Release --memory --filter Leetcode*
+          dotnet run -c Release --memory --list tree

@@ -5,12 +5,13 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Submissions", "Submissions\Submissions.csproj", "{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{C9A81814-CC1F-4337-B887-DAD25B17A0EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{C9A81814-CC1F-4337-B887-DAD25B17A0EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A54809E0-DF67-495C-BE99-0294DED27DC6}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
+		.github\workflows\workflow.yml = .github\workflows\workflow.yml
 	EndProjectSection
 EndProject
 Global
