@@ -43,4 +43,11 @@ jobs:
         id: benchmark
         run: |
           cd ./Benchmarks
-          dotnet run --configuration Release --memory --filter Leetcode.Benchmarks* --warmupCount 2 --minIterationCount 4 --maxIterationCount 8
+          dotnet run --configuration Release --memory --filter Leetcode.Benchmarks* --exporters json --warmupCount 2 --minIterationCount 4 --maxIterationCount 8
+      
+      # TODO: Deploy to github pages when ready to make repo public
+      #- name: Store benchmark result
+      #  uses: rhysd/github-action-benchmark@v1
+      #  with:
+      #    tool: 'benchmarkdotnet'
+      #    output-file-path: Benchmarks/BenchmarkDotNet.Artifacts/results/Leetcode.Benchmarks.Leetcode-report-full-compressed.json

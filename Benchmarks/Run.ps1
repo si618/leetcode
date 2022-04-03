@@ -1,2 +1,2 @@
-dotnet build -c Release
-dotnet run -c Release --memory --filter Leetcode.Benchmarks*
+dotnet build --configuration Release
+dotnet run --configuration Release --filter Leetcode.Benchmarks* --memory --exporters json --warmupCount 2 --minIterationCount 4 --maxIterationCount 8
