@@ -39,7 +39,7 @@ jobs:
         id: test
         run: dotnet test --configuration Release
       
-      - name: Run benchmarkdotnet
+      - name: Run dotnet benchmark
         id: benchmark
         run: |
           cd ./Benchmarks
