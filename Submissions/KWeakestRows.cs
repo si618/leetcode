@@ -6,10 +6,11 @@ public class KWeakestRowsTest
     public static int[] KWeakestRows(int[][] mat, int k)
     {
         return mat
-            .Select((row, index) => (strength: row.Count(x => x == 1), index))
-            .OrderBy(x => x.strength)
+            .Select((row, index) => 
+                (Strength: row.Count(x => x == 1), Index: index))
+            .OrderBy(x => x.Strength)
             .Take(k)
-            .Select(x => x.index)
+            .Select(x => x.Index)
             .ToArray();
     }
 

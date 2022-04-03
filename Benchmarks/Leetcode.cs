@@ -85,4 +85,22 @@ public class Leetcode
         NumberOfStepsTest.NumberOfSteps(8);
         NumberOfStepsTest.NumberOfSteps(123);
     }
+
+    [Benchmark]
+    public void MaximumWealth()
+    {
+        var ex1 = new int[][]
+        {
+                new int[] { 1, 2, 3 },
+                new int[] { 3, 2, 1 }
+        };
+        var ex2 = new int[][]
+        {
+            new int[] { 1, 5 },
+            new int[] { 7, 3 },
+            new int[] { 3, 5 }
+        };
+        MaximumWealthTest.MaximumWealth(ex1);
+        MaximumWealthTest.MaximumWealth(ex2);
+    }
 }

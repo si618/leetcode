@@ -19,7 +19,6 @@ public class RomanToIntTest
 
         var result = 0;
         var length = s.Length - 1;
-
         for (var i = length; i >= 0; i--)
         {
             var romanCharAsInt = romanValues[s[i]];
@@ -34,7 +33,6 @@ public class RomanToIntTest
                 result += romanCharAsInt;
             }
         }
-
         return result;
     }
 
