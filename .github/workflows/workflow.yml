@@ -43,4 +43,4 @@ jobs:
         id: benchmark
         run: |
           cd ./Benchmarks
-          dotnet run --configuration Release --memory --filter Leetcode.Benchmarks*
+          dotnet run --configuration Release --memory --filter Leetcode.Benchmarks* --warmupCount 2 --minIterationCount 4 --maxIterationCount 8
