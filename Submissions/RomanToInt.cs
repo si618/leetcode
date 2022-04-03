@@ -6,7 +6,7 @@ public class RomanToIntTest
 {
     public static int RomanToInt(string s)
     {
-        var dictionary = new Dictionary<char, int>()
+        var romanValues = new Dictionary<char, int>()
         {
             { 'I', 1 },
             { 'V', 5 },
@@ -22,10 +22,10 @@ public class RomanToIntTest
 
         for (var i = length; i >= 0; i--)
         {
-            var romanCharAsInt = dictionary[s[i]];
+            var romanCharAsInt = romanValues[s[i]];
             if (i < length)
             {
-                result = romanCharAsInt >= dictionary[s[i + 1]]
+                result = romanCharAsInt >= romanValues[s[i + 1]]
                     ? result + romanCharAsInt
                     : result - romanCharAsInt;
             }
