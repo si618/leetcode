@@ -59,20 +59,20 @@ public class Leetcode
     [Benchmark]
     public void KWeakestRows()
     {
-        var ex1 = new int[][]
+        var ex1 = new[][]
         {
-            new int[] { 1, 1, 0, 0, 0 },
-            new int[] { 1, 1, 1, 1, 0 },
-            new int[] { 1, 0, 0, 0, 0 },
-            new int[] { 1, 1, 0, 0, 0 },
-            new int[] { 1, 1, 1, 1, 1 }
+            new[] { 1, 1, 0, 0, 0 },
+            new[] { 1, 1, 1, 1, 0 },
+            new[] { 1, 0, 0, 0, 0 },
+            new[] { 1, 1, 0, 0, 0 },
+            new[] { 1, 1, 1, 1, 1 }
         };
-        var ex2 = new int[][]
+        var ex2 = new[][]
         {
-            new int[] { 1, 0, 0, 0 },
-            new int[] { 1, 1, 1, 1 },
-            new int[] { 1, 0, 0, 0 },
-            new int[] { 1, 0, 0, 0 }
+            new[] { 1, 0, 0, 0 },
+            new[] { 1, 1, 1, 1 },
+            new[] { 1, 0, 0, 0 },
+            new[] { 1, 0, 0, 0 }
         };
         KWeakestRowsTest.KWeakestRows(ex1, 3);
         KWeakestRowsTest.KWeakestRows(ex2, 2);
@@ -91,16 +91,27 @@ public class Leetcode
     {
         var ex1 = new int[][]
         {
-                new int[] { 1, 2, 3 },
-                new int[] { 3, 2, 1 }
+                new[] { 1, 2, 3 },
+                new[] { 3, 2, 1 }
         };
         var ex2 = new int[][]
         {
-            new int[] { 1, 5 },
-            new int[] { 7, 3 },
-            new int[] { 3, 5 }
+            new[] { 1, 5 },
+            new[] { 7, 3 },
+            new[] { 3, 5 }
         };
         MaximumWealthTest.MaximumWealth(ex1);
         MaximumWealthTest.MaximumWealth(ex2);
+    }
+
+    [Benchmark]
+    public void TwoSum()
+    {
+        var ex1 = new[] { 2, 7, 11, 15 };
+        var ex2 = new[] { 3, 2, 4 };
+        var ex3 = new[] { 3, 3 };
+        TwoSumTest.TwoSum(ex1, 9);
+        TwoSumTest.TwoSum(ex2, 6);
+        TwoSumTest.TwoSum(ex3, 6);
     }
 }
