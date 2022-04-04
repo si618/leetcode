@@ -59,7 +59,7 @@ public class Leetcode
     [Benchmark]
     public void KWeakestRows()
     {
-        var ex1 = new[][]
+        var ex1 = new int[][]
         {
             new[] { 1, 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1, 0 },
@@ -67,7 +67,7 @@ public class Leetcode
             new[] { 1, 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1, 1 }
         };
-        var ex2 = new[][]
+        var ex2 = new int[][]
         {
             new[] { 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1 },
@@ -91,8 +91,8 @@ public class Leetcode
     {
         var ex1 = new int[][]
         {
-                new[] { 1, 2, 3 },
-                new[] { 3, 2, 1 }
+            new[] { 1, 2, 3 },
+            new[] { 3, 2, 1 }
         };
         var ex2 = new int[][]
         {
