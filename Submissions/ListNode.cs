@@ -1,12 +1,12 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 
 public class ListNode
 {
-    public int Val;
-    public ListNode? Next;
+    public int val;
+    public ListNode? next;
     public ListNode(int val = 0, ListNode? next = null)
     {
-        Val = val;
-        Next = next;
+        this.val = val;
+        this.next = next;
     }
 }

@@ -1,7 +1,7 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 
-public class MaximumWealthTest
+public partial class Submission
 {
     public static int MaximumWealth(int[][] accounts)
     {
@@ -9,7 +9,7 @@ public class MaximumWealthTest
     }
 
     [Test]
-    public void Test()
+    public void MaximumWealthTest()
     {
         // Arrange
         var ex1 = new int[][]

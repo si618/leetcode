@@ -1,7 +1,7 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 
-public class TwoSumTest
+public partial class Submission
 {
     public static int[] TwoSum(int[] nums, int target)
     {
@@ -11,6 +11,7 @@ public class TwoSumTest
         }
         for (var i = 0; i < nums.Length; i++)
         {
+            // Test all remaining indexes for target match
             for (var j = i + 1; j < nums.Length; j++)
             {
                 if (nums[i] + nums[j] == target)
@@ -23,7 +24,7 @@ public class TwoSumTest
     }
 
     [Test]
-    public void Test()
+    public void TwoSumTest()
     {
         // Arrange
         var ex1 = new[] { 2, 7, 11, 15 };

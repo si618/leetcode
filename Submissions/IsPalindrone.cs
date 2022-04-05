@@ -1,23 +1,22 @@
-namespace Leetcode.Submissions;
+namespace LeetCode;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-public class IsPalindromeTest
+public partial class Submission
 {
     public static bool IsPalindrome(ListNode head)
     {
-        if (head.Next is null)
+        if (head.next is null)
         {
             return true;
         }
-        var list = new List<int> { head.Val };
-        while (head.Next is not null)
+        var list = new List<int> { head.val };
+        while (head.next is not null)
         {
-            head = head.Next;
-            list.Add(head.Val);
+            head = head.next;
+            list.Add(head.val);
         };
-
         var isOdd = list.Count % 2 != 0;
         var take = isOdd
             ? (list.Count - 1) / 2
@@ -41,28 +40,28 @@ public class IsPalindromeTest
     }
 
     [Test]
-    public void Test()
+    public void IsPalindromeTest()
     {
         // Arrange
         var single = new ListNode(1, null);
         var even = new ListNode(1,
             new ListNode(2,
-                new ListNode(2,
-                    new ListNode(1, null))));
+            new ListNode(2,
+            new ListNode(1, null))));
         var odd = new ListNode(1,
             new ListNode(2,
-                new ListNode(3,
-                    new ListNode(2,
-                        new ListNode(1, null)))));
+            new ListNode(3,
+            new ListNode(2,
+            new ListNode(1, null)))));
         var notEven = new ListNode(2,
             new ListNode(1,
-                    new ListNode(2,
-                        new ListNode(1, null))));
+            new ListNode(2,
+            new ListNode(1, null))));
         var notOdd = new ListNode(2,
             new ListNode(1,
-                new ListNode(3,
-                    new ListNode(2,
-                        new ListNode(1, null)))));
+            new ListNode(3,
+            new ListNode(2,
+            new ListNode(1, null)))));
         // Act & Assert
         Assert.IsTrue(IsPalindrome(single));
         Assert.IsTrue(IsPalindrome(even));

@@ -1,7 +1,7 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 
-public class FizzBuzzTest
+public partial class Submission
 {
     public static IList<string> FizzBuzz(int n)
     {
@@ -27,7 +27,7 @@ public class FizzBuzzTest
     }
 
     [Test]
-    public void Test()
+    public void FizzBuzzTest()
     {
         // Arrange
         var input1 = 3;

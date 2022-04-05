@@ -1,7 +1,7 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 
-public class KWeakestRowsTest
+public partial class Submission
 {
     public static int[] KWeakestRows(int[][] mat, int k)
     {
@@ -15,7 +15,7 @@ public class KWeakestRowsTest
     }
 
     [Test]
-    public void Test()
+    public void KWeakestRowsTest()
     {
         // Arrange
         var ex1 = new int[][]

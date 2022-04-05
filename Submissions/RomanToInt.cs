@@ -1,8 +1,8 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-public class RomanToIntTest
+public partial class Submission
 {
     public static int RomanToInt(string s)
     {
@@ -16,7 +16,6 @@ public class RomanToIntTest
             { 'D', 500 },
             { 'M', 1_000 }
         };
-
         var result = 0;
         var length = s.Length - 1;
         for (var i = length; i >= 0; i--)
@@ -37,7 +36,7 @@ public class RomanToIntTest
     }
 
     [Test]
-    public void Test()
+    public void RomanToIntTest()
     {
         // Arrange
         var iii = "III";

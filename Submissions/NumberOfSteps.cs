@@ -1,7 +1,7 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 
-public class NumberOfStepsTest
+public partial class Submission
 {
     public static int NumberOfSteps(int num)
     {
@@ -22,7 +22,7 @@ public class NumberOfStepsTest
     }
 
     [Test]
-    public void Test()
+    public void NumberOfStepsTest()
     {
         // Arrange, Act & Assert
         Assert.AreEqual(6, NumberOfSteps(14));

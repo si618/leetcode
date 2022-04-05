@@ -1,7 +1,7 @@
-﻿namespace Leetcode.Submissions;
+﻿namespace LeetCode;
 using NUnit.Framework;
 
-public class RansomNoteTest
+public partial class Submission
 {
     public static bool CanConstruct(string ransomNote, string magazine)
     {
@@ -17,7 +17,6 @@ public class RansomNoteTest
                 frequency[mc]++;
             }
         }
-
         foreach (var rc in ransomNote)
         {
             if (!frequency.ContainsKey(rc) || frequency[rc] == 0)
@@ -26,12 +25,11 @@ public class RansomNoteTest
             }
             frequency[rc]--;
         }
-
         return true;
     }
 
     [Test]
-    public void Test()
+    public void CanConstructTest()
     {
         // Arrange
         var m1 = "a";
