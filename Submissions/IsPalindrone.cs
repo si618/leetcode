@@ -1,9 +1,11 @@
 namespace LeetCode;
+
+using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static bool IsPalindrome(ListNode head)
     {
@@ -11,38 +13,35 @@ public partial class Submission
         {
             return true;
         }
+
         var list = new List<int> { head.val };
+
         while (head.next is not null)
         {
             head = head.next;
             list.Add(head.val);
         };
+
         var isOdd = list.Count % 2 != 0;
-        var take = isOdd
-            ? (list.Count - 1) / 2
-            : list.Count / 2;
-        var skip = isOdd
-            ? take + 1
-            : take;
-        var firstHalf = new List<int>(list.Take(take));
-        var secondHalf = new List<int>(list
-            .Skip(skip)
-            .Take(take)
-            .Reverse());
-        for (var i = 0; i < firstHalf.Count; i++)
+        var take = isOdd ? (list.Count - 1) / 2 : list.Count / 2;
+        var skip = isOdd ? take + 1 : take;
+        var firstHalf = list.Take(take).ToArray();
+        var secondHalf = list.Skip(skip).Take(take).Reverse().ToArray();
+
+        for (var i = 0; i < firstHalf.Length; i++)
         {
             if (firstHalf[i] != secondHalf[i])
             {
                 return false;
             }
         }
+
         return true;
     }
 
     [Test]
     public void IsPalindromeTest()
     {
-        // Arrange
         var single = new ListNode(1, null);
         var even = new ListNode(1,
             new ListNode(2,
@@ -62,12 +61,12 @@ public partial class Submission
             new ListNode(3,
             new ListNode(2,
             new ListNode(1, null)))));
-        // Act & Assert
-        Assert.IsTrue(IsPalindrome(single));
-        Assert.IsTrue(IsPalindrome(even));
-        Assert.IsTrue(IsPalindrome(odd));
-        Assert.IsFalse(IsPalindrome(notEven));
-        Assert.IsFalse(IsPalindrome(notOdd));
+
+        IsPalindrome(single).Should().BeTrue();
+        IsPalindrome(even).Should().BeTrue();
+        IsPalindrome(odd).Should().BeTrue();
+        IsPalindrome(notEven).Should().BeFalse();
+        IsPalindrome(notOdd).Should().BeFalse();
     }
 
 }

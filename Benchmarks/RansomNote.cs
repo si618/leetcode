@@ -1,13 +1,14 @@
 ﻿namespace LeetCode;
+
 using BenchmarkDotNet.Attributes;
 
-public partial class Benchmarks
+public partial class Benchmark
 {
     [Benchmark]
     public void RansomNote()
     {
-        Submission.CanConstruct("b", "a");
-        Submission.CanConstruct("ab", "aa");
-        Submission.CanConstruct("aab", "aa");
+        Submission.RansomNote("b", "a");
+        Submission.RansomNote("ab", "aa");
+        Submission.RansomNote("aab", "aa");
     }
 }

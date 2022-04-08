@@ -1,7 +1,9 @@
 ﻿namespace LeetCode;
+
+using FluentAssertions;
 using NUnit.Framework;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static int[] KWeakestRows(int[][] mat, int k)
     {
@@ -34,7 +36,7 @@ public partial class Submission
             new[] { 1, 0, 0, 0 }
         };
         // Act & Assert
-        Assert.AreEqual(new[] { 2, 0, 3 }, KWeakestRows(ex1, 3));
-        Assert.AreEqual(new[] { 0, 2 }, KWeakestRows(ex2, 2));
+        KWeakestRows(ex1, 3).Should().Equal(new[] { 2, 0, 3 });
+        KWeakestRows(ex2, 2).Should().Equal(new[] { 0, 2 });
     }
 }

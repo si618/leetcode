@@ -1,7 +1,9 @@
 ﻿namespace LeetCode;
+
+using FluentAssertions;
 using NUnit.Framework;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
@@ -10,6 +12,7 @@ public partial class Submission
         // Node to store sum of nodes
         var answer = result;
         var carry = 0;
+
         // Process until both nodes are fully evaluated
         while (l1 is not null || l2 is not null)
         {
@@ -32,10 +35,12 @@ public partial class Submission
             // Update both current and next answer to new node
             answer = answer.next = node;
         }
+
         if (carry > 0)
         {
             answer.next = new ListNode(carry);
         }
+
         // Answer is guaranteed to be non-null
         return result.next!;
     }
@@ -43,7 +48,6 @@ public partial class Submission
     [Test]
     public void AddTwoNumbersTest()
     {
-        // Arrange
         var ex1l1 = new ListNode(2,
             new ListNode(4,
             new ListNode(3, null)));
@@ -75,14 +79,14 @@ public partial class Submission
             new ListNode(0,
             new ListNode(0,
             new ListNode(1, null))))))));
-        // Act
+
         var ex1result = AddTwoNumbers(ex1l1, ex1l2);
         var ex2result = AddTwoNumbers(ex2l1, ex2l2);
         var ex3result = AddTwoNumbers(ex3l1, ex3l2);
-        // Assert
-        Assert.IsNotNull(ex1result);
-        Assert.IsNotNull(ex2result);
-        Assert.IsNotNull(ex3result);
+
+        ex1result.Should().NotBeNull();
+        ex2result.Should().NotBeNull();
+        ex3result.Should().NotBeNull();
         static void AssertEqual(ListNode? l1, ListNode? l2)
         {
             if (l1 is null && l2 is null)
@@ -94,11 +98,11 @@ public partial class Submission
                 Assert.Fail("Either both node or neither node should be null");
                 return;
             }
-            Assert.AreEqual(l1.val, l2.val);
+            l1.val.Should().Be(l2.val);
             AssertEqual(l1.next, l2.next);
         }
-        AssertEqual(ex1expected, ex1result);
-        AssertEqual(ex2expected, ex2result);
-        AssertEqual(ex3expected, ex3result);
+        AssertEqual(ex1result, ex1expected);
+        AssertEqual(ex2result, ex2expected);
+        AssertEqual(ex3result, ex3expected);
     }
 }

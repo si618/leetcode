@@ -1,8 +1,10 @@
 ﻿namespace LeetCode;
+
+using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static int RomanToInt(string s)
     {
@@ -18,9 +20,11 @@ public partial class Submission
         };
         var result = 0;
         var length = s.Length - 1;
+
         for (var i = length; i >= 0; i--)
         {
             var romanCharAsInt = romanValues[s[i]];
+
             if (i < length)
             {
                 result = romanCharAsInt >= romanValues[s[i + 1]]
@@ -32,21 +36,16 @@ public partial class Submission
                 result += romanCharAsInt;
             }
         }
+
         return result;
     }
 
     [Test]
     public void RomanToIntTest()
     {
-        // Arrange
-        var iii = "III";
-        var lviii = "LVIII";
-        var mcmxciv = "MCMXCIV";
-        var mmxxii = "MMXXII";
-        // Act & Assert
-        Assert.AreEqual(3, RomanToInt(iii));
-        Assert.AreEqual(58, RomanToInt(lviii));
-        Assert.AreEqual(1994, RomanToInt(mcmxciv));
-        Assert.AreEqual(2022, RomanToInt(mmxxii));
+        RomanToInt("III").Should().Be(3);
+        RomanToInt("LVIII").Should().Be(58);
+        RomanToInt("MCMXCIV").Should().Be(1994);
+        RomanToInt("MMXXII").Should().Be(2022);
     }
 }

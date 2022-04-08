@@ -1,9 +1,11 @@
 namespace LeetCode;
+
+using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static ListNode MiddleNode(ListNode head)
     {
@@ -20,7 +22,6 @@ public partial class Submission
     [Test]
     public void MiddleNodeTest()
     {
-        // Arrange
         var single = new ListNode(1, null);
         var even = new ListNode(1,
             new ListNode(2,
@@ -31,10 +32,10 @@ public partial class Submission
             new ListNode(3,
             new ListNode(4,
             new ListNode(5, null)))));
-        // Act & Assert
-        Assert.AreEqual(single, MiddleNode(single));
-        Assert.AreEqual(even.next!.next, MiddleNode(even));
-        Assert.AreEqual(odd.next!.next, MiddleNode(odd));
+
+        MiddleNode(single).Should().BeSameAs(single);
+        MiddleNode(even).Should().BeSameAs(even.next!.next);
+        MiddleNode(odd).Should().BeSameAs(odd.next!.next);
     }
 
 }

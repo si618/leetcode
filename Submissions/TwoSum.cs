@@ -1,7 +1,7 @@
 ﻿namespace LeetCode;
 using NUnit.Framework;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static int[] TwoSum(int[] nums, int target)
     {
@@ -31,8 +31,8 @@ public partial class Submission
         var ex2 = new[] { 3, 2, 4 };
         var ex3 = new[] { 3, 3 };
         // Act & Assert
-        Assert.AreEqual(new[] { 0, 1 }, TwoSum(ex1, 9));
-        Assert.AreEqual(new[] { 1, 2 }, TwoSum(ex2, 6));
-        Assert.AreEqual(new[] { 0, 1 }, TwoSum(ex3, 6));
+        Assert.That(TwoSum(ex1, 9), Is.EqualTo(new[] { 0, 1 }));
+        Assert.That(TwoSum(ex2, 6), Is.EqualTo(new[] { 1, 2 }));
+        Assert.That(TwoSum(ex3, 6), Is.EqualTo(new[] { 0, 1 }));
     }
 }

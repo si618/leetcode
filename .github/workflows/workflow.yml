@@ -43,7 +43,7 @@ jobs:
         id: benchmark
         run: |
           cd ./Benchmarks
-          dotnet run --configuration Release --memory --filter LeetCode* --exporters json --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
+          dotnet run --configuration Release --memory --filter LeetCode.Benchmark* --exporters json --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
       
       # TODO: Deploy to github pages when ready to make repo public
       #- name: Store benchmark result

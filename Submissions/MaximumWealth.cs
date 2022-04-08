@@ -1,7 +1,9 @@
 ﻿namespace LeetCode;
+
+using FluentAssertions;
 using NUnit.Framework;
 
-public partial class Submission
+public sealed partial class Submission
 {
     public static int MaximumWealth(int[][] accounts)
     {
@@ -11,7 +13,6 @@ public partial class Submission
     [Test]
     public void MaximumWealthTest()
     {
-        // Arrange
         var ex1 = new int[][]
         {
             new[] { 1, 2, 3 },
@@ -23,8 +24,8 @@ public partial class Submission
             new[] { 7, 3 },
             new[] { 3, 5 }
         };
-        // Act & Assert
-        Assert.AreEqual(6, MaximumWealth(ex1));
-        Assert.AreEqual(10, MaximumWealth(ex2));
+
+        MaximumWealth(ex1).Should().Be(6);
+        MaximumWealth(ex2).Should().Be(10);
     }
 }

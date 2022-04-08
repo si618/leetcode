@@ -1,7 +1,8 @@
 ﻿namespace LeetCode;
+
 using BenchmarkDotNet.Attributes;
 
-public partial class Benchmarks
+public partial class Benchmark
 {
     [Benchmark]
     public void FizzBuzz()
