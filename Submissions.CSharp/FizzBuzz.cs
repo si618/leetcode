@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Easy, Category.None)]
     public static IList<string> FizzBuzz(int n)
     {
         var result = new List<string>();

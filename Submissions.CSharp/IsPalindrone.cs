@@ -7,6 +7,7 @@ using System.Linq;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Easy, Category.TwoPointers)]
     public static bool IsPalindrome(ListNode head)
     {
         if (head.next is null)

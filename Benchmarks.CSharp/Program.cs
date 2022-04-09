@@ -3,12 +3,12 @@ using LeetCode;
 using System.Reflection;
 
 var benchmarks = typeof(Benchmark).GetMethods().Select(m => m.Name);
-var submissions = typeof(Submission)
+var submissionsInCSharp = typeof(Submission)
     .GetMembers(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Static)
     .Where(m => !m.Name.EndsWith("Test"))
     .Select(m => m.Name);
-submissions.Except(benchmarks)
+submissionsInCSharp.Except(benchmarks)
     .ToList()
-    .ForEach(s => Console.WriteLine($"Benchmark missing for submission `{s}`"));
+    .ForEach(s => Console.WriteLine($"Benchmark missing for C# submission `{s}`!"));
 
 BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);

@@ -5,6 +5,8 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Easy, Category.None)]
+
     public static int[] KWeakestRows(int[][] mat, int k)
     {
         return mat

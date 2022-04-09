@@ -1,4 +1,5 @@
 ﻿.vs
-Benchmarks/BenchmarkDotNet.Artifacts
+BenchmarkDotNet.Artifacts
 bin
 obj
+

@@ -1,8 +1,10 @@
 ﻿namespace LeetCode;
+
 using NUnit.Framework;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Easy, Category.ArraysAndHashing)]
     public static int[] TwoSum(int[] nums, int target)
     {
         if (nums.Length < 2)

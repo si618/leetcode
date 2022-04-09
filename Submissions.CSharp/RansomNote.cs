@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Easy, Category.None)]
     public static bool RansomNote(string ransomNote, string magazine)
     {
         var frequency = new Dictionary<char, int>();

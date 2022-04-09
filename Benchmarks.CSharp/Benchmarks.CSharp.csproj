@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Submissions\Submissions.csproj" />
+    <ProjectReference Include="..\Submissions.CSharp\Submissions.CSharp.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Submissions", "Submissions\Submissions.csproj", "{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Submissions.CSharp", "Submissions.CSharp\Submissions.CSharp.csproj", "{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{C9A81814-CC1F-4337-B887-DAD25B17A0EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.CSharp", "Benchmarks.CSharp\Benchmarks.CSharp.csproj", "{C9A81814-CC1F-4337-B887-DAD25B17A0EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A54809E0-DF67-495C-BE99-0294DED27DC6}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Benchmark.ps1 = Benchmark.ps1
 		Directory.Build.props = Directory.Build.props
-		Benchmarks\Run.ps1 = Benchmarks\Run.ps1
 		.github\workflows\workflow.yml = .github\workflows\workflow.yml
 	EndProjectSection
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Submissions.FSharp", "Submissions.FSharp\Submissions.FSharp.fsproj", "{8F7B3A0D-2A03-47B6-AC6F-D4025C500142}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Benchmarks.FSharp", "Benchmarks.FSharp\Benchmarks.FSharp.fsproj", "{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,14 @@ Global
 		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7B3A0D-2A03-47B6-AC6F-D4025C500142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7B3A0D-2A03-47B6-AC6F-D4025C500142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7B3A0D-2A03-47B6-AC6F-D4025C500142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7B3A0D-2A03-47B6-AC6F-D4025C500142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

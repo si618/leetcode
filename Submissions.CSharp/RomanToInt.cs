@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Easy, Category.None)]
+
     public static int RomanToInt(string s)
     {
         var romanValues = new Dictionary<char, int>()

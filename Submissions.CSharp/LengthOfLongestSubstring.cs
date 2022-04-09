@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
+    [LeetCode(Difficulty.Medium, Category.SlidingWindow)]
     public static int LengthOfLongestSubstring(string s)
     {
         var list = new List<char>();
@@ -13,7 +14,6 @@ public sealed partial class Submission
 
         for (var right = 0; right < s.Length; right++)
         {
-            // Uses "sliding window" solution
             // https://youtu.be/wiGpQwVHdE0
             while (list.Contains(s[right]))
             {
