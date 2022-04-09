@@ -1,8 +1,7 @@
 ﻿open BenchmarkDotNet.Attributes
 open BenchmarkDotNet.Running
-open BenchmarkDotNet.Jobs
 
-[<SimpleJob(RuntimeMoniker.Net60)>]
+[<SimpleJob>]
 type FizzBuzz() =
 
     [<Benchmark>]
@@ -12,4 +11,7 @@ type FizzBuzz() =
 
 // TODO: Work out reflection check to warn of missing benchmarks?
 
-BenchmarkRunner.Run<FizzBuzz>() |> ignore
+module Program =
+
+    [<EntryPoint>]
+    BenchmarkRunner.Run<FizzBuzz>() |> ignore
