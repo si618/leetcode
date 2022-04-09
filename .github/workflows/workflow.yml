@@ -24,7 +24,9 @@ jobs:
 
       # TODO: Remove once fixed: https://github.com/dotnet/format/issues/1519
       - name: Install dotnet format
-        run: dotnet tool install -g dotnet-format --version "6.*" --add-source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json
+        run: |
+          dotnet tool install -g dotnet-format --version "6.*" \
+            --add-source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json
 
       - name: Run dotnet build
         id: build
@@ -41,9 +43,13 @@ jobs:
       
       - name: Run dotnet benchmark
         id: benchmark
-        run: |
-          cd ./Benchmarks
-          dotnet run --configuration Release --memory --filter LeetCode.Benchmark* --exporters json --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
+        run: | 
+          dotnet run \
+            --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
+            --configuration Release \
+            --filter LeetCode.Benchmark* \
+            --exporters json \
+            --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
       
       # TODO: Deploy to github pages when ready to make repo public
       #- name: Store benchmark result
