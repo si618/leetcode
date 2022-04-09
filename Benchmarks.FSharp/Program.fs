@@ -5,9 +5,9 @@ open BenchmarkDotNet.Running
 type FizzBuzz() =
 
     [<Benchmark>]
-    let ex1 = Submission.FizzBuzz 3 
-    let ex2 = Submission.FizzBuzz 5 
-    let ex3 = Submission.FizzBuzz 15 
+    let ex1 = LeetCode.Submission.FizzBuzz 3 
+    let ex2 = LeetCode.Submission.FizzBuzz 5 
+    let ex3 = LeetCode.Submission.FizzBuzz 15 
 
 // TODO: Work out reflection check to warn of missing benchmarks?
 

@@ -1,4 +1,4 @@
-﻿module Submission
+﻿module LeetCode.Submission
 
 open FsUnit
 open NUnit.Framework
