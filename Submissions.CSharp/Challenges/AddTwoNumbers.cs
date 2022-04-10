@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(Difficulty.Easy, Category.LinkedList)]
+    [LeetCode("Add Two Numbers", Difficulty.Easy, Category.LinkedList)]
     public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
         // Placeholder node to store result

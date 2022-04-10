@@ -5,7 +5,10 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(Difficulty.Medium, Category.SlidingWindow)]
+    [LeetCode(
+        "Longest Substring Without Repeating Characters", 
+        Difficulty.Medium, 
+        Category.SlidingWindow)]
     public static int LengthOfLongestSubstring(string s)
     {
         var list = new List<char>();

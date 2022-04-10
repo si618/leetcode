@@ -7,7 +7,10 @@ using System.Linq;
 
 public sealed partial class Submission
 {
-    [LeetCode(Difficulty.Easy, Category.None)]
+    [LeetCode(
+        "Middle of the Linked List", 
+        Difficulty.Easy, 
+        Category.NotInNeetCode)]
     public static ListNode MiddleNode(ListNode head)
     {
         var list = new List<ListNode> { head };

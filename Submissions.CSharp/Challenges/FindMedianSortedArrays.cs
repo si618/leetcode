@@ -6,7 +6,7 @@
 public sealed partial class Submission
 {
     // TODO: Waiting until I've done other easy and medium binary search submissions
-    //[LeetCode(Difficulty.Hard, Category.BinarySearch)]
+    //[LeetCode("Median of Two Sorted Arrays", Difficulty.Hard, Category.BinarySearch)]
     //public static double FindMedianSortedArrays(int[] nums1, int[] nums2)
     //{
     //    return 0;

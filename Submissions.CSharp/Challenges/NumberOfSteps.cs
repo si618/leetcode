@@ -5,7 +5,10 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(Difficulty.Easy, Category.None)]
+    [LeetCode(
+        "Number of Steps to Reduce a Number to Zero", 
+        Difficulty.Easy, 
+        Category.NotInNeetCode)]
     public static int NumberOfSteps(int num)
     {
         var steps = 0;
