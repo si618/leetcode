@@ -42,7 +42,7 @@ jobs:
         run: dotnet test --configuration Release
       
       - name: Run C# benchmark
-        id: benchmark
+        id: benchmark-csharp
         run: | 
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
@@ -50,6 +50,15 @@ jobs:
             --filter LeetCode.Benchmark* \
             --exporters json \
             --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
+
+      - name: Run F# benchmark
+        id: benchmark-fsharp
+        run: | 
+          dotnet run \
+            --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
+            --configuration Release \
+            --exporters json \
+            --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
       
       # TODO: Deploy to github pages when ready to make repo public
       #- name: Store benchmark result
