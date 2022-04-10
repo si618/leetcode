@@ -1,5 +1,3 @@
 ﻿namespace LeetCode
 
-type ListNode =
-    { value : int
-      next : ListNode }
+type ListNode = { value: int; next: ListNode }
