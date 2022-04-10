@@ -6,8 +6,8 @@ using NUnit.Framework;
 public sealed partial class Submission
 {
     [LeetCode(
-        "Richest Customer Wealth", 
-        Difficulty.Easy, 
+        "Richest Customer Wealth",
+        Difficulty.Easy,
         Category.NotInNeetCode)]
     public static int MaximumWealth(int[][] accounts)
     {

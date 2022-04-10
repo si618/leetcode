@@ -8,8 +8,8 @@ using System.Linq;
 public sealed partial class Submission
 {
     [LeetCode(
-        "Middle of the Linked List", 
-        Difficulty.Easy, 
+        "Middle of the Linked List",
+        Difficulty.Easy,
         Category.NotInNeetCode)]
     public static ListNode MiddleNode(ListNode head)
     {

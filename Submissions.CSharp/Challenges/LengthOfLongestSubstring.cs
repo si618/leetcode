@@ -6,8 +6,8 @@ using NUnit.Framework;
 public sealed partial class Submission
 {
     [LeetCode(
-        "Longest Substring Without Repeating Characters", 
-        Difficulty.Medium, 
+        "Longest Substring Without Repeating Characters",
+        Difficulty.Medium,
         Category.SlidingWindow)]
     public static int LengthOfLongestSubstring(string s)
     {

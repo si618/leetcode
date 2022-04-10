@@ -61,7 +61,7 @@ public static class CategoryExtensions
         Category.Graphs => "Graphs",
         Category.AdvancedGraphs => "Advanced Graphs",
         Category.OneDDynamicProgramming => "1-D Dynamic Programming",
-        Category.TwoDDynamicProgramming=> "2-D Dynamic Programming",
+        Category.TwoDDynamicProgramming => "2-D Dynamic Programming",
         Category.Greedy => "Greedy",
         Category.Intervals => "Intervals",
         Category.MathAndGeometry => "Maths & Geometry",

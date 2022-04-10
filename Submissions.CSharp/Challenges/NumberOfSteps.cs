@@ -6,8 +6,8 @@ using NUnit.Framework;
 public sealed partial class Submission
 {
     [LeetCode(
-        "Number of Steps to Reduce a Number to Zero", 
-        Difficulty.Easy, 
+        "Number of Steps to Reduce a Number to Zero",
+        Difficulty.Easy,
         Category.NotInNeetCode)]
     public static int NumberOfSteps(int num)
     {
