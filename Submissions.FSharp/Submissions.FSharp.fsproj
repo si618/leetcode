@@ -7,16 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Challenges\AddTwoNumbers.fs" />
+    <Compile Include="Challenges\ContainsDuplicate.fs" />
     <Compile Include="ListNode.fs" />
     <Compile Include="Challenges\FizzBuzz.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FsUnit" Version="4.2.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-    <PackageReference Include="NUnit" Version="3.13.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
-    <PackageReference Include="coverlet.collector" Version="3.1.0" />
+    <PackageReference Include="FsUnit" Version="5.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Submissions.CSharp\Submissions.CSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="6.0.3" />
   </ItemGroup>
 
 </Project>

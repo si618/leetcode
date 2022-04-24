@@ -34,4 +34,4 @@ foreach (var category in submissionsInCSharp)
     }
 }
 
-BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
+BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args);
