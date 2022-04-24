@@ -1,7 +1,7 @@
 ﻿open BenchmarkDotNet.Running
 open LeetCode
 
-// TODO: Work out reflection check to warn of missing benchmarks as per C#
+// TODO: Work out reflection to display solutions and warn of missing benchmarks as per C#
 
 [<EntryPoint>]
 let main args =
