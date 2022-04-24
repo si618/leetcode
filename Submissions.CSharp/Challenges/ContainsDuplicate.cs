@@ -6,13 +6,13 @@ using NUnit.Framework;
 public sealed partial class Submission
 {
     [LeetCode(
-        "Contains Duplicate", 
-        Difficulty.Easy, 
+        "Contains Duplicate",
+        Difficulty.Easy,
         Category.ArraysAndHashing)]
     public static bool ContainsDuplicate(int[] nums)
     {
         var set = new HashSet<int>();
-        
+
         for (int i = 0; i < nums.Length; i++)
         {
             var num = nums[i];
@@ -21,10 +21,10 @@ public sealed partial class Submission
             {
                 return true;
             }
-            
+
             set.Add(num);
         }
-        
+
         return false;
     }
 
