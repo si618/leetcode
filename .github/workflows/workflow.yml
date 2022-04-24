@@ -59,15 +59,11 @@ jobs:
             --exporters json \
             --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
       
-      - name: Temp
-        shell: pwsh
-        run: Get-ChildItem ./ -recurse | where {$_.name -like "*report-full-compressed.json"} | select fullname
-
       - name: Store C# benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
           tool: 'benchmarkdotnet'
-          output-file-path: Benchmarks.CSharp/BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true      
 
@@ -75,6 +71,6 @@ jobs:
         uses: rhysd/github-action-benchmark@v1
         with:
           tool: 'benchmarkdotnet'
-          output-file-path: Benchmarks.FSharp/BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true      
