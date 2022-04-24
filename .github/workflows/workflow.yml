@@ -53,7 +53,7 @@ jobs:
         id: benchmark-fsharp
         run: | 
           dotnet run \
-            --project ./Benchmarks.FSharp/Benchmarks.FSharp.csproj \
+            --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
