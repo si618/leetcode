@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - 'main'
-  pull_request:
-    branches:
-      - '*'
+
 env:
   DOTNET_VERSION: '6.0.x'
 
@@ -66,9 +64,13 @@ jobs:
         with:
           tool: 'benchmarkdotnet'
           output-file-path: Benchmarks.CSharp/BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
-      
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true      
+
       - name: Store F# benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
           tool: 'benchmarkdotnet'
           output-file-path: Benchmarks.FSharp/BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true      
