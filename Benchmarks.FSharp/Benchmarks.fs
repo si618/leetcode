@@ -4,8 +4,7 @@ open BenchmarkDotNet.Attributes
 
 // TODO: Types in F# can't be partial so need to find another way to split benchmarks up
 
-[<MemoryDiagnoser>]
-type Benchmarks() =
+type FSharpBenchmarks() =
 
     [<Benchmark>]
     member _.FizzBuzz() = [ 
