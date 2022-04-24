@@ -47,7 +47,7 @@ jobs:
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
             --configuration Release \
-            --filter LeetCode.Benchmark* \
+            --filter LeetCode.CSharpBenchmarks* \
             --exporters json \
             --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
 
@@ -55,14 +55,20 @@ jobs:
         id: benchmark-fsharp
         run: | 
           dotnet run \
-            --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
+            --project ./Benchmarks.FSharp/Benchmarks.FSharp.csproj \
             --configuration Release \
+            --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
-            --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
+            --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
       
-      # TODO: Deploy to github pages when ready to make repo public
-      #- name: Store benchmark result
-      #  uses: rhysd/github-action-benchmark@v1
-      #  with:
-      #    tool: 'benchmarkdotnet'
-      #    output-file-path: Benchmarks.CSharp/BenchmarkDotNet.Artifacts/results/LeetCode.Benchmarks-report-full-compressed.json
+      - name: Store C# benchmark result
+        uses: rhysd/github-action-benchmark@v1
+        with:
+          tool: 'benchmarkdotnet'
+          output-file-path: Benchmarks.CSharp/BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
+      
+      - name: Store F# benchmark result
+        uses: rhysd/github-action-benchmark@v1
+        with:
+          tool: 'benchmarkdotnet'
+          output-file-path: Benchmarks.FSharp/BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json

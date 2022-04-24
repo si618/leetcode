@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		Benchmark.ps1 = Benchmark.ps1
 		Directory.Build.props = Directory.Build.props
+		Format.ps1 = Format.ps1
 		.github\workflows\workflow.yml = .github\workflows\workflow.yml
 	EndProjectSection
 EndProject

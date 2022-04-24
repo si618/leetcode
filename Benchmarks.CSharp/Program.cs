@@ -2,7 +2,7 @@
 using LeetCode;
 using System.Reflection;
 
-var benchmarks = typeof(Benchmark).GetMethods().Select(m => m.Name);
+var benchmarks = typeof(CSharpBenchmarks).GetMethods().Select(m => m.Name);
 var submissionsInCSharp = typeof(Submission)
     .GetMethods()
     .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
@@ -21,7 +21,7 @@ var submissionsInCSharp = typeof(Submission)
     .ThenBy(s => s.Difficulty)
     .GroupBy(s => s.Category, s => s);
 
-Console.WriteLine("LeetCode Challenges");
+Console.WriteLine("LeetCode C# Challenges");
 foreach (var category in submissionsInCSharp)
 {
     Console.WriteLine(category.Key.Description());
