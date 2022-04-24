@@ -60,6 +60,7 @@ jobs:
             --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
       
       - name: Temp
+        shell: pwsh
         run: Get-ChildItem ./ -recurse | where {$_.name -like "*report-full-compressed.json"} | select fullname
 
       - name: Store C# benchmark result
