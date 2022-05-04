@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1651708180288,
+  "lastUpdate": 1651708181393,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -362,6 +362,42 @@ window.BENCHMARK_DATA = {
             "value": 549.5764361619949,
             "unit": "ns",
             "range": "± 5.902961410933659"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "13a8b0641e4f2b4d3f179f38d3cb89ea9126919a",
+          "message": "Create README.md",
+          "timestamp": "2022-05-05T09:15:48+09:30",
+          "tree_id": "4b00be5ab7034ac5cb8a6cd7abb1328cfbde6308",
+          "url": "https://github.com/si618/leetcode/commit/13a8b0641e4f2b4d3f179f38d3cb89ea9126919a"
+        },
+        "date": 1651708181073,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 449.38120063145954,
+            "unit": "ns",
+            "range": "± 70.49348671301951"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 705.9158760706583,
+            "unit": "ns",
+            "range": "± 16.025477412537658"
           }
         ]
       }
