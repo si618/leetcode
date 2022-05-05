@@ -1,4 +1,5 @@
 ## Leetcode via Neetcode
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/si618/leetcode/Build%20and%20Benchmark)
 
 [Benchmarked](si618.github.io/leetcode/dev/bench) C# submissions to [Leetcode](leetcode.com) challenges with naïve F# solutions on my functional programming journey.
 
