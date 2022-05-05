@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1651710891362,
+  "lastUpdate": 1651710892975,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -626,6 +626,42 @@ window.BENCHMARK_DATA = {
             "value": 476.60316880544025,
             "unit": "ns",
             "range": "± 2.420047901562051"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2e465b027f15afbf0e7e14819167bf8a1149d226",
+          "message": "Add shield.io build status badge",
+          "timestamp": "2022-05-05T10:01:07+09:30",
+          "tree_id": "e3e6ae31bdc6ddd924814cc2f1742ae39d6c2a15",
+          "url": "https://github.com/si618/leetcode/commit/2e465b027f15afbf0e7e14819167bf8a1149d226"
+        },
+        "date": 1651710892641,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 494.1069543361664,
+            "unit": "ns",
+            "range": "± 9.577266655736663"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 724.3000181913376,
+            "unit": "ns",
+            "range": "± 13.618651464020477"
           }
         ]
       }
