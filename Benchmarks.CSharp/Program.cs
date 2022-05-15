@@ -2,7 +2,10 @@
 using LeetCode;
 using System.Reflection;
 
-var benchmarks = typeof(CSharpBenchmarks).GetMethods().Select(m => m.Name);
+var benchmarks = typeof(CSharpBenchmarks)
+    .GetMethods()
+    .Select(m => m.Name)
+    .ToArray();
 var submissionsInCSharp = typeof(Submission)
     .GetMethods()
     .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)

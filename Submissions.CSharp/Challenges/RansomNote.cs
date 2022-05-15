@@ -1,4 +1,5 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 using FluentAssertions;
 using NUnit.Framework;
@@ -38,12 +39,13 @@ public sealed partial class Submission
     [Test]
     public void RansomNoteTest()
     {
-        var m1 = "a";
-        var r1 = "b";
-        var m2 = "aa";
-        var r2 = "ab";
-        var r3 = "bg";
-        var m3 = "aabefjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj";
+        const string m1 = "a";
+        const string r1 = "b";
+        const string m2 = "aa";
+        const string r2 = "ab";
+        const string r3 = "bg";
+        // ReSharper disable once StringLiteralTypo
+        const string m3 = "aabefjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj";
 
         RansomNote(r1, m1).Should().BeFalse();
         RansomNote(r2, m2).Should().BeFalse();

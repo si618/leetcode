@@ -1,4 +1,5 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 using BenchmarkDotNet.Attributes;
 
@@ -10,12 +11,12 @@ public partial class CSharpBenchmarks
         var even = new ListNode(1,
             new ListNode(2,
             new ListNode(3,
-            new ListNode(4, null))));
+            new ListNode(4))));
         var odd = new ListNode(1,
             new ListNode(2,
             new ListNode(3,
             new ListNode(4,
-            new ListNode(5, null)))));
+            new ListNode(5)))));
         Submission.MiddleNode(even);
         Submission.MiddleNode(odd);
     }

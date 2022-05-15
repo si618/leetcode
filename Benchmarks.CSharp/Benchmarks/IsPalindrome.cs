@@ -1,4 +1,5 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 using BenchmarkDotNet.Attributes;
 
@@ -10,9 +11,9 @@ public partial class CSharpBenchmarks
         var isPalindrome = new ListNode(1,
             new ListNode(2,
             new ListNode(2,
-            new ListNode(1, null))));
+            new ListNode(1))));
         var isNotPalindrome = new ListNode(1,
-            new ListNode(2, null));
+            new ListNode(2));
         Submission.IsPalindrome(isPalindrome);
         Submission.IsPalindrome(isNotPalindrome);
     }

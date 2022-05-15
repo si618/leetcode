@@ -1,12 +1,13 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 public class ListNode
 {
-    public int val;
-    public ListNode? next;
+    public readonly int Val;
+    public ListNode? Next;
     public ListNode(int val = 0, ListNode? next = null)
     {
-        this.val = val;
-        this.next = next;
+        Val = val;
+        Next = next;
     }
 }

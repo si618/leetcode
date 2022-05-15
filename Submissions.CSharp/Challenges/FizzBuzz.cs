@@ -1,4 +1,5 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 using FluentAssertions;
 using NUnit.Framework;
@@ -10,7 +11,7 @@ public sealed partial class Submission
     {
         var result = new List<string>();
 
-        for (int i = 1; i <= n; i++)
+        for (var i = 1; i <= n; i++)
         {
             var value = string.Empty;
 

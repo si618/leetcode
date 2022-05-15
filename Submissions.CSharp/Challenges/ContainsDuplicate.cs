@@ -1,4 +1,5 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 using FluentAssertions;
 using NUnit.Framework;
@@ -9,14 +10,13 @@ public sealed partial class Submission
         "Contains Duplicate",
         Difficulty.Easy,
         Category.ArraysAndHashing)]
+    // ReSharper disable once ParameterTypeCanBeEnumerable.Global
     public static bool ContainsDuplicate(int[] nums)
     {
         var set = new HashSet<int>();
 
-        for (int i = 0; i < nums.Length; i++)
+        foreach (var num in nums)
         {
-            var num = nums[i];
-
             if (set.Contains(num))
             {
                 return true;

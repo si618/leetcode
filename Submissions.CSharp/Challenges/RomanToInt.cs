@@ -1,4 +1,5 @@
-﻿namespace LeetCode;
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
 
 using FluentAssertions;
 using NUnit.Framework;
@@ -47,6 +48,7 @@ public sealed partial class Submission
     [Test]
     public void RomanToIntTest()
     {
+        // ReSharper disable StringLiteralTypo
         RomanToInt("III").Should().Be(3);
         RomanToInt("LVIII").Should().Be(58);
         RomanToInt("MCMXCIV").Should().Be(1994);
