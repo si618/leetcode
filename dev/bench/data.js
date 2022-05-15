@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1652585456392,
+  "lastUpdate": 1652585457386,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -890,6 +890,42 @@ window.BENCHMARK_DATA = {
             "value": 665.4349292119344,
             "unit": "ns",
             "range": "± 17.0428809721645"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "46d34db0c0063d047d4620f0c27b11974ced31e9",
+          "message": "Implement or ignore resharper recommendations",
+          "timestamp": "2022-05-15T12:56:06+09:30",
+          "tree_id": "874209e788fc6045fb6ff202b262a07f66efd33d",
+          "url": "https://github.com/si618/leetcode/commit/46d34db0c0063d047d4620f0c27b11974ced31e9"
+        },
+        "date": 1652585457096,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 330.4227747122447,
+            "unit": "ns",
+            "range": "± 0.7027997802415341"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 517.2081527709961,
+            "unit": "ns",
+            "range": "± 1.4331240526785316"
           }
         ]
       }
