@@ -12,7 +12,7 @@ public sealed partial class Submission
         Category.ArraysAndHashing)]
     public static bool IsAnagram(string s, string t)
     {
-        return s.Length == t.Length && 
+        return s.Length == t.Length &&
                s.OrderBy(c => c).SequenceEqual(t.OrderBy(c => c));
     }
 
