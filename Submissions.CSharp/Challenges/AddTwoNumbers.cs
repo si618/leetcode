@@ -99,7 +99,7 @@ public sealed partial class Submission
                 }
                 if (l1 is null || l2 is null)
                 {
-                    Assert.Fail("Either both node or neither node should be null");
+                    Assert.Fail("Either both nodes or neither node should be null");
                     return;
                 }
                 l1.Val.Should().Be(l2.Val);

@@ -24,8 +24,7 @@ public sealed partial class Submission
     [Test]
     public void KWeakestRowsTest()
     {
-        // Arrange
-        var ex1 = new int[][]
+        var ex1 = new[]
         {
             new[] { 1, 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1, 0 },
@@ -33,15 +32,15 @@ public sealed partial class Submission
             new[] { 1, 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1, 1 }
         };
-        var ex2 = new int[][]
+        var ex2 = new[]
         {
             new[] { 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1 },
             new[] { 1, 0, 0, 0 },
             new[] { 1, 0, 0, 0 }
         };
-        // Act & Assert
-        KWeakestRows(ex1, 3).Should().Equal(new[] { 2, 0, 3 });
-        KWeakestRows(ex2, 2).Should().Equal(new[] { 0, 2 });
+
+        KWeakestRows(ex1, 3).Should().Equal(2, 0, 3);
+        KWeakestRows(ex2, 2).Should().Equal(0, 2);
     }
 }
