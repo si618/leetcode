@@ -9,8 +9,8 @@
   <ItemGroup>
     <Compile Include="Challenges\AddTwoNumbers.fs" />
     <Compile Include="Challenges\ContainsDuplicate.fs" />
-    <Compile Include="ListNode.fs" />
     <Compile Include="Challenges\FizzBuzz.fs" />
+    <Compile Include="ListNode.fs" />
   </ItemGroup>
 
   <ItemGroup>
