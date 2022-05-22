@@ -58,16 +58,16 @@ jobs:
         uses: rhysd/github-action-benchmark@v1
         with:
           name: C# Benchmarks
-          tool: 'benchmarkdotnet'
+          tool: benchmarkdotnet
           output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-push: true      
+          auto-push: false      
 
       - name: Store F# benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
           name: F# Benchmarks
-          tool: 'benchmarkdotnet'
+          tool: benchmarkdotnet
           output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true      
