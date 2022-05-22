@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653187369999,
+  "lastUpdate": 1653187370994,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -1178,6 +1178,42 @@ window.BENCHMARK_DATA = {
             "value": 723.5155973434448,
             "unit": "ns",
             "range": "± 5.148983476893622"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "5bb485b7a69cc4c869f2ec7f4a98e21833f14e3c",
+          "message": "Remove workaround for dotnet format bug",
+          "timestamp": "2022-05-22T12:08:49+09:30",
+          "tree_id": "9d842b1aa4822ece29cd93166785590dc26d004d",
+          "url": "https://github.com/si618/leetcode/commit/5bb485b7a69cc4c869f2ec7f4a98e21833f14e3c"
+        },
+        "date": 1653187370715,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 448.6772423055437,
+            "unit": "ns",
+            "range": "± 5.377664284554487"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 625.428062915802,
+            "unit": "ns",
+            "range": "± 1.57616606892207"
           }
         ]
       }
