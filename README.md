@@ -9,10 +9,10 @@ I stumbled across the most excellent [Neetcode](https://neetcode.io) website and
 
 ```
 > git --version
-git version 2.25.1
+git version 2.36.1
 
 > dotnet --list-sdks
-6.0.202 [/usr/share/dotnet/sdk]
+6.0.300 [/usr/share/dotnet/sdk]
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
