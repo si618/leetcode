@@ -63,6 +63,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: false      
 
+      - name: Rebase local changes
+        run: git pull --rebase
+
       - name: Store F# benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
@@ -70,7 +73,4 @@ jobs:
           tool: benchmarkdotnet
           output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-push: false      
-
-      - name: Push benchmark results
-        run: git push 'https://si618:${{ secrets.GITHUB_TOKEN }}@github.com/si618/leetcode.git' gh-pages:gh-pages
+          auto-push: true
