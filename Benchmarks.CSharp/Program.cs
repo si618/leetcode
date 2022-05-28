@@ -22,8 +22,10 @@ var submissionsInCSharp = typeof(Submission)
     })
     .OrderBy(s => s.Category)
     .ThenBy(s => s.Difficulty)
-    .GroupBy(s => s.Category, s => s);
+    .GroupBy(s => s.Category, s => s)
+    .ToArray();
 
+var total = 0;
 Console.WriteLine("LeetCode C# Challenges");
 foreach (var category in submissionsInCSharp)
 {
@@ -35,6 +37,10 @@ foreach (var category in submissionsInCSharp)
             : " * Missing benchmark *";
         Console.WriteLine($"  [{submission.Difficulty}] {submission.Description}{missing}");
     }
+    total += category.Count();
 }
+Console.WriteLine();
+Console.WriteLine($"Total challenges submitted: {total}");
+Console.WriteLine();
 
 BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args);
