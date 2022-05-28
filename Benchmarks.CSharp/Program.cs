@@ -27,6 +27,7 @@ var submissionsInCSharp = typeof(Submission)
 
 var total = 0;
 Console.WriteLine("LeetCode C# Challenges");
+Console.WriteLine();
 foreach (var category in submissionsInCSharp)
 {
     Console.WriteLine(category.Key.Description());
