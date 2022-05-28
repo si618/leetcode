@@ -7,7 +7,7 @@ on:
 env:
   DOTNET_NOLOGO: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  DOTNET_CLI_TELEMETRY_OPTOUT: true  
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_VERSION: 6.0.x
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }} 
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Run dotnet build
         id: build
@@ -33,10 +33,10 @@ jobs:
       - name: Run dotnet test
         id: test
         run: dotnet test --configuration Release
-      
+
       - name: Run C# benchmark
         id: benchmark-csharp
-        run: | 
+        run: |
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
             --configuration Release \
@@ -46,14 +46,14 @@ jobs:
 
       - name: Run F# benchmark
         id: benchmark-fsharp
-        run: | 
+        run: |
           dotnet run \
             --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
             --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
-      
+
       - name: Store C# benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
@@ -61,7 +61,7 @@ jobs:
           tool: benchmarkdotnet
           output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-push: false      
+          auto-push: false
 
       - name: Store F# benchmark result
         uses: rhysd/github-action-benchmark@v1

@@ -14,7 +14,7 @@ public sealed partial class Submission
         {
             return false;
         }
-        
+
         var pairs = new Dictionary<char, char>
         {
             { ')', '(' },
