@@ -6,10 +6,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(
-        "Contains Duplicate",
-        Difficulty.Easy,
-        Category.ArraysAndHashing)]
+    [LeetCode("Contains Duplicate", Difficulty.Easy, Category.ArraysAndHashing)]
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global
     public static bool ContainsDuplicate(int[] nums)
     {

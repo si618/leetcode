@@ -7,10 +7,7 @@ using System.Collections.Generic;
 
 public sealed partial class Submission
 {
-    [LeetCode(
-        "Roman to Integer",
-        Difficulty.Easy,
-        Category.NotInNeetCode)]
+    [LeetCode("Roman to Integer", Difficulty.Easy, Category.NotInNeetCode)]
     public static int RomanToInt(string s)
     {
         var romanValues = new Dictionary<char, int>()

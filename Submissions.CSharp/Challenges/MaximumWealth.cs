@@ -6,10 +6,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(
-        "Richest Customer Wealth",
-        Difficulty.Easy,
-        Category.NotInNeetCode)]
+    [LeetCode("Richest Customer Wealth", Difficulty.Easy, Category.NotInNeetCode)]
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global
     public static int MaximumWealth(int[][] accounts)
     {

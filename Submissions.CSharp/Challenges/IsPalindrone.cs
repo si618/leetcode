@@ -8,10 +8,7 @@ using System.Linq;
 
 public sealed partial class Submission
 {
-    [LeetCode(
-        "Palindrome Linked List",
-        Difficulty.Easy,
-        Category.TwoPointers)]
+    [LeetCode("Palindrome Linked List", Difficulty.Easy, Category.TwoPointers)]
     public static bool IsPalindrome(ListNode head)
     {
         if (head.Next is null)

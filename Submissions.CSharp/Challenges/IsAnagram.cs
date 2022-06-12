@@ -6,10 +6,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(
-        "Valid Anagram",
-        Difficulty.Easy,
-        Category.ArraysAndHashing)]
+    [LeetCode("Valid Anagram", Difficulty.Easy, Category.ArraysAndHashing)]
     public static bool IsAnagram(string s, string t)
     {
         return s.Length == t.Length &&

@@ -6,10 +6,7 @@ using NUnit.Framework;
 
 public sealed partial class Submission
 {
-    [LeetCode(
-        "The K Weakest Rows in a Matrix",
-        Difficulty.Easy,
-        Category.NotInNeetCode)]
+    [LeetCode("The K Weakest Rows in a Matrix", Difficulty.Easy, Category.NotInNeetCode)]
     public static int[] KWeakestRows(int[][] mat, int k)
     {
         return mat
