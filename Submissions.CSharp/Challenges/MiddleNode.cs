@@ -39,5 +39,4 @@ public sealed partial class Submission
         MiddleNode(even).Should().BeSameAs(even.Next!.Next);
         MiddleNode(odd).Should().BeSameAs(odd.Next!.Next);
     }
-
 }

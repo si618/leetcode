@@ -71,5 +71,4 @@ public sealed partial class Submission
         IsPalindrome(notEven).Should().BeFalse();
         IsPalindrome(notOdd).Should().BeFalse();
     }
-
 }
