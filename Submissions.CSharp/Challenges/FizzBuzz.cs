@@ -39,15 +39,12 @@ public sealed partial class Submission
     [Test]
     public void FizzBuzzTest()
     {
-        var input1 = 3;
         var output1 = new List<string> { "1", "2", "Fizz" };
-        var input2 = 5;
         var output2 = new List<string> { "1", "2", "Fizz", "4", "Buzz" };
-        var input3 = 15;
         var output3 = new List<string> { "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz" };
 
-        FizzBuzz(input1).Should().Equal(output1);
-        FizzBuzz(input2).Should().Equal(output2);
-        FizzBuzz(input3).Should().Equal(output3);
+        FizzBuzz(3).Should().Equal(output1);
+        FizzBuzz(5).Should().Equal(output2);
+        FizzBuzz(15).Should().Equal(output3);
     }
 }

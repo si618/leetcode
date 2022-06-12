@@ -8,7 +8,7 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void KWeakestRows()
     {
-        var ex1 = new int[][]
+        var ex1 = new[]
         {
             new[] { 1, 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1, 0 },
@@ -16,7 +16,7 @@ public partial class CSharpBenchmarks
             new[] { 1, 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1, 1 }
         };
-        var ex2 = new int[][]
+        var ex2 = new[]
         {
             new[] { 1, 0, 0, 0 },
             new[] { 1, 1, 1, 1 },

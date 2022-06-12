@@ -26,12 +26,12 @@ var submissionsInCSharp = typeof(Submission)
     .ToArray();
 
 var total = 0;
+var nl = Environment.NewLine;
 Console.WriteLine("LeetCode C# Challenges");
-Console.WriteLine();
 foreach (var category in submissionsInCSharp)
 {
-    Console.WriteLine(category.Key.Description());
-    foreach (var submission in category)
+    Console.WriteLine($"{nl}{category.Key.Description()}{nl}");
+    foreach (var submission in category.ToArray())
     {
         var missing = benchmarks.Contains(submission.Name)
             ? string.Empty
@@ -40,8 +40,9 @@ foreach (var category in submissionsInCSharp)
     }
     total += category.Count();
 }
-Console.WriteLine();
-Console.WriteLine($"Total challenges submitted: {total}");
-Console.WriteLine();
+Console.WriteLine($"{nl}Total challenges submitted: {total}{nl}");
 
-BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args);
+if (!args.Contains("--info", StringComparer.InvariantCultureIgnoreCase))
+{
+    BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args);
+}

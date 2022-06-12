@@ -8,12 +8,12 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void MaximumWealth()
     {
-        var ex1 = new int[][]
+        var ex1 = new[]
         {
             new[] { 1, 2, 3 },
             new[] { 3, 2, 1 }
         };
-        var ex2 = new int[][]
+        var ex2 = new[]
         {
             new[] { 1, 5 },
             new[] { 7, 3 },
