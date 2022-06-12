@@ -14,7 +14,8 @@ public sealed partial class Submission
 
         while (leftPtr <= rightPtr)
         {
-            var midPtr = (leftPtr + rightPtr) / 2;
+            // Find mid-point without risk of overflowing
+            var midPtr = leftPtr + (rightPtr - leftPtr) / 2;
             var midVal = nums[midPtr];
 
             if (midVal > target)
