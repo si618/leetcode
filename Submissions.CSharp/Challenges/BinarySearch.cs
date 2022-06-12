@@ -1,0 +1,47 @@
+﻿// ReSharper disable once CheckNamespace
+namespace LeetCode;
+
+using FluentAssertions;
+using NUnit.Framework;
+
+public sealed partial class Submission
+{
+    [LeetCode("Binary Search", Difficulty.Easy, Category.BinarySearch)]
+    public static int BinarySearch(int[] nums, int target)
+    {
+        var leftPtr = 0;
+        var rightPtr = nums.Length - 1;
+
+        while (leftPtr <= rightPtr)
+        {
+            var midPtr = (leftPtr + rightPtr) / 2;
+            var midVal = nums[midPtr];
+
+            if (midVal > target)
+            {
+                rightPtr = midPtr - 1;
+            }
+            else if (midVal < target)
+            {
+                leftPtr = midPtr + 1;
+            }
+            else
+            {
+                return midPtr;
+            }
+        }
+
+        // Target not found
+        return -1;
+    }
+
+    [Test]
+    public void BinarySearchTest()
+    {
+        var nums = new[] { -1, 0, 3, 5, 9, 12 };
+
+        BinarySearch(nums, 9).Should().Be(4);
+        BinarySearch(nums, 2).Should().Be(-1);
+        BinarySearch(Array.Empty<int>(), 0).Should().Be(-1);
+    }
+}
