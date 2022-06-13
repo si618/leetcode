@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1655103306962,
+  "lastUpdate": 1655103307272,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -2708,6 +2708,42 @@ window.BENCHMARK_DATA = {
             "value": 516.2384494372776,
             "unit": "ns",
             "range": "± 4.110496485002871"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "e0a8d9b9a3475476477f3894db5ca228ed1d6bc3",
+          "message": "Add \"Merge Two Sorted Lists\" challenge",
+          "timestamp": "2022-06-13T16:19:28+09:30",
+          "tree_id": "b061f17ba06c30ac8e694ac8e6aaf67a95fe02ad",
+          "url": "https://github.com/si618/leetcode/commit/e0a8d9b9a3475476477f3894db5ca228ed1d6bc3"
+        },
+        "date": 1655103307241,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 581.4617245992025,
+            "unit": "ns",
+            "range": "± 13.98813511135783"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 785.9833969540066,
+            "unit": "ns",
+            "range": "± 24.43631275719965"
           }
         ]
       }
