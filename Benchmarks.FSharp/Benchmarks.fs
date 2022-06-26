@@ -8,12 +8,12 @@ type FSharpBenchmarks() =
 
     [<Benchmark>]
     member _.ContainsDuplicate() = [
-        LeetCode.Submission.ContainsDuplicate [| 1; 2; 3; 1 |]; 
-        LeetCode.Submission.ContainsDuplicate [| 1; 2; 3; 4 |]; 
-        LeetCode.Submission.ContainsDuplicate [| 1; 1; 1; 3; 3; 4; 3; 2; 4; 2 |] ]
+        Submission.ContainsDuplicate [| 1; 2; 3; 1 |];
+        Submission.ContainsDuplicate [| 1; 2; 3; 4 |];
+        Submission.ContainsDuplicate [| 1; 1; 1; 3; 3; 4; 3; 2; 4; 2 |] ]
 
     [<Benchmark>]
-    member _.FizzBuzz() = [ 
-        LeetCode.Submission.FizzBuzz 3;
-        LeetCode.Submission.FizzBuzz 5; 
-        LeetCode.Submission.FizzBuzz 15 ]
+    member _.FizzBuzz() = [
+        Submission.FizzBuzz 3;
+        Submission.FizzBuzz 5;
+        Submission.FizzBuzz 15 ]
