@@ -42,6 +42,7 @@ public sealed partial class Submission
 
         InvertTree(root1).Should().BeEquivalentTo(exp1);
         InvertTree(root2).Should().BeEquivalentTo(exp2);
-        InvertTree(new TreeNode()).Should().BeNull();
+        InvertTree(new TreeNode()).Should().BeEquivalentTo(new TreeNode());
+        InvertTree(null).Should().BeNull();
     }
 }
