@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1656749962990,
+  "lastUpdate": 1656749963280,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -3062,6 +3062,42 @@ window.BENCHMARK_DATA = {
             "value": 734.0208586284092,
             "unit": "ns",
             "range": "± 5.5249658378332605"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "ee32da664980fbbfe3d413a759741b45c27b1fe5",
+          "message": "Add \"Maximum Depth of Binary Tree\" challenge",
+          "timestamp": "2022-07-02T17:43:41+09:30",
+          "tree_id": "158482b6778f3a8ec87c4d58e6dd25ade1d8eb8c",
+          "url": "https://github.com/si618/leetcode/commit/ee32da664980fbbfe3d413a759741b45c27b1fe5"
+        },
+        "date": 1656749963252,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 444.48725682497025,
+            "unit": "ns",
+            "range": "± 16.987353986662857"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 612.7387443270002,
+            "unit": "ns",
+            "range": "± 7.181657262070632"
           }
         ]
       }
