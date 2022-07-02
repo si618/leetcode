@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1656233967491,
+  "lastUpdate": 1656749962990,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -2196,6 +2196,150 @@ window.BENCHMARK_DATA = {
             "value": 706.9167680059161,
             "unit": "ns",
             "range": "± 6.29503396952956"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "ee32da664980fbbfe3d413a759741b45c27b1fe5",
+          "message": "Add \"Maximum Depth of Binary Tree\" challenge",
+          "timestamp": "2022-07-02T17:43:41+09:30",
+          "tree_id": "158482b6778f3a8ec87c4d58e6dd25ade1d8eb8c",
+          "url": "https://github.com/si618/leetcode/commit/ee32da664980fbbfe3d413a759741b45c27b1fe5"
+        },
+        "date": 1656749961425,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.CSharpBenchmarks.AddTwoNumbers",
+            "value": 359.8782178560893,
+            "unit": "ns",
+            "range": "± 2.5505166958686045"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.BinarySearch",
+            "value": 25.93200683262613,
+            "unit": "ns",
+            "range": "± 0.6263616418430931"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.ContainsDuplicate",
+            "value": 382.4189449946086,
+            "unit": "ns",
+            "range": "± 9.983984633756327"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.FizzBuzz",
+            "value": 575.5468545489841,
+            "unit": "ns",
+            "range": "± 27.100277975821466"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.InvertTree",
+            "value": 203.54859325620862,
+            "unit": "ns",
+            "range": "± 6.152919633186132"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.IsAnagram",
+            "value": 1716.3023397922516,
+            "unit": "ns",
+            "range": "± 45.337784653583945"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.IsPalindrome",
+            "value": 521.4662374920315,
+            "unit": "ns",
+            "range": "± 14.56865951532004"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.KWeakestRows",
+            "value": 2502.4582888285317,
+            "unit": "ns",
+            "range": "± 79.51551640124711"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.LengthOfLongestSubstring",
+            "value": 674.7625563939413,
+            "unit": "ns",
+            "range": "± 16.646193731230504"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.MaxDepth",
+            "value": 139.39026437865363,
+            "unit": "ns",
+            "range": "± 6.321012292264124"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.MaximumWealth",
+            "value": 488.6059552298652,
+            "unit": "ns",
+            "range": "± 18.473983491318418"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.MaxProfit",
+            "value": 39.90409407681889,
+            "unit": "ns",
+            "range": "± 1.0378576606440868"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.MergeTwoLists",
+            "value": 125.03716434372797,
+            "unit": "ns",
+            "range": "± 8.005213349647757"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.MiddleNode",
+            "value": 381.6972436375088,
+            "unit": "ns",
+            "range": "± 14.126853217770245"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.NumberOfSteps",
+            "value": 32.65401887148619,
+            "unit": "ns",
+            "range": "± 0.3902339381862609"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.RansomNote",
+            "value": 399.05806708335876,
+            "unit": "ns",
+            "range": "± 21.616736195709592"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.ReverseList",
+            "value": 82.76454122364521,
+            "unit": "ns",
+            "range": "± 0.8432966302226496"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.RomanToInt",
+            "value": 943.5847776201036,
+            "unit": "ns",
+            "range": "± 31.353922676724693"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.TwoSum",
+            "value": 64.29283510148525,
+            "unit": "ns",
+            "range": "± 3.928601997711311"
+          },
+          {
+            "name": "LeetCode.CSharpBenchmarks.AreParenthesesValid",
+            "value": 630.5320071114434,
+            "unit": "ns",
+            "range": "± 18.28089882965939"
           }
         ]
       }
