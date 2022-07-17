@@ -14,8 +14,8 @@ public sealed partial class Submission
 
         while (current is not null)
         {
-            var next = current.Next;
-            current.Next = previous;
+            var next = current.next;
+            current.next = previous;
             previous = current;
             current = next;
         }

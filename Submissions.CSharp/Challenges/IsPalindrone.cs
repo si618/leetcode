@@ -11,17 +11,17 @@ public sealed partial class Submission
     [LeetCode("Palindrome Linked List", Difficulty.Easy, Category.TwoPointers)]
     public static bool IsPalindrome(ListNode head)
     {
-        if (head.Next is null)
+        if (head.next is null)
         {
             return true;
         }
 
-        var list = new List<int> { head.Val };
+        var list = new List<int> { head.val };
 
-        while (head.Next is not null)
+        while (head.next is not null)
         {
-            head = head.Next;
-            list.Add(head.Val);
+            head = head.next;
+            list.Add(head.val);
         };
 
         var isOdd = list.Count % 2 != 0;

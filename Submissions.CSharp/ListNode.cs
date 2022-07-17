@@ -3,12 +3,14 @@ namespace LeetCode;
 
 public class ListNode
 {
-    public readonly int Val;
-    public ListNode? Next;
+    // ReSharper disable once InconsistentNaming
+    public readonly int val;
+    // ReSharper disable once InconsistentNaming
+    public ListNode? next;
 
     public ListNode(int val = 0, ListNode? next = null)
     {
-        Val = val;
-        Next = next;
+        this.val = val;
+        this.next = next;
     }
 }

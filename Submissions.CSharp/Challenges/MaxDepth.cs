@@ -14,7 +14,7 @@ public sealed partial class Submission
             return 0;
         }
 
-        return Math.Max(MaxDepth(root.Left), MaxDepth(root.Right)) + 1;
+        return Math.Max(MaxDepth(root.left), MaxDepth(root.right)) + 1;
     }
 
     [Test]

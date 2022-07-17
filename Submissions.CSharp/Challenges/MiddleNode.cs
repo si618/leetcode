@@ -12,9 +12,9 @@ public sealed partial class Submission
     public static ListNode MiddleNode(ListNode head)
     {
         var list = new List<ListNode> { head };
-        while (head.Next is not null)
+        while (head.next is not null)
         {
-            head = head.Next;
+            head = head.next;
             list.Add(head);
         };
         var skip = list.Count / 2;
@@ -36,7 +36,7 @@ public sealed partial class Submission
             new ListNode(5)))));
 
         MiddleNode(single).Should().BeSameAs(single);
-        MiddleNode(even).Should().BeSameAs(even.Next!.Next);
-        MiddleNode(odd).Should().BeSameAs(odd.Next!.Next);
+        MiddleNode(even).Should().BeSameAs(even.next!.next);
+        MiddleNode(odd).Should().BeSameAs(odd.next!.next);
     }
 }

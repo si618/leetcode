@@ -14,29 +14,29 @@ public sealed partial class Submission
 
         while (list1 is not null && list2 is not null)
         {
-            if (list1.Val < list2.Val)
+            if (list1.val < list2.val)
             {
-                tail.Next = list1;
-                list1 = list1.Next;
+                tail.next = list1;
+                list1 = list1.next;
             }
             else
             {
-                tail.Next = list2;
-                list2 = list2.Next;
+                tail.next = list2;
+                list2 = list2.next;
             }
-            tail = tail.Next;
+            tail = tail.next;
         }
 
         if (list1 is not null)
         {
-            tail.Next = list1;
+            tail.next = list1;
         }
         else if (list2 is not null)
         {
-            tail.Next = list2;
+            tail.next = list2;
         }
 
-        return dummy.Next;
+        return dummy.next;
     }
 
     [Test]

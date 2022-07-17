@@ -21,30 +21,30 @@ public sealed partial class Submission
             var l1Val = 0;
             if (l1 is not null)
             {
-                l1Val = l1.Val;
-                l1 = l1.Next!;
+                l1Val = l1.val;
+                l1 = l1.next!;
             }
             var l2Val = 0;
             if (l2 is not null)
             {
-                l2Val = l2.Val;
-                l2 = l2.Next!;
+                l2Val = l2.val;
+                l2 = l2.next!;
             }
             var sum = l1Val + l2Val + carry;
             carry = sum / 10;
             // New node only stores first digit as carry is saved
             var node = new ListNode(sum % 10);
             // Update both current and next answer to new node
-            answer = answer.Next = node;
+            answer = answer.next = node;
         }
 
         if (carry > 0)
         {
-            answer.Next = new ListNode(carry);
+            answer.next = new ListNode(carry);
         }
 
         // Answer is guaranteed to be non-null
-        return result.Next!;
+        return result.next!;
     }
 
     [Test]
@@ -102,9 +102,9 @@ public sealed partial class Submission
                     Assert.Fail("Either both nodes or neither node should be null");
                     return;
                 }
-                l1.Val.Should().Be(l2.Val);
-                l1 = l1.Next;
-                l2 = l2.Next;
+                l1.val.Should().Be(l2.val);
+                l1 = l1.next;
+                l2 = l2.next;
             }
         }
         AssertEqual(ex1Result, ex1Expected);

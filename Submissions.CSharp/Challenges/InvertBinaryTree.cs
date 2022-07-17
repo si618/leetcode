@@ -14,15 +14,15 @@ public sealed partial class Submission
             return null;
         }
 
-        (root.Left, root.Right) = (root.Right, root.Left);
+        (root.left, root.right) = (root.right, root.left);
 
-        if (root.Left is not null)
+        if (root.left is not null)
         {
-            InvertTree(root.Left);
+            InvertTree(root.left);
         }
-        if (root.Right is not null)
+        if (root.right is not null)
         {
-            InvertTree(root.Right);
+            InvertTree(root.right);
         }
 
         return root;
