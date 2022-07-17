@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1658033023048,
+  "lastUpdate": 1658033023269,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -3608,6 +3608,42 @@ window.BENCHMARK_DATA = {
             "value": 668.9936600791084,
             "unit": "ns",
             "range": "± 11.004785440498235"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "b04abb0be8fa1697dec8402d79c373e66c8f33d0",
+          "message": "Add \"Diameter of Binary Tree\" challenge",
+          "timestamp": "2022-07-17T14:08:50+09:30",
+          "tree_id": "efeb8b3f026395a6ed7c6dc89845862e2bc03a85",
+          "url": "https://github.com/si618/leetcode/commit/b04abb0be8fa1697dec8402d79c373e66c8f33d0"
+        },
+        "date": 1658033023249,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 340.79180126190187,
+            "unit": "ns",
+            "range": "± 0.8482230762256838"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 489.582795937856,
+            "unit": "ns",
+            "range": "± 1.9888262296076884"
           }
         ]
       }
