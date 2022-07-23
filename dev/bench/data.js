@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1658552873576,
+  "lastUpdate": 1658552873852,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -3800,6 +3800,42 @@ window.BENCHMARK_DATA = {
             "value": 489.582795937856,
             "unit": "ns",
             "range": "± 1.9888262296076884"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "4d79f9307ee68953aa823f5e893050a34082c0ce",
+          "message": "Add \"Balanced Binary Tree\" challenge",
+          "timestamp": "2022-07-23T14:31:55+09:30",
+          "tree_id": "8e3657dee99a1cac239e6ec4b3c09a2936b21ac2",
+          "url": "https://github.com/si618/leetcode/commit/4d79f9307ee68953aa823f5e893050a34082c0ce"
+        },
+        "date": 1658552873824,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 510.6926327943802,
+            "unit": "ns",
+            "range": "± 15.071869940421374"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 720.0610893794468,
+            "unit": "ns",
+            "range": "± 5.796812801492222"
           }
         ]
       }
