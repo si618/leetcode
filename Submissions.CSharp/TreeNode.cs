@@ -3,12 +3,11 @@ namespace LeetCode;
 
 public class TreeNode
 {
-    // ReSharper disable once InconsistentNaming
+    // ReSharper disable InconsistentNaming
     public readonly int val;
-    // ReSharper disable once InconsistentNaming
     public TreeNode? left;
-    // ReSharper disable once InconsistentNaming
     public TreeNode? right;
+    // ReSharper enable InconsistentNaming
 
     public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
     {
