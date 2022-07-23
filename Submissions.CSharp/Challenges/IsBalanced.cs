@@ -11,7 +11,7 @@ public sealed partial class Submission
     {
         (bool IsBalanced, int Height) DepthFirstSearch(TreeNode? node)
         {
-            if (node == null)
+            if (node is null)
             {
                 return (true, 0);
             }
