@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1658556052044,
+  "lastUpdate": 1658556052347,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -3992,6 +3992,42 @@ window.BENCHMARK_DATA = {
             "value": 720.0610893794468,
             "unit": "ns",
             "range": "± 5.796812801492222"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "4465e6c8858375fcb1892d4cd9600fb491a26ee4",
+          "message": "Add helper methods to deserialize from leetcode examples",
+          "timestamp": "2022-07-23T15:24:46+09:30",
+          "tree_id": "208339b9fefce8cf4f612a32def766b85616fb84",
+          "url": "https://github.com/si618/leetcode/commit/4465e6c8858375fcb1892d4cd9600fb491a26ee4"
+        },
+        "date": 1658556052317,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 428.22443935606213,
+            "unit": "ns",
+            "range": "± 22.08790365255956"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 622.6338693830702,
+            "unit": "ns",
+            "range": "± 11.608436963132233"
           }
         ]
       }
