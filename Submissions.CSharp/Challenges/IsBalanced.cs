@@ -34,36 +34,16 @@ public sealed partial class Submission
     [Test]
     public void IsBalancedTest()
     {
-        var root1 = new TreeNode(3,
-            left: new TreeNode(9),
-            right: new TreeNode(20,
-                left: new TreeNode(15),
-                right: new TreeNode(7)));
-        var root2 = new TreeNode(1,
-            left: new TreeNode(2,
-                left: new TreeNode(3,
-                    left: new TreeNode(4),
-                    right: new TreeNode(4)),
-                right: new TreeNode(3)),
-            right: new TreeNode(2));
-        var root3 = new TreeNode(1, left: new TreeNode(2, left: new TreeNode(3)));
-        var root4 = new TreeNode();
-        var root5 = new TreeNode(1,
-            left: new TreeNode(2,
-                left: new TreeNode(4,
-                    left: new TreeNode(7),
-                    right: null),
-                right: new TreeNode(5)),
-            right: new TreeNode(3,
-                left: null,
-                right: new TreeNode(6,
-                    left: null,
-                    right: new TreeNode(8))));
+        var root1 = new TreeNode(new int?[] { 3, 9, 20, null, null, 15, 7 });
+        var root2 = new TreeNode(new int?[] { 1, 2, 2, 3, 3, null, null, 4, 4 });
+        var root3 = new TreeNode(new int?[] { 1, 2, null, 3 });
+        var root4 = new TreeNode(new int?[] { 1, 2, 3, 4, 5, null, 6, 7, null, null, null, null, 8 });
+        var root5 = new TreeNode();
 
         IsBalanced(root1).Should().BeTrue();
         IsBalanced(root2).Should().BeFalse();
         IsBalanced(root3).Should().BeFalse();
-        IsBalanced(root4).Should().BeTrue();
-        IsBalanced(root5).Should().BeFalse();
+        IsBalanced(root4).Should().BeFalse();
+        IsBalanced(root5).Should().BeTrue();
     }
 }
