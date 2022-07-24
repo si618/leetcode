@@ -6,8 +6,9 @@ var benchmarks = typeof(CSharpBenchmarks)
     .GetMethods()
     .Select(m => m.Name)
     .ToArray();
+
 var submissionsInCSharp = typeof(Submission)
-    .GetMethods()
+    .GetMembers()
     .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
     .Select(m =>
     {
