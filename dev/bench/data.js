@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1658640745442,
+  "lastUpdate": 1658640745721,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -4826,6 +4826,42 @@ window.BENCHMARK_DATA = {
             "value": 780.1857956250509,
             "unit": "ns",
             "range": "± 5.487113656348499"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "913a66722826e85b906de2c3b60a1456c1c46d35",
+          "message": "Add \"Implement Trie (Prefix Tree)\" challenge",
+          "timestamp": "2022-07-24T14:56:01+09:30",
+          "tree_id": "cb67cb05e66331a3bb984d3882f3288dd2879979",
+          "url": "https://github.com/si618/leetcode/commit/913a66722826e85b906de2c3b60a1456c1c46d35"
+        },
+        "date": 1658640745690,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 530.0161329905192,
+            "unit": "ns",
+            "range": "± 2.7887855759890994"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 758.2147346496582,
+            "unit": "ns",
+            "range": "± 2.1400713771158597"
           }
         ]
       }
