@@ -16,10 +16,7 @@ public sealed partial class Submission
 
         while (true)
         {
-            if (current is null)
-            {
-                throw new ArgumentException("Nodes cannot be null in Binary Search Tree");
-            }
+            ArgumentNullException.ThrowIfNull(current);
 
             if (p.val < current.val && q.val < current.val)
             {
