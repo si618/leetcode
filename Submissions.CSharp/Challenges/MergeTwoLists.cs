@@ -1,4 +1,3 @@
-// ReSharper disable once CheckNamespace
 namespace LeetCode;
 
 using FluentAssertions;

@@ -1,5 +1,4 @@
-﻿// ReSharper disable once CheckNamespace
-namespace LeetCode;
+﻿namespace LeetCode;
 
 /// <summary>NeetCode category</summary>
 public enum Category

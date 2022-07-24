@@ -1,5 +1,4 @@
-﻿// ReSharper disable once CheckNamespace
-namespace LeetCode;
+﻿namespace LeetCode;
 
 [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
 public sealed class LeetCodeAttribute : Attribute

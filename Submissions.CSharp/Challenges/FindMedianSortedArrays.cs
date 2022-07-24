@@ -1,5 +1,4 @@
-﻿// ReSharper disable once CheckNamespace
-namespace LeetCode;
+﻿namespace LeetCode;
 
 //using FluentAssertions;
 //using NUnit.Framework;

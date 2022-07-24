@@ -1,5 +1,4 @@
-﻿// ReSharper disable once CheckNamespace
-namespace LeetCode;
+﻿namespace LeetCode;
 
 /// <summary>LeetCode difficulty</summary>
 public enum Difficulty
