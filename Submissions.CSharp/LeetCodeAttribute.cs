@@ -1,7 +1,7 @@
 ﻿// ReSharper disable once CheckNamespace
 namespace LeetCode;
 
-[AttributeUsage(AttributeTargets.Method)]
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
 public sealed class LeetCodeAttribute : Attribute
 {
     /// <summary>Challenge description</summary>
