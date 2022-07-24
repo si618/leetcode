@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1658634933971,
+  "lastUpdate": 1658634934246,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -4400,6 +4400,42 @@ window.BENCHMARK_DATA = {
             "value": 588.0388889312744,
             "unit": "ns",
             "range": "± 8.87818331858093"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "67377c375253578da80382d18a5b7b94ac94f57d",
+          "message": "Add \"Lowest Common Ancestor of a Binary Search Tree\" challenge",
+          "timestamp": "2022-07-24T13:19:04+09:30",
+          "tree_id": "795372dd8786349ceefd8c28f21140776770276e",
+          "url": "https://github.com/si618/leetcode/commit/67377c375253578da80382d18a5b7b94ac94f57d"
+        },
+        "date": 1658634934220,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 493.16807746887207,
+            "unit": "ns",
+            "range": "± 16.52320167718433"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 710.4621078703138,
+            "unit": "ns",
+            "range": "± 15.206974385778754"
           }
         ]
       }
