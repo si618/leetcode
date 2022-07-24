@@ -3,7 +3,6 @@ namespace LeetCode;
 
 using FluentAssertions;
 using NUnit.Framework;
-using System.Runtime.CompilerServices;
 
 public sealed partial class Submission
 {
@@ -38,7 +37,7 @@ public sealed partial class Submission
         var root1 = new TreeNode(new int?[] { 3, 4, 5, 1, 2 });
         var subRoot1 = new TreeNode(new int?[] { 4, 1, 2 });
         var root2 = new TreeNode(new int?[] { 3, 4, 5, 1, 2, null, null, null, null, 0 });
-        var subRoot2 = new TreeNode(new int?[] { 4, 1, 2  });
+        var subRoot2 = new TreeNode(new int?[] { 4, 1, 2 });
 
         IsSubtree(root1, subRoot1).Should().BeTrue();
         IsSubtree(root2, subRoot2).Should().BeFalse();

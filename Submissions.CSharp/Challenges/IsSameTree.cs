@@ -3,7 +3,6 @@ namespace LeetCode;
 
 using FluentAssertions;
 using NUnit.Framework;
-using System.Runtime.CompilerServices;
 
 public sealed partial class Submission
 {
