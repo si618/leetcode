@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1659164281524,
+  "lastUpdate": 1659164281740,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -5480,6 +5480,42 @@ window.BENCHMARK_DATA = {
             "value": 566.5671742757162,
             "unit": "ns",
             "range": "± 16.639286939033987"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "73522f72cb68b613d42e8650cd1f803fec44123d",
+          "message": "Add \"Kth Largest Element in a Stream\" challenge",
+          "timestamp": "2022-07-30T16:21:47+09:30",
+          "tree_id": "81758dd98ae8240a8e7af698def0013803e660b5",
+          "url": "https://github.com/si618/leetcode/commit/73522f72cb68b613d42e8650cd1f803fec44123d"
+        },
+        "date": 1659164281719,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 394.6297781944275,
+            "unit": "ns",
+            "range": "± 1.8065481763345839"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 588.0444589191013,
+            "unit": "ns",
+            "range": "± 9.41909740836741"
           }
         ]
       }
