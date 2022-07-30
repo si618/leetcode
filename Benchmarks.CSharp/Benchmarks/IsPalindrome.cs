@@ -7,12 +7,8 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void IsPalindrome()
     {
-        var isPalindrome = new ListNode(1,
-            new ListNode(2,
-            new ListNode(2,
-            new ListNode(1))));
-        var isNotPalindrome = new ListNode(1,
-            new ListNode(2));
+        var isPalindrome = new ListNode(new[] { 1, 2, 2, 1 });
+        var isNotPalindrome = new ListNode(new[] { 1, 2 });
         Submission.IsPalindrome(isPalindrome);
         Submission.IsPalindrome(isNotPalindrome);
     }

@@ -45,24 +45,10 @@ public sealed partial class Submission
     public void IsPalindromeTest()
     {
         var single = new ListNode(1);
-        var even = new ListNode(1,
-            new ListNode(2,
-            new ListNode(2,
-            new ListNode(1))));
-        var odd = new ListNode(1,
-            new ListNode(2,
-            new ListNode(3,
-            new ListNode(2,
-            new ListNode(1)))));
-        var notEven = new ListNode(2,
-            new ListNode(1,
-            new ListNode(2,
-            new ListNode(1))));
-        var notOdd = new ListNode(2,
-            new ListNode(1,
-            new ListNode(3,
-            new ListNode(2,
-            new ListNode(1)))));
+        var even = new ListNode(new[] { 1, 2, 2, 1 });
+        var odd = new ListNode(new[] { 1, 2, 3, 2, 1 });
+        var notEven = new ListNode(new[] { 2, 1, 2, 1 });
+        var notOdd = new ListNode(new[] { 2, 1, 3, 2, 1 });
 
         IsPalindrome(single).Should().BeTrue();
         IsPalindrome(even).Should().BeTrue();

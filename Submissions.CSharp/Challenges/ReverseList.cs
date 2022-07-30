@@ -25,16 +25,8 @@ public sealed partial class Submission
     [Test]
     public void ReverseListTest()
     {
-        var ex1 = new ListNode(1,
-            new ListNode(2,
-            new ListNode(3,
-            new ListNode(4,
-            new ListNode(5)))));
-        var ep1 = new ListNode(5,
-            new ListNode(4,
-            new ListNode(3,
-            new ListNode(2,
-            new ListNode(1)))));
+        var ex1 = new ListNode(new[] { 1, 2, 3, 4, 5 });
+        var ep1 = new ListNode(new[] { 5, 4, 3, 2, 1 });
         var ex2 = new ListNode(1, new ListNode(2));
         var ep2 = new ListNode(2, new ListNode(1));
         ListNode? ex3 = null;

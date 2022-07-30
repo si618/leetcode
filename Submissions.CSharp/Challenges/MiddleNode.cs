@@ -24,15 +24,8 @@ public sealed partial class Submission
     public void MiddleNodeTest()
     {
         var single = new ListNode(1);
-        var even = new ListNode(1,
-            new ListNode(2,
-            new ListNode(3,
-            new ListNode(4))));
-        var odd = new ListNode(1,
-            new ListNode(2,
-            new ListNode(3,
-            new ListNode(4,
-            new ListNode(5)))));
+        var even = new ListNode(new[] { 1, 2, 3, 4 });
+        var odd = new ListNode(new[] { 1, 2, 3, 4, 5 });
 
         MiddleNode(single).Should().BeSameAs(single);
         MiddleNode(even).Should().BeSameAs(even.next!.next);

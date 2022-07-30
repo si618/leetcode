@@ -49,37 +49,15 @@ public sealed partial class Submission
     [Test]
     public void AddTwoNumbersTest()
     {
-        var ex11 = new ListNode(2,
-            new ListNode(4,
-            new ListNode(3)));
-        var ex12 = new ListNode(5,
-            new ListNode(6,
-            new ListNode(4)));
-        var ex1Expected = new ListNode(7,
-            new ListNode(0,
-            new ListNode(8)));
+        var ex11 = new ListNode(new[] { 2, 4, 3 });
+        var ex12 = new ListNode(new[] { 5, 6, 4 });
+        var ex1Expected = new ListNode(new[] { 7, 0, 8 });
         var ex21 = new ListNode();
         var ex22 = new ListNode();
         var ex2Expected = new ListNode();
-        var ex31 = new ListNode(9,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(9)))))));
-        var ex32 = new ListNode(9,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(9))));
-        var ex3Expected = new ListNode(8,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(9,
-            new ListNode(0,
-            new ListNode(0,
-            new ListNode(0,
-            new ListNode(1))))))));
+        var ex31 = new ListNode(new[] { 9, 9, 9, 9, 9, 9, 9 });
+        var ex32 = new ListNode(new[] { 9, 9, 9, 9 });
+        var ex3Expected = new ListNode(new[] { 8, 9, 9, 9, 0, 0, 0, 1 });
 
         var ex1Result = AddTwoNumbers(ex11, ex12);
         var ex2Result = AddTwoNumbers(ex21, ex22);
