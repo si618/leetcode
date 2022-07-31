@@ -34,7 +34,7 @@ public sealed partial class Challenge
     [Test]
     public void LastStoneWeightTest()
     {
-        var ex1 = new[] { 2,7,4,1,8,1 };
+        var ex1 = new[] { 2, 7, 4, 1, 8, 1 };
         var ex2 = new[] { 1 };
 
         LastStoneWeight(ex1).Should().Be(1);

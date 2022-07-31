@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <GenerateProgramFile>true</GenerateProgramFile>
+    <RootNamespace>Submissions.FSharp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Submissions.CSharp\Submissions.CSharp.csproj" />
+    <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj" />
   </ItemGroup>
 
   <ItemGroup>

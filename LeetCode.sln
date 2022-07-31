@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Submissions.CSharp", "Submissions.CSharp\Submissions.CSharp.csproj", "{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.CSharp", "LeetCode.CSharp\LeetCode.CSharp.csproj", "{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.CSharp", "Benchmarks.CSharp\Benchmarks.CSharp.csproj", "{C9A81814-CC1F-4337-B887-DAD25B17A0EE}"
 EndProject
@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Benchmarks.FSharp", "Benchmarks.FSharp\Benchmarks.FSharp.fsproj", "{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Submissions.FSharp", "Submissions.FSharp\Submissions.FSharp.fsproj", "{B8401765-DECF-4417-985E-A090E67A2BE8}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "LeetCode.FSharp", "LeetCode.FSharp\LeetCode.FSharp.fsproj", "{B8401765-DECF-4417-985E-A090E67A2BE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
