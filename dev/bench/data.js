@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1659241503900,
+  "lastUpdate": 1659241504146,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "C# Benchmarks": [
@@ -5930,6 +5930,42 @@ window.BENCHMARK_DATA = {
             "value": 553.3342892783029,
             "unit": "ns",
             "range": "± 3.253536109194449"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "58757981a32170389dbeb8796959ad19bc968e3f",
+          "message": "Rename projects and dotnet format",
+          "timestamp": "2022-07-31T13:48:11+09:30",
+          "tree_id": "bce2d3aaa0eb00d581b179169d9ea8498b394db5",
+          "url": "https://github.com/si618/leetcode/commit/58757981a32170389dbeb8796959ad19bc968e3f"
+        },
+        "date": 1659241504123,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "LeetCode.FSharpBenchmarks.ContainsDuplicate",
+            "value": 375.3403494093153,
+            "unit": "ns",
+            "range": "± 5.167331328779663"
+          },
+          {
+            "name": "LeetCode.FSharpBenchmarks.FizzBuzz",
+            "value": 565.4702038764954,
+            "unit": "ns",
+            "range": "± 5.883610386202706"
           }
         ]
       }
