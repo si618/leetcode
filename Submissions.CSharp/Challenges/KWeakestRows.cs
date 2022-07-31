@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("The K Weakest Rows in a Matrix", Difficulty.Easy, Category.NotInNeetCode)]
     public static int[] KWeakestRows(int[][] mat, int k)

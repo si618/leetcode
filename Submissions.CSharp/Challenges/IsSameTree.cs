@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Same Tree", Difficulty.Easy, Category.Trees)]
     public static bool IsSameTree(TreeNode? p, TreeNode? q)

@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Diameter of Binary Tree", Difficulty.Easy, Category.Trees)]
     public static int DiameterOfBinaryTree(TreeNode root)

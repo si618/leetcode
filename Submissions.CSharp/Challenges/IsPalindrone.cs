@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Palindrome Linked List", Difficulty.Easy, Category.TwoPointers)]
     public static bool IsPalindrome(ListNode head)

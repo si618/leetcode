@@ -3,7 +3,7 @@
 //using FluentAssertions;
 //using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     // TODO: Waiting until I've done other easy and medium binary search submissions
     //[LeetCode("Median of Two Sorted Arrays", Difficulty.Hard, Category.BinarySearch)]

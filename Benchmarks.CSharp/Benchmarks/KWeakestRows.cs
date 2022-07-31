@@ -22,7 +22,7 @@ public partial class CSharpBenchmarks
             new[] { 1, 0, 0, 0 },
             new[] { 1, 0, 0, 0 }
         };
-        Submission.KWeakestRows(ex1, 3);
-        Submission.KWeakestRows(ex2, 2);
+        Challenge.KWeakestRows(ex1, 3);
+        Challenge.KWeakestRows(ex2, 2);
     }
 }

@@ -7,8 +7,8 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void FizzBuzz()
     {
-        Submission.FizzBuzz(3);
-        Submission.FizzBuzz(5);
-        Submission.FizzBuzz(15);
+        Challenge.FizzBuzz(3);
+        Challenge.FizzBuzz(5);
+        Challenge.FizzBuzz(15);
     }
 }

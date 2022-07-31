@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode(
         "Lowest Common Ancestor of a Binary Search Tree",

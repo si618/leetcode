@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Middle of the Linked List", Difficulty.Easy, Category.NotInNeetCode)]
     public static ListNode MiddleNode(ListNode head)

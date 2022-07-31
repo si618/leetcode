@@ -4,7 +4,7 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Last Stone Weight", Difficulty.Easy, Category.HeapPriorityQueue)]
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global
@@ -20,12 +20,14 @@ public sealed partial class Submission
         {
             var heaviest = queue.Dequeue();
             var nextHeaviest = queue.Dequeue();
-            var remainder = heaviest - nextHeaviest;
-            if (remainder > 0)
+            if (heaviest == nextHeaviest)
             {
-                queue.Enqueue(remainder, -remainder);
+                continue;
             }
+            var remainder = heaviest - nextHeaviest;
+            queue.Enqueue(remainder, -remainder);
         }
+
         return queue.Count == 0 ? 0 : queue.Peek();
     }
 

@@ -4,7 +4,7 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client.Payloads;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Valid Parentheses", Difficulty.Easy, Category.Stack)]
     public static bool AreParenthesesValid(string s)

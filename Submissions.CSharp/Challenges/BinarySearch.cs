@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Binary Search", Difficulty.Easy, Category.BinarySearch)]
     public static int BinarySearch(int[] nums, int target)

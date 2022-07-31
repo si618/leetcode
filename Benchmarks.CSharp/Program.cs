@@ -7,7 +7,7 @@ var benchmarks = typeof(CSharpBenchmarks)
     .Select(m => m.Name)
     .ToArray();
 
-var submissionsInCSharp = typeof(Submission)
+var challengesInCSharp = typeof(Challenge)
     .GetMembers()
     .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
     .Select(m =>
@@ -23,25 +23,26 @@ var submissionsInCSharp = typeof(Submission)
     })
     .OrderBy(s => s.Category)
     .ThenBy(s => s.Difficulty)
+    .ThenBy(s => s.Description)
     .GroupBy(s => s.Category, s => s)
     .ToArray();
 
 var total = 0;
 var nl = Environment.NewLine;
 Console.WriteLine("LeetCode C# Challenges");
-foreach (var category in submissionsInCSharp)
+foreach (var category in challengesInCSharp)
 {
     Console.WriteLine($"{nl}{category.Key.Description()}{nl}");
-    foreach (var submission in category.ToArray())
+    foreach (var challenge in category.ToArray())
     {
-        var missing = benchmarks.Contains(submission.Name)
+        var missing = benchmarks.Contains(challenge.Name)
             ? string.Empty
             : " * Missing benchmark *";
-        Console.WriteLine($"  [{submission.Difficulty}] {submission.Description}{missing}");
+        Console.WriteLine($"  [{challenge.Difficulty}] {challenge.Description}{missing}");
     }
     total += category.Count();
 }
-Console.WriteLine($"{nl}Total challenges submitted: {total}{nl}");
+Console.WriteLine($"{nl}Total challenges: {total}{nl}");
 
 if (!args.Contains("--info", StringComparer.InvariantCultureIgnoreCase))
 {

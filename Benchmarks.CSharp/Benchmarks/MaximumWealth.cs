@@ -18,7 +18,7 @@ public partial class CSharpBenchmarks
             new[] { 7, 3 },
             new[] { 3, 5 }
         };
-        Submission.MaximumWealth(ex1);
-        Submission.MaximumWealth(ex2);
+        Challenge.MaximumWealth(ex1);
+        Challenge.MaximumWealth(ex2);
     }
 }

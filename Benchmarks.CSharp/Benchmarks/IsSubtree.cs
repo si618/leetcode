@@ -11,7 +11,7 @@ public partial class CSharpBenchmarks
         var subRoot1 = new TreeNode(new int?[] { 4, 1, 2 });
         var root2 = new TreeNode(new int?[] { 3, 4, 5, 1, 2, null, null, null, null, 0 });
         var subRoot2 = new TreeNode(new int?[] { 4, 1, 2 });
-        Submission.IsSubtree(root1, subRoot1);
-        Submission.IsSubtree(root2, subRoot2);
+        Challenge.IsSubtree(root1, subRoot1);
+        Challenge.IsSubtree(root2, subRoot2);
     }
 }

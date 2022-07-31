@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Subtree of Another Tree", Difficulty.Easy, Category.Trees)]
     public static bool IsSubtree(TreeNode? root, TreeNode? subRoot)

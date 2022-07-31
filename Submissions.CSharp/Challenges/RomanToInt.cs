@@ -4,7 +4,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Roman to Integer", Difficulty.Easy, Category.NotInNeetCode)]
     public static int RomanToInt(string s)

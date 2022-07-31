@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Two Sum", Difficulty.Easy, Category.ArraysAndHashing)]
     public static int[] TwoSum(int[] nums, int target)

@@ -9,7 +9,7 @@ public partial class CSharpBenchmarks
     {
         var even = new ListNode(new[] { 1, 2, 3, 4 });
         var odd = new ListNode(new[] { 1, 2, 3, 4, 5 });
-        Submission.MiddleNode(even);
-        Submission.MiddleNode(odd);
+        Challenge.MiddleNode(even);
+        Challenge.MiddleNode(odd);
     }
 }

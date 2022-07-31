@@ -4,7 +4,7 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Kth Largest Element in a Stream", Difficulty.Easy, Category.HeapPriorityQueue)]
     public class KthLargest

@@ -3,7 +3,7 @@ namespace LeetCode;
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Merge Two Sorted Lists", Difficulty.Easy, Category.LinkedList)]
     public static ListNode? MergeTwoLists(ListNode? list1, ListNode? list2)

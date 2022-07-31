@@ -7,7 +7,7 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void Trie()
     {
-        var trie = new Submission.Trie();
+        var trie = new Challenge.Trie();
 
         trie.Insert("apple");
         trie.Search("apple");

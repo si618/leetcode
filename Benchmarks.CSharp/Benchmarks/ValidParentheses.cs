@@ -7,8 +7,8 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void AreParenthesesValid()
     {
-        Submission.AreParenthesesValid("()");
-        Submission.AreParenthesesValid("()[]{}");
-        Submission.AreParenthesesValid("(]");
+        Challenge.AreParenthesesValid("()");
+        Challenge.AreParenthesesValid("()[]{}");
+        Challenge.AreParenthesesValid("(]");
     }
 }

@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Richest Customer Wealth", Difficulty.Easy, Category.NotInNeetCode)]
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global

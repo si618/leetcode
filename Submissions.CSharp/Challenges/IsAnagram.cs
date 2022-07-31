@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Valid Anagram", Difficulty.Easy, Category.ArraysAndHashing)]
     public static bool IsAnagram(string s, string t)

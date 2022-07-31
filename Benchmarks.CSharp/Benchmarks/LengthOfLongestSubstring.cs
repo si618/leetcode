@@ -8,8 +8,8 @@ public partial class CSharpBenchmarks
     public void LengthOfLongestSubstring()
     {
         // ReSharper disable StringLiteralTypo
-        Submission.LengthOfLongestSubstring("abcabcbb");
-        Submission.LengthOfLongestSubstring("bbbbb");
-        Submission.LengthOfLongestSubstring("pwwkew");
+        Challenge.LengthOfLongestSubstring("abcabcbb");
+        Challenge.LengthOfLongestSubstring("bbbbb");
+        Challenge.LengthOfLongestSubstring("pwwkew");
     }
 }

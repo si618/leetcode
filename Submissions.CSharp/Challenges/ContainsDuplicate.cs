@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Contains Duplicate", Difficulty.Easy, Category.ArraysAndHashing)]
     // ReSharper disable once ParameterTypeCanBeEnumerable.Global

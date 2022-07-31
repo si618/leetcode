@@ -9,7 +9,7 @@ public partial class CSharpBenchmarks
     {
         var isPalindrome = new ListNode(new[] { 1, 2, 2, 1 });
         var isNotPalindrome = new ListNode(new[] { 1, 2 });
-        Submission.IsPalindrome(isPalindrome);
-        Submission.IsPalindrome(isNotPalindrome);
+        Challenge.IsPalindrome(isPalindrome);
+        Challenge.IsPalindrome(isNotPalindrome);
     }
 }

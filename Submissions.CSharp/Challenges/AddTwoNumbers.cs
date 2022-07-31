@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Add Two Numbers", Difficulty.Easy, Category.LinkedList)]
     public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)

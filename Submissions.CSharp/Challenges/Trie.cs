@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Implement Trie (Prefix Tree)", Difficulty.Medium, Category.Tries)]
     public class Trie

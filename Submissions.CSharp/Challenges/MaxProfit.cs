@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Best Time to Buy and Sell Stock", Difficulty.Easy, Category.TwoPointers)]
     public static int MaxProfit(int[] prices)

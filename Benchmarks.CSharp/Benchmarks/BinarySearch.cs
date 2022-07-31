@@ -8,7 +8,7 @@ public partial class CSharpBenchmarks
     public void BinarySearch()
     {
         var nums = new[] { -1, 0, 3, 5, 9, 12 };
-        Submission.BinarySearch(nums, 9);
-        Submission.BinarySearch(nums, 2);
+        Challenge.BinarySearch(nums, 9);
+        Challenge.BinarySearch(nums, 2);
     }
 }

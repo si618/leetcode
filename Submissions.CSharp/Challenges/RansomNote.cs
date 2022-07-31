@@ -3,7 +3,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-public sealed partial class Submission
+public sealed partial class Challenge
 {
     [LeetCode("Ransom Note", Difficulty.Easy, Category.NotInNeetCode)]
     public static bool RansomNote(string ransomNote, string magazine)
