@@ -27,8 +27,8 @@ var problems = typeof(Problem)
     .GroupBy(s => s.Category, s => s)
     .ToArray();
 
-const string asciiArt = @"
-    __                __   ______            __
+const string asciiArt =
+@"    __                __   ______            __
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
