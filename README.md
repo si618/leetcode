@@ -21,7 +21,11 @@ Cloning into 'leetcode'...
 > dotnet build
 > dotnet test --no-restore
 > ./Benchmark.ps1
-LeetCode C# Challenges
+    __                __   ______            __
+   / /   ___   ___   / /_ / ____/____   ____/ /___
+  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
+ / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
+/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
 ```
 
 Github [workflow](https://github.com/si618/leetcode/actions/workflows/workflow.yml) may help if you run into issues.
