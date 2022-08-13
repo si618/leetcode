@@ -13,8 +13,8 @@ public partial class CSharpBenchmarks
         var q2 = new TreeNode(new int?[] { 1, null, 2 });
         var p3 = new TreeNode(new int?[] { 1, 2, 1 });
         var q3 = new TreeNode(new int?[] { 1, 1, 2 });
-        Challenge.IsSameTree(p1, q1);
-        Challenge.IsSameTree(p2, q2);
-        Challenge.IsSameTree(p3, q3);
+        Problem.IsSameTree(p1, q1);
+        Problem.IsSameTree(p2, q2);
+        Problem.IsSameTree(p3, q3);
     }
 }

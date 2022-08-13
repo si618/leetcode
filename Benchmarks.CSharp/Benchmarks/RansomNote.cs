@@ -7,8 +7,8 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void RansomNote()
     {
-        Challenge.RansomNote("b", "a");
-        Challenge.RansomNote("ab", "aa");
-        Challenge.RansomNote("aab", "aa");
+        Problem.RansomNote("b", "a");
+        Problem.RansomNote("ab", "aa");
+        Problem.RansomNote("aab", "aa");
     }
 }

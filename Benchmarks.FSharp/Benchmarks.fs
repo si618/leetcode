@@ -8,12 +8,12 @@ type FSharpBenchmarks() =
 
     [<Benchmark>]
     member _.ContainsDuplicate() = [
-        Challenge.ContainsDuplicate [| 1; 2; 3; 1 |];
-        Challenge.ContainsDuplicate [| 1; 2; 3; 4 |];
-        Challenge.ContainsDuplicate [| 1; 1; 1; 3; 3; 4; 3; 2; 4; 2 |] ]
+        Problem.ContainsDuplicate [| 1; 2; 3; 1 |];
+        Problem.ContainsDuplicate [| 1; 2; 3; 4 |];
+        Problem.ContainsDuplicate [| 1; 1; 1; 3; 3; 4; 3; 2; 4; 2 |] ]
 
     [<Benchmark>]
     member _.FizzBuzz() = [
-        Challenge.FizzBuzz 3;
-        Challenge.FizzBuzz 5;
-        Challenge.FizzBuzz 15 ]
+        Problem.FizzBuzz 3;
+        Problem.FizzBuzz 5;
+        Problem.FizzBuzz 15 ]

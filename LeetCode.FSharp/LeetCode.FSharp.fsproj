@@ -4,13 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <GenerateProgramFile>true</GenerateProgramFile>
-    <RootNamespace>Submissions.FSharp</RootNamespace>
+    <RootNamespace>LeetCode.FSharp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Challenges\AddTwoNumbers.fs" />
-    <Compile Include="Challenges\ContainsDuplicate.fs" />
-    <Compile Include="Challenges\FizzBuzz.fs" />
+    <Compile Include="Problems\AddTwoNumbers.fs" />
+    <Compile Include="Problems\ContainsDuplicate.fs" />
+    <Compile Include="Problems\FizzBuzz.fs" />
     <Compile Include="ListNode.fs" />
   </ItemGroup>
 

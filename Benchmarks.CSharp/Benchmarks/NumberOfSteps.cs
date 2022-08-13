@@ -7,8 +7,8 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void NumberOfSteps()
     {
-        Challenge.NumberOfSteps(14);
-        Challenge.NumberOfSteps(8);
-        Challenge.NumberOfSteps(123);
+        Problem.NumberOfSteps(14);
+        Problem.NumberOfSteps(8);
+        Problem.NumberOfSteps(123);
     }
 }

@@ -7,7 +7,7 @@ var benchmarks = typeof(CSharpBenchmarks)
     .Select(m => m.Name)
     .ToArray();
 
-var challengesInCSharp = typeof(Challenge)
+var problems = typeof(Problem)
     .GetMembers()
     .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
     .Select(m =>
@@ -27,22 +27,31 @@ var challengesInCSharp = typeof(Challenge)
     .GroupBy(s => s.Category, s => s)
     .ToArray();
 
+const string asciiArt = @"
+    __                __   ______            __
+   / /   ___   ___   / /_ / ____/____   ____/ /___
+  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
+ / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
+/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
+";
+Console.WriteLine(asciiArt);
+Console.WriteLine("C# Problems");
+
 var total = 0;
 var nl = Environment.NewLine;
-Console.WriteLine("LeetCode C# Challenges");
-foreach (var category in challengesInCSharp)
+foreach (var category in problems)
 {
     Console.WriteLine($"{nl}{category.Key.Description()}{nl}");
-    foreach (var challenge in category.ToArray())
+    foreach (var problem in category.ToArray())
     {
-        var missing = benchmarks.Contains(challenge.Name)
+        var missing = benchmarks.Contains(problem.Name)
             ? string.Empty
-            : " * Missing benchmark *";
-        Console.WriteLine($"  [{challenge.Difficulty}] {challenge.Description}{missing}");
+            : " * Missing Benchmark *";
+        Console.WriteLine($"  [{problem.Difficulty}] {problem.Description}{missing}");
     }
     total += category.Count();
 }
-Console.WriteLine($"{nl}Total challenges: {total}{nl}");
+Console.WriteLine($"{nl}Total Problems: {total}{nl}");
 
 if (!args.Contains("--info", StringComparer.InvariantCultureIgnoreCase))
 {

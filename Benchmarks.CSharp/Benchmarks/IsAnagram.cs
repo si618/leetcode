@@ -8,7 +8,7 @@ public partial class CSharpBenchmarks
     public void IsAnagram()
     {
         // ReSharper disable once StringLiteralTypo
-        Challenge.IsAnagram("anagram", "nagaram");
-        Challenge.IsAnagram("rat", "car");
+        Problem.IsAnagram("anagram", "nagaram");
+        Problem.IsAnagram("rat", "car");
     }
 }

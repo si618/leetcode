@@ -11,7 +11,7 @@ public partial class CSharpBenchmarks
     //    var ex1nums2 = new[] { 2 };
     //    var ex2nums1 = new[] { 1, 2 };
     //    var ex2nums2 = new[] { 3, 4 };
-    //    Challenge.FindMedianSortedArrays(ex1nums1, ex1nums2);
-    //    Challenge.FindMedianSortedArrays(ex2nums1, ex2nums2);
+    //    Problem.FindMedianSortedArrays(ex1nums1, ex1nums2);
+    //    Problem.FindMedianSortedArrays(ex2nums1, ex2nums2);
     //}
 }

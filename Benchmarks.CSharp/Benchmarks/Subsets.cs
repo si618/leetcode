@@ -7,7 +7,7 @@ public partial class CSharpBenchmarks
     [Benchmark]
     public void Subsets()
     {
-        Challenge.Subsets(new[] { 1, 2, 3 });
-        Challenge.Subsets(new[] { 0 });
+        Problem.Subsets(new[] { 1, 2, 3 });
+        Problem.Subsets(new[] { 0 });
     }
 }

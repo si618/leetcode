@@ -12,7 +12,7 @@ public partial class CSharpBenchmarks
             right: new TreeNode(20, left: new TreeNode(15), right: new TreeNode(7)));
         var root2 = new TreeNode(1, left: null, right: new TreeNode(2));
 
-        Challenge.MaxDepth(root1);
-        Challenge.MaxDepth(root2);
+        Problem.MaxDepth(root1);
+        Problem.MaxDepth(root2);
     }
 }

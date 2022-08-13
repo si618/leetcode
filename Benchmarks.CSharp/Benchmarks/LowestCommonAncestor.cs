@@ -13,8 +13,8 @@ public partial class CSharpBenchmarks
         var q2 = p1.right!;
         var root3 = new TreeNode(new int?[] { 2, 1 });
         var q3 = root3.left!;
-        Challenge.LowestCommonAncestor(root1, p1, q1);
-        Challenge.LowestCommonAncestor(root1, p1, q2);
-        Challenge.LowestCommonAncestor(root3, root3, q3);
+        Problem.LowestCommonAncestor(root1, p1, q1);
+        Problem.LowestCommonAncestor(root1, p1, q2);
+        Problem.LowestCommonAncestor(root3, root3, q3);
     }
 }

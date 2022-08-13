@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <RootNamespace>Submissions.CSharp</RootNamespace>
+    <RootNamespace>LeetCode.CSharp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

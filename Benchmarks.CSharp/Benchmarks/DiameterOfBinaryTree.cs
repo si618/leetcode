@@ -12,7 +12,7 @@ public partial class CSharpBenchmarks
                 left: new TreeNode(4), right: new TreeNode(5)),
             right: new TreeNode(3));
         var root2 = new TreeNode(1, left: new TreeNode(2));
-        Challenge.DiameterOfBinaryTree(root1);
-        Challenge.DiameterOfBinaryTree(root2);
+        Problem.DiameterOfBinaryTree(root1);
+        Problem.DiameterOfBinaryTree(root2);
     }
 }

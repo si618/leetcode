@@ -8,8 +8,8 @@ public partial class CSharpBenchmarks
     public void RomanToInt()
     {
         // ReSharper disable StringLiteralTypo
-        Challenge.RomanToInt("III");
-        Challenge.RomanToInt("LVIII");
-        Challenge.RomanToInt("MCMXCIV");
+        Problem.RomanToInt("III");
+        Problem.RomanToInt("LVIII");
+        Problem.RomanToInt("MCMXCIV");
     }
 }

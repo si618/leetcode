@@ -12,8 +12,8 @@ public partial class CSharpBenchmarks
             right: new TreeNode(7, left: new TreeNode(6), right: new TreeNode(9)));
         var root2 = new TreeNode(2, left: new TreeNode(1), right: new TreeNode(3));
 
-        Challenge.InvertTree(root1);
-        Challenge.InvertTree(root2);
-        Challenge.InvertTree(new TreeNode());
+        Problem.InvertTree(root1);
+        Problem.InvertTree(root2);
+        Problem.InvertTree(new TreeNode());
     }
 }
