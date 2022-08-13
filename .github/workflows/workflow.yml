@@ -9,9 +9,6 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_VERSION: 6.0.x
-  BENCHMARK_WARMUP_COUNT: 2
-  BENCHMARK_MIN_ITERATION_COUNT: 4
-  BENCHMARK_MAX_ITERATION_COUNT: 6
 
 jobs:
   build-and-benchmark:
@@ -45,10 +42,7 @@ jobs:
             --configuration Release \
             --filter LeetCode.CSharpBenchmarks* \
             --exporters json \
-            --memory
-            --warmupCount ${{ env.BENCHMARK_WARMUP_COUNT }}
-            --minIterationCount ${{ env.BENCHMARK_MIN_ITERATION_COUNT }}
-            --maxIterationCount ${{ env.BENCHMARK_MAX_ITERATION_COUNT }}
+            --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
 
       - name: Run F# benchmark
         id: benchmark-fsharp
@@ -58,10 +52,7 @@ jobs:
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
-            --memory
-            --warmupCount ${{ env.BENCHMARK_WARMUP_COUNT }}
-            --minIterationCount ${{ env.BENCHMARK_MIN_ITERATION_COUNT }}
-            --maxIterationCount ${{ env.BENCHMARK_MAX_ITERATION_COUNT }}
+            --memory --warmupCount 3 --minIterationCount 6 --maxIterationCount 9
 
       - name: Store C# benchmark result
         uses: rhysd/github-action-benchmark@v1
