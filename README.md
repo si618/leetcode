@@ -27,5 +27,3 @@ Cloning into 'leetcode'...
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
 ```
-
-Github [workflow](https://github.com/si618/leetcode/actions/workflows/workflow.yml) may help if you run into issues.
