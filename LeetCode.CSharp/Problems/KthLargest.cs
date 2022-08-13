@@ -60,5 +60,6 @@ public sealed partial class Problem
             ex2.Add(9).Should().Be(5, "9 should replace 5");
             ex2.Add(4).Should().Be(5, "4 shouldn't replace 5");
         }
+
     }
 }
