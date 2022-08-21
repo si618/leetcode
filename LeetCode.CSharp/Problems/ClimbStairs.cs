@@ -12,7 +12,7 @@ public sealed partial class Problem
         var oneStep = 1;
         var twoStep = 1;
 
-        // Start from the top of the stairs and work backwards
+        // Start from the top of the stairs and work backwards to solve each sub-problem
         for (var i = 0; i < n - 1; i++)
         {
             // Memoize result to avoid recalculation
