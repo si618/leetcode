@@ -14,18 +14,20 @@ public sealed partial class Problem
         {
             public readonly int Key;
             public readonly int Value;
-            public Node? Previous;
-            public Node? Next;
+            public Node Previous;
+            public Node Next;
 
             public Node(int key = 0, int value = 0)
             {
                 Key = key;
                 Value = value;
+                Previous = new Node();
+                Next = new Node();
             }
         }
 
         private readonly int _capacity;
-        // Value is node rather than int to allow update to double linked list
+        // Value is node rather than int to update to double linked list (left and right nodes)
         private readonly Dictionary<int, Node> _cache = new();
         // Left pointer is least recently used
         private readonly Node _left = new();
@@ -35,34 +37,32 @@ public sealed partial class Problem
         public LRUCache(int capacity)
         {
             _capacity = capacity;
-            // Initialise double linked list
+            // Need to initialise double linked list
             _left.Next = _right;
             _right.Previous = _left;
         }
 
-        private static void Remove(Node middleNode)
+        /// <summary>
+        /// Remove <paramref name="node"/> by updating pointers to other nodes
+        /// </summary>
+        /// <param name="node">The "middle" node to be removed</param>
+        private static void Remove(Node node)
         {
-            var previous = middleNode.Previous;
-            var next = middleNode.Next;
+            var previous = node.Previous;
+            var next = node.Next;
 
-            if (previous is not null)
-            {
-                previous.Next = next;
-            }
-            if (next is not null)
-            {
-                next.Previous = previous;
-            }
+            previous.Next = next;
+            next.Previous = previous;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="node"></param>
         private void Insert(Node node)
         {
             var previous = _right.Previous;
-
-            if (previous is not null)
-            {
-                previous.Next = node;
-            }
+            previous.Next = node;
 
             _right.Previous = node;
 
