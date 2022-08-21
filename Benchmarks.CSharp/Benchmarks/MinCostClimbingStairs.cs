@@ -8,6 +8,6 @@ public partial class CSharpBenchmarks
     public void MinCostClimbingStairs()
     {
         Problem.MinCostClimbingStairs(new[] { 10, 15, 20 });
-        Problem.MinCostClimbingStairs(new [] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1});
+        Problem.MinCostClimbingStairs(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 });
     }
 }

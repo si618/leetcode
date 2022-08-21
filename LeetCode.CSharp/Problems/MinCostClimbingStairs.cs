@@ -28,7 +28,7 @@ public sealed partial class Problem
     [Test]
     public void MinCostClimbingStairsTest()
     {
-            MinCostClimbingStairs(new []{ 10, 15, 20 }).Should().Be(15);
-            MinCostClimbingStairs(new []{ 1, 100, 1, 1, 1, 100, 1, 1, 100, 1}).Should().Be(6);
+        MinCostClimbingStairs(new[] { 10, 15, 20 }).Should().Be(15);
+        MinCostClimbingStairs(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }).Should().Be(6);
     }
 }
