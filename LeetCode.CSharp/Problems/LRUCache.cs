@@ -10,22 +10,14 @@ public sealed partial class Problem
     // ReSharper disable once InconsistentNaming - LeetCode requirement
     public class LRUCache
     {
-        private class Node
+        private record Node(int Key = 0, int Value = 0)
         {
-            public readonly int Key;
-            public readonly int Value;
             public Node? Previous;
             public Node? Next;
-
-            public Node(int key = 0, int value = 0)
-            {
-                Key = key;
-                Value = value;
-            }
         }
 
         private readonly int _capacity;
-        // Value is node rather than int to update to double linked list (left and right nodes)
+        // Value is node rather than int to update double linked list (left and right nodes)
         private readonly Dictionary<int, Node> _cache = new();
         // Left pointer is least recently used
         private readonly Node _left = new();
@@ -35,7 +27,7 @@ public sealed partial class Problem
         public LRUCache(int capacity)
         {
             _capacity = capacity;
-            // Need to initialise double linked list
+            // Initialise doubly linked list pointers by pointing to each other
             _left.Next = _right;
             _right.Previous = _left;
         }
@@ -43,7 +35,7 @@ public sealed partial class Problem
         /// <summary>
         /// Remove <paramref name="node"/> by updating pointers to other nodes
         /// </summary>
-        /// <param name="node">The "middle" node to be removed</param>
+        /// <param name="node">The node to be removed</param>
         private static void Remove(Node node)
         {
             var previous = node.Previous;
@@ -53,6 +45,7 @@ public sealed partial class Problem
             {
                 previous.Next = next;
             }
+
             if (next is not null)
             {
                 next.Previous = previous;
@@ -60,7 +53,7 @@ public sealed partial class Problem
         }
 
         /// <summary>
-        ///
+        /// Insert <paramref name="node"/> by updating pointers and marking as most recently used
         /// </summary>
         /// <param name="node"></param>
         private void Insert(Node node)
@@ -72,8 +65,6 @@ public sealed partial class Problem
             }
 
             _right.Previous = node;
-
-            // Mark as most recently used
             node.Next = _right;
             node.Previous = previous;
         }
