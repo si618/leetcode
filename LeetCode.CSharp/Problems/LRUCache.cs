@@ -12,28 +12,33 @@ public sealed partial class Problem
     {
         private record Node(int Key = 0, int Value = 0)
         {
-            public Node? Previous;
-            public Node? Next;
+            public Node? Previous { get; set; }
+
+            public Node? Next { get; set; }
         }
 
         private readonly int _capacity;
+
         // Value is node rather than int to update double linked list (left and right nodes)
         private readonly Dictionary<int, Node> _cache = new();
-        // Left pointer is least recently used
+
+        // Left node is pointer least recently used
         private readonly Node _left = new();
-        // Right pointer is most recently used
+
+        // Right node is pointer to most recently used
         private readonly Node _right = new();
 
         public LRUCache(int capacity)
         {
             _capacity = capacity;
-            // Initialise doubly linked list pointers by pointing to each other
+
+            // Double link pointers to each other
             _left.Next = _right;
             _right.Previous = _left;
         }
 
         /// <summary>
-        /// Remove <paramref name="node"/> by updating pointers to other nodes
+        /// Remove <paramref name="node"/> by updating its pointers to other nodes
         /// </summary>
         /// <param name="node">The node to be removed</param>
         private static void Remove(Node node)
@@ -45,7 +50,6 @@ public sealed partial class Problem
             {
                 previous.Next = next;
             }
-
             if (next is not null)
             {
                 next.Previous = previous;
@@ -61,12 +65,14 @@ public sealed partial class Problem
             var previous = _right.Previous;
             if (previous is not null)
             {
+                // Set previous MRU pointer to new node
                 previous.Next = node;
+                node.Previous = previous;
             }
 
+            // Mark node as most recently used
             _right.Previous = node;
             node.Next = _right;
-            node.Previous = previous;
         }
 
         public int Get(int key)
@@ -97,7 +103,7 @@ public sealed partial class Problem
 
             if (!_cache.TryAdd(key, node))
             {
-                // Need to update existing item as its value or pointers may have changed
+                // Replace node in cache as its value or pointers may have changed
                 _cache[key] = node;
             }
 
@@ -108,7 +114,7 @@ public sealed partial class Problem
                 return;
             }
 
-            // Capacity exceeded so remove from list and evict from cache
+            // Capacity exceeded so remove LRU from linked list and evict from cache
             var lru = _left.Next;
             Remove(lru);
             _cache.Remove(lru.Key);
