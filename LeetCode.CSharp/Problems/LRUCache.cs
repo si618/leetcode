@@ -14,15 +14,13 @@ public sealed partial class Problem
         {
             public readonly int Key;
             public readonly int Value;
-            public Node Previous;
-            public Node Next;
+            public Node? Previous;
+            public Node? Next;
 
             public Node(int key = 0, int value = 0)
             {
                 Key = key;
                 Value = value;
-                Previous = new Node();
-                Next = new Node();
             }
         }
 
@@ -51,8 +49,14 @@ public sealed partial class Problem
             var previous = node.Previous;
             var next = node.Next;
 
-            previous.Next = next;
-            next.Previous = previous;
+            if (previous is not null)
+            {
+                previous.Next = next;
+            }
+            if (next is not null)
+            {
+                next.Previous = previous;
+            }
         }
 
         /// <summary>
@@ -62,7 +66,10 @@ public sealed partial class Problem
         private void Insert(Node node)
         {
             var previous = _right.Previous;
-            previous.Next = node;
+            if (previous is not null)
+            {
+                previous.Next = node;
+            }
 
             _right.Previous = node;
 
