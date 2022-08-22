@@ -5,6 +5,7 @@ using BenchmarkDotNet.Attributes;
 public partial class CSharpBenchmarks
 {
     [Benchmark]
+    // ReSharper disable once InconsistentNaming - LeetCode requirement
     public void LRUCache()
     {
         var lru = new Problem.LRUCache(2);
