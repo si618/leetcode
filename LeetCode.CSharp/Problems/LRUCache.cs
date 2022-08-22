@@ -82,11 +82,16 @@ public sealed partial class Problem
                 return -1;
             }
 
-            // Remove as node can't exist twice in cache
-            Remove(node);
+            // ReSharper disable once InvertIf - Clarity
+            // No need to update lists or cache if key already most recently used
+            if (_right.Key != key)
+            {
+                // Remove as node can't exist twice in dictionary cache
+                Remove(node);
 
-            // Update most recently used pointer
-            Insert(node);
+                // Update most recently used pointer
+                Insert(node);
+            }
 
             return node.Value;
         }
