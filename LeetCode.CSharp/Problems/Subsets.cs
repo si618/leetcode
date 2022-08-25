@@ -1,8 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Subsets", Difficulty.Medium, Category.BackTracking)]
@@ -27,6 +24,7 @@ public sealed partial class Problem
 
             // Remove current item and continue backtracking
             subset.Remove(nums[index]);
+
             // ReSharper disable once TailRecursiveCall
             // For clarity - minimal difference found in benchmark
             DepthFirstSearch(index + 1);

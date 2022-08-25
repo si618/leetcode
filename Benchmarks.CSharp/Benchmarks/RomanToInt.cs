@@ -1,13 +1,11 @@
 ﻿namespace LeetCode;
 
-using BenchmarkDotNet.Attributes;
-
 public partial class CSharpBenchmarks
 {
     [Benchmark]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RomanToInt()
     {
-        // ReSharper disable StringLiteralTypo
         Problem.RomanToInt("III");
         Problem.RomanToInt("LVIII");
         Problem.RomanToInt("MCMXCIV");

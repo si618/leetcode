@@ -1,13 +1,9 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using FluentAssertions.Execution;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Last Stone Weight", Difficulty.Easy, Category.HeapPriorityQueue)]
-    // ReSharper disable once ParameterTypeCanBeEnumerable.Global
+    [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int LastStoneWeight(int[] stones)
     {
         PriorityQueue<int, int> queue = new();

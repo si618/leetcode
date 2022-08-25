@@ -1,15 +1,12 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using FluentAssertions.Execution;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode(
         "Min Cost Climbing Stairs",
         Difficulty.Easy,
         Category.OneDDynamicProgramming)]
+    [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int MinCostClimbingStairs(int[] cost)
     {
         // Add zero to end of array with no cost to cater for last step

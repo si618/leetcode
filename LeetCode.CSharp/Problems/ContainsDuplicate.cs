@@ -1,12 +1,9 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Contains Duplicate", Difficulty.Easy, Category.ArraysAndHashing)]
-    // ReSharper disable once ParameterTypeCanBeEnumerable.Global
+    [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static bool ContainsDuplicate(int[] nums)
     {
         var set = new HashSet<int>();

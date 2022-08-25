@@ -40,7 +40,7 @@ public enum Category
     /// <summary>Math and Geometry</summary>
     MathAndGeometry = 17,
     /// <summary>Bit Manipulation</summary>
-    BitManipulation = 18,
+    BitManipulation = 18
 }
 
 public static class CategoryExtensions

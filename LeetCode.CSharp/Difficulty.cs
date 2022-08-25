@@ -1,6 +1,7 @@
 ﻿namespace LeetCode;
 
 /// <summary>LeetCode difficulty</summary>
+[SuppressMessage("ReSharper", "UnusedMember.Global")]
 public enum Difficulty
 {
     /// <summary>Easy</summary>

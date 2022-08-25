@@ -1,14 +1,11 @@
 ﻿namespace LeetCode;
 
-using System.Runtime.Serialization;
-
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class TreeNode
 {
-    // ReSharper disable InconsistentNaming
     public readonly int val;
     public TreeNode? left;
     public TreeNode? right;
-    // ReSharper enable InconsistentNaming
 
     public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
     {

@@ -1,8 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Fizz Buzz", Difficulty.Easy, Category.NotInNeetCode)]

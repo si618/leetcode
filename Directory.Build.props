@@ -1,4 +1,5 @@
 <Project>
+
   <Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')" />
 
   <PropertyGroup>
@@ -7,7 +8,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <WarningsAsErrors>true</WarningsAsErrors>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 

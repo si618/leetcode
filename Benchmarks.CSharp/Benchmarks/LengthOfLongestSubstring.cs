@@ -1,13 +1,11 @@
 ﻿namespace LeetCode;
 
-using BenchmarkDotNet.Attributes;
-
 public partial class CSharpBenchmarks
 {
     [Benchmark]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void LengthOfLongestSubstring()
     {
-        // ReSharper disable StringLiteralTypo
         Problem.LengthOfLongestSubstring("abcabcbb");
         Problem.LengthOfLongestSubstring("bbbbb");
         Problem.LengthOfLongestSubstring("pwwkew");

@@ -1,14 +1,11 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Balanced Binary Tree", Difficulty.Easy, Category.Trees)]
     public static bool IsBalanced(TreeNode root)
     {
-        (bool IsBalanced, int Height) DepthFirstSearch(TreeNode? node)
+        static (bool IsBalanced, int Height) DepthFirstSearch(TreeNode? node)
         {
             if (node is null)
             {

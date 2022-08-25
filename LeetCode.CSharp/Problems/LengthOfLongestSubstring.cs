@@ -1,8 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode(
@@ -32,6 +29,7 @@ public sealed partial class Problem
     }
 
     [Test]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void LengthOfLongestSubstringTest()
     {
         LengthOfLongestSubstring("abcabcbb").Should().Be(3);

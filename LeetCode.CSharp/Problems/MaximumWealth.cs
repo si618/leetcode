@@ -1,12 +1,9 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Richest Customer Wealth", Difficulty.Easy, Category.NotInNeetCode)]
-    // ReSharper disable once ParameterTypeCanBeEnumerable.Global
+    [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int MaximumWealth(int[][] accounts)
     {
         return accounts.Select(account => account.Sum()).Max();

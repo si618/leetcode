@@ -1,8 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Valid Anagram", Difficulty.Easy, Category.ArraysAndHashing)]
@@ -13,9 +10,9 @@ public sealed partial class Problem
     }
 
     [Test]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void IsAnagramTest()
     {
-        // ReSharper disable once StringLiteralTypo
         IsAnagram("anagram", "nagaram").Should().BeTrue();
         IsAnagram("rat", "cat").Should().BeFalse();
         IsAnagram("ratty", "rat").Should().BeFalse();

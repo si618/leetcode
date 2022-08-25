@@ -1,7 +1,5 @@
 namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +19,7 @@ public sealed partial class Problem
         {
             head = head.next;
             list.Add(head.val);
-        };
+        }
 
         var isOdd = list.Count % 2 != 0;
         var take = isOdd ? (list.Count - 1) / 2 : list.Count / 2;
@@ -29,16 +27,7 @@ public sealed partial class Problem
         var firstHalf = list.Take(take).ToArray();
         var secondHalf = list.Skip(skip).Take(take).Reverse().ToArray();
 
-        // ReSharper disable once LoopCanBeConvertedToQuery
-        for (var i = 0; i < firstHalf.Length; i++)
-        {
-            if (firstHalf[i] != secondHalf[i])
-            {
-                return false;
-            }
-        }
-
-        return true;
+        return !firstHalf.Where((t, i) => t != secondHalf[i]).Any();
     }
 
     [Test]

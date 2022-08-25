@@ -1,7 +1,5 @@
 ﻿namespace LeetCode;
 
-using BenchmarkDotNet.Attributes;
-
 public partial class CSharpBenchmarks
 {
     [Benchmark]
@@ -12,6 +10,6 @@ public partial class CSharpBenchmarks
 
         Problem.MergeTwoLists(ex11, ex12);
         Problem.MergeTwoLists(null, null);
-        Problem.MergeTwoLists(null, new ListNode(0));
+        Problem.MergeTwoLists(null, new ListNode());
     }
 }

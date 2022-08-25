@@ -1,8 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Ransom Note", Difficulty.Easy, Category.NotInNeetCode)]
@@ -36,6 +33,7 @@ public sealed partial class Problem
     }
 
     [Test]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RansomNoteTest()
     {
         const string m1 = "a";
@@ -43,7 +41,6 @@ public sealed partial class Problem
         const string m2 = "aa";
         const string r2 = "ab";
         const string r3 = "bg";
-        // ReSharper disable once StringLiteralTypo
         const string m3 = "aabefjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj";
 
         RansomNote(r1, m1).Should().BeFalse();

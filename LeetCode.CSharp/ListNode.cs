@@ -1,11 +1,10 @@
 ﻿namespace LeetCode;
 
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class ListNode
 {
-    // ReSharper disable InconsistentNaming
     public readonly int val;
     public ListNode? next;
-    // ReSharper enable InconsistentNaming
 
     public ListNode(int val = 0, ListNode? next = null)
     {

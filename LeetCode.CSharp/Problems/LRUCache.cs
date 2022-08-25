@@ -1,13 +1,9 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using FluentAssertions.Execution;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("LRU Cache", Difficulty.Medium, Category.LinkedList)]
-    // ReSharper disable once InconsistentNaming - LeetCode requirement
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class LRUCache
     {
         private record Node(int Key = 0, int Value = 0)
@@ -82,16 +78,17 @@ public sealed partial class Problem
                 return -1;
             }
 
-            // ReSharper disable once InvertIf - Clarity
-            // No need to update lists or cache if key already most recently used
-            if (_right.Key != key)
+            // No need to update linked lists if key was already most recently used
+            if (_right.Key == key)
             {
-                // Remove as node can't exist twice in dictionary cache
-                Remove(node);
-
-                // Update most recently used pointer
-                Insert(node);
+                return node.Value;
             }
+
+            // Clear out "middle" node pointers
+            Remove(node);
+
+            // Update most recently used pointers
+            Insert(node);
 
             return node.Value;
         }
@@ -100,7 +97,13 @@ public sealed partial class Problem
         {
             if (_cache.TryGetValue(key, out var existing))
             {
-                // Remove existing node as it's now most recently used
+                if (existing == _right)
+                {
+                    // Nothing to do as key and value were already most recently used
+                    return;
+                }
+
+                // Remove existing node as it's now the most recently used but wasn't previously
                 Remove(existing);
             }
 
@@ -127,7 +130,7 @@ public sealed partial class Problem
     }
 
     [Test]
-    // ReSharper disable once InconsistentNaming - LeetCode requirement
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public void LRUCacheTest()
     {
         var lru = new LRUCache(2);

@@ -1,7 +1,5 @@
 ﻿namespace LeetCode;
 
-using BenchmarkDotNet.Attributes;
-
 public partial class CSharpBenchmarks
 {
     [Benchmark]

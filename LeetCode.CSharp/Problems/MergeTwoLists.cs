@@ -1,8 +1,5 @@
 namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Merge Two Sorted Lists", Difficulty.Easy, Category.LinkedList)]
@@ -44,7 +41,7 @@ public sealed partial class Problem
         var ex11 = new ListNode(new[] { 1, 2, 4 });
         var ex12 = new ListNode(new[] { 1, 3, 4 });
         var ep1 = new ListNode(new[] { 1, 1, 2, 3, 4, 4 });
-        var ex3 = new ListNode(0);
+        var ex3 = new ListNode();
 
         MergeTwoLists(ex11, ex12).Should().BeEquivalentTo(ep1);
         MergeTwoLists(null, null).Should().BeNull();

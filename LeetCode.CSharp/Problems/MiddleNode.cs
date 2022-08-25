@@ -1,7 +1,5 @@
 namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,7 +13,7 @@ public sealed partial class Problem
         {
             head = head.next;
             list.Add(head);
-        };
+        }
         var skip = list.Count / 2;
         return list.Skip(skip).First();
     }

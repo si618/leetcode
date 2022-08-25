@@ -1,7 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using NUnit.Framework;
 using System.Collections.Generic;
 
 public sealed partial class Problem
@@ -9,7 +7,7 @@ public sealed partial class Problem
     [LeetCode("Roman to Integer", Difficulty.Easy, Category.NotInNeetCode)]
     public static int RomanToInt(string s)
     {
-        var romanValues = new Dictionary<char, int>()
+        var romanValues = new Dictionary<char, int>
         {
             { 'I', 1 },
             { 'V', 5 },
@@ -42,9 +40,9 @@ public sealed partial class Problem
     }
 
     [Test]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RomanToIntTest()
     {
-        // ReSharper disable StringLiteralTypo
         RomanToInt("III").Should().Be(3);
         RomanToInt("LVIII").Should().Be(58);
         RomanToInt("MCMXCIV").Should().Be(1994);

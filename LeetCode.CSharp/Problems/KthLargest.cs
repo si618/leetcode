@@ -1,9 +1,5 @@
 ﻿namespace LeetCode;
 
-using FluentAssertions;
-using FluentAssertions.Execution;
-using NUnit.Framework;
-
 public sealed partial class Problem
 {
     [LeetCode("Kth Largest Element in a Stream", Difficulty.Easy, Category.HeapPriorityQueue)]
@@ -12,7 +8,7 @@ public sealed partial class Problem
         private readonly PriorityQueue<int, int> _queue = new();
         private readonly int _k;
 
-        // ReSharper disable once ParameterTypeCanBeEnumerable.Local
+        [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Local")]
         public KthLargest(int k, int[] nums)
         {
             _k = k;

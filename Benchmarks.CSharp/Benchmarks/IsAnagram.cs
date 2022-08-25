@@ -1,13 +1,11 @@
 ﻿namespace LeetCode;
 
-using BenchmarkDotNet.Attributes;
-
 public partial class CSharpBenchmarks
 {
     [Benchmark]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void IsAnagram()
     {
-        // ReSharper disable once StringLiteralTypo
         Problem.IsAnagram("anagram", "nagaram");
         Problem.IsAnagram("rat", "car");
     }
