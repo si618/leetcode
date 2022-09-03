@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Benchmarks.CSharp": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
