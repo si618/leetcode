@@ -2,7 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("LRU Cache", Difficulty.Medium, Category.LinkedList)]
+    [LeetCode("LRU Cache", Difficulty.Medium, Category.LinkedList, "7ABFKPK2hD4")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class LRUCache
     {

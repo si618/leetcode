@@ -3,7 +3,9 @@
   <Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')" />
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <!-- Default to latest stable release -->
+    <TargetFramework Condition="'$(UseTargetFramework)' == ''">net6.0</TargetFramework>
+    <TargetFramework Condition="'$(UseTargetFramework)' != ''">$(UseTargetFramework)</TargetFramework>
     <Authors>Simon McKenna</Authors>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>

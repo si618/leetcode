@@ -8,38 +8,51 @@ internal static class CommandBuilder
 {
     public static RootCommand BuildRootCommand(IEnumerable<string> args)
     {
-        Option<bool> noBenchmarkOption = new(
-            name: "--no-benchmark",
-            description: "Do not run benchmarks");
+        Option<bool> summaryOption = new(
+            name: "--problems",
+            description: "Show problem summary without running benchmarks");
+
+        Option<string> problemOption = new(
+            name: "--problem",
+            description: "Show details for problem without running benchmarks");
 
         const string description = @"Benchmark C# LeetCode problems using BenchmarkDotNet
 See: https://benchmarkdotnet.org/articles/guides/console-args.html";
-        var rootCommand = new RootCommand(description) { noBenchmarkOption };
+        var rootCommand = new RootCommand(description) { summaryOption, problemOption };
 
         // Allow arguments to pass through to BenchmarkDotNet
         // as that will fail and report any invalid arguments
         rootCommand.TreatUnmatchedTokensAsErrors = false;
 
         // Exclude known options from being passed to BenchmarkDotNet
-        var excludeArgs = new[] { noBenchmarkOption.Name };
+        var excludeArgs = new[] { summaryOption.Name, problemOption.Name };
         var benchmarkArgs = args.Except(excludeArgs).ToArray();
 
-        rootCommand.SetHandler(noBenchmark =>
-            DoRootCommand(!noBenchmark, benchmarkArgs), noBenchmarkOption);
+        rootCommand.SetHandler((summary, problem) =>
+            DoRootCommand(summary, benchmarkArgs, problem), summaryOption, problemOption);
 
         return rootCommand;
     }
 
-    private static void DoRootCommand(bool runBenchmark, string[] benchmarkArgs)
+    private static void DoRootCommand(bool summary, string[] benchmarkArgs, string problem)
     {
         ConsoleWriter.WriteHeader();
-        ConsoleWriter.WriteProblems();
 
-        if (runBenchmark)
+        switch (summary)
         {
-            BenchmarkSwitcher
-                .FromAssembly(Assembly.GetExecutingAssembly())
-                .Run(benchmarkArgs);
+            case false when string.IsNullOrEmpty(problem):
+                BenchmarkSwitcher
+                    .FromAssembly(Assembly.GetExecutingAssembly())
+                    .Run(benchmarkArgs);
+                return;
+            case true:
+                ConsoleWriter.WriteProblems();
+                break;
+        }
+
+        if (!string.IsNullOrWhiteSpace(problem))
+        {
+            ConsoleWriter.WriteProblemDetail(problem);
         }
     }
 }

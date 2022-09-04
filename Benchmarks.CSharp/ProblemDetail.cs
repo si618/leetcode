@@ -4,4 +4,5 @@ internal record ProblemDetail(
     string Name,
     string Description,
     Category Category,
-    Difficulty Difficulty);
+    Difficulty Difficulty,
+    Uri? Link);
