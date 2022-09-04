@@ -6,13 +6,9 @@ services:
     build:
       context: .
       dockerfile: Benchmarks.CSharp/Dockerfile
-    ports:
-      - "5000:5000"
 
   benchmarks-fsharp:
     image: benchmarks-fsharp
     build:
       context: .
       dockerfile: Benchmarks.FSharp/Dockerfile
-    ports:
-      - "5000:5000"
