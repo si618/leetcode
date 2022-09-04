@@ -33,8 +33,8 @@ Cloning into 'leetcode'...
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
 
-Solved C# Problems
-
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
 ...
 
 # List solved C# problems without running benchmarks
@@ -42,12 +42,6 @@ Solved C# Problems
 
 # Show problem details without running benchmarks
 > dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj --problem 'LRU Cache'
-
-Benchmark:    LRUCache
-Description:  LRU Cache
-Difficulty:   Medium
-Category:     Linked List
-NeetCode:     https://www.youtube.com/watch?v=7ABFKPK2hD4
 
 # Dry run all benchmarks
 > dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -c Release --filter *Benchmarks* --job Dry
@@ -58,7 +52,7 @@ NeetCode:     https://www.youtube.com/watch?v=7ABFKPK2hD4
 
 ### Running benchmarks from docker
 
-[Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.CSharp/Dockerfile) supports dotnet 6.0 and 7.0 in a Debian 11 container.
+[C# Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.CSharp/Dockerfile) supports dotnet 6.0 and 7.0 in a Debian 11 container.
 
 Builds are in release configuration and always pass `--memory` argument to BenchmarkDotNet.
 
