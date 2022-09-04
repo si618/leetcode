@@ -43,8 +43,11 @@ Cloning into 'leetcode'...
 # Show problem details without running benchmarks
 > dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj --problem 'LRU Cache'
 
-# Dry run all benchmarks
+# Dry run all C# benchmarks
 > dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -c Release --filter *Benchmarks* --job Dry
+
+# Dry run all F# benchmarks
+> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -c Release --filter *Benchmarks* --job Dry
 
 # Run benchmark with leading asterisk required by BenchmarkDotNet
 > dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -c Release --filter *LRUCache --memory
@@ -52,7 +55,9 @@ Cloning into 'leetcode'...
 
 ### Running benchmarks from docker
 
-[C# Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.CSharp/Dockerfile) supports dotnet 6.0 and 7.0 in a Debian 11 container.
+[C# Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.CSharp/Dockerfile) targets dotnet 6.0 and 7.0 in a Debian 11 container with problem summary and detail options.
+
+[F# Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.FSharp/Dockerfile) target dotnet 6.0 in a Debian 11 container.
 
 Builds are in release configuration and always pass `--memory` argument to BenchmarkDotNet.
 
@@ -65,8 +70,11 @@ Builds are in release configuration and always pass `--memory` argument to Bench
 # Show problem details without running benchmarks
 > docker run --rm benchmarks-csharp --problem 'LRU Cache'
 
-# Dry run all benchmarks targetting dotnet 6.0
+# Dry run all C# benchmarks targetting dotnet 6.0
 > docker run benchmarks-csharp /p:UseTargetFramework=net6.0 --filter *Benchmarks* --job Dry
+
+# Dry run all F# benchmarks
+> docker run benchmarks-fsharp --filter *Benchmarks* --job Dry
 
 # Run all C# benchmarks targetting dotnet 7.0
 > docker run benchmarks-csharp /p:UseTargetFramework=net7.0 --filter *Benchmarks*
