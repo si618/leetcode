@@ -1,7 +1,12 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/Benchmarks.*Sharp"
+    directory: "/Benchmarks.CSharp"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "docker"
+    directory: "/Benchmarks.FSharp"
     schedule:
       interval: "weekly"
 
