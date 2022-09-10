@@ -38,47 +38,54 @@ Cloning into 'leetcode'...
 ...
 
 # List solved C# problems without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj --problems
+> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net7.0 --problems
 
 # Show problem details without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj --problem 'LRU Cache'
+> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net7.0 --problem 'LRU Cache'
 
-# Dry run all C# benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -c Release --filter *Benchmarks* --job Dry
+# Run all F# benchmarks
+> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -f net7.0 -c Release --filter *Benchmarks*
 
-# Dry run all F# benchmarks
-> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -c Release --filter *Benchmarks* --job Dry
-
-# Run benchmark with leading asterisk required by BenchmarkDotNet
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -c Release --filter *LRUCache --memory
+# Run single C# benchmark
+> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net7.0 -c Release --filter *LRUCache
 ```
 
 ### Running benchmarks from docker
 
-[C# Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.CSharp/Dockerfile) targets dotnet 6.0 and 7.0 in a Debian 11 container with problem summary and detail options.
-
-[F# Dockerfile](https://github.com/si618/leetcode/blob/main/Benchmarks.FSharp/Dockerfile) target dotnet 6.0 in a Debian 11 container.
-
-Builds are in release configuration and always pass `--memory` argument to BenchmarkDotNet.
-
 ``` bash
+# Build docker images for C# and F# benchmark projects
 > docker-compose up
 
-# List available C# problems without running benchmarks
+# List solved C# problems without running benchmarks
 > docker run --rm benchmarks-csharp --problems
 
 # Show problem details without running benchmarks
 > docker run --rm benchmarks-csharp --problem 'LRU Cache'
 
-# Dry run all C# benchmarks targetting dotnet 6.0
-> docker run benchmarks-csharp /p:UseTargetFramework=net6.0 --filter *Benchmarks* --job Dry
+# Run all F# benchmarks
+> docker run benchmarks-fsharp --filter *Benchmarks*
 
-# Dry run all F# benchmarks
-> docker run benchmarks-fsharp --filter *Benchmarks* --job Dry
+# Run single C# benchmark
+> docker run benchmarks-csharp --filter *LRUCache
+```
 
-# Run all C# benchmarks targetting dotnet 7.0
-> docker run benchmarks-csharp /p:UseTargetFramework=net7.0 --filter *Benchmarks*
+C# benchmarks have options to list summary of problems as well as problem details.
 
-# Run benchmark with leading asterisk required by BenchmarkDotNet
-> docker run benchmarks-csharp /p:UseTargetFramework=net7.0 --filter *LRUCache
+```
+> .\Benchmarks.CSharp.exe --help
+Description:
+  Benchmark C# LeetCode problems using BenchmarkDotNet
+  See: https://benchmarkdotnet.org/articles/guides/console-args.html
+
+Usage:
+  Benchmarks.CSharp [options] [[--] <additional arguments>...]]
+
+Options:
+  --problems           Show problem summary without running benchmarks
+  --problem <problem>  Show details for problem without running benchmarks
+  --version            Show version information
+  -?, -h, --help       Show help and usage information
+
+Additional Arguments:
+  Arguments passed to the application that is being run.
 ```

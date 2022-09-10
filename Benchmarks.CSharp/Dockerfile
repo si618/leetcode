@@ -15,10 +15,8 @@ COPY LeetCode.CSharp/LeetCode.CSharp.csproj LeetCode.CSharp/
 COPY . .
 WORKDIR /src/Benchmarks.CSharp
 
-RUN dotnet restore Benchmarks.CSharp.csproj /p:UseTargetFramework=net7.0
-RUN dotnet build Benchmarks.CSharp.csproj /p:UseTargetFramework=net7.0 -c Release
-RUN dotnet restore Benchmarks.CSharp.csproj /p:UseTargetFramework=net6.0
-RUN dotnet build Benchmarks.CSharp.csproj /p:UseTargetFramework=net6.0 -c Release
+RUN dotnet restore Benchmarks.CSharp.csproj
+RUN dotnet build Benchmarks.CSharp.csproj -c Release
 
-# Benchmarks require release configuration and always check memory allocation
-ENTRYPOINT ["dotnet", "run", "Benchmarks.CSharp.csproj", "-c", "Release", "--memory"]
+# Benchmarks require release configuration and run against both net6.0 and net7.0 SDKs
+ENTRYPOINT ["dotnet", "run", "Benchmarks.CSharp.csproj", "-f", "net7.0", "-c", "Release"]
