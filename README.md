@@ -1,9 +1,9 @@
-## Leetcode via Neetcode
+## LeetCode via NeetCode
 [![Build and Benchmark](https://github.com/si618/leetcode/actions/workflows/workflow.yml/badge.svg)](https://github.com/si618/leetcode/actions/workflows/workflow.yml)
 
-[Benchmarked](https://si618.github.io/leetcode/dev/bench) C# submissions for [Leetcode](https://leetcode.com) problems with naïve F# solutions on my functional programming journey.
+[Benchmarked](https://si618.github.io/leetcode/dev/bench) C# submissions for [LeetCode](https://leetcode.com) problems with naïve F# solutions on my functional programming journey.
 
-After stumbling across the excellent [Neetcode](https://neetcode.io) website this repository is now following the author's approach 🙇‍
+After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm now following the author's guidance and supporting his work by becoming a lifetime pro 🙇‍
 ### Building
 
 ``` bash
