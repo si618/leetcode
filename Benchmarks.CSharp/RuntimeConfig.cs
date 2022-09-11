@@ -12,7 +12,7 @@ internal class RuntimeConfig : ManualConfig
     {
         AddDiagnoser(MemoryDiagnoser.Default);
 
-        AddJob(Job.Default.WithRuntime(CoreRuntime.Core70));
+        //AddJob(Job.Default.WithRuntime(CoreRuntime.Core70));
         AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
         AddColumn(StatisticColumn.OperationsPerSecond);
