@@ -8,7 +8,7 @@ env:
   DOTNET_NOLOGO: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  # TODO: Add net7.0 back once dotnet format issue is resolved
+  # TODO: Change back to net7.0 once dotnet format issue is resolved
   DOTNET_FRAMEWORK: net6.0
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          include-prerelease: true
+          # TODO: Add net7.0 back once dotnet format issue is resolved
           dotnet-version: |
             6.0.x
 
