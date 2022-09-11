@@ -42,7 +42,7 @@ jobs:
         run: |
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
-            --framework ${{ DOTNET_FRAMEWORK }} \
+            --framework $DOTNET_FRAMEWORK \
             --problems
 
       - name: Run C# benchmark
@@ -50,7 +50,7 @@ jobs:
         run: |
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
-            --framework ${{ DOTNET_FRAMEWORK }} \
+            --framework $DOTNET_FRAMEWORK \
             --configuration Release \
             --filter LeetCode.CSharpBenchmarks* \
             --exporters json \
@@ -62,7 +62,7 @@ jobs:
         run: |
           dotnet run \
             --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
-            --framework ${{ DOTNET_FRAMEWORK }} \
+            --framework $DOTNET_FRAMEWORK \
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
