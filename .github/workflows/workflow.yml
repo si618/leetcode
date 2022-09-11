@@ -21,7 +21,6 @@ jobs:
         with:
           include-prerelease: true
           dotnet-version: |
-            7.0.x
             6.0.x
 
       - name: Run dotnet build
