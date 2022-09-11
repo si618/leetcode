@@ -8,6 +8,8 @@ env:
   DOTNET_NOLOGO: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+  # TODO: Add net7.0 back once dotnet format issue is resolved
+  DOTNET_FRAMEWORK: net6.0
 
 jobs:
   build-and-benchmark:
@@ -35,12 +37,20 @@ jobs:
         id: test
         run: dotnet test --configuration Release
 
+      - name: List C# problems
+        id: problems-csharp
+        run: |
+          dotnet run \
+            --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
+            --framework net6.0 \
+            --problems
+
       - name: Run C# benchmark
         id: benchmark-csharp
         run: |
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
-            --framework net6.0 \
+            --framework ${{ DOTNET_FRAMEWORK }} \
             --configuration Release \
             --filter LeetCode.CSharpBenchmarks* \
             --exporters json \
@@ -52,7 +62,7 @@ jobs:
         run: |
           dotnet run \
             --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
-            --framework net6.0 \
+            --framework ${{ DOTNET_FRAMEWORK }} \
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
