@@ -41,7 +41,7 @@ jobs:
         run: |
           dotnet run \
             --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
-            --framework net7.0
+            --framework net6.0
             --configuration Release \
             --filter LeetCode.CSharpBenchmarks* \
             --exporters json \
@@ -53,7 +53,7 @@ jobs:
         run: |
           dotnet run \
             --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
-            --framework net7.0
+            --framework net6.0
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \

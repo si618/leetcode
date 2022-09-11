@@ -38,16 +38,16 @@ Cloning into 'leetcode'...
 ...
 
 # List solved C# problems without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net7.0 --problems
+> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 --problems
 
 # Show problem details without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net7.0 --problem 'LRU Cache'
+> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 --problem 'LRU Cache'
 
 # Run all F# benchmarks
-> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -f net7.0 -c Release --filter *Benchmarks*
+> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -f net6.0 -c Release --filter *Benchmarks*
 
 # Run single C# benchmark
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net7.0 -c Release --filter *LRUCache
+> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 -c Release --filter *LRUCache
 ```
 
 ### Running benchmarks from docker

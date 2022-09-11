@@ -16,4 +16,4 @@ RUN dotnet restore Benchmarks.FSharp.fsproj
 RUN dotnet build Benchmarks.FSharp.fsproj -c Release
 
 # Benchmarks require release configuration and run against both net6.0 and net7.0 SDKs
-ENTRYPOINT ["dotnet", "run", "Benchmarks.FSharp.fsproj", "-f", "net7.0", "-c", "Release"]
+ENTRYPOINT ["dotnet", "run", "Benchmarks.FSharp.fsproj", "-f", "net6.0", "-c", "Release"]
