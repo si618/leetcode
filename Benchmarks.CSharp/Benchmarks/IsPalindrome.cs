@@ -2,12 +2,17 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void IsPalindrome()
+    [GlobalSetup(Target = nameof(IsPalindrome))]
+    public void IsPalindromeSetup()
     {
-        var isPalindrome = new ListNode(new[] { 1, 2, 2, 1 });
-        var isNotPalindrome = new ListNode(new[] { 1, 2 });
-        Problem.IsPalindrome(isPalindrome);
-        Problem.IsPalindrome(isNotPalindrome);
+        _intArray1 = Enumerable.Range(1, 10_000).ToArray();
+        _intArray2 = _intArray1.Reverse().ToArray();
+        _listNode1 = new ListNode(_intArray1.Concat(_intArray2).ToArray());
+    }
+
+    [Benchmark]
+    public bool IsPalindrome()
+    {
+        return Problem.IsPalindrome(_listNode1);
     }
 }

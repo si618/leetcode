@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Balanced Binary Tree", Difficulty.Easy, Category.Trees)]
+    [LeetCode(
+        "Balanced Binary Tree",
+        Difficulty.Easy,
+        Category.Trees,
+        "QfJsau0ItOY")]
     public static bool IsBalanced(TreeNode root)
     {
         static (bool IsBalanced, int Height) DepthFirstSearch(TreeNode? node)
