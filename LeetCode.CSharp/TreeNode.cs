@@ -28,7 +28,7 @@ public class TreeNode
         right = root.right;
     }
 
-    private static TreeNode? Deserialize(IReadOnlyList<int?> values)
+    public static TreeNode? Deserialize(IReadOnlyList<int?> values)
     {
         var count = values.Count;
         var nodes = new TreeNode?[count];

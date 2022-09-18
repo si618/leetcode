@@ -6,6 +6,7 @@ public partial class CSharpBenchmarks
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public void LRUCache()
     {
+        // Inputs from LeetCode
         var lru = new Problem.LRUCache(2);
         lru.Put(1, 1);
         lru.Put(2, 2);

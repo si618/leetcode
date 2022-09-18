@@ -2,7 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Binary Search", Difficulty.Easy, Category.BinarySearch)]
+    [LeetCode("Binary Search", Difficulty.Easy, Category.BinarySearch, "s4DPM8ct1pI")]
     public static int BinarySearch(int[] nums, int target)
     {
         var leftPtr = 0;

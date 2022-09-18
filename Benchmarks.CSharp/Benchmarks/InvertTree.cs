@@ -2,16 +2,16 @@
 
 public partial class CSharpBenchmarks
 {
-    [GlobalSetup(Target = nameof(DiameterOfBinaryTree))]
-    public void DiameterOfBinaryTreeSetup()
+    [GlobalSetup(Target = nameof(InvertTree))]
+    public void InvertTreeSetup()
     {
         var values = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
         _treeNode1 = TreeNode.Deserialize(values)!;
     }
 
     [Benchmark]
-    public int DiameterOfBinaryTree()
+    public TreeNode? InvertTree()
     {
-        return Problem.DiameterOfBinaryTree(_treeNode1);
+        return Problem.InvertTree(_treeNode1);
     }
 }

@@ -3,9 +3,8 @@
 public partial class CSharpBenchmarks
 {
     [Benchmark]
-    public void ClimbStairs()
+    public int ClimbStairs()
     {
-        Problem.ClimbStairs(2);
-        Problem.ClimbStairs(3);
+        return Problem.ClimbStairs(10_000_000);
     }
 }

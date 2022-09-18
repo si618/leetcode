@@ -2,11 +2,14 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Valid Anagram", Difficulty.Easy, Category.ArraysAndHashing)]
+    [LeetCode(
+        "Valid Anagram",
+        Difficulty.Easy,
+        Category.ArraysAndHashing,
+        "9UtInBqnCgA")]
     public static bool IsAnagram(string s, string t)
     {
-        return s.Length == t.Length &&
-               s.OrderBy(c => c).SequenceEqual(t.OrderBy(c => c));
+        return s.Length == t.Length && s.OrderBy(c => c).SequenceEqual(t.OrderBy(c => c));
     }
 
     [Test]

@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Contains Duplicate", Difficulty.Easy, Category.ArraysAndHashing)]
+    [LeetCode(
+        "Contains Duplicate",
+        Difficulty.Easy,
+        Category.ArraysAndHashing,
+        "3OamzN90kPg")]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static bool ContainsDuplicate(int[] nums)
     {

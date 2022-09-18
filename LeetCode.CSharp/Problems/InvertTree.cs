@@ -2,7 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Invert Binary Tree", Difficulty.Easy, Category.Trees)]
+    [LeetCode("Invert Binary Tree", Difficulty.Easy, Category.Trees, "OnSn2XEQ4MY")]
     public static TreeNode? InvertTree(TreeNode? root)
     {
         if (root is null)

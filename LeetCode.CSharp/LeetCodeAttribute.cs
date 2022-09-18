@@ -15,13 +15,17 @@ public sealed class LeetCodeAttribute : Attribute
     /// <summary>Link to NeetCode video</summary>
     public Uri? Link { get; }
 
-    public LeetCodeAttribute(string description, Difficulty difficulty, Category category, string yt = "")
+    public LeetCodeAttribute(
+        string description,
+        Difficulty difficulty,
+        Category category,
+        string youTube = "")
     {
         Description = description;
         Difficulty = difficulty;
         Category = category;
-        Link = string.IsNullOrEmpty(yt)
+        Link = string.IsNullOrEmpty(youTube)
             ? null
-            : new Uri($"https://www.youtube.com/watch?v={yt}", UriKind.Absolute);
+            : new Uri($"https://www.youtube.com/watch?v={youTube}", UriKind.Absolute);
     }
 }

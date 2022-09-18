@@ -2,11 +2,15 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void BinarySearch()
+    [GlobalSetup(Target = nameof(BinarySearch))]
+    public void BinarySearchSetup()
     {
-        var nums = new[] { -1, 0, 3, 5, 9, 12 };
-        Problem.BinarySearch(nums, 9);
-        Problem.BinarySearch(nums, 2);
+        _intArray1 = Enumerable.Range(0, 1_000_000).ToArray();
+    }
+
+    [Benchmark]
+    public int BinarySearch()
+    {
+        return Problem.BinarySearch(_intArray1, 1_000);
     }
 }
