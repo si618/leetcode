@@ -11,7 +11,7 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 git version 2.37.1
 
 > dotnet --list-sdks
-6.0.400 [/usr/share/dotnet/sdk]
+6.0.401 [/usr/share/dotnet/sdk]
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
@@ -54,7 +54,7 @@ Cloning into 'leetcode'...
 
 ``` bash
 # Build docker images for C# and F# benchmark projects
-> docker-compose up
+> docker compose up
 
 # List solved C# problems without running benchmarks
 > docker run --rm benchmarks-csharp --problems
