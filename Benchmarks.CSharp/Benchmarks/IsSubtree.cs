@@ -2,14 +2,17 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void IsSubtree()
+    [GlobalSetup(Target = nameof(IsSubtree))]
+    public void IsSubtreeSetup()
     {
-        var root1 = new TreeNode(new int?[] { 3, 4, 5, 1, 2 });
-        var subRoot1 = new TreeNode(new int?[] { 4, 1, 2 });
-        var root2 = new TreeNode(new int?[] { 3, 4, 5, 1, 2, null, null, null, null, 0 });
-        var subRoot2 = new TreeNode(new int?[] { 4, 1, 2 });
-        Problem.IsSubtree(root1, subRoot1);
-        Problem.IsSubtree(root2, subRoot2);
+        var values = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
+        _treeNode1 = TreeNode.Deserialize(values)!;
+        _treeNode2 = TreeNode.Deserialize(values)!;
+    }
+
+    [Benchmark]
+    public bool IsSubtree()
+    {
+        return Problem.IsSubtree(_treeNode1, _treeNode2);
     }
 }

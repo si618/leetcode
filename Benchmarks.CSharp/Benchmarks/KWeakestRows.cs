@@ -2,25 +2,20 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void KWeakestRows()
+    [GlobalSetup(Target = nameof(KWeakestRows))]
+    public void KWeakestRowsSetup()
     {
-        var ex1 = new[]
+        var temp = Enumerable.Range(1, 1_000).ToArray();
+        _intArray3 = new int[10_000][];
+        for (var i = 0; i < 10_000; i++)
         {
-            new[] { 1, 1, 0, 0, 0 },
-            new[] { 1, 1, 1, 1, 0 },
-            new[] { 1, 0, 0, 0, 0 },
-            new[] { 1, 1, 0, 0, 0 },
-            new[] { 1, 1, 1, 1, 1 }
-        };
-        var ex2 = new[]
-        {
-            new[] { 1, 0, 0, 0 },
-            new[] { 1, 1, 1, 1 },
-            new[] { 1, 0, 0, 0 },
-            new[] { 1, 0, 0, 0 }
-        };
-        Problem.KWeakestRows(ex1, 3);
-        Problem.KWeakestRows(ex2, 2);
+            _intArray3[i] = temp;
+        }
+    }
+
+    [Benchmark]
+    public int[] KWeakestRows()
+    {
+        return Problem.KWeakestRows(_intArray3, 9_999);
     }
 }

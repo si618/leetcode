@@ -2,12 +2,15 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    [SuppressMessage("ReSharper", "StringLiteralTypo")]
-    public void LengthOfLongestSubstring()
+    [GlobalSetup(Target = nameof(LengthOfLongestSubstring))]
+    public void LengthOfLongestSubstringSetup()
     {
-        Problem.LengthOfLongestSubstring("abcabcbb");
-        Problem.LengthOfLongestSubstring("bbbbb");
-        Problem.LengthOfLongestSubstring("pwwkew");
+        _string1 = string.Join("", Enumerable.Range(1, 1_000_000).Select(i => i.ToString()));
+    }
+
+    [Benchmark]
+    public int LengthOfLongestSubstring()
+    {
+        return Problem.LengthOfLongestSubstring(_string1);
     }
 }

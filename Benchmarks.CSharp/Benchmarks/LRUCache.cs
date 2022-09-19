@@ -2,20 +2,23 @@
 
 public partial class CSharpBenchmarks
 {
+    private Problem.LRUCache _lruCache = null!;
+
+    [GlobalSetup(Target = nameof(LRUCache))]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public void LRUCacheSetup()
+    {
+        _lruCache = new Problem.LRUCache(1_000_000);
+        for (var i = 0; i < 1_000_000; i++)
+        {
+            _lruCache.Put(i, i);
+        }
+    }
+
     [Benchmark]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public void LRUCache()
+    public int LRUCache()
     {
-        // Inputs from LeetCode
-        var lru = new Problem.LRUCache(2);
-        lru.Put(1, 1);
-        lru.Put(2, 2);
-        lru.Get(1);
-        lru.Put(3, 3);
-        lru.Get(2);
-        lru.Put(4, 4);
-        lru.Get(1);
-        lru.Get(3);
-        lru.Get(4);
+        return _lruCache.Get(500_000);
     }
 }

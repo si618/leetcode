@@ -2,10 +2,15 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void LastStoneWeight()
+    [GlobalSetup(Target = nameof(LastStoneWeight))]
+    public void LastStoneWeightSetup()
     {
-        Problem.LastStoneWeight(new[] { 2, 7, 4, 1, 8, 1 });
-        Problem.LastStoneWeight(new[] { 1 });
+        _intArray1 = Enumerable.Range(1, 1_000_000).ToArray();
+    }
+
+    [Benchmark]
+    public int LastStoneWeight()
+    {
+        return Problem.LastStoneWeight(_intArray1);
     }
 }
