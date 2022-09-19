@@ -6,7 +6,7 @@ public sealed partial class Problem
         "Contains Duplicate",
         Difficulty.Easy,
         Category.ArraysAndHashing,
-        "3OamzN90kPg")]
+        "https://www.youtube.com/watch?v=3OamzN90kPg")]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static bool ContainsDuplicate(int[] nums)
     {

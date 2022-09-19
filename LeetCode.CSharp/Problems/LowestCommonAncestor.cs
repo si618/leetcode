@@ -5,7 +5,8 @@ public sealed partial class Problem
     [LeetCode(
         "Lowest Common Ancestor of a Binary Search Tree",
         Difficulty.Easy,
-        Category.Trees)]
+        Category.Trees,
+        "https://www.youtube.com/watch?v=gs2LMfuOR9k")]
     public static TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
     {
         var current = root;

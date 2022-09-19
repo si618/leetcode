@@ -2,7 +2,11 @@ namespace LeetCode;
 
 public sealed partial class Problem
 {
-    [LeetCode("Reverse Linked List", Difficulty.Easy, Category.LinkedList)]
+    [LeetCode(
+        "Reverse Linked List",
+        Difficulty.Easy,
+        Category.LinkedList,
+        "https://www.youtube.com/watch?v=G0_I-ZF0S38")]
     public static ListNode? ReverseList(ListNode? head)
     {
         ListNode? previous = null;

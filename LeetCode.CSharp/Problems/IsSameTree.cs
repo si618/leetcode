@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Same Tree", Difficulty.Easy, Category.Trees)]
+    [LeetCode(
+        "Same Tree",
+        Difficulty.Easy,
+        Category.Trees,
+        "https://www.youtube.com/watch?v=vRbbcKXCxOw")]
     public static bool IsSameTree(TreeNode? p, TreeNode? q)
     {
         // Null tree nodes are equal

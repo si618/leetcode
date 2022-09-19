@@ -2,7 +2,11 @@ namespace LeetCode;
 
 public sealed partial class Problem
 {
-    [LeetCode("Merge Two Sorted Lists", Difficulty.Easy, Category.LinkedList)]
+    [LeetCode(
+        "Merge Two Sorted Lists",
+        Difficulty.Easy,
+        Category.LinkedList,
+        "https://www.youtube.com/watch?v=XIdigk956u0")]
     public static ListNode? MergeTwoLists(ListNode? list1, ListNode? list2)
     {
         var dummy = new ListNode();

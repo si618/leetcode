@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Maximum Subarray", Difficulty.Medium, Category.Greedy, "5WZl3MMT0Eg")]
+    [LeetCode(
+        "Maximum Subarray",
+        Difficulty.Medium,
+        Category.Greedy,
+        "https://www.youtube.com/watch?v=5WZl3MMT0Eg")]
     public static int MaxSubarray(int[] nums)
     {
         var maxSub = nums[0];

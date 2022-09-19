@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Number of Islands", Difficulty.Medium, Category.Graphs)]
+    [LeetCode(
+        "Number of Islands",
+        Difficulty.Medium,
+        Category.Graphs,
+        "https://www.youtube.com/watch?v=pV2kpPD66nE")]
     public static int NumIslands(char[][]? grid)
     {
         if (grid is null || grid.Length == 0)

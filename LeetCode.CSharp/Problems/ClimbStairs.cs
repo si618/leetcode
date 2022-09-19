@@ -6,7 +6,7 @@ public sealed partial class Problem
         "Climbing Stairs",
         Difficulty.Easy,
         Category.OneDDynamicProgramming,
-        "Y0lT9Fck7qI")]
+        "https://www.youtube.com/watch?v=Y0lT9Fck7qI")]
     public static int ClimbStairs(int n)
     {
         // End of decision tree always has one step as two steps would be out of bounds

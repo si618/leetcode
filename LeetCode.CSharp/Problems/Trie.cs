@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Implement Trie (Prefix Tree)", Difficulty.Medium, Category.Tries)]
+    [LeetCode(
+        "Implement Trie (Prefix Tree)",
+        Difficulty.Medium,
+        Category.Tries,
+        "https://www.youtube.com/watch?v=oobqoCJlHA0")]
     public class Trie
     {
         public Trie()

@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Two Sum", Difficulty.Easy, Category.ArraysAndHashing)]
+    [LeetCode(
+        "Two Sum",
+        Difficulty.Easy,
+        Category.ArraysAndHashing,
+        "https://www.youtube.com/watch?v=KLlXCFG5TnA")]
     public static int[] TwoSum(int[] nums, int target)
     {
         if (nums.Length < 2)

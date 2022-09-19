@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Valid Parentheses", Difficulty.Easy, Category.Stack)]
+    [LeetCode(
+        "Valid Parentheses",
+        Difficulty.Easy,
+        Category.Stack,
+        "https://www.youtube.com/watch?v=WTzjTskDFMg")]
     public static bool AreParenthesesValid(string s)
     {
         if (string.IsNullOrWhiteSpace(s))

@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Subtree of Another Tree", Difficulty.Easy, Category.Trees)]
+    [LeetCode(
+        "Subtree of Another Tree",
+        Difficulty.Easy,
+        Category.Trees,
+        "https://www.youtube.com/watch?v=E36O5SWp-LE")]
     public static bool IsSubtree(TreeNode? root, TreeNode? subRoot)
     {
         // A null root or null root edge means a null subRoot is a subtree

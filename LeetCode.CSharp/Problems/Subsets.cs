@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Subsets", Difficulty.Medium, Category.BackTracking)]
+    [LeetCode(
+        "Subsets",
+        Difficulty.Medium,
+        Category.BackTracking,
+        "https://www.youtube.com/watch?v=REOH22Xwdkk")]
     public static IList<IList<int>> Subsets(int[] nums)
     {
         var subsets = new List<IList<int>>();

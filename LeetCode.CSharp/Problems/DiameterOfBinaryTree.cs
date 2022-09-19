@@ -6,7 +6,7 @@ public sealed partial class Problem
         "Diameter of Binary Tree",
         Difficulty.Easy,
         Category.Trees,
-        "bkxqA8Rfv04")]
+        "https://www.youtube.com/watch?v=bkxqA8Rfv04")]
     public static int DiameterOfBinaryTree(TreeNode root)
     {
         var maxDiameter = 0;

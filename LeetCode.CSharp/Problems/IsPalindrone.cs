@@ -9,7 +9,7 @@ public sealed partial class Problem
         "Palindrome Linked List",
         Difficulty.Easy,
         Category.TwoPointers,
-        "jJXJ16kPFWg")]
+        "https://www.youtube.com/watch?v=jJXJ16kPFWg")]
     public static bool IsPalindrome(ListNode head)
     {
         if (head.next is null)

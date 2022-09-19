@@ -5,7 +5,8 @@ public sealed partial class Problem
     [LeetCode(
         "Min Cost Climbing Stairs",
         Difficulty.Easy,
-        Category.OneDDynamicProgramming)]
+        Category.OneDDynamicProgramming,
+        "https://www.youtube.com/watch?v=ktmzAZWkEZ0")]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int MinCostClimbingStairs(int[] cost)
     {

@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Maximum Depth of Binary Tree", Difficulty.Easy, Category.Trees)]
+    [LeetCode(
+        "Maximum Depth of Binary Tree",
+        Difficulty.Easy,
+        Category.Trees,
+        "https://www.youtube.com/watch?v=hTM3phVI6YQ")]
     public static int MaxDepth(TreeNode? root)
     {
         if (root is null)

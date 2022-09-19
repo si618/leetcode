@@ -6,7 +6,7 @@ public sealed partial class Problem
         "Balanced Binary Tree",
         Difficulty.Easy,
         Category.Trees,
-        "QfJsau0ItOY")]
+        "https://www.youtube.com/watch?v=QfJsau0ItOY")]
     public static bool IsBalanced(TreeNode root)
     {
         static (bool IsBalanced, int Height) DepthFirstSearch(TreeNode? node)

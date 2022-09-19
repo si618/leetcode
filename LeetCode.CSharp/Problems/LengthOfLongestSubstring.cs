@@ -5,7 +5,8 @@ public sealed partial class Problem
     [LeetCode(
         "Longest Substring Without Repeating Characters",
         Difficulty.Medium,
-        Category.SlidingWindow)]
+        Category.SlidingWindow,
+        "https://www.youtube.com/watch?v=wiGpQwVHdE0")]
     public static int LengthOfLongestSubstring(string s)
     {
         var list = new List<char>();
@@ -14,7 +15,6 @@ public sealed partial class Problem
 
         for (var right = 0; right < s.Length; right++)
         {
-            // https://youtu.be/wiGpQwVHdE0
             while (list.Contains(s[right]))
             {
                 list.Remove(s[left]);

@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Last Stone Weight", Difficulty.Easy, Category.HeapPriorityQueue)]
+    [LeetCode(
+        "Last Stone Weight",
+        Difficulty.Easy,
+        Category.HeapPriorityQueue,
+        "https://www.youtube.com/watch?v=B-QCq79-Vfw")]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int LastStoneWeight(int[] stones)
     {

@@ -2,7 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Best Time to Buy and Sell Stock", Difficulty.Easy, Category.TwoPointers)]
+    [LeetCode("Best Time to Buy and Sell Stock", Difficulty.Easy, Category.NotInNeetCode)]
     public static int MaxProfit(int[] prices)
     {
         var left = 0;

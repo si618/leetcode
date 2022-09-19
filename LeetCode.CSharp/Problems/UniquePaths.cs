@@ -2,7 +2,11 @@
 
 public sealed partial class Problem
 {
-    [LeetCode("Unique Paths", Difficulty.Medium, Category.TwoDDynamicProgramming, "IlEsdxuD4lY")]
+    [LeetCode(
+        "Unique Paths",
+        Difficulty.Medium,
+        Category.TwoDDynamicProgramming,
+        "https://www.youtube.com/watch?v=IlEsdxuD4lY")]
     public static int UniquePaths(int m, int n)
     {
         int[] CreateRow()

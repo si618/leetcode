@@ -19,13 +19,11 @@ public sealed class LeetCodeAttribute : Attribute
         string description,
         Difficulty difficulty,
         Category category,
-        string youTube = "")
+        string uri = "")
     {
         Description = description;
         Difficulty = difficulty;
         Category = category;
-        Link = string.IsNullOrEmpty(youTube)
-            ? null
-            : new Uri($"https://www.youtube.com/watch?v={youTube}", UriKind.Absolute);
+        Link = string.IsNullOrEmpty(uri) ? null : new Uri($"{uri}", UriKind.Absolute);
     }
 }
