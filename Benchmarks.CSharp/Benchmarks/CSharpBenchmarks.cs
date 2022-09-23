@@ -9,18 +9,18 @@ public partial class CSharpBenchmarks
     private int Int1 { get; set; }
 
     private int[] IntArray1 { get; set; } = Array.Empty<int>();
-    private int[] IntArray2 { get; set; } =  Array.Empty<int>();
-    private int[][] IntArrayMulti { get; set; } =  Array.Empty<int[]>();
+    private int[] IntArray2 { get; set; } = Array.Empty<int>();
+    private int[][] IntArrayMulti { get; set; } = Array.Empty<int[]>();
     private int?[] IntArrayNullable { get; set; } = Array.Empty<int?>();
 
-    private ListNode ListNode1 { get; set; } =  new();
-    private ListNode ListNode2 { get; set; } =  new();
+    private ListNode ListNode1 { get; set; } = new();
+    private ListNode ListNode2 { get; set; } = new();
 
-    private string String1 { get; set; } =  string.Empty;
-    private string String2 { get; set; } =  string.Empty;
+    private string String1 { get; set; } = string.Empty;
+    private string String2 { get; set; } = string.Empty;
 
-    private TreeNode TreeNode1 { get; set; } =  new();
-    private TreeNode TreeNode2 { get; set; } =  new();
+    private TreeNode TreeNode1 { get; set; } = new();
+    private TreeNode TreeNode2 { get; set; } = new();
 
     /// <summary>
     /// Build a pseudo random string
