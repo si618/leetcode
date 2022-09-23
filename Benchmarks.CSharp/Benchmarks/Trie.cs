@@ -2,17 +2,26 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void Trie()
+    private readonly Problem.Trie _trie = new();
+
+    [GlobalSetup(Target = nameof(Trie))]
+    public void TrieSetup()
     {
-        var trie = new Problem.Trie();
+        String1 = BuildPseudoRandomString(1_000_000, 2);
+        String2 = BuildPseudoRandomString(10);
+    }
 
-        trie.Insert("apple");
-        trie.Search("apple");
-        trie.Search("app");
-        trie.StartsWith("app");
+    [Benchmark]
+    public bool Trie()
+    {
+        _trie.Insert(String1);
+        return _trie.Search(String2);
+    }
 
-        trie.Insert("app");
-        trie.Search("app");
+    [GlobalCleanup(Target = nameof(Trie))]
+    public void TrieCleanup()
+    {
+        String1 = string.Empty;
+        String2 = string.Empty;
     }
 }

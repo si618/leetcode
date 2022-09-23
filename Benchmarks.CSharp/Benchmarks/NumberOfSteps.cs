@@ -3,10 +3,8 @@
 public partial class CSharpBenchmarks
 {
     [Benchmark]
-    public void NumberOfSteps()
+    public int NumberOfSteps()
     {
-        Problem.NumberOfSteps(14);
-        Problem.NumberOfSteps(8);
-        Problem.NumberOfSteps(123);
+        return Problem.NumberOfSteps(1_000_000_000);
     }
 }

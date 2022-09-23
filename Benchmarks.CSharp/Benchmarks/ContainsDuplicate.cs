@@ -13,4 +13,10 @@ public partial class CSharpBenchmarks
     {
         return Problem.ContainsDuplicate(IntArray1);
     }
+
+    [GlobalCleanup(Target = nameof(ContainsDuplicate))]
+    public void ContainsDuplicateCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
+    }
 }

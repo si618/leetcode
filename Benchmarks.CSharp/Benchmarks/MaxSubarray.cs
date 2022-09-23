@@ -2,26 +2,23 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MaxSubarray()
+    [GlobalSetup(Target = nameof(MaxSubarray))]
+    public void MaxSubarraySetup()
     {
-        // Inputs from LeetCode
-        var ex1 = new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-        var ex2 = new[] { 1 };
-        var ex3 = new[] { 5, 4, -1, 7, 8 };
+        IntArray1 = Enumerable.Range(1, 10_000_000)
+            .Concat(Enumerable.Range(1, 10_000_000))
+            .ToArray();
+    }
 
-        // Larger inputs for benchmark
-        var random = new Random(618);
-        var ex4 = new int[100_000];
-        for (var i = 0; i < ex4.Length; i++)
-        {
-            // Generate some negative and positive integers
-            ex4[i] = random.Next(1, 20) - 10;
-        }
+    [Benchmark]
+    public int MaxSubarray()
+    {
+        return Problem.MaxSubarray(IntArray1);
+    }
 
-        Problem.MaxSubarray(ex1);
-        Problem.MaxSubarray(ex2);
-        Problem.MaxSubarray(ex3);
-        Problem.MaxSubarray(ex4);
+    [GlobalCleanup(Target = nameof(MaxSubarray))]
+    public void MaxSubarrayCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
     }
 }

@@ -2,14 +2,26 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MergeTwoLists()
+    [GlobalSetup(Target = nameof(MergeTwoLists))]
+    public void MergeTwoListsSetup()
     {
-        var ex11 = new ListNode(new[] { 1, 2, 4 });
-        var ex12 = new ListNode(new[] { 1, 3, 4 });
+        ListNode1 = new ListNode(Enumerable.Range(1, 100_000).ToArray());
+        ListNode2 = new ListNode(Enumerable.Range(1, 50_000).ToArray());
+    }
 
-        Problem.MergeTwoLists(ex11, ex12);
-        Problem.MergeTwoLists(null, null);
-        Problem.MergeTwoLists(null, new ListNode());
+    [Benchmark]
+    public ListNode? MergeTwoLists()
+    {
+        // TODO Work out why ListNode1 and ListNode2 bork on GlobalSetup
+        var listNode1 = new ListNode(Enumerable.Range(1, 100_000).ToArray());
+        var listNode2 = new ListNode(Enumerable.Range(1, 50_000).ToArray());
+        return Problem.MergeTwoLists(listNode1, listNode2);
+    }
+
+    [GlobalCleanup(Target = nameof(MergeTwoLists))]
+    public void MergeTwoListsCleanup()
+    {
+        ListNode1 = new ListNode();
+        ListNode2 = new ListNode();
     }
 }

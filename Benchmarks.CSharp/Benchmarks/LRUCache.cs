@@ -21,4 +21,11 @@ public partial class CSharpBenchmarks
     {
         return _lruCache.Get(500_000);
     }
+
+    [GlobalCleanup(Target = nameof(LRUCache))]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public void LRUCacheCleanup()
+    {
+        _lruCache = null!;
+    }
 }

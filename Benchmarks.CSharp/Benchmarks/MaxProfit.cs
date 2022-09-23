@@ -2,10 +2,21 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MaxProfit()
+    [GlobalSetup(Target = nameof(MaxProfit))]
+    public void MaxProfitSetup()
     {
-        Problem.MaxProfit(new[] { 7, 1, 5, 3, 6, 4 });
-        Problem.MaxProfit(new[] { 7, 6, 4, 3, 1 });
+        IntArray1 = Enumerable.Range(1, 10_000_000).ToArray();
+    }
+
+    [Benchmark]
+    public int MaxProfit()
+    {
+        return Problem.MaxProfit(IntArray1);
+    }
+
+    [GlobalCleanup(Target = nameof(MaxProfit))]
+    public void MaxProfitCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
     }
 }

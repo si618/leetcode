@@ -2,21 +2,27 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MaximumWealth()
+    [GlobalSetup(Target = nameof(MaximumWealth))]
+    public void MaximumWealthSetup()
     {
-        var ex1 = new[]
+        IntArray1 = Enumerable.Range(1, 1_000).ToArray();
+        IntArrayMulti = new int[10_000][];
+        for (var i = 0; i < IntArrayMulti.Length; i++)
         {
-            new[] { 1, 2, 3 },
-            new[] { 3, 2, 1 }
-        };
-        var ex2 = new[]
-        {
-            new[] { 1, 5 },
-            new[] { 7, 3 },
-            new[] { 3, 5 }
-        };
-        Problem.MaximumWealth(ex1);
-        Problem.MaximumWealth(ex2);
+            IntArrayMulti[i] = IntArray1;
+        }
+    }
+
+    [Benchmark]
+    public int MaximumWealth()
+    {
+        return Problem.MaximumWealth(IntArrayMulti);
+    }
+
+    [GlobalCleanup(Target = nameof(MaximumWealth))]
+    public void MaximumWealthCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
+        IntArrayMulti = Array.Empty<int[]>();
     }
 }

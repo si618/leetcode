@@ -2,10 +2,26 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void Subsets()
+    [GlobalSetup(Target = nameof(Subsets))]
+    public void SubsetsSetup()
     {
-        Problem.Subsets(new[] { 1, 2, 3 });
-        Problem.Subsets(new[] { 0 });
+        var random = new Random(42);
+        IntArray1 = new int[100_000];
+        for (var i = 0; i < IntArray1.Length; i++)
+        {
+            IntArray1[i] = i % random.Next(1, 10);
+        }
+    }
+
+    [Benchmark]
+    public IList<IList<int>> Subsets()
+    {
+        return Problem.Subsets(new[] { 1, 2, 3 });
+    }
+
+    [GlobalCleanup(Target = nameof(Subsets))]
+    public void SubsetsCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
     }
 }

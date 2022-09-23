@@ -13,4 +13,10 @@ public partial class CSharpBenchmarks
     {
         return Problem.LastStoneWeight(IntArray1);
     }
+
+    [GlobalCleanup(Target = nameof(LastStoneWeight))]
+    public void LastStoneWeightCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
+    }
 }

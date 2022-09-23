@@ -4,10 +4,8 @@ public partial class CSharpBenchmarks
 {
     [Benchmark]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
-    public void RomanToInt()
+    public int RomanToInt()
     {
-        Problem.RomanToInt("III");
-        Problem.RomanToInt("LVIII");
-        Problem.RomanToInt("MCMXCIV");
+        return Problem.RomanToInt("MMMCMXCIXCMXCIX");
     }
 }

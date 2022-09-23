@@ -2,10 +2,23 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MinCostClimbingStairs()
+    [GlobalSetup(Target = nameof(MinCostClimbingStairs))]
+    public void MinCostClimbingStairsSetup()
     {
-        Problem.MinCostClimbingStairs(new[] { 10, 15, 20 });
-        Problem.MinCostClimbingStairs(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 });
+        IntArray1 = Enumerable.Range(1, 1_000_000)
+            .Concat(Enumerable.Range(1, 1_000_000))
+            .ToArray();
+    }
+
+    [Benchmark]
+    public int MinCostClimbingStairs()
+    {
+        return Problem.MinCostClimbingStairs(IntArray1);
+    }
+
+    [GlobalCleanup(Target = nameof(MinCostClimbingStairs))]
+    public void MinCostClimbingStairsCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
     }
 }

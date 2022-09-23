@@ -2,12 +2,21 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MiddleNode()
+    [GlobalSetup(Target = nameof(MiddleNode))]
+    public void MiddleNodeSetup()
     {
-        var even = new ListNode(new[] { 1, 2, 3, 4 });
-        var odd = new ListNode(new[] { 1, 2, 3, 4, 5 });
-        Problem.MiddleNode(even);
-        Problem.MiddleNode(odd);
+        ListNode1 = new ListNode(Enumerable.Range(1, 1_000_000).ToArray());
+    }
+
+    [Benchmark]
+    public ListNode MiddleNode()
+    {
+        return Problem.MiddleNode(ListNode1);
+    }
+
+    [GlobalCleanup(Target = nameof(MiddleNode))]
+    public void MiddleNodeCleanup()
+    {
+        ListNode1 = new ListNode();
     }
 }

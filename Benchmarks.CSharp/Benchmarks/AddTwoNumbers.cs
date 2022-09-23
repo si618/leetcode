@@ -18,4 +18,13 @@ public partial class CSharpBenchmarks
     {
         return Problem.AddTwoNumbers(ListNode1, ListNode2);
     }
+
+    [GlobalCleanup(Target = nameof(AddTwoNumbers))]
+    public void AddTwoNumbersCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
+        IntArray2 = Array.Empty<int>();
+        ListNode1 = new ListNode(IntArray1);
+        ListNode2 = new ListNode(IntArray2);
+    }
 }

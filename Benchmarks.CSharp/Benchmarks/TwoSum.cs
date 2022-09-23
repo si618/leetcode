@@ -2,14 +2,24 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void TwoSum()
+    [GlobalSetup(Target = nameof(TwoSum))]
+    public void TwoSumSetup()
     {
-        var ex1 = new[] { 2, 7, 11, 15 };
-        var ex2 = new[] { 3, 2, 4 };
-        var ex3 = new[] { 3, 3 };
-        Problem.TwoSum(ex1, 9);
-        Problem.TwoSum(ex2, 6);
-        Problem.TwoSum(ex3, 6);
+        IntArray1 = Enumerable.Range(1, 10_000).ToArray();
+        // Force full iteration by making target last two items in array
+        Int1 = IntArray1[^1] + IntArray1[^2];
+    }
+
+    [Benchmark]
+    public int[] TwoSum()
+    {
+        return Problem.TwoSum(IntArray1, Int1);
+    }
+
+    [GlobalCleanup(Target = nameof(TwoSum))]
+    public void TwoSumCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
+        Int1 = 0;
     }
 }

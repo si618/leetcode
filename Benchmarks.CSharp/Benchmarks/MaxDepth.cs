@@ -2,15 +2,23 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void MaxDepth()
+    [GlobalSetup(Target = nameof(MaxDepth))]
+    public void MaxDepthSetup()
     {
-        var root1 = new TreeNode(3,
-            left: new TreeNode(9, left: new TreeNode(1), right: null),
-            right: new TreeNode(20, left: new TreeNode(15), right: new TreeNode(7)));
-        var root2 = new TreeNode(1, left: null, right: new TreeNode(2));
+        IntArrayNullable = Enumerable.Range(1, 10_000_000).Cast<int?>().ToArray();
+        TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
+    }
 
-        Problem.MaxDepth(root1);
-        Problem.MaxDepth(root2);
+    [Benchmark]
+    public int MaxDepth()
+    {
+        return Problem.MaxDepth(TreeNode1);
+    }
+
+    [GlobalCleanup(Target = nameof(MaxDepth))]
+    public void MaxDepthCleanup()
+    {
+        IntArrayNullable = Array.Empty<int?>();
+        TreeNode1 = new TreeNode();
     }
 }

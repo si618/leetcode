@@ -2,13 +2,21 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void ReverseList()
+    [GlobalSetup(Target = nameof(ReverseList))]
+    public void ReverseListSetup()
     {
-        var ex1 = new ListNode(new[] { 1, 2, 3, 4, 5 });
-        var ex2 = new ListNode(1, new ListNode(2));
+        ListNode1 = new ListNode(Enumerable.Range(1, 1_000_000).ToArray());
+    }
 
-        Problem.ReverseList(ex1);
-        Problem.ReverseList(ex2);
+    [Benchmark]
+    public ListNode? ReverseList()
+    {
+        return Problem.ReverseList(ListNode1);
+    }
+
+    [GlobalCleanup(Target = nameof(ReverseList))]
+    public void ReverseListCleanup()
+    {
+        ListNode1 = new ListNode();
     }
 }

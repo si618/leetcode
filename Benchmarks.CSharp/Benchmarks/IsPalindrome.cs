@@ -15,4 +15,12 @@ public partial class CSharpBenchmarks
     {
         return Problem.IsPalindrome(ListNode1);
     }
+
+    [GlobalCleanup(Target = nameof(IsPalindrome))]
+    public void IsPalindromeCleanup()
+    {
+        IntArray1 = Array.Empty<int>();
+        IntArray2 = Array.Empty<int>();
+        ListNode1 = new ListNode();
+    }
 }

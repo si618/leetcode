@@ -2,24 +2,31 @@
 
 public partial class CSharpBenchmarks
 {
-    [Benchmark]
-    public void NumIslands()
+    // private char[][] CharArrayMulti { get; set; } = { new[] { char.MinValue }};
+
+    [GlobalSetup(Target = nameof(NumIslands))]
+    public void NumIslandsSetup()
     {
-        var ex1 = new[]
-        {
-            new [] { '1', '1', '1', '1', '0' },
-            new [] { '1', '1', '0', '1', '0' },
-            new [] { '1', '1', '0', '0', '0' },
-            new [] { '0', '0', '0', '0', '0' }
-        };
-        var ex2 = new[]
-        {
-            new [] { '1', '1', '0', '0', '0' },
-            new [] { '1', '1', '0', '0', '0' },
-            new [] { '0', '0', '1', '0', '0' },
-            new [] { '0', '0', '0', '1', '1' }
-        };
-        Problem.NumIslands(ex1);
-        Problem.NumIslands(ex2);
+        // CharArrayMulti = new char[10_000][];
+        // for (var i = 0; i < CharArrayMulti.Length; i++)
+        // {
+        //     for (var j = 0; j < CharArrayMulti.Length; j++)
+        //     {
+        //         CharArrayMulti[i][j] = i % 10 == 0 ? '1' : '0';
+        //     }
+        // }
+    }
+
+    [Benchmark]
+    public int NumIslands()
+    {
+        return 0;
+        // return Problem.NumIslands(CharArrayMulti);
+    }
+
+    [GlobalCleanup(Target = nameof(NumIslands))]
+    public void NumIslandsCleanup()
+    {
+        // CharArrayMulti = new[] { new[] { char.MinValue } };
     }
 }

@@ -66,6 +66,6 @@ public static class CategoryExtensions
         Category.Intervals => "Intervals",
         Category.MathAndGeometry => "Maths & Geometry",
         Category.BitManipulation => "Bit Manipulation",
-        _ => throw new NotImplementedException($"Missing description for {category}")
+        _ => throw new InvalidOperationException($"Missing description for {category}")
     };
 }
