@@ -54,8 +54,7 @@ jobs:
             --configuration Release \
             --filter LeetCode.CSharpBenchmarks* \
             --exporters json \
-            --memory \
-            --job Short
+            --memory
 
       - name: Run F# benchmark
         id: benchmark-fsharp
@@ -66,8 +65,7 @@ jobs:
             --configuration Release \
             --filter LeetCode.FSharpBenchmarks* \
             --exporters json \
-            --memory \
-            --job Short
+            --memory
 
       - name: Store C# benchmark result
         uses: rhysd/github-action-benchmark@v1
