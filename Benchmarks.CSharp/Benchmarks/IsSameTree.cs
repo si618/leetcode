@@ -6,13 +6,13 @@ public partial class CSharpBenchmarks
     public void IsSameTreeSetup()
     {
         var values = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
-        _treeNode1 = TreeNode.Deserialize(values)!;
-        _treeNode2 = TreeNode.Deserialize(values)!;
+        TreeNode1 = TreeNode.Deserialize(values)!;
+        TreeNode2 = TreeNode.Deserialize(values)!;
     }
 
     [Benchmark]
     public bool IsSameTree()
     {
-        return Problem.IsSameTree(_treeNode1, _treeNode2);
+        return Problem.IsSameTree(TreeNode1, TreeNode2);
     }
 }

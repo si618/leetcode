@@ -6,16 +6,16 @@ public partial class CSharpBenchmarks
     public void KWeakestRowsSetup()
     {
         var temp = Enumerable.Range(1, 1_000).ToArray();
-        _intArray3 = new int[10_000][];
+        IntArray3 = new int[10_000][];
         for (var i = 0; i < 10_000; i++)
         {
-            _intArray3[i] = temp;
+            IntArray3[i] = temp;
         }
     }
 
     [Benchmark]
     public int[] KWeakestRows()
     {
-        return Problem.KWeakestRows(_intArray3, 9_999);
+        return Problem.KWeakestRows(IntArray3, 9_999);
     }
 }

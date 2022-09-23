@@ -5,17 +5,17 @@ public partial class CSharpBenchmarks
     [GlobalSetup(Target = nameof(AddTwoNumbers))]
     public void AddTwoNumbersSetup()
     {
-        _intArray1 = new int[50_000];
-        _intArray2 = new int[10_000];
-        Array.Fill(_intArray1, 9);
-        Array.Fill(_intArray2, 9);
-        _listNode1 = new ListNode(_intArray1);
-        _listNode2 = new ListNode(_intArray2);
+        IntArray1 = new int[50_000];
+        IntArray2 = new int[10_000];
+        Array.Fill(IntArray1, 9);
+        Array.Fill(IntArray2, 9);
+        ListNode1 = new ListNode(IntArray1);
+        ListNode2 = new ListNode(IntArray2);
     }
 
     [Benchmark]
     public ListNode AddTwoNumbers()
     {
-        return Problem.AddTwoNumbers(_listNode1, _listNode2);
+        return Problem.AddTwoNumbers(ListNode1, ListNode2);
     }
 }

@@ -5,16 +5,16 @@ using Benchmarks.CSharp;
 [Config(typeof(RuntimeConfig))]
 public partial class CSharpBenchmarks
 {
-    private int[] _intArray1 = Array.Empty<int>();
-    private int[] _intArray2 = Array.Empty<int>();
-    private int[][] _intArray3 = Array.Empty<int[]>();
+    private int[] IntArray1 { get; set; } = Array.Empty<int>();
+    private int[] IntArray2 { get; set; } =  Array.Empty<int>();
+    private int[][] IntArray3 { get; set; } =  Array.Empty<int[]>();
 
-    private ListNode _listNode1 = new();
-    private ListNode _listNode2 = new();
+    private ListNode ListNode1 { get; set; } =  new();
+    private ListNode ListNode2 { get; set; } =  new();
 
-    private string _string1 = string.Empty;
-    private string _string2 = string.Empty;
+    private string String1 { get; set; } =  string.Empty;
+    private string String2 { get; set; } =  string.Empty;
 
-    private TreeNode _treeNode1 = new();
-    private TreeNode _treeNode2 = new();
+    private TreeNode TreeNode1 { get; set; } =  new();
+    private TreeNode TreeNode2 { get; set; } =  new();
 }
