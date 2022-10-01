@@ -68,18 +68,6 @@ public static class ConsoleWriter
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
 "; ;
         WriteRainbow(header);
-        // var foreground = AnsiConsole.Foreground;
-        // AnsiConsole.Foreground = Color.SpringGreen2;
-        // AnsiConsole.WriteLine("    __                __   ______            __");
-        // AnsiConsole.Foreground = Color.SpringGreen3_1;
-        // AnsiConsole.WriteLine("   / /   ___   ___   / /_ / ____/____   ____/ /___");
-        // AnsiConsole.Foreground = Color.Green3_1;
-        // AnsiConsole.WriteLine(@"  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \");
-        // AnsiConsole.Foreground = Color.SpringGreen3_1;
-        // AnsiConsole.WriteLine(" / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/");
-        // AnsiConsole.Foreground = Color.SpringGreen2;
-        // AnsiConsole.WriteLine(@"/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/");
-        // AnsiConsole.Foreground = foreground;
     }
 
     public static void WriteProblems()
