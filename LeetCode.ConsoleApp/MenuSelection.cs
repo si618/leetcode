@@ -1,12 +1,18 @@
 ﻿namespace LeetCode.ConsoleApp;
 
+using System.Collections.Immutable;
+using System.Collections.ObjectModel;
+
 public abstract class MenuSelection : SmartEnum<MenuSelection>, IMenuSelection
 {
     public static readonly MenuSelection ListProblems = new ProblemList();
-    public static readonly MenuSelection RunBenchmarks = new RunBenchmark();
+    public static readonly MenuSelection RunBenchmarks = new BenchmarkList();
     public static readonly MenuSelection Exit = new ExitApp();
 
     public abstract void Execute();
+
+    public IReadOnlyList<MenuSelection> GetRootMenuSelections() =>
+        new ReadOnlyCollection<MenuSelection>(List.OrderBy(s => s.Value).ToList());
 
     private MenuSelection(string name, int order) : base(name, order)
     {
@@ -23,9 +29,9 @@ public abstract class MenuSelection : SmartEnum<MenuSelection>, IMenuSelection
         }
     }
 
-    private sealed class RunBenchmark : MenuSelection
+    private sealed class BenchmarkList : MenuSelection
     {
-        public RunBenchmark() : base("Run Benchmarks", 2)
+        public BenchmarkList() : base("Run Benchmarks", 2)
         {
         }
 
