@@ -1,6 +1,4 @@
-﻿namespace Benchmarks.CSharp;
-
-using System.Reflection;
+﻿namespace LeetCode.ConsoleApp;
 
 internal static class Reflection
 {
@@ -32,7 +30,16 @@ internal static class Reflection
             .GroupBy(s => s.Category, s => s);
 
     public static IEnumerable<string> GetCSharpBenchmarks() =>
-        typeof(CSharpBenchmarks)
+        GetSharpBenchmarks("LeetCode.CSharpBenchmarks");
+
+    public static IEnumerable<string> GetFSharpBenchmarks() =>
+        GetSharpBenchmarks("LeetCode.FSharpBenchmarks");
+
+    private static IEnumerable<string> GetSharpBenchmarks(string name) =>
+        AppDomain.CurrentDomain.GetAssemblies()
+            .Where(a => !a.IsDynamic)
+            .SelectMany(a => a.GetTypes())
+            .First(t => t.FullName!.Equals(name))
             .GetMethods()
             .Select(m => m.Name);
 }

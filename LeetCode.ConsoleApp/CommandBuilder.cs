@@ -1,10 +1,6 @@
-﻿namespace Benchmarks.CSharp;
+﻿namespace LeetCode.ConsoleApp;
 
-using BenchmarkDotNet.Running;
-using System.CommandLine;
-using System.Reflection;
-
-internal static class CommandBuilder
+public static class CommandBuilder
 {
     public static RootCommand BuildRootCommand(IEnumerable<string> args)
     {
@@ -42,7 +38,9 @@ See: https://benchmarkdotnet.org/articles/guides/console-args.html";
         {
             case false when string.IsNullOrEmpty(problem):
                 BenchmarkSwitcher
-                    .FromAssembly(Assembly.GetExecutingAssembly())
+                    .FromAssemblies(AppDomain.CurrentDomain.GetAssemblies()
+                        .Where(a => a.FullName!.StartsWith("Benchmarks."))
+                        .ToArray())
                     .Run(benchmarkArgs);
                 return;
             case true:

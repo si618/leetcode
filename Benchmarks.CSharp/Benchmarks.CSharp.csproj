@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LeetCode.ConsoleApp\LeetCode.ConsoleApp.csproj" />
     <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿namespace Benchmarks.CSharp;
+﻿namespace LeetCode.ConsoleApp;
 
 internal record ProblemDetail(
     string Name,
