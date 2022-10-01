@@ -12,7 +12,7 @@ env:
   DOTNET_FRAMEWORK: net6.0
 
 jobs:
-  build-and-benchmark:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,6 +37,9 @@ jobs:
         id: test
         run: dotnet test --configuration Release
 
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
       - name: List C# problems
         id: problems-csharp
         run: |
