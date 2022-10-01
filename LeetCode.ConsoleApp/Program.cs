@@ -1,5 +1,5 @@
 ﻿var selection = MenuSelection.ListProblems;
-var prompt = new SelectionPrompt<MenuSelection>().AddChoices(selection.GetRootMenuSelections());
+var prompt = new SelectionPrompt<MenuSelection>().AddChoices(MenuSelection.GetMainMenuSelections());
 
 while (selection != MenuSelection.Exit)
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp;
+﻿namespace LeetCode.ConsoleApp.Menus;
 
 public interface IMenuSelection
 {
