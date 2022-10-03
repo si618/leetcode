@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
           # TODO: Add net7.0 back once dotnet format issue is resolved
           dotnet-version: |
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
           # TODO: Add net7.0 back once dotnet format issue is resolved
           dotnet-version: |
