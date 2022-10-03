@@ -1,8 +1,12 @@
 ﻿namespace LeetCode.ConsoleApp;
 
-internal record ProblemDetail(
+public record ProblemDetail(
     string Name,
     string Description,
     Category Category,
     Difficulty Difficulty,
-    Uri? Link);
+    string Language,
+    Uri? Link) : IComparable<ProblemDetail>
+{
+    public int CompareTo(ProblemDetail? other) => Name.Equals(other?.Name) ? 0 : 1;
+}

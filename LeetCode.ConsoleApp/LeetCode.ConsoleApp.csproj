@@ -12,11 +12,19 @@
       <PackageReference Include="Ardalis.SmartEnum" Version="2.1.0" />
       <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
       <PackageReference Include="Spectre.Console" Version="0.45.0" />
-      <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+      <PackageReference Include="Spectre.Console.Cli" Version="0.45.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj" />
+      <ProjectReference Include="..\LeetCode.FSharp\LeetCode.FSharp.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\.dockerignore">
+        <DependentUpon>Dockerfile</DependentUpon>
+        <Link>.dockerignore</Link>
+      </None>
     </ItemGroup>
 
 </Project>

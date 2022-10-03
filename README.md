@@ -22,70 +22,35 @@ Cloning into 'leetcode'...
 
 ```
 
-### Running benchmarks locally
+### Console Application
+
+Problem information and benchmarks can be run from the console application
 
 ``` bash
-# Run all C# and F# benchmarks
-> ./Benchmark.ps1
+> cd ./LeetCode.ConsoleApp
+> dotnet run
     __                __   ______            __
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
-
-// Validating benchmarks:
-// ***** BenchmarkRunner: Start   *****
-...
-
-# List solved C# problems without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 --problems
-
-# Show problem details without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 --problem 'LRU Cache'
-
-# Run all F# benchmarks
-> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -f net6.0 -c Release --filter *Benchmarks*
-
-# Run single C# benchmark
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 -c Release --filter *LRUCache
 ```
 
 ### Running benchmarks from docker
 
 ``` bash
-# Build docker images for C# and F# benchmark projects
+# Build docker image
 > docker compose up
 
-# List solved C# problems without running benchmarks
-> docker run --rm benchmarks-csharp --problems
+# List solved problems without running benchmarks
+> docker run --rm leetcode --problems
 
 # Show problem details without running benchmarks
-> docker run --rm benchmarks-csharp --problem 'LRU Cache'
+> docker run --rm leetcode --problem 'LRU Cache'
 
 # Run all F# benchmarks
-> docker run benchmarks-fsharp --filter *Benchmarks*
+> docker run leetcode --filter *FSharp.Benchmarks*
 
 # Run single C# benchmark
-> docker run benchmarks-csharp --filter *LRUCache
-```
-
-C# benchmarks have options to list summary of problems as well as problem details.
-
-```
-> .\Benchmarks.CSharp.exe --help
-Description:
-  Benchmark C# LeetCode problems using BenchmarkDotNet
-  See: https://benchmarkdotnet.org/articles/guides/console-args.html
-
-Usage:
-  Benchmarks.CSharp [options] [[--] <additional arguments>...]]
-
-Options:
-  --problems           Show problem summary without running benchmarks
-  --problem <problem>  Show details for problem without running benchmarks
-  --version            Show version information
-  -?, -h, --help       Show help and usage information
-
-Additional Arguments:
-  Arguments passed to the application that is being run.
+> docker run leetcode --filter *CSharp.Benchmark.LRUCache
 ```

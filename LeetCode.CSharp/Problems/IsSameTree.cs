@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -30,7 +30,7 @@ public sealed partial class Problem
         return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
     }
 
-    [Test]
+    [Fact]
     public void IsSameTreeTest()
     {
         var p1 = new TreeNode(new int?[] { 1, 2, 3 });

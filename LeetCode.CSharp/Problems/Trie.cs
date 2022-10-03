@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -71,7 +71,7 @@ public sealed partial class Problem
         public bool EndOfWord { get; set; }
     }
 
-    [Test]
+    [Fact]
     public void TrieTest()
     {
         var trie = new Trie();

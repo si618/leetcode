@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -12,7 +12,7 @@ public sealed partial class Problem
         return s.Length == t.Length && s.OrderBy(c => c).SequenceEqual(t.OrderBy(c => c));
     }
 
-    [Test]
+    [Fact]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void IsAnagramTest()
     {

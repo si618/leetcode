@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 using System.Collections.Generic;
 
@@ -39,7 +39,7 @@ public sealed partial class Problem
         return result;
     }
 
-    [Test]
+    [Fact]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RomanToIntTest()
     {

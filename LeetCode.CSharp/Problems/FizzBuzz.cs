@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -32,7 +32,7 @@ public sealed partial class Problem
         return result;
     }
 
-    [Test]
+    [Fact]
     public void FizzBuzzTest()
     {
         var output1 = new List<string> { "1", "2", "Fizz" };

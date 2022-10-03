@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -23,7 +23,7 @@ public sealed partial class Problem
         return Math.Min(minCost[0], minCost[1]);
     }
 
-    [Test]
+    [Fact]
     public void MinCostClimbingStairsTest()
     {
         MinCostClimbingStairs(new[] { 10, 15, 20 }).Should().Be(15);

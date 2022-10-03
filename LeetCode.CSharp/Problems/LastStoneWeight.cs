@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -31,7 +31,7 @@ public sealed partial class Problem
         return queue.Count == 0 ? 0 : queue.Peek();
     }
 
-    [Test]
+    [Fact]
     public void LastStoneWeightTest()
     {
         var ex1 = new[] { 2, 7, 4, 1, 8, 1 };

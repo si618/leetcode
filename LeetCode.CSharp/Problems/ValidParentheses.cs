@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -40,7 +40,7 @@ public sealed partial class Problem
         return !stack.Any();
     }
 
-    [Test]
+    [Fact]
     public void AreParenthesesValidTest()
     {
         AreParenthesesValid("()").Should().BeTrue();

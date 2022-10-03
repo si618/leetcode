@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -133,7 +133,7 @@ public sealed partial class Problem
         }
     }
 
-    [Test]
+    [Fact]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public void LRUCacheTest()
     {

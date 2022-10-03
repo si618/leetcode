@@ -1,4 +1,4 @@
-namespace LeetCode;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -39,7 +39,7 @@ public sealed partial class Problem
         return dummy.next;
     }
 
-    [Test]
+    [Fact]
     public void MergeTwoListsTest()
     {
         var ex11 = new ListNode(new[] { 1, 2, 4 });

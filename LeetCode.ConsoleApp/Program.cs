@@ -1,10 +1,11 @@
-﻿var selection = MenuSelection.ListProblems;
-var prompt = new SelectionPrompt<MenuSelection>().AddChoices(MenuSelection.GetMainMenuSelections());
+﻿var app = new CommandApp();
 
-while (selection != MenuSelection.Exit)
+app.Configure(config =>
 {
-    AnsiConsole.Clear();
-    ConsoleWriter.WriteHeader();
-    selection = AnsiConsole.Prompt(prompt);
-    selection.Execute();
-}
+    config.AddCommand<ConsoleAppCommand>("app");
+    config.AddCommand<BenchmarkCommand>("benchmark");
+    config.AddCommand<ProblemInfoCommand>("problem");
+    config.AddCommand<ProblemListCommand>("list");
+});
+
+await app.RunAsync(args);

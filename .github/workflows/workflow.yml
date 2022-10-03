@@ -55,7 +55,7 @@ jobs:
         id: problems-csharp
         run: |
           dotnet run \
-            --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj \
             --framework $DOTNET_FRAMEWORK \
             --problems
 
@@ -63,10 +63,10 @@ jobs:
         id: benchmark-csharp
         run: |
           dotnet run \
-            --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj \
             --framework $DOTNET_FRAMEWORK \
             --configuration Release \
-            --filter LeetCode.CSharpBenchmarks* \
+            --filter LeetCode.CSharp.Benchmarks* \
             --exporters json \
             --memory
 
@@ -74,10 +74,10 @@ jobs:
         id: benchmark-fsharp
         run: |
           dotnet run \
-            --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.fsproj \
             --framework $DOTNET_FRAMEWORK \
             --configuration Release \
-            --filter LeetCode.FSharpBenchmarks* \
+            --filter LeetCode.FSharp.Benchmarks* \
             --exporters json \
             --memory
 
@@ -86,7 +86,7 @@ jobs:
         with:
           name: C# Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.CSharp.Benchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: false
 
@@ -95,7 +95,7 @@ jobs:
         with:
           name: F# Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.FSharp.Benchmarks-report-full-compressed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           skip-fetch-gh-pages: true
           auto-push: true

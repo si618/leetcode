@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -31,7 +31,7 @@ public sealed partial class Problem
         return DepthFirstSearch(root).IsBalanced;
     }
 
-    [Test]
+    [Fact]
     public void IsBalancedTest()
     {
         var root1 = new TreeNode(new int?[] { 3, 9, 20, null, null, 15, 7 });

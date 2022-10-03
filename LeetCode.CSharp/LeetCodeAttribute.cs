@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp;
 
 [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
 public sealed class LeetCodeAttribute : Attribute

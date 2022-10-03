@@ -1,7 +1,5 @@
 ﻿namespace LeetCode.ConsoleApp;
 
-using System.Text;
-
 public static class ConsoleWriter
 {
     /// <summary>
@@ -58,16 +56,21 @@ public static class ConsoleWriter
         Console.Write(output.ToString());
     }
 
-    public static void WriteHeader()
+    public static void WriteHeader(bool extraLine = false)
     {
         const string header =
 @"    __                __   ______            __
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
-/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
-"; ;
+/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/";
+
         WriteRainbow(header);
+
+        if (extraLine)
+        {
+            Console.WriteLine();
+        }
     }
 
     public static void WriteProblems()

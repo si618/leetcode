@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -25,7 +25,7 @@ public sealed partial class Problem
         return oneStep;
     }
 
-    [Test]
+    [Fact]
     public void ClimbStairsTest()
     {
         ClimbStairs(2).Should().Be(2);

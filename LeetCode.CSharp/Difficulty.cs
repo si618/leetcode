@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp;
 
 /// <summary>LeetCode difficulty</summary>
 [SuppressMessage("ReSharper", "UnusedMember.Global")]

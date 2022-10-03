@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -97,7 +97,7 @@ public sealed partial class Problem
         return islands;
     }
 
-    [Test]
+    [Fact]
     public void NumIslandsTest()
     {
         var ex1 = new[]

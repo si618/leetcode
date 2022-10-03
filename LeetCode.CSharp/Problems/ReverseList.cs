@@ -1,4 +1,4 @@
-namespace LeetCode;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -23,7 +23,7 @@ public sealed partial class Problem
         return previous;
     }
 
-    [Test]
+    [Fact]
     public void ReverseListTest()
     {
         var ex1 = new ListNode(new[] { 1, 2, 3, 4, 5 });

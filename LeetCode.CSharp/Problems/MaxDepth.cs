@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -17,7 +17,7 @@ public sealed partial class Problem
         return Math.Max(MaxDepth(root.left), MaxDepth(root.right)) + 1;
     }
 
-    [Test]
+    [Fact]
     public void MaxDepthTest()
     {
         var root1 = new TreeNode(3,

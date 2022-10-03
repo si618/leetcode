@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -28,7 +28,7 @@ public sealed partial class Problem
         return max;
     }
 
-    [Test]
+    [Fact]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void LengthOfLongestSubstringTest()
     {

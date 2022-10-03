@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public class TreeNode

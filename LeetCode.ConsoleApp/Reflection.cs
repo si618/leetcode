@@ -6,11 +6,7 @@ internal static class Reflection
         typeof(Problem)
             .GetMembers()
             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-            .Select(m =>
-            {
-                var a = m.GetCustomAttribute(typeof(LeetCodeAttribute)) as LeetCodeAttribute;
-                return new ProblemDetail(m.Name, a!.Description, a.Category, a.Difficulty, a.Link);
-            })
+            .Select(GetProblemDetail)
             .FirstOrDefault(p =>
                 p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
                 p.Description.Equals(name, StringComparison.InvariantCultureIgnoreCase));
@@ -19,27 +15,36 @@ internal static class Reflection
         typeof(Problem)
             .GetMembers()
             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-            .Select(m =>
-            {
-                var a = m.GetCustomAttribute(typeof(LeetCodeAttribute)) as LeetCodeAttribute;
-                return new ProblemDetail(m.Name, a!.Description, a.Category, a.Difficulty, a.Link);
-            })
+            .Select(GetProblemDetail)
             .OrderBy(s => s.Category)
             .ThenBy(s => s.Difficulty)
             .ThenBy(s => s.Description)
             .GroupBy(s => s.Category, s => s);
 
     public static IEnumerable<string> GetCSharpBenchmarks() =>
-        GetSharpBenchmarks("LeetCode.CSharpBenchmarks");
+        typeof(CSharp.Benchmarks).GetMethods().Select(m => m.Name);
 
     public static IEnumerable<string> GetFSharpBenchmarks() =>
-        GetSharpBenchmarks("LeetCode.FSharpBenchmarks");
+        typeof(FSharp.Benchmarks).GetMethods().Select(m => m.Name);
 
-    private static IEnumerable<string> GetSharpBenchmarks(string name) =>
-        AppDomain.CurrentDomain.GetAssemblies()
-            .Where(a => !a.IsDynamic)
-            .SelectMany(a => a.GetTypes())
-            .First(t => t.FullName!.Equals(name))
-            .GetMethods()
-            .Select(m => m.Name);
+    private static ProblemDetail GetProblemDetail(MemberInfo memberInfo)
+    {
+        ArgumentNullException.ThrowIfNull(nameof(memberInfo));
+
+        // All problems have a C# implementation and some may also be solved in F#
+        var fSharpType = $"LeetCode.FSharp.Problems.{memberInfo.Name}, LeetCode.FSharp";
+        var language = Type.GetType(fSharpType) is null
+            ? "C#"
+            : "C# F#";
+
+        var attribute = memberInfo.GetCustomAttribute<LeetCodeAttribute>();
+
+        return new ProblemDetail(
+            memberInfo.Name,
+            attribute!.Description,
+            attribute.Category,
+            attribute.Difficulty,
+            language,
+            attribute.Link);
+    }
 }

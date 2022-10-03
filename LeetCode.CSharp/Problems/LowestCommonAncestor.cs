@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -33,7 +33,7 @@ public sealed partial class Problem
         }
     }
 
-    [Test]
+    [Fact]
     public void LowestCommonAncestorTest()
     {
         var root1 = new TreeNode(new int?[] { 6, 2, 8, 0, 4, 7, 9, null, null, 3, 5 });
