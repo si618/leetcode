@@ -1,7 +1,7 @@
-﻿namespace LeetCode.CSharp;
+﻿namespace LeetCode.CSharp.Benchmarks;
 
 [Config(typeof(RuntimeConfig))]
-public partial class Benchmarks
+public partial class Benchmark
 {
     private int Int1 { get; set; }
 

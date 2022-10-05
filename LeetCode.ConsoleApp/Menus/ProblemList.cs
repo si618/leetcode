@@ -34,7 +34,7 @@ internal sealed class ProblemList : MenuSelection
         AnsiConsole.Write(table);
 
         var problem = AnsiConsole.Prompt(prompt);
-        AnsiConsole.Markup($"TODO Show details on problem [green]{problem.Name}[/]");
+        AnsiConsole.Markup($"TODO Show details on problem [blue]{problem.Name}[/]");
         Console.ReadLine();
     }
 

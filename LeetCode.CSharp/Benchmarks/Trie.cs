@@ -1,6 +1,6 @@
-﻿namespace LeetCode.CSharp;
+﻿namespace LeetCode.CSharp.Benchmarks;
 
-public partial class Benchmarks
+public partial class Benchmark
 {
     private readonly Problem.Trie _trie = new();
 

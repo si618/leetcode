@@ -22,10 +22,15 @@ internal static class Reflection
             .GroupBy(s => s.Category, s => s);
 
     public static IEnumerable<string> GetCSharpBenchmarks() =>
-        typeof(CSharp.Benchmarks).GetMethods().Select(m => m.Name);
+        typeof(CSharp.Benchmarks.Benchmark).GetMethods().Select(m => m.Name);
 
     public static IEnumerable<string> GetFSharpBenchmarks() =>
-        typeof(FSharp.Benchmarks).GetMethods().Select(m => m.Name);
+        GetFSharpBenchmarkTypes().Select(m => m.Name);
+
+    public static IEnumerable<Type> GetFSharpBenchmarkTypes() =>
+        typeof(FSharp.ListNode).Assembly.GetTypes()
+            .Where(t => t.Namespace is not null &&
+                t.Namespace.StartsWith("LeetCode.FSharp.Benchmarks"));
 
     private static ProblemDetail GetProblemDetail(MemberInfo memberInfo)
     {

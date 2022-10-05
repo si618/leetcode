@@ -23,12 +23,23 @@ internal sealed class BenchmarkCommand : Command<BenchmarkCommand.Settings>
                 : ValidationResult.Success();
         }
 
-        public Type[] BenchmarkTypes() =>
-            !CSharp && !FSharp
-                ? new[] { typeof(Benchmarks), typeof(FSharp.Benchmarks) }
-                : CSharp
-                    ? new[] { typeof(Benchmarks) }
-                    : new[] { typeof(FSharp.Benchmarks) };
+        public Type[] BenchmarkTypes()
+        {
+            var types = new List<Type>();
+
+            if (CSharp)
+            {
+                types.Add(typeof(CSharp.Benchmarks.Benchmark));
+            }
+
+            if (FSharp)
+            {
+                types.AddRange(Reflection.GetFSharpBenchmarkTypes());
+            }
+
+            return types.ToArray();
+        }
+
         public string WaitingMessage()
         {
             var message = !CSharp && !FSharp
@@ -76,13 +87,26 @@ internal sealed class BenchmarkCommand : Command<BenchmarkCommand.Settings>
 
         foreach (var summary in summaries)
         {
-            AnsiConsole.WriteLine(summary.Title);
+            var table = new Table();
+            var columns = summary.GetColumns();
+            foreach (var column in columns)
+            {
+                table.AddColumn(column.ColumnName);
+            }
+
             foreach (var report in summary.Reports)
             {
+                foreach (var measurement in report.AllMeasurements)
+                {
+                    foreach (var column in columns)
+                    {
+                        // TODO
+                        //var val = column.GetValue(summary, measurement);
+                    }
+                }
             }
-            foreach (var column in summary.GetColumns())
-            {
-            }
+
+            AnsiConsole.Write(table);
         }
 
         return 0;

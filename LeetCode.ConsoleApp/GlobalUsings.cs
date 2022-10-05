@@ -1,9 +1,4 @@
 ﻿global using Ardalis.SmartEnum;
-global using BenchmarkDotNet.Columns;
-global using BenchmarkDotNet.Configs;
-global using BenchmarkDotNet.Diagnosers;
-global using BenchmarkDotNet.Environments;
-global using BenchmarkDotNet.Jobs;
 global using BenchmarkDotNet.Reports;
 global using BenchmarkDotNet.Running;
 global using LeetCode.ConsoleApp.Commands;
