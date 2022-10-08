@@ -20,12 +20,12 @@ module ContainsDuplicate =
 
     [<Fact>]
     let ``When passing ex1 ContainsDuplicate should return true`` () =
-         ContainsDuplicate(ex1) |> should equal true
+        ContainsDuplicate(ex1) |> should equal true
 
     [<Fact>]
     let ``When passing ex2 ContainsDuplicate should return false`` () =
-         ContainsDuplicate(ex2) |> should equal false
+        ContainsDuplicate(ex2) |> should equal false
 
     [<Fact>]
     let ``When passing ex3 ContainsDuplicate should return true`` () =
-         ContainsDuplicate(ex3) |> should equal true
+        ContainsDuplicate(ex3) |> should equal true

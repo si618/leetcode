@@ -6,8 +6,8 @@ open LeetCode.FSharp.Problems
 [<Config(typeof<LeetCode.CSharp.RuntimeConfig>)>]
 type ContainsDuplicate() =
 
+    let array = seq { 1..1_000_000 }
+
     [<Benchmark>]
-    member _.ContainsDuplicate() = [
-        ContainsDuplicate.ContainsDuplicate [| 1; 2; 3; 1 |];
-        ContainsDuplicate.ContainsDuplicate [| 1; 2; 3; 4 |];
-        ContainsDuplicate.ContainsDuplicate [| 1; 1; 1; 3; 3; 4; 3; 2; 4; 2 |] ]
+    member _.ContainsDuplicate() =
+        [ ContainsDuplicate.ContainsDuplicate array ]

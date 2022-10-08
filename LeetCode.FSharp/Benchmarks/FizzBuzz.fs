@@ -7,5 +7,4 @@ open LeetCode.FSharp.Problems
 type FizzBuzz() =
 
     [<Benchmark>]
-    member _.FizzBuzz() = [
-        FizzBuzz.FizzBuzz 1_000 ];
+    member _.FizzBuzz() = [ FizzBuzz.FizzBuzz 1_000 ]

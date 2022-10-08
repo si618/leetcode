@@ -8,22 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Problems\AddTwoNumbers.fs" />
-    <Compile Include="Problems\ContainsDuplicate.fs" />
-    <Compile Include="Problems\FizzBuzz.fs" />
-    <Compile Include="ListNode.fs" />
-    <Compile Include="Benchmarks\ContainsDuplicate.fs" />
-    <Compile Include="Benchmarks\FizzBuzz.fs" />
+    <Compile Include="Problems\AddTwoNumbers.fs"/>
+    <Compile Include="Problems\ContainsDuplicate.fs"/>
+    <Compile Include="Problems\FizzBuzz.fs"/>
+    <Compile Include="ListNode.fs"/>
+    <Compile Include="Benchmarks\ContainsDuplicate.fs"/>
+    <Compile Include="Benchmarks\FizzBuzz.fs"/>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FsUnit.xUnit" Version="5.0.5" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="FsUnit.xUnit" Version="5.0.5"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2"/>
     <PackageReference Include="coverlet.collector" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit" Version="2.4.2"/>
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -31,11 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="6.0.6" />
+    <PackageReference Update="FSharp.Core" Version="6.0.6"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj" />
+    <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj"/>
   </ItemGroup>
 
 </Project>
