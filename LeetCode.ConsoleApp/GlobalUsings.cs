@@ -1,5 +1,4 @@
-﻿global using Ardalis.SmartEnum;
-global using BenchmarkDotNet.Reports;
+﻿global using BenchmarkDotNet.Reports;
 global using BenchmarkDotNet.Running;
 global using LeetCode.ConsoleApp.Commands;
 global using LeetCode.ConsoleApp.Menus;

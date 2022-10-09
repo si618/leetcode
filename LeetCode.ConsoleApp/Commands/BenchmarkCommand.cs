@@ -1,64 +1,10 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-internal sealed class BenchmarkCommand : Command<BenchmarkCommand.Settings>
+using Spectre.Console.Rendering;
+
+internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 {
-    public sealed class Settings : CommandSettings
-    {
-        [Description("Filter by LeetCode.[C|F]Sharp.Benchmarks.<Name> (* wildcards accepted)")]
-        [CommandArgument(0, "[filter]")]
-        public string? Filter{ get; init; }
-
-        [Description("Only run C# benchmarks")]
-        [CommandOption("--csharp")]
-        public bool CSharp { get; init; }
-
-        [Description("Only run F# benchmarks")]
-        [CommandOption("--fsharp")]
-        public bool FSharp { get; init; }
-
-        public override ValidationResult Validate()
-        {
-            return CSharp && FSharp
-                ? ValidationResult.Error("CSharp and FSharp options are mutually exclusive")
-                : ValidationResult.Success();
-        }
-
-        public Type[] BenchmarkTypes()
-        {
-            var types = new List<Type>();
-
-            if (CSharp)
-            {
-                types.Add(typeof(CSharp.Benchmarks.Benchmark));
-            }
-
-            if (FSharp)
-            {
-                types.AddRange(Reflection.GetFSharpBenchmarkTypes());
-            }
-
-            return types.ToArray();
-        }
-
-        public string WaitingMessage()
-        {
-            var message = !CSharp && !FSharp
-                ? "Running C# and F# benchmarks"
-                : CSharp
-                    ? "Running C# benchmarks"
-                    : "Running F# benchmarks";
-
-            if (Filter?.Length > 0)
-            {
-                message += $" matching [blue]{Filter}[/]";
-            }
-
-            return message;
-        }
-
-    }
-
-    public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
+    public override int Execute([NotNull] CommandContext context, [NotNull] BenchmarkSettings settings)
     {
         if (IsDebugRelease)
         {
@@ -68,8 +14,72 @@ internal sealed class BenchmarkCommand : Command<BenchmarkCommand.Settings>
             return 1;
         }
 
-        var args = new[] { "--filter", settings.Filter };
+        var args = BuildArgs(settings);
 
+        var summaries = RunBenchmarks(settings, args);
+
+        var report = BuildReport(summaries);
+
+        AnsiConsole.Write(report);
+
+        return 0;
+    }
+
+    private static bool IsDebugRelease
+    {
+        get
+        {
+#if DEBUG
+            return true;
+#else
+            return false;
+#endif
+        }
+    }
+
+    private static string[] BuildArgs(BenchmarkSettings settings)
+    {
+        var args = new List<string> { "--filter" };
+
+        // No filter means run all benchmarks
+        if (string.IsNullOrEmpty(settings.Filter))
+        {
+            if (settings.CSharp)
+            {
+                args.Add("LeetCode.CSharp*");
+            }
+            else if (settings.FSharp)
+            {
+                args.Add("LeetCode.FSharp*");
+            }
+            else
+            {
+                args.Add("LeetCode*");
+            }
+        }
+        else
+        {
+            if (settings.Filter.Contains('*'))
+            {
+                // User added wildcard
+                args.Add(settings.Filter);
+            }
+            else if (settings.Filter.Contains('.'))
+            {
+                // User added namespace
+                args.Add($"{settings.Filter}*");
+            }
+            else
+            {
+                args.Add($"*{settings.Filter}");
+            }
+        }
+
+        return args.ToArray();
+    }
+
+    private static IEnumerable<Summary> RunBenchmarks(BenchmarkSettings settings, string[] args)
+    {
         ConsoleWriter.WriteHeader(false);
         var consoleOut = Console.Out;
         Console.SetOut(TextWriter.Null);
@@ -85,9 +95,15 @@ internal sealed class BenchmarkCommand : Command<BenchmarkCommand.Settings>
 
         Console.SetOut(consoleOut);
 
+        return summaries;
+    }
+
+    private static IRenderable BuildReport(IEnumerable<Summary> summaries)
+    {
+        var table = new Table();
+
         foreach (var summary in summaries)
         {
-            var table = new Table();
             var columns = summary.GetColumns();
             foreach (var column in columns)
             {
@@ -105,22 +121,8 @@ internal sealed class BenchmarkCommand : Command<BenchmarkCommand.Settings>
                     }
                 }
             }
-
-            AnsiConsole.Write(table);
         }
 
-        return 0;
-    }
-
-    private static bool IsDebugRelease
-    {
-        get
-        {
-#if DEBUG
-            return true;
-#else
-            return false;
-#endif
-        }
+        return table;
     }
 }

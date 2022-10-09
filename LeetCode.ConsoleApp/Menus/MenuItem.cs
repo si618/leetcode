@@ -1,6 +1,10 @@
 ﻿namespace LeetCode.ConsoleApp.Menus;
 
-public record MenuItem(string Name, int Order) : IComparable<MenuItem>
+internal record MenuItem(string Name, int Order)
 {
-    public int CompareTo(MenuItem? other) => Name.Equals(other?.Name) ? 0 : 1;
+    /// <summary>
+    /// Execute the menu item when selected
+    /// </summary>
+    /// <returns>Status code</returns>
+    public virtual int Execute() => 0;
 }
