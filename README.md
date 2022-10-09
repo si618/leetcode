@@ -29,6 +29,20 @@ Problem information and benchmarks can be run from the console application
 ``` bash
 > cd ./LeetCode.ConsoleApp
 > dotnet run
+USAGE:
+    LeetCode.ConsoleApp.dll [OPTIONS] <COMMAND>
+
+OPTIONS:
+    -h, --help       Prints help information
+    -v, --version    Prints version information
+
+COMMANDS:
+    app          Run interactive console application
+    benchmark    Run benchmarks against leetcode problems
+    problem      Show information about a problem
+    list         List information about problems
+
+> dotnet run app
     __                __   ______            __
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
