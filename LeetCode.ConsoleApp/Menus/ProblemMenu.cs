@@ -7,30 +7,32 @@ internal class ProblemMenu : MenuBase
     public ProblemMenu(ProblemDetail problem)
     {
         Problem = problem;
-        MenuItems = new List<MenuItem>
+        MenuItems = new List<Selection>
         {
-            new BenchmarkMenuItem(Problem, 1),
-            new("Exit", 2)
+            new BenchmarkSelection(Problem, 1),
+            new ExitSelection(2)
         };
     }
 
-    public override void Render()
+    public override int Render()
     {
         AnsiConsole.Clear();
-        ConsoleWriter.WriteHeader(extraLine: true);
+        ConsoleWriter.WriteHeader(appendLine: true);
 
         WriteProblemDetail();
 
         var selected = MenuItems.First();
-        var prompt = new SelectionPrompt<MenuItem>()
+        var prompt = new SelectionPrompt<Selection>()
             .AddChoices(GetMenuItems())
             .UseConverter(m => m.Name);
 
-        while (selected.Name != "Exit")
+        var exitCode = 0;
+        while (selected.Name != ExitSelection.Exit)
         {
             selected = AnsiConsole.Prompt(prompt);
-            selected.Execute();
+            exitCode = selected.Execute();
         }
+        return exitCode;
     }
 
     private void WriteProblemDetail()

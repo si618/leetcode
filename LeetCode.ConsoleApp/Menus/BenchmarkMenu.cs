@@ -1,19 +1,32 @@
 ﻿namespace LeetCode.ConsoleApp.Menus;
 
-internal class MainMenu : MenuBase
+internal class BenchmarkMenu : MenuBase
 {
-    public MainMenu()
+    private IEnumerable<ProblemDetail> Problems { get; init; }
+
+    public BenchmarkMenu(ProblemDetail problem)
+        : this(new List<ProblemDetail> { problem })
     {
+    }
+
+    public BenchmarkMenu(IEnumerable<ProblemDetail> problems)
+    {
+        Problems = problems.ToArray();
         MenuItems = new List<Selection>
         {
-            new ProblemListSelection(1),
-            new BenchmarkListSelection(2),
-            new AboutSelection(3),
-            new ExitSelection(4)
+            new BenchmarkLogSelection(2),
+            new ExitSelection(3)
         };
     }
+
     public override int Render()
     {
+        AnsiConsole.Clear();
+        ConsoleWriter.WriteHeader(appendLine: true);
+
+        // TODO Spinner and run benchmarks
+        // TODO Render table of results
+
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()
             .AddChoices(GetMenuItems())
@@ -22,8 +35,6 @@ internal class MainMenu : MenuBase
         var exitCode = 0;
         while (selected.Name != ExitSelection.Exit)
         {
-            AnsiConsole.Clear();
-            ConsoleWriter.WriteHeader(appendLine: true);
             selected = AnsiConsole.Prompt(prompt);
             exitCode = selected.Execute();
         }

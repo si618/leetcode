@@ -2,12 +2,14 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-internal sealed class ProblemListCommand : Command
+internal sealed class ListCommand : Command
 {
     public override int Execute([NotNull] CommandContext context)
     {
-        ConsoleWriter.WriteHeader();
+        ConsoleWriter.WriteHeader(appendLine: false);
+
         WriteProblemList();
+
         return 0;
     }
 

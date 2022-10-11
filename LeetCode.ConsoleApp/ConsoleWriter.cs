@@ -3,15 +3,13 @@
 public static class ConsoleWriter
 {
     /// <summary>
-    /// Output <paramref name="text"/> to console after converting to colourful rainbow.
+    /// Output <paramref name="text"/> to console after converting to a colourful rainbow pattern.
     /// </summary>
     /// <remarks>
     /// Converted with thanks from: https://github.com/andot/lolcat/blob/master/Out-Rainbow.psm1
     /// </remarks>
-    private static void WriteRainbow(string text)
+    private static StringBuilder MakeRainbow(string text, double spread = 3, double frequency = .1)
     {
-        const double spread = 3.0;
-        const double frequency = .1;
         const char esc = (char)27;
 
         var random = new Random();
@@ -53,10 +51,10 @@ public static class ConsoleWriter
             output.AppendLine();
         }
 
-        Console.Write(output.ToString());
+        return output;
     }
 
-    public static void WriteHeader(bool extraLine = false)
+    public static void WriteHeader(bool appendLine = false)
     {
         const string header =
 @"    __                __   ______            __
@@ -65,12 +63,14 @@ public static class ConsoleWriter
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/";
 
-        WriteRainbow(header);
+        var output = MakeRainbow(header);
 
-        if (extraLine)
+        if (appendLine)
         {
-            Console.WriteLine();
+            output.AppendLine();
         }
+
+        Console.Write(output);
     }
 
     public static void WriteProblems()

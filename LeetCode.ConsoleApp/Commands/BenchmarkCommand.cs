@@ -1,23 +1,21 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-using Spectre.Console.Rendering;
-
 internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 {
-    public override int Execute([NotNull] CommandContext context, [NotNull] BenchmarkSettings settings)
+    public override int Execute(
+        [NotNull] CommandContext context,
+        [NotNull] BenchmarkSettings settings)
     {
-        if (IsDebugRelease)
+        if (!IsDebug)
         {
             ConsoleWriter.WriteHeader(true);
             AnsiConsole.MarkupLine("[red]App must be in RELEASE configuration to run benchmarks[/]");
-            Console.ReadLine();
+
             return 1;
         }
 
         var args = BuildArgs(settings);
-
-        var summaries = RunBenchmarks(settings, args);
-
+        var summaries = BuildSummaries(settings, args);
         var report = BuildReport(summaries);
 
         AnsiConsole.Write(report);
@@ -25,7 +23,10 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         return 0;
     }
 
-    private static bool IsDebugRelease
+    internal static IEnumerable<Summary> RunBenchmarks(Type[] types, string[] args) =>
+        BenchmarkSwitcher.FromTypes(types).Run(args);
+
+    private static bool IsDebug
     {
         get
         {
@@ -61,16 +62,17 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         {
             if (settings.Filter.Contains('*'))
             {
-                // User added wildcard
+                // User added wildcard so use whatever they passed
                 args.Add(settings.Filter);
             }
             else if (settings.Filter.Contains('.'))
             {
-                // User added namespace
+                // User added namespace but no wildcard
                 args.Add($"{settings.Filter}*");
             }
             else
             {
+                // No wildcard or namespace, so add wildcard prefix
                 args.Add($"*{settings.Filter}");
             }
         }
@@ -78,7 +80,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         return args.ToArray();
     }
 
-    private static IEnumerable<Summary> RunBenchmarks(BenchmarkSettings settings, string[] args)
+    private static IEnumerable<Summary> BuildSummaries(BenchmarkSettings settings, string[] args)
     {
         ConsoleWriter.WriteHeader(false);
         var consoleOut = Console.Out;
@@ -88,14 +90,28 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
         AnsiConsole.Status()
             .Spinner(Spinner.Known.Dots)
-            .Start(settings.WaitingMessage(), _ =>
-                summaries.AddRange(BenchmarkSwitcher
-                    .FromTypes(settings.BenchmarkTypes())
-                    .Run(args)));
+            .Start(WaitingMessage(settings), _ =>
+                summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
 
         Console.SetOut(consoleOut);
 
         return summaries;
+    }
+
+    private static string WaitingMessage(BenchmarkSettings settings)
+    {
+        var message = !settings.CSharp && !settings.FSharp
+            ? "Running C# and F# benchmarks"
+            : settings.CSharp
+                ? "Running C# benchmarks"
+                : "Running F# benchmarks";
+
+        if (settings.Filter?.Length > 0)
+        {
+            message += $" matching [blue]{settings.Filter}[/]";
+        }
+
+        return message;
     }
 
     private static IRenderable BuildReport(IEnumerable<Summary> summaries)

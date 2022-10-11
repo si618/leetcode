@@ -14,23 +14,24 @@ public sealed class BenchmarkSettings : CommandSettings
     [CommandOption("--fsharp")]
     public bool FSharp { get; init; }
 
-    public override ValidationResult Validate()
-    {
-        return CSharp && FSharp
+    public override ValidationResult Validate() =>
+        CSharp && FSharp
             ? ValidationResult.Error("CSharp and FSharp options are mutually exclusive")
-            : ValidationResult.Success();
-    }
+            : string.IsNullOrEmpty(Filter) || BenchmarkFoundInFilter()
+                ? ValidationResult.Success()
+                : ValidationResult.Error($"Benchmark not found for Filter '{Filter}'");
 
     public Type[] BenchmarkTypes()
     {
         var types = new List<Type>();
+        var all = !CSharp && !FSharp;
 
-        if (CSharp)
+        if (all || CSharp)
         {
             types.Add(typeof(CSharp.Benchmarks.Benchmark));
         }
 
-        if (FSharp)
+        if (all || FSharp)
         {
             types.AddRange(Reflection.GetFSharpBenchmarkTypes());
         }
@@ -38,19 +39,21 @@ public sealed class BenchmarkSettings : CommandSettings
         return types.ToArray();
     }
 
-    public string WaitingMessage()
+    private bool BenchmarkFoundInFilter()
     {
-        var message = !CSharp && !FSharp
-            ? "Running C# and F# benchmarks"
-            : CSharp
-                ? "Running C# benchmarks"
-                : "Running F# benchmarks";
+        var benchmarks = new List<string>();
+        var all = !CSharp && !FSharp;
 
-        if (Filter?.Length > 0)
+        if (all || CSharp)
         {
-            message += $" matching [blue]{Filter}[/]";
+            benchmarks.AddRange(Reflection.GetCSharpBenchmarks());
         }
 
-        return message;
+        if (all || FSharp)
+        {
+            benchmarks.AddRange(Reflection.GetFSharpBenchmarks());
+        }
+
+        return benchmarks.Contains(Filter, StringComparer.InvariantCultureIgnoreCase);
     }
 }

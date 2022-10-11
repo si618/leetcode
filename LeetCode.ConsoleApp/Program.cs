@@ -2,14 +2,14 @@
 
 app.Configure(config =>
 {
-    config.AddCommand<ConsoleAppCommand>("app")
+    config.AddCommand<AppCommand>("app")
         .WithDescription("Run interactive console application");
     config.AddCommand<BenchmarkCommand>("benchmark")
         .WithDescription("Run benchmarks against leetcode problems");
-    config.AddCommand<ProblemInfoCommand>("problem")
+    config.AddCommand<InfoCommand>("info")
         .WithDescription("Show information about a problem");
-    config.AddCommand<ProblemListCommand>("list")
+    config.AddCommand<ListCommand>("list")
         .WithDescription("List information about problems");
 });
 
-await app.RunAsync(args);
+return await app.RunAsync(args);

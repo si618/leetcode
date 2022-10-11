@@ -6,7 +6,4 @@ public record ProblemDetail(
     Category Category,
     Difficulty Difficulty,
     string Language,
-    Uri? Link) : IComparable<ProblemDetail>
-{
-    public int CompareTo(ProblemDetail? other) => Name.Equals(other?.Name) ? 0 : 1;
-}
+    Uri? Link);

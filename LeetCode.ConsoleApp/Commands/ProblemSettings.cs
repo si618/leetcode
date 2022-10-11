@@ -2,16 +2,16 @@
 
 public sealed class ProblemSettings : CommandSettings
 {
-    public ProblemDetail? Problem { get; }
+    [Description("Name of LeetCode problem")]
+    [CommandArgument(0, "[name]")]
+    public string Name { get; init; } = string.Empty;
 
-    public override ValidationResult Validate()
-    {
-        if (Problem is null)
-        {
-            return ValidationResult.Error("No problem set");
-        }
-        return Reflection.GetProblem(Problem.Name) is null
-            ? ValidationResult.Error($"Problem '{Problem.Name}' not found")
-            : ValidationResult.Success();
-    }
+    public ProblemDetail Problem => Reflection.GetProblem(Name)!;
+
+    public override ValidationResult Validate() =>
+        string.IsNullOrWhiteSpace(Name)
+            ? ValidationResult.Error("No problem set")
+            : Reflection.GetProblem(Name) is null
+                ? ValidationResult.Error($"Problem '{Name}' not found")
+                : ValidationResult.Success();
 }

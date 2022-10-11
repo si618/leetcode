@@ -1,8 +1,8 @@
-﻿namespace LeetCode.ConsoleApp.Menus;
+﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record AboutMenuItem : MenuItem
+internal record AboutSelection : Selection
 {
-    internal AboutMenuItem(int order) : base("About", order)
+    internal AboutSelection(int order) : base("About", order)
     {
     }
 

@@ -1,10 +1,10 @@
 ﻿namespace LeetCode.ConsoleApp.Menus;
 
-internal abstract class MenuBase : IMenu
+internal abstract class MenuBase
 {
-    public IEnumerable<MenuItem> MenuItems { get; protected init; } = Array.Empty<MenuItem>();
+    public IEnumerable<Selection> MenuItems { get; protected init; } = Array.Empty<Selection>();
 
-    public abstract void Render();
+    public IEnumerable<Selection> GetMenuItems() => MenuItems.OrderBy(m => m.Order);
 
-    public IEnumerable<MenuItem> GetMenuItems() => MenuItems.OrderBy(menuItem => menuItem.Order);
+    public abstract int Render();
 }

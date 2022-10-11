@@ -1,15 +1,15 @@
-﻿namespace LeetCode.ConsoleApp.Menus;
+﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record ProblemListMenuItem : MenuItem
+internal record ProblemListSelection : Selection
 {
-    internal ProblemListMenuItem(int order) : base("List Problems", order)
+    internal ProblemListSelection(int order) : base("List Problems", order)
     {
     }
 
     public override int Execute()
     {
         AnsiConsole.Clear();
-        ConsoleWriter.WriteHeader(extraLine: true);
+        ConsoleWriter.WriteHeader(appendLine: false);
 
         var problems = Reflection
             .GetProblemsByCategory()
