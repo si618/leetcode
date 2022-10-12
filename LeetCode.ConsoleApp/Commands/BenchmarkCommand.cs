@@ -6,12 +6,8 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         [NotNull] CommandContext context,
         [NotNull] BenchmarkSettings settings)
     {
-        if (IsDebug)
+        if (IsDebug())
         {
-            ConsoleWriter.WriteHeader(true);
-            AnsiConsole.MarkupLine(
-                "[red]Error:[/] App must be in [yellow]RELEASE[/] configuration to run benchmarks");
-
             return 1;
         }
 
@@ -27,16 +23,26 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
     internal static IEnumerable<Summary> RunBenchmarks(Type[] types, string[] args) =>
         BenchmarkSwitcher.FromTypes(types).Run(args);
 
-    private static bool IsDebug
+    internal static bool IsDebug()
     {
-        get
-        {
+        var debug = false;
+
 #if DEBUG
-            return true;
+        debug = true;
 #else
-            return false;
+        debug = false;
 #endif
+
+        if (!debug)
+        {
+            return false;
         }
+
+        ConsoleWriter.WriteHeader(true);
+        AnsiConsole.MarkupLine(
+        "[red]Error:[/] App must be in [yellow]RELEASE[/] configuration to run benchmarks");
+
+        return true;
     }
 
     private static string[] BuildArgs(BenchmarkSettings settings)
