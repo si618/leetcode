@@ -2,6 +2,7 @@
 
 app.Configure(config =>
 {
+    config.SetApplicationName("LeetCode.exe");
     config.AddCommand<AppCommand>("app")
         .WithDescription("Run interactive console application");
     config.AddCommand<BenchmarkCommand>("benchmark")
@@ -10,6 +11,8 @@ app.Configure(config =>
         .WithDescription("Show information about a problem");
     config.AddCommand<ListCommand>("list")
         .WithDescription("List information about problems");
+    config.AddExample(new []{ "benchmark", "LRUCache", "--csharp" });
+    config.AddExample(new []{ "info", "MergeTwoLists" });
 });
 
 return await app.RunAsync(args);
