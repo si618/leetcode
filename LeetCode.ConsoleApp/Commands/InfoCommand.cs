@@ -6,7 +6,7 @@ public sealed class InfoCommand : Command<ProblemSettings>
         [NotNull] CommandContext context,
         [NotNull] ProblemSettings settings)
     {
-        ConsoleWriter.WriteHeader(appendLine: false);
+        ConsoleWriter.WriteHeader(appendLine: true);
 
         WriteProblemDetails(settings);
 

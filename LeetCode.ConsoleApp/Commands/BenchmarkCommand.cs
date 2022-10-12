@@ -6,10 +6,11 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         [NotNull] CommandContext context,
         [NotNull] BenchmarkSettings settings)
     {
-        if (!IsDebug)
+        if (IsDebug)
         {
             ConsoleWriter.WriteHeader(true);
-            AnsiConsole.MarkupLine("[red]App must be in RELEASE configuration to run benchmarks[/]");
+            AnsiConsole.MarkupLine(
+                "[red]Error:[/] App must be in [yellow]RELEASE[/] configuration to run benchmarks");
 
             return 1;
         }
@@ -42,7 +43,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
     {
         var args = new List<string> { "--filter" };
 
-        // No filter means run all benchmarks
+        // No filter means run all benchmarks for specified options
         if (string.IsNullOrEmpty(settings.Filter))
         {
             if (settings.CSharp)
@@ -62,17 +63,17 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         {
             if (settings.Filter.Contains('*'))
             {
-                // User added wildcard so use whatever they passed
+                // User added wildcard so use whatever was passed
                 args.Add(settings.Filter);
             }
             else if (settings.Filter.Contains('.'))
             {
-                // User added namespace but no wildcard
+                // User added namespace but no wildcard so add suffix
                 args.Add($"{settings.Filter}*");
             }
             else
             {
-                // No wildcard or namespace, so add wildcard prefix
+                // No wildcard or namespace so add wildcard prefix
                 args.Add($"*{settings.Filter}");
             }
         }
@@ -82,15 +83,21 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
     private static IEnumerable<Summary> BuildSummaries(BenchmarkSettings settings, string[] args)
     {
+        if (args.Length != 2)
+        {
+            throw new ArgumentOutOfRangeException(nameof(args));
+        }
+
         ConsoleWriter.WriteHeader(false);
         var consoleOut = Console.Out;
         Console.SetOut(TextWriter.Null);
 
+        var parsedFilter = args[1];
         var summaries = new List<Summary>();
 
         AnsiConsole.Status()
             .Spinner(Spinner.Known.Dots)
-            .Start(WaitingMessage(settings), _ =>
+            .Start(WaitingMessage(settings, parsedFilter), _ =>
                 summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
 
         Console.SetOut(consoleOut);
@@ -98,7 +105,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         return summaries;
     }
 
-    private static string WaitingMessage(BenchmarkSettings settings)
+    private static string WaitingMessage(BenchmarkSettings settings, string parsedFilter)
     {
         var message = !settings.CSharp && !settings.FSharp
             ? "Running C# and F# benchmarks"
@@ -108,7 +115,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
         if (settings.Filter?.Length > 0)
         {
-            message += $" matching [blue]{settings.Filter}[/]";
+            message += $" matching [blue]{parsedFilter}[/]";
         }
 
         return message;

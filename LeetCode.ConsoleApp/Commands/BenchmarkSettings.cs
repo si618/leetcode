@@ -16,10 +16,10 @@ public sealed class BenchmarkSettings : CommandSettings
 
     public override ValidationResult Validate() =>
         CSharp && FSharp
-            ? ValidationResult.Error("CSharp and FSharp options are mutually exclusive")
-            : string.IsNullOrEmpty(Filter) || BenchmarkFoundInFilter()
+            ? ValidationResult.Error("--csharp and --fsharp options are mutually exclusive")
+            : string.IsNullOrEmpty(Filter) || BenchmarkFound()
                 ? ValidationResult.Success()
-                : ValidationResult.Error($"Benchmark not found for Filter '{Filter}'");
+                : ValidationResult.Error($"Benchmark not found for '{Filter}'");
 
     public Type[] BenchmarkTypes()
     {
@@ -39,7 +39,7 @@ public sealed class BenchmarkSettings : CommandSettings
         return types.ToArray();
     }
 
-    private bool BenchmarkFoundInFilter()
+    private bool BenchmarkFound()
     {
         var benchmarks = new List<string>();
         var all = !CSharp && !FSharp;
