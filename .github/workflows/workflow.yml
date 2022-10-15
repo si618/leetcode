@@ -76,7 +76,6 @@ jobs:
         with:
           name: Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.*-report-full-compressed.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.Benchmarks.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          skip-fetch-gh-pages: true
           auto-push: true

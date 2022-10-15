@@ -6,7 +6,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         [NotNull] CommandContext context,
         [NotNull] BenchmarkSettings settings)
     {
-        if (IsDebug())
+        if (IsDebugConfiguration())
         {
             return 1;
         }
@@ -23,7 +23,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
     internal static IEnumerable<Summary> RunBenchmarks(Type[] types, string[] args) =>
         BenchmarkSwitcher.FromTypes(types).Run(args);
 
-    internal static bool IsDebug()
+    internal static bool IsDebugConfiguration()
     {
         var debug = false;
 

@@ -12,7 +12,7 @@ app.Configure(config =>
     config.AddCommand<ListCommand>("list")
         .WithDescription("List information about problems");
     config.AddCommand<WorkflowCommand>("workflow")
-        .WithDescription("Run benchmarks for CI using GitHub workflow");
+        .WithDescription("Run benchmarks for GitHub workflow");
     config.AddExample(new []{ "benchmark", "LRUCache", "--csharp" });
     config.AddExample(new []{ "info", "MergeTwoLists" });
 });

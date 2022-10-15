@@ -1,21 +1,20 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-internal sealed class WorkflowCommand : Command<WorkflowSettings>
+using System.Text.Json;
+using System.Text.Json.Nodes;
+
+internal sealed class WorkflowCommand : Command
 {
-    public override int Execute(
-        [NotNull] CommandContext context,
-        [NotNull] WorkflowSettings settings)
+    public override int Execute([NotNull] CommandContext context)
     {
-        if (BenchmarkCommand.IsDebug())
+        if (BenchmarkCommand.IsDebugConfiguration())
         {
             return 1;
         }
 
         ConsoleWriter.WriteHeader(appendLine: true);
-
-        BenchmarkCommand.RunBenchmarks(BuildTypes(), BuildArgs(settings));
-
-        // TODO Combine benchmark results into single JSON for github-action-benchmark
+        BenchmarkCommand.RunBenchmarks(BuildTypes(), BuildArgs());
+        CombineBenchmarkResults();
 
         return 0;
     }
@@ -31,27 +30,55 @@ internal sealed class WorkflowCommand : Command<WorkflowSettings>
         return types.ToArray();
     }
 
-    private static string[] BuildArgs(WorkflowSettings settings)
-    {
-        var args = new List<string>();
-
-        if (!string.IsNullOrEmpty(settings.Filter))
+    private static string[] BuildArgs() =>
+        new []
         {
-            args.Add("--filter");
-            args.Add(settings.Filter);
-        }
-
-        if (!string.IsNullOrEmpty(settings.Exporters))
-        {
-            args.Add("--exporters");
-            args.Add(settings.Exporters);
+            "--filter", "LeetCode.*",
+            "--exporters", "json",
+            "--memory"
         };
 
-        if (settings.Memory)
+    private static void CombineBenchmarkResults()
+    {
+        const string resultsDir = "./BenchmarkDotNet.Artifacts/results";
+        const string resultsFile = "LeetCode.Benchmarks";
+        const string searchPattern = "LeetCode.*.json";
+        var resultsPath = Path.Combine(resultsDir, resultsFile + ".json");
+
+        if (!Directory.Exists(resultsDir))
         {
-            args.Add("--memory");
+            throw new DirectoryNotFoundException($"Directory not found '{resultsDir}'");
         }
 
-        return args.ToArray();
+        if (File.Exists(resultsPath))
+        {
+            File.Delete(resultsPath);
+        }
+
+        var reports = Directory
+            .GetFiles(resultsDir, searchPattern, SearchOption.TopDirectoryOnly)
+            .ToArray();
+        if (!reports.Any())
+        {
+            throw new FileNotFoundException($"Reports not found '{searchPattern}'");
+        }
+
+        var combinedReport = JsonNode.Parse(File.ReadAllText(reports.First()))!;
+        var title = combinedReport["Title"]!;
+        var benchmarks = combinedReport["Benchmarks"]!.AsArray();
+        // Rename title whilst keeping original timestamp
+        combinedReport["Title"] = $"{resultsFile}{title.GetValue<string>()[^16..]}";
+
+        foreach (var report in reports.Skip(1))
+        {
+            var array = JsonNode.Parse(File.ReadAllText(report))!["Benchmarks"]!.AsArray();
+            foreach (var benchmark in array)
+            {
+                // Double parse avoids "The node already has a parent" exception
+                benchmarks.Add(JsonNode.Parse(benchmark!.ToJsonString())!);
+            }
+        }
+
+        File.WriteAllText(resultsPath, combinedReport.ToString());
     }
 }
