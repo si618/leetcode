@@ -7,12 +7,13 @@ internal sealed class WorkflowCommand : Command
 {
     public override int Execute([NotNull] CommandContext context)
     {
+        ConsoleWriter.WriteHeader(appendLine: true);
+
         if (BenchmarkCommand.IsDebugConfiguration())
         {
             return 1;
         }
 
-        ConsoleWriter.WriteHeader(appendLine: true);
         BenchmarkCommand.RunBenchmarks(BuildTypes(), BuildArgs());
         CombineBenchmarkResults();
 

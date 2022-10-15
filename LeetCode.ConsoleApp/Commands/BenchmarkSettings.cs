@@ -14,6 +14,10 @@ public sealed class BenchmarkSettings : CommandSettings
     [CommandOption("--fsharp")]
     public bool FSharp { get; init; }
 
+    [Description("Allow debug configuration to run - use only for development")]
+    [CommandOption("--debug")]
+    public bool Debug { get; init; }
+
     public override ValidationResult Validate() =>
         CSharp && FSharp
             ? ValidationResult.Error("--csharp and --fsharp options are mutually exclusive")

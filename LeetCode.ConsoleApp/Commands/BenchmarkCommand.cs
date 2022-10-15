@@ -6,7 +6,9 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         [NotNull] CommandContext context,
         [NotNull] BenchmarkSettings settings)
     {
-        if (IsDebugConfiguration())
+        ConsoleWriter.WriteHeader(appendLine: true);
+
+        if (IsDebugConfiguration(settings.Debug))
         {
             return 1;
         }
@@ -23,7 +25,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
     internal static IEnumerable<Summary> RunBenchmarks(Type[] types, string[] args) =>
         BenchmarkSwitcher.FromTypes(types).Run(args);
 
-    internal static bool IsDebugConfiguration()
+    internal static bool IsDebugConfiguration(bool warnRatherThanFail = false)
     {
         var debug = false;
 
@@ -38,7 +40,13 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
             return false;
         }
 
-        ConsoleWriter.WriteHeader(true);
+        if (warnRatherThanFail)
+        {
+            AnsiConsole.MarkupLine(
+            "[orange1]Warning:[/] App should be in [yellow]RELEASE[/] configuration to run benchmarks");
+            return false;
+        }
+
         AnsiConsole.MarkupLine(
         "[red]Error:[/] App must be in [yellow]RELEASE[/] configuration to run benchmarks");
 
@@ -94,19 +102,15 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
             throw new ArgumentOutOfRangeException(nameof(args));
         }
 
-        ConsoleWriter.WriteHeader(false);
-        var consoleOut = Console.Out;
         Console.SetOut(TextWriter.Null);
 
-        var parsedFilter = args[1];
         var summaries = new List<Summary>();
-
         AnsiConsole.Status()
             .Spinner(Spinner.Known.Dots)
-            .Start(WaitingMessage(settings, parsedFilter), _ =>
+            .Start(WaitingMessage(settings, parsedFilter: args[1]), _ =>
                 summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
 
-        Console.SetOut(consoleOut);
+        Console.SetOut(Console.Out);
 
         return summaries;
     }
@@ -129,29 +133,9 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
     private static IRenderable BuildReport(IEnumerable<Summary> summaries)
     {
+        AnsiConsole.MarkupLine($"[blue]TODO[/] Write output for {summaries.Count()} summaries");
+
         var table = new Table();
-
-        foreach (var summary in summaries)
-        {
-            var columns = summary.GetColumns();
-            foreach (var column in columns)
-            {
-                table.AddColumn(column.ColumnName);
-            }
-
-            foreach (var report in summary.Reports)
-            {
-                foreach (var measurement in report.AllMeasurements)
-                {
-                    foreach (var column in columns)
-                    {
-                        // TODO
-                        //var val = column.GetValue(summary, measurement);
-                    }
-                }
-            }
-        }
-
         return table;
     }
 }
