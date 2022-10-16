@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp;
 
-public static class ConsoleWriter
+internal static class ConsoleWriter
 {
     /// <summary>
     /// Output <paramref name="text"/> to console after converting to a colourful rainbow pattern.
@@ -71,56 +71,5 @@ public static class ConsoleWriter
         }
 
         Console.Write(output);
-    }
-
-    public static void WriteProblems()
-    {
-        AnsiConsole.WriteLine("Solved C# Problems");
-
-        var countOfProblems = 0;
-        var nl = Environment.NewLine;
-        var benchmarks = Reflection.GetCSharpBenchmarks().ToArray();
-
-        foreach (var category in Reflection.GetProblemsByCategory())
-        {
-            AnsiConsole.WriteLine($"{nl}{category.Key.Description()}{nl}");
-
-            foreach (var problem in category.ToArray())
-            {
-                var missing = benchmarks.Contains(problem.Name)
-                    ? string.Empty
-                    : " * Missing Benchmark *";
-                AnsiConsole.WriteLine($"  [{problem.Difficulty}] {problem.Description}");
-            }
-
-            countOfProblems += category.Count();
-        }
-
-        AnsiConsole.WriteLine($"{nl}Total Problems: {countOfProblems}{nl}");
-    }
-
-    public static void WriteProblemDetail(string name)
-    {
-        var problem = Reflection.GetProblem(name);
-        if (problem is null)
-        {
-            AnsiConsole.WriteLine($"Unknown '{name}' Problem");
-            return;
-        }
-
-        AnsiConsole.WriteLine($"Benchmark:    {problem.Name}");
-
-        if (problem.Name != problem.Description)
-        {
-            AnsiConsole.WriteLine($"Description:  {problem.Description}");
-        }
-
-        AnsiConsole.WriteLine($"Difficulty:   {problem.Difficulty}");
-        AnsiConsole.WriteLine($"Category:     {problem.Category.Description()}");
-
-        if (problem.Link is not null)
-        {
-            AnsiConsole.WriteLine($"NeetCode:     {problem.Link}");
-        }
     }
 }
