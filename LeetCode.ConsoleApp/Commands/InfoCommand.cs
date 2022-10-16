@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-public sealed class InfoCommand : Command<ProblemSettings>
+internal sealed class InfoCommand : Command<ProblemSettings>
 {
     public override int Execute(
         [NotNull] CommandContext context,

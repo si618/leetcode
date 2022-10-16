@@ -4,7 +4,6 @@ public static class Extensions
 {
     public static string Description(this Category category) => category switch
     {
-        Category.NotInNeetCode => "Not in NeetCode",
         Category.ArraysAndHashing => "Arrays & Hashing",
         Category.TwoPointers => "Two Pointers",
         Category.SlidingWindow => "Sliding Window",
@@ -23,6 +22,7 @@ public static class Extensions
         Category.Intervals => "Intervals",
         Category.MathAndGeometry => "Maths & Geometry",
         Category.BitManipulation => "Bit Manipulation",
+        Category.NotInNeetCode => "Not in NeetCode",
         _ => throw new ArgumentOutOfRangeException(
             nameof(category),
             category,

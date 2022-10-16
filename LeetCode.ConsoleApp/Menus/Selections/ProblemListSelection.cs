@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record ProblemListSelection : Selection
+internal sealed record ProblemListSelection : Selection
 {
     internal ProblemListSelection(int order) : base("List Problems", order)
     {

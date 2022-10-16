@@ -13,8 +13,8 @@ app.Configure(config =>
         .WithDescription("List information about problems");
     config.AddCommand<WorkflowCommand>("workflow")
         .WithDescription("Run benchmarks for GitHub workflow");
-    config.AddExample(new []{ "benchmark", "LRUCache", "--csharp" });
-    config.AddExample(new []{ "info", "MergeTwoLists" });
+    config.AddExample(new[] { "benchmark", "LRUCache", "--csharp" });
+    config.AddExample(new[] { "info", "MergeTwoLists" });
 });
 
 return await app.RunAsync(args);

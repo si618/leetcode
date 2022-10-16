@@ -1,8 +1,5 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-using System.Text.Json;
-using System.Text.Json.Nodes;
-
 internal sealed class WorkflowCommand : Command
 {
     public override int Execute([NotNull] CommandContext context)
@@ -32,18 +29,18 @@ internal sealed class WorkflowCommand : Command
     }
 
     private static string[] BuildArgs() =>
-        new []
+        new[]
         {
             "--filter", "LeetCode.*",
             "--exporters", "json",
             "--memory"
         };
 
-    private static void CombineBenchmarkResults()
+    private static void CombineBenchmarkResults(
+        string resultsDir = "./BenchmarkDotNet.Artifacts/results",
+        string resultsFile = "LeetCode.Benchmarks",
+        string searchPattern = "LeetCode.*.json")
     {
-        const string resultsDir = "./BenchmarkDotNet.Artifacts/results";
-        const string resultsFile = "LeetCode.Benchmarks";
-        const string searchPattern = "LeetCode.*.json";
         var resultsPath = Path.Combine(resultsDir, resultsFile + ".json");
 
         if (!Directory.Exists(resultsDir))

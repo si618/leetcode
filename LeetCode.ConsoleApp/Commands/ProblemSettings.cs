@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-public sealed class ProblemSettings : CommandSettings
+internal sealed class ProblemSettings : CommandSettings
 {
     [Description("Name of LeetCode problem")]
     [CommandArgument(0, "[name]")]

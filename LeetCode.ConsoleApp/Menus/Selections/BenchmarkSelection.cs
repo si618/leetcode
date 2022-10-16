@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record BenchmarkSelection : Selection
+internal sealed record BenchmarkSelection : Selection
 {
     private ProblemDetail Problem { get; }
 

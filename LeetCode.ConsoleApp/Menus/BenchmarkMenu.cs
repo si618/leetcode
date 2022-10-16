@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus;
 
-internal class BenchmarkMenu : MenuBase
+internal sealed class BenchmarkMenu : MenuBase
 {
     private IEnumerable<ProblemDetail> Problems { get; init; }
 

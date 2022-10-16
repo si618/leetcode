@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus;
 
-internal class MainMenu : MenuBase
+internal sealed class MainMenu : MenuBase
 {
     public MainMenu()
     {

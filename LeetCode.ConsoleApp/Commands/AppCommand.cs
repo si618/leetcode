@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-public sealed class AppCommand : Command
+internal sealed class AppCommand : Command
 {
     public override int Execute(CommandContext context)
     {

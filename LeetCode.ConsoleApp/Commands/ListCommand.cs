@@ -1,7 +1,5 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-using System.Diagnostics.CodeAnalysis;
-
 internal sealed class ListCommand : Command
 {
     public override int Execute([NotNull] CommandContext context)

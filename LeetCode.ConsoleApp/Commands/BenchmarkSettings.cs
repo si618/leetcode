@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Commands;
 
-public sealed class BenchmarkSettings : CommandSettings
+internal sealed class BenchmarkSettings : CommandSettings
 {
     [Description("Filter by LeetCode.[C|F]Sharp.Benchmarks.<Name> (* wildcards accepted)")]
     [CommandArgument(0, "[filter]")]

@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record BenchmarkListSelection : Selection
+internal sealed record BenchmarkListSelection : Selection
 {
     internal BenchmarkListSelection(int order) : base("Run Benchmarks", order)
     {

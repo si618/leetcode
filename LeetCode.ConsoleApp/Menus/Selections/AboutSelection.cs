@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record AboutSelection : Selection
+internal sealed record AboutSelection : Selection
 {
     internal AboutSelection(int order) : base("About", order)
     {

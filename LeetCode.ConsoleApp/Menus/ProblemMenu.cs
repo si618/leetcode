@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus;
 
-internal class ProblemMenu : MenuBase
+internal sealed class ProblemMenu : MenuBase
 {
     private ProblemDetail Problem { get; init; }
 

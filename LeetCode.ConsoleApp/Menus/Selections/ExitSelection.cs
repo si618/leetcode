@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp.Menus.Selections;
 
-internal record ExitSelection : Selection
+internal sealed record ExitSelection : Selection
 {
     public const string Exit = "Exit";
 
