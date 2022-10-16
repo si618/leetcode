@@ -15,7 +15,8 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
         var args = BuildArgs(settings);
         var summaries = BuildSummaries(settings, args);
-        var report = BuildReport(summaries);
+        var builder = new SpectreReportBuilder(summaries);
+        var report = builder.Build();
 
         AnsiConsole.Write(report);
 
@@ -129,13 +130,5 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         }
 
         return message;
-    }
-
-    private static IRenderable BuildReport(IEnumerable<Summary> summaries)
-    {
-        AnsiConsole.MarkupLine($"[blue]TODO[/] Write output for {summaries.Count()} summaries");
-
-        var table = new Table();
-        return table;
     }
 }
