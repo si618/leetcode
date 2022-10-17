@@ -93,7 +93,10 @@ internal sealed class SpectreReportBuilder
                 }
 
                 var index = headers.IndexOf(column.Header);
-                columns[index] = $"{colour}{line[columnIndex]}[/]";
+                if (index > 0)
+                {
+                    columns[index] = $"{colour}{line[columnIndex]}[/]";
+                }
             }
 
             table.AddRow(columns.ToArray());
