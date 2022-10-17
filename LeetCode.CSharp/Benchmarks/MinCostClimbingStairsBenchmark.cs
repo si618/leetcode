@@ -11,10 +11,7 @@ public class MinCostClimbingStairsBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int MinCostClimbingStairs()
-    {
-        return Problem.MinCostClimbingStairs(IntArray1);
-    }
+    public int MinCostClimbingStairs() => Problem.MinCostClimbingStairs(IntArray1);
 
     [GlobalCleanup(Target = nameof(MinCostClimbingStairs))]
     public void MinCostClimbingStairsCleanup()

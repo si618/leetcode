@@ -9,10 +9,7 @@ public class MaxProfitBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int MaxProfit()
-    {
-        return Problem.MaxProfit(IntArray1);
-    }
+    public int MaxProfit() => Problem.MaxProfit(IntArray1);
 
     [GlobalCleanup(Target = nameof(MaxProfit))]
     public void MaxProfitCleanup()

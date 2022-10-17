@@ -11,10 +11,7 @@ public class TwoSumSetupBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int[] TwoSum()
-    {
-        return Problem.TwoSum(IntArray1, Int1);
-    }
+    public int[] TwoSum() => Problem.TwoSum(IntArray1, Int1);
 
     [GlobalCleanup(Target = nameof(TwoSum))]
     public void TwoSumCleanup()

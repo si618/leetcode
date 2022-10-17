@@ -10,10 +10,7 @@ public class MaxDepthBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int MaxDepth()
-    {
-        return Problem.MaxDepth(TreeNode1);
-    }
+    public int MaxDepth() => Problem.MaxDepth(TreeNode1);
 
     [GlobalCleanup(Target = nameof(MaxDepth))]
     public void MaxDepthCleanup()

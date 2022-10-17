@@ -3,8 +3,5 @@
 public class NumberOfStepsBenchmark : Benchmark
 {
     [Benchmark]
-    public int NumberOfSteps()
-    {
-        return Problem.NumberOfSteps(1_000_000_000);
-    }
+    public int NumberOfSteps() => Problem.NumberOfSteps(1_000_000_000);
 }

@@ -15,10 +15,8 @@ public class LowestCommonAncestorBenchmark : Benchmark
     }
 
     [Benchmark]
-    public TreeNode LowestCommonAncestor()
-    {
-        return Problem.LowestCommonAncestor(TreeNode1, TreeNode1, TreeNode2);
-    }
+    public TreeNode LowestCommonAncestor() =>
+        Problem.LowestCommonAncestor(TreeNode1, TreeNode1, TreeNode2);
 
     [GlobalCleanup(Target = nameof(LowestCommonAncestor))]
     public void LowestCommonAncestorCleanup()

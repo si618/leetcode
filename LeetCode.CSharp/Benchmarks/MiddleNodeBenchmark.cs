@@ -9,10 +9,7 @@ public class MiddleNodeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public ListNode MiddleNode()
-    {
-        return Problem.MiddleNode(ListNode1);
-    }
+    public ListNode MiddleNode() => Problem.MiddleNode(ListNode1);
 
     [GlobalCleanup(Target = nameof(MiddleNode))]
     public void MiddleNodeCleanup()

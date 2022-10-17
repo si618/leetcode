@@ -10,10 +10,7 @@ public class RansomNoteBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool RansomNote()
-    {
-        return Problem.RansomNote(String1, String2);
-    }
+    public bool RansomNote() => Problem.RansomNote(String1, String2);
 
     [GlobalCleanup(Target = nameof(RansomNote))]
     public void RansomNoteCleanup()

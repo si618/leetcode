@@ -14,10 +14,7 @@ public class AddTwoNumbersBenchmark : Benchmark
     }
 
     [Benchmark]
-    public ListNode AddTwoNumbers()
-    {
-        return Problem.AddTwoNumbers(ListNode1, ListNode2);
-    }
+    public ListNode AddTwoNumbers() => Problem.AddTwoNumbers(ListNode1, ListNode2);
 
     [GlobalCleanup(Target = nameof(AddTwoNumbers))]
     public void AddTwoNumbersCleanup()

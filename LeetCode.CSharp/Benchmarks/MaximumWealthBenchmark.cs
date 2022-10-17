@@ -14,10 +14,7 @@ public class MaximumWealthBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int MaximumWealth()
-    {
-        return Problem.MaximumWealth(IntArrayMulti);
-    }
+    public int MaximumWealth() => Problem.MaximumWealth(IntArrayMulti);
 
     [GlobalCleanup(Target = nameof(MaximumWealth))]
     public void MaximumWealthCleanup()

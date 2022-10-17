@@ -17,10 +17,7 @@ public class ValidParenthesesBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool ValidParentheses()
-    {
-        return Problem.ValidParentheses(String1);
-    }
+    public bool ValidParentheses() => Problem.ValidParentheses(String1);
 
     [GlobalCleanup(Target = nameof(ValidParentheses))]
     public void ValidParenthesesCleanup()

@@ -11,10 +11,7 @@ public class IsPalindromeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool IsPalindrome()
-    {
-        return Problem.IsPalindrome(ListNode1);
-    }
+    public bool IsPalindrome() => Problem.IsPalindrome(ListNode1);
 
     [GlobalCleanup(Target = nameof(IsPalindrome))]
     public void IsPalindromeCleanup()

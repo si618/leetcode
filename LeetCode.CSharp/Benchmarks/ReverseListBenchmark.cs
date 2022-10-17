@@ -9,10 +9,7 @@ public class ReverseListBenchmark : Benchmark
     }
 
     [Benchmark]
-    public ListNode? ReverseList()
-    {
-        return Problem.ReverseList(ListNode1);
-    }
+    public ListNode? ReverseList() => Problem.ReverseList(ListNode1);
 
     [GlobalCleanup(Target = nameof(ReverseList))]
     public void ReverseListCleanup()

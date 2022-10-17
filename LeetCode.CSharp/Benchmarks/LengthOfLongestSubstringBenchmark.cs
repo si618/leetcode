@@ -9,10 +9,7 @@ public class LengthOfLongestSubstringBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int LengthOfLongestSubstring()
-    {
-        return Problem.LengthOfLongestSubstring(String1);
-    }
+    public int LengthOfLongestSubstring() => Problem.LengthOfLongestSubstring(String1);
 
     [GlobalCleanup(Target = nameof(LengthOfLongestSubstring))]
     public void LengthOfLongestSubstringCleanup()

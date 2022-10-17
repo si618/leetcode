@@ -9,10 +9,7 @@ public class ContainsDuplicateBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool ContainsDuplicate()
-    {
-        return Problem.ContainsDuplicate(IntArray1);
-    }
+    public bool ContainsDuplicate() => Problem.ContainsDuplicate(IntArray1);
 
     [GlobalCleanup(Target = nameof(ContainsDuplicate))]
     public void ContainsDuplicateCleanup()

@@ -10,10 +10,7 @@ public class InvertTreeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public TreeNode? InvertTree()
-    {
-        return Problem.InvertTree(TreeNode1);
-    }
+    public TreeNode? InvertTree() => Problem.InvertTree(TreeNode1);
 
     [GlobalCleanup(Target = nameof(InvertTree))]
     public void InvertTreeCleanup()

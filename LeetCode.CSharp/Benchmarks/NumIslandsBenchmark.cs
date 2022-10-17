@@ -22,10 +22,7 @@ public class NumIslandsBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int NumIslands()
-    {
-        return Problem.NumIslands(CharArrayMulti);
-    }
+    public int NumIslands() => Problem.NumIslands(CharArrayMulti);
 
     [GlobalCleanup(Target = nameof(NumIslands))]
     public void NumIslandsCleanup()

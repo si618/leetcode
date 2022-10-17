@@ -9,10 +9,7 @@ public class LastStoneWeightBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int LastStoneWeight()
-    {
-        return Problem.LastStoneWeight(IntArray1);
-    }
+    public int LastStoneWeight() => Problem.LastStoneWeight(IntArray1);
 
     [GlobalCleanup(Target = nameof(LastStoneWeight))]
     public void LastStoneWeightCleanup()

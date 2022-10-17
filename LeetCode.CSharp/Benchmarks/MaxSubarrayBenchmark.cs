@@ -11,10 +11,7 @@ public class MaxSubarrayBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int MaxSubarray()
-    {
-        return Problem.MaxSubarray(IntArray1);
-    }
+    public int MaxSubarray() => Problem.MaxSubarray(IntArray1);
 
     [GlobalCleanup(Target = nameof(MaxSubarray))]
     public void MaxSubarrayCleanup()

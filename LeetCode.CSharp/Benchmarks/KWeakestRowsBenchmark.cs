@@ -14,10 +14,7 @@ public class KWeakestRowsBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int[] KWeakestRows()
-    {
-        return Problem.KWeakestRows(IntArrayMulti, 9_999);
-    }
+    public int[] KWeakestRows() => Problem.KWeakestRows(IntArrayMulti, 9_999);
 
     [GlobalCleanup(Target = nameof(KWeakestRows))]
     public void KWeakestRowsCleanup()

@@ -9,10 +9,7 @@ public class BinarySearchBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int BinarySearch()
-    {
-        return Problem.BinarySearch(IntArray1, 1_000);
-    }
+    public int BinarySearch() => Problem.BinarySearch(IntArray1, 1_000);
 
     [GlobalCleanup(Target = nameof(BinarySearch))]
     public void BinarySearchCleanup()

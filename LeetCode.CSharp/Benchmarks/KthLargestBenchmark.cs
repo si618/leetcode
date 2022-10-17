@@ -12,10 +12,7 @@ public class KthLargestBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int KthLargest()
-    {
-        return _kthLargest.Add(75_000_000);
-    }
+    public int KthLargest() => _kthLargest.Add(75_000_000);
 
     [GlobalCleanup(Target = nameof(KthLargest))]
     public void KthLargestCleanup()

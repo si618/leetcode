@@ -10,10 +10,7 @@ public class IsAnagramBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool IsAnagram()
-    {
-        return Problem.IsAnagram(String1, String2);
-    }
+    public bool IsAnagram() => Problem.IsAnagram(String1, String2);
 
     [GlobalCleanup(Target = nameof(IsAnagram))]
     public void IsAnagramCleanup()

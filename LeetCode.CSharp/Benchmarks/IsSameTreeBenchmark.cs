@@ -11,10 +11,7 @@ public class IsSameTreeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool IsSameTree()
-    {
-        return Problem.IsSameTree(TreeNode1, TreeNode2);
-    }
+    public bool IsSameTree() => Problem.IsSameTree(TreeNode1, TreeNode2);
 
     [GlobalCleanup(Target = nameof(IsSameTree))]
     public void IsSameTreeCleanup()

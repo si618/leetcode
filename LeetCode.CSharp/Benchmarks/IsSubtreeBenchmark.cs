@@ -11,10 +11,7 @@ public class IsSubtreeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool IsSubtree()
-    {
-        return Problem.IsSubtree(TreeNode1, TreeNode2);
-    }
+    public bool IsSubtree() => Problem.IsSubtree(TreeNode1, TreeNode2);
 
     [GlobalCleanup(Target = nameof(IsSubtree))]
     public void IsSubtreeCleanup()

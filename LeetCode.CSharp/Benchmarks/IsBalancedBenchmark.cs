@@ -10,10 +10,7 @@ public class IsBalancedBenchmark : Benchmark
     }
 
     [Benchmark]
-    public bool IsBalanced()
-    {
-        return Problem.IsBalanced(TreeNode1);
-    }
+    public bool IsBalanced() => Problem.IsBalanced(TreeNode1);
 
     [GlobalCleanup(Target = nameof(IsBalanced))]
     public void IsBalancedCleanup()

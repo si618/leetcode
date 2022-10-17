@@ -18,10 +18,7 @@ public class LRUCacheBenchmark : Benchmark
 
     [Benchmark]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public int LRUCache()
-    {
-        return _lruCache.Get(500_000);
-    }
+    public int LRUCache() => _lruCache.Get(500_000);
 
     [GlobalCleanup(Target = nameof(LRUCache))]
     [SuppressMessage("ReSharper", "InconsistentNaming")]

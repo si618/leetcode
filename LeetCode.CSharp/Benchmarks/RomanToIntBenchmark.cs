@@ -4,8 +4,5 @@ public class RomanToIntBenchmark : Benchmark
 {
     [Benchmark]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
-    public int RomanToInt()
-    {
-        return Problem.RomanToInt("MMMCMXCIXCMXCIX");
-    }
+    public int RomanToInt() => Problem.RomanToInt("MMMCMXCIXCMXCIX");
 }

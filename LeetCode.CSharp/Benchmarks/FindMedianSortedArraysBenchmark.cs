@@ -3,8 +3,5 @@
 // public class FindMedianSortedArraysBenchmark : Benchmark
 // {
 //     //[Benchmark]
-//     //public double FindMedianSortedArrays()
-//     //{
-//     //    return Problem.FindMedianSortedArrays(IntArray1, _intArray2);
-//     //}
+//     //public double FindMedianSortedArrays() => Problem.FindMedianSortedArrays(IntArray1, _intArray2);
 // }

@@ -10,10 +10,7 @@ public class DiameterOfBinaryTreeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int DiameterOfBinaryTree()
-    {
-        return Problem.DiameterOfBinaryTree(TreeNode1);
-    }
+    public int DiameterOfBinaryTree() => Problem.DiameterOfBinaryTree(TreeNode1);
 
     [GlobalCleanup(Target = nameof(DiameterOfBinaryTree))]
     public void DiameterOfBinaryTreeCleanup()
