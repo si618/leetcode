@@ -23,7 +23,7 @@ internal sealed class BenchmarkSettings : CommandSettings
             ? ValidationResult.Error("--csharp and --fsharp options are mutually exclusive")
             : string.IsNullOrEmpty(Filter) || BenchmarkFound()
                 ? ValidationResult.Success()
-                : ValidationResult.Error($"Benchmark not found for '{Filter}'");
+                : ValidationResult.Error($"Benchmark not found '{Filter}'");
 
     public Type[] BenchmarkTypes()
     {
@@ -32,7 +32,7 @@ internal sealed class BenchmarkSettings : CommandSettings
 
         if (all || CSharp)
         {
-            types.Add(typeof(CSharp.Benchmarks.Benchmark));
+            types.AddRange(Reflection.GetCSharpBenchmarkTypes());
         }
 
         if (all || FSharp)
@@ -40,23 +40,15 @@ internal sealed class BenchmarkSettings : CommandSettings
             types.AddRange(Reflection.GetFSharpBenchmarkTypes());
         }
 
-        return types.ToArray();
+        return types
+            .OrderBy(t => t.Name)
+            .ThenBy(t => t.Namespace)
+            .ToArray();
     }
 
     private bool BenchmarkFound()
     {
-        var benchmarks = new List<string>();
-        var all = !CSharp && !FSharp;
-
-        if (all || CSharp)
-        {
-            benchmarks.AddRange(Reflection.GetCSharpBenchmarks());
-        }
-
-        if (all || FSharp)
-        {
-            benchmarks.AddRange(Reflection.GetFSharpBenchmarks());
-        }
+        var benchmarks = BenchmarkTypes().Select(b => b.Name);
 
         return benchmarks.Contains(Filter, StringComparer.InvariantCultureIgnoreCase);
     }

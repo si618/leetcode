@@ -19,10 +19,9 @@ internal sealed class WorkflowCommand : Command
 
     private static Type[] BuildTypes()
     {
-        var types = new List<Type>
-        {
-            typeof(CSharp.Benchmarks.Benchmark)
-        };
+        var types = new List<Type>();
+
+        types.AddRange(Reflection.GetCSharpBenchmarkTypes());
         types.AddRange(Reflection.GetFSharpBenchmarkTypes());
 
         return types.ToArray();

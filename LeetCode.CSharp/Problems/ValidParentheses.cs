@@ -7,7 +7,7 @@ public sealed partial class Problem
         Difficulty.Easy,
         Category.Stack,
         "https://www.youtube.com/watch?v=WTzjTskDFMg")]
-    public static bool AreParenthesesValid(string s)
+    public static bool ValidParentheses(string s)
     {
         if (string.IsNullOrWhiteSpace(s))
         {
@@ -41,16 +41,16 @@ public sealed partial class Problem
     }
 
     [Fact]
-    public void AreParenthesesValidTest()
+    public void ValidParenthesesTest()
     {
-        AreParenthesesValid("()").Should().BeTrue();
-        AreParenthesesValid("()[]{}").Should().BeTrue();
-        AreParenthesesValid("([{}])").Should().BeTrue();
-        AreParenthesesValid("{[[((()))]]}").Should().BeTrue();
-        AreParenthesesValid("(())[[[]]]{{{{}}}}").Should().BeTrue();
-        AreParenthesesValid("").Should().BeFalse();
-        AreParenthesesValid("(").Should().BeFalse();
-        AreParenthesesValid("(]").Should().BeFalse();
-        AreParenthesesValid("][").Should().BeFalse();
+        ValidParentheses("()").Should().BeTrue();
+        ValidParentheses("()[]{}").Should().BeTrue();
+        ValidParentheses("([{}])").Should().BeTrue();
+        ValidParentheses("{[[((()))]]}").Should().BeTrue();
+        ValidParentheses("(())[[[]]]{{{{}}}}").Should().BeTrue();
+        ValidParentheses("").Should().BeFalse();
+        ValidParentheses("(").Should().BeFalse();
+        ValidParentheses("(]").Should().BeFalse();
+        ValidParentheses("][").Should().BeFalse();
     }
 }

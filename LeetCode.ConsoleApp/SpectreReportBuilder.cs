@@ -20,8 +20,8 @@ internal sealed class SpectreReportBuilder
 
         if (!Summaries.Any())
         {
-            AnsiConsole.MarkupLine("[Warn]Warning:[/] No summaries found");
-            return table;
+            AnsiConsole.MarkupLine("[orange1]Warning:[/] No summaries found");
+            return new Text(string.Empty);
         }
 
         foreach (var infoLine in Summaries.First().HostEnvironmentInfo.ToFormattedString())
@@ -36,7 +36,7 @@ internal sealed class SpectreReportBuilder
             if (summary.Table.FullContent.Length == 0)
             {
                 AnsiConsole.MarkupLine(
-                $"[Warn]Warning:[/] No benchmarks found [yellow]'{summary.Title}'[/]");
+                $"[orange1]Warning:[/] No benchmarks found [yellow]'{summary.Title}'[/]");
                 continue;
             }
 
@@ -46,19 +46,22 @@ internal sealed class SpectreReportBuilder
         return table;
     }
 
-    private IEnumerable<SummaryTable.SummaryTableColumn> BuildHeaders(Table table)
+    private IEnumerable<string> BuildHeaders(Table table)
     {
-        table.AddColumn("Lang");
-
         var headers = Summaries
             .SelectMany(s => s.Table.Columns)
             .Where(c => c.NeedToShow)
             .DistinctBy(c => c.Header)
-            .ToArray();
+            .Select(c => c.Header)
+            .ToList();
+
+        // Add language column injected at start of table, which seems easier than defining a
+        // custom column in BenchmarkDotNet and doesn't appear to allow fine-grained ordering
+        table.AddColumn("Lang");
 
         foreach (var header in headers)
         {
-            table.AddColumn(header.Header, cfg => cfg.RightAligned());
+            table.AddColumn(header, cfg => cfg.RightAligned());
         }
 
         // Language
@@ -69,39 +72,31 @@ internal sealed class SpectreReportBuilder
         return headers;
     }
 
-    private static void BuildSummary(
-        Summary summary,
-        Table table,
-        IEnumerable<SummaryTable.SummaryTableColumn> headers)
+    private static void BuildSummary(Summary summary, Table table, IList<string> headers)
     {
         var csharp = summary.Title.Contains(".CSharp.");
         var colour = csharp ? "[blue]" : "[green]";
-        var columns = new List<string>
-        {
-            new (csharp ? $"{colour}C#[/]" : $"{colour}F#[/]")
-        };
-        columns.AddRange(
-            headers
-                .Select(header => header.Header)
-                .Distinct());
+        var language = csharp ? $"{colour}C#[/]" : $"{colour}F#[/]";
 
         foreach (var line in summary.Table.FullContent)
         {
+            var columns = new string[headers.Count];
+            columns[0] = language;
+
             for (var columnIndex = 0; columnIndex < summary.Table.ColumnCount; columnIndex++)
             {
                 var column = summary.Table.Columns[columnIndex];
+
                 if (!column.NeedToShow)
                 {
                     continue;
                 }
 
-                var index = columns.IndexOf(column.Header);
-                columns[index] = index >= 0
-                    ? $"{colour}{line[columnIndex]}[/]"
-                    : string.Empty;
+                var index = headers.IndexOf(column.Header) + 1;
+                columns[index] = $"{colour}{line[columnIndex]}[/]";
             }
-        }
 
-        table.AddRow(columns.ToArray());
+            table.AddRow(columns.ToArray());
+        }
     }
 }

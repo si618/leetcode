@@ -4,6 +4,8 @@ global using BenchmarkDotNet.Configs;
 global using BenchmarkDotNet.Diagnosers;
 global using BenchmarkDotNet.Environments;
 global using BenchmarkDotNet.Jobs;
+global using BenchmarkDotNet.Reports;
+global using BenchmarkDotNet.Running;
 global using FluentAssertions;
 global using FluentAssertions.Execution;
 global using LeetCode.CSharp.Problems;

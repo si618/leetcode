@@ -1,23 +1,23 @@
 ﻿namespace LeetCode.CSharp.Benchmarks;
 
 [Config(typeof(RuntimeConfig))]
-public partial class Benchmark
+public abstract class Benchmark
 {
-    private int Int1 { get; set; }
+    protected int Int1 { get; set; }
 
-    private int[] IntArray1 { get; set; } = Array.Empty<int>();
-    private int[] IntArray2 { get; set; } = Array.Empty<int>();
-    private int[][] IntArrayMulti { get; set; } = Array.Empty<int[]>();
-    private int?[] IntArrayNullable { get; set; } = Array.Empty<int?>();
+    protected int[] IntArray1 { get; set; } = Array.Empty<int>();
+    protected int[] IntArray2 { get; set; } = Array.Empty<int>();
+    protected int[][] IntArrayMulti { get; set; } = Array.Empty<int[]>();
+    protected int?[] IntArrayNullable { get; set; } = Array.Empty<int?>();
 
-    private ListNode ListNode1 { get; set; } = new();
-    private ListNode ListNode2 { get; set; } = new();
+    protected ListNode ListNode1 { get; set; } = new();
+    protected ListNode ListNode2 { get; set; } = new();
 
-    private string String1 { get; set; } = string.Empty;
-    private string String2 { get; set; } = string.Empty;
+    protected string String1 { get; set; } = string.Empty;
+    protected string String2 { get; set; } = string.Empty;
 
-    private TreeNode TreeNode1 { get; set; } = new();
-    private TreeNode TreeNode2 { get; set; } = new();
+    protected TreeNode TreeNode1 { get; set; } = new();
+    protected TreeNode TreeNode2 { get; set; } = new();
 
     /// <summary>
     /// Build a pseudo random string
@@ -32,7 +32,7 @@ public partial class Benchmark
     /// <param name="size">The size of the string to return</param>
     /// <param name="frequencyOfSpace">How frequently should space occur</param>
     /// <returns>Pseudo random string</returns>
-    private static string BuildPseudoRandomString(int size, int frequencyOfSpace = 0)
+    protected static string BuildPseudoRandomString(int size, int frequencyOfSpace = 0)
     {
         var random = new Random(42);
         var stringBuilder = new StringBuilder(size);

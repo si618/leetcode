@@ -12,8 +12,8 @@
     <Compile Include="Problems\ContainsDuplicate.fs" />
     <Compile Include="Problems\FizzBuzz.fs" />
     <Compile Include="ListNode.fs" />
-    <Compile Include="Benchmarks\ContainsDuplicate.fs" />
-    <Compile Include="Benchmarks\FizzBuzz.fs" />
+    <Compile Include="Benchmarks\ContainsDuplicateBenchmark.fs" />
+    <Compile Include="Benchmarks\FizzBuzzBenchmark.fs" />
   </ItemGroup>
 
   <ItemGroup>
