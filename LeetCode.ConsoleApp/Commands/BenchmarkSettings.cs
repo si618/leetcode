@@ -48,7 +48,8 @@ internal sealed class BenchmarkSettings : CommandSettings
 
     private bool BenchmarkFound()
     {
-        var benchmarks = BenchmarkTypes().Select(b => b.Name);
+        var benchmarks = BenchmarkTypes()
+            .Select(b => b.Name.TrimEnd("Benchmark".ToCharArray()));
 
         return benchmarks.Contains(Filter, StringComparer.InvariantCultureIgnoreCase);
     }

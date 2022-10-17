@@ -57,7 +57,7 @@ internal sealed class SpectreReportBuilder
 
         // Add language column injected at start of table, which seems easier than defining a
         // custom column in BenchmarkDotNet and doesn't appear to allow fine-grained ordering
-        table.AddColumn("Lang");
+        headers.Insert(0, "Lang");
 
         foreach (var header in headers)
         {
@@ -66,7 +66,7 @@ internal sealed class SpectreReportBuilder
 
         // Language
         table.Columns[0].Centered();
-        // Benchmark method
+        // Method
         table.Columns[1].LeftAligned();
 
         return headers;
@@ -92,7 +92,7 @@ internal sealed class SpectreReportBuilder
                     continue;
                 }
 
-                var index = headers.IndexOf(column.Header) + 1;
+                var index = headers.IndexOf(column.Header);
                 columns[index] = $"{colour}{line[columnIndex]}[/]";
             }
 
