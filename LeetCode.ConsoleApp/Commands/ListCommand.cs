@@ -32,7 +32,7 @@ internal sealed class ListCommand : Command
                 var missing = cSharpBenchmarks.Contains(problem.Name)
                     ? string.Empty
                     : " [red]* Missing C# Benchmark *[/]";
-                if (problem.Language.Contains("F#") && !fSharpBenchmarks.Contains(problem.Name))
+                if (problem.FSharp && !fSharpBenchmarks.Contains(problem.Name))
                 {
                     missing = string.IsNullOrEmpty(missing)
                         ? " [red]* Missing F# Benchmark *[/]"
@@ -43,7 +43,7 @@ internal sealed class ListCommand : Command
                     problem.Description + missing,
                     problem.Category.Description(),
                     problem.Difficulty.ToMarkup(),
-                    problem.Language);
+                    problem.LanguageMarkup());
             }
         }
 

@@ -5,5 +5,13 @@ internal record ProblemDetail(
     string Description,
     Category Category,
     Difficulty Difficulty,
-    string Language,
-    Uri? Link);
+    Uri? Link,
+    bool CSharp,
+    bool FSharp)
+{
+    public string LanguageMarkup() =>
+        string.Join(" ",
+                CSharp ? "[blue]C#[/]" : string.Empty,
+                FSharp ? "[teal]F#[/]" : string.Empty)
+            .Trim();
+}

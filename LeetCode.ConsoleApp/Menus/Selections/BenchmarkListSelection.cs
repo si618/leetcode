@@ -9,7 +9,9 @@ internal sealed record BenchmarkListSelection : Selection
     public override int Execute()
     {
         AnsiConsole.Write("TODO: Multi selection prompt to run all or selected benchmarks in C# or F#");
+
         Console.ReadLine();
+
         return 0;
     }
 }

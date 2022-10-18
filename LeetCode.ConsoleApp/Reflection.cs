@@ -22,31 +22,41 @@ internal static class Reflection
             .GroupBy(s => s.Category, s => s);
 
     public static IEnumerable<string> GetCSharpBenchmarks() =>
-        GetCSharpBenchmarkTypes().Select(m => m.Name.TrimEnd("Benchmark".ToCharArray()));
+        GetCSharpBenchmarkTypes().Select(type =>
+            type.Name.EndsWith("Benchmark") ? type.Name[..^9] : type.Name);
 
     public static IEnumerable<string> GetFSharpBenchmarks() =>
-        GetFSharpBenchmarkTypes().Select(m => m.Name.TrimEnd("Benchmark".ToCharArray()));
+        GetFSharpBenchmarkTypes().Select(type =>
+            type.Name.EndsWith("Benchmark") ? type.Name[..^9] : type.Name);
 
     public static IEnumerable<Type> GetCSharpBenchmarkTypes() =>
-        typeof(CSharp.Benchmarks.Benchmark).Assembly.GetTypes()
-            .Where(t => t.Namespace is not null && !t.IsAbstract &&
-                 t.Namespace.StartsWith("LeetCode.CSharp.Benchmarks"));
+        typeof(CSharp.Benchmark).Assembly.GetTypes()
+            .Where(type => type.Namespace is not null && !type.IsAbstract &&
+                 type.Namespace.StartsWith("LeetCode.CSharp.Benchmarks"));
 
     public static IEnumerable<Type> GetFSharpBenchmarkTypes() =>
         typeof(FSharp.ListNode).Assembly.GetTypes()
-            .Where(t => t.Namespace is not null &&
-                t.Namespace.StartsWith("LeetCode.FSharp.Benchmarks"));
+            .Where(type => type.Namespace is not null &&
+                type.Namespace.StartsWith("LeetCode.FSharp.Benchmarks"));
+
+    public static IEnumerable<string> GetCSharpProblems() =>
+        typeof(Problem)
+            .GetMembers()
+            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
+            .Select(m => m.Name);
+
+    public static IEnumerable<string> GetFSharpProblems() =>
+        typeof(FSharp.ListNode).Assembly.GetTypes()
+            .Where(type => type.Namespace is not null &&
+                           type.Namespace.StartsWith("LeetCode.FSharp.Problems"))
+            .Select(type => type.Name);
 
     private static ProblemDetail GetProblemDetail(MemberInfo memberInfo)
     {
         ArgumentNullException.ThrowIfNull(nameof(memberInfo));
 
-        // All problems have a C# implementation and some may also be solved in F#
-        var fSharpType = $"LeetCode.FSharp.Problems.{memberInfo.Name}, LeetCode.FSharp";
-        var language = Type.GetType(fSharpType) is null
-            ? "C#"
-            : "C# F#";
-
+        var csharp = GetCSharpProblems().Contains(memberInfo.Name);
+        var fsharp = GetFSharpProblems().Contains(memberInfo.Name);
         var attribute = memberInfo.GetCustomAttribute<LeetCodeAttribute>();
 
         return new ProblemDetail(
@@ -54,7 +64,8 @@ internal static class Reflection
             attribute!.Description,
             attribute.Category,
             attribute.Difficulty,
-            language,
-            attribute.Link);
+            attribute.Link,
+            csharp,
+            fsharp);
     }
 }

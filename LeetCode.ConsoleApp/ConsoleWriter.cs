@@ -2,6 +2,25 @@
 
 internal static class ConsoleWriter
 {
+    public static void WriteHeader(bool appendLine = false)
+    {
+        const string header =
+@"    __                __   ______            __
+   / /   ___   ___   / /_ / ____/____   ____/ /___
+  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
+ / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
+/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/";
+
+        var output = MakeRainbow(header);
+
+        if (appendLine)
+        {
+            output.AppendLine();
+        }
+
+        Console.Write(output);
+    }
+
     /// <summary>
     /// Output <paramref name="text"/> to console after converting to a colourful rainbow pattern.
     /// </summary>
@@ -52,24 +71,5 @@ internal static class ConsoleWriter
         }
 
         return output;
-    }
-
-    public static void WriteHeader(bool appendLine = false)
-    {
-        const string header =
-@"    __                __   ______            __
-   / /   ___   ___   / /_ / ____/____   ____/ /___
-  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
- / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
-/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/";
-
-        var output = MakeRainbow(header);
-
-        if (appendLine)
-        {
-            output.AppendLine();
-        }
-
-        Console.Write(output);
     }
 }

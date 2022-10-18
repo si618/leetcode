@@ -6,7 +6,7 @@ public class KWeakestRowsBenchmark : Benchmark
     public void KWeakestRowsSetup()
     {
         IntArray1 = Enumerable.Range(1, 1_000).ToArray();
-        IntArrayMulti = new int[10_000][];
+        IntArrayMulti = new int[1_000][];
         for (var i = 0; i < IntArrayMulti.Length; i++)
         {
             IntArrayMulti[i] = IntArray1;
@@ -14,7 +14,7 @@ public class KWeakestRowsBenchmark : Benchmark
     }
 
     [Benchmark]
-    public int[] KWeakestRows() => Problem.KWeakestRows(IntArrayMulti, 9_999);
+    public int[] KWeakestRows() => Problem.KWeakestRows(IntArrayMulti, 999);
 
     [GlobalCleanup(Target = nameof(KWeakestRows))]
     public void KWeakestRowsCleanup()

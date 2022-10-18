@@ -46,11 +46,9 @@ internal sealed class BenchmarkSettings : CommandSettings
             .ToArray();
     }
 
-    private bool BenchmarkFound()
-    {
-        var benchmarks = BenchmarkTypes()
-            .Select(b => b.Name.TrimEnd("Benchmark".ToCharArray()));
-
-        return benchmarks.Contains(Filter, StringComparer.InvariantCultureIgnoreCase);
-    }
+    private bool BenchmarkFound() =>
+        Reflection
+            .GetCSharpBenchmarks()
+            .Union(Reflection.GetFSharpBenchmarks())
+            .Contains(Filter, StringComparer.InvariantCultureIgnoreCase);
 }

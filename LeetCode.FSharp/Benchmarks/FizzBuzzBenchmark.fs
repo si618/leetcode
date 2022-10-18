@@ -3,7 +3,7 @@
 open BenchmarkDotNet.Attributes
 open LeetCode.FSharp.Problems
 
-[<Config(typeof<LeetCode.CSharp.RuntimeConfig>)>]
+[<Config(typeof<LeetCode.CSharp.BenchmarkConfig>)>]
 type FizzBuzzBenchmark() =
 
     [<Benchmark>]

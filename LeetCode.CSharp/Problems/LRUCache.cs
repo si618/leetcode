@@ -3,7 +3,7 @@
 public sealed partial class Problem
 {
     [LeetCode(
-        "LRU Cache",
+        "Least Recently Used Cache",
         Difficulty.Medium,
         Category.LinkedList,
         "https://www.youtube.com/watch?v=7ABFKPK2hD4")]

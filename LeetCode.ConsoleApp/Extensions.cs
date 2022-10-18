@@ -39,4 +39,27 @@ public static class Extensions
             difficulty,
             $"Missing difficulty {difficulty}")
     };
+
+    internal static string ToMarkup(this ProblemDetail problem)
+    {
+        var markup = new StringBuilder();
+
+        markup.AppendLine($"[gray]Benchmark:[/]    {problem.Name}");
+
+        if (problem.Name != problem.Description)
+        {
+            markup.AppendLine($"[gray]Description:[/]  {problem.Description}");
+        }
+
+        markup.AppendLine($"[gray]Category:[/]     {problem.Category.Description()}");
+        markup.AppendLine($"[gray]Difficulty:[/]   {problem.Difficulty.ToMarkup()}");
+        markup.AppendLine($"[gray]Language:[/]     {problem.LanguageMarkup()}");
+
+        if (problem.Link is not null)
+        {
+            markup.AppendLine($"[gray]NeetCode:[/]     {problem.Link}");
+        }
+
+        return markup.ToString();
+    }
 }

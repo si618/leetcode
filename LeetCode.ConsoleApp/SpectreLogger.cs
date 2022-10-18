@@ -21,7 +21,6 @@ internal sealed class SpectreLogger : ILogger
 
     public void Flush()
     {
-        AnsiConsole.WriteLine("TODO Remove after testing - Flush called");
     }
 
     public string Id { get; } = nameof(SpectreLogger);

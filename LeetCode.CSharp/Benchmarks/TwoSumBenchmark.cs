@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.CSharp.Benchmarks;
 
-public class TwoSumSetupBenchmark : Benchmark
+public class TwoSumBenchmark : Benchmark
 {
     [GlobalSetup(Target = nameof(TwoSum))]
     public void TwoSumSetup()

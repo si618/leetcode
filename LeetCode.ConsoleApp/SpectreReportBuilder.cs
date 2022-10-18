@@ -1,8 +1,10 @@
 ﻿namespace LeetCode.ConsoleApp;
 
+using System.Net.WebSockets;
+
 internal sealed class SpectreReportBuilder
 {
-    public IEnumerable<Summary> Summaries { get; }
+    private IEnumerable<Summary> Summaries { get; }
 
     public SpectreReportBuilder(IEnumerable<Summary> summaries)
     {
@@ -48,16 +50,24 @@ internal sealed class SpectreReportBuilder
 
     private IEnumerable<string> BuildHeaders(Table table)
     {
-        var headers = Summaries
+        // Columns currently supported in benchmarks (via BenchmarkConfig) in their expected order
+        var supportedHeaders = new []
+        {
+            "Lang", "Method", "Mean", "Median", "Error", "StdDev", "Op/s", "Gen0", "Gen1", "Gen2",
+            "Allocated"
+        };
+
+        var summaryHeaders = Summaries
             .SelectMany(s => s.Table.Columns)
             .Where(c => c.NeedToShow)
             .DistinctBy(c => c.Header)
             .Select(c => c.Header)
             .ToList();
 
-        // Add language column injected at start of table, which seems easier than defining a
-        // custom column in BenchmarkDotNet and doesn't appear to allow fine-grained ordering
-        headers.Insert(0, "Lang");
+        // This could be a BenchmarkDotNet custom column instead of manual injection
+        summaryHeaders.Insert(0, "Lang");
+
+        var headers = supportedHeaders.Intersect(summaryHeaders).ToArray();
 
         foreach (var header in headers)
         {
@@ -75,13 +85,17 @@ internal sealed class SpectreReportBuilder
     private static void BuildSummary(Summary summary, Table table, IList<string> headers)
     {
         var csharp = summary.Title.Contains(".CSharp.");
-        var colour = csharp ? "[blue]" : "[green]";
+        var colour = csharp ? "[blue]" : "[teal]";
         var language = csharp ? $"{colour}C#[/]" : $"{colour}F#[/]";
 
         foreach (var line in summary.Table.FullContent)
         {
             var columns = new string[headers.Count];
             columns[0] = language;
+            for (var i = 1; i < headers.Count; i++)
+            {
+                columns[i] = string.Empty;
+            }
 
             for (var columnIndex = 0; columnIndex < summary.Table.ColumnCount; columnIndex++)
             {

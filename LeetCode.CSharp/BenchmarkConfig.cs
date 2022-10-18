@@ -1,8 +1,8 @@
 ﻿namespace LeetCode.CSharp;
 
-public sealed class RuntimeConfig : ManualConfig
+public sealed class BenchmarkConfig : ManualConfig
 {
-    public RuntimeConfig()
+    public BenchmarkConfig()
     {
         // ConsoleApp checks for DEBUG but FsUnit.xUnit has DEBUG reference
         WithOption(ConfigOptions.DisableOptimizationsValidator, true);

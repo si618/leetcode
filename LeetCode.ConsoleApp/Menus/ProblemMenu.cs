@@ -17,9 +17,10 @@ internal sealed class ProblemMenu : MenuBase
     public override int Render()
     {
         AnsiConsole.Clear();
+
         ConsoleWriter.WriteHeader(appendLine: true);
 
-        WriteProblemDetail();
+        AnsiConsole.MarkupLine(Problem.ToMarkup());
 
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()
@@ -33,25 +34,5 @@ internal sealed class ProblemMenu : MenuBase
             exitCode = selected.Execute();
         }
         return exitCode;
-    }
-
-    private void WriteProblemDetail()
-    {
-        AnsiConsole.MarkupLine($"[gray]Benchmark:[/]    {Problem.Name}");
-
-        if (Problem.Name != Problem.Description)
-        {
-            AnsiConsole.MarkupLine($"[gray]Description:[/]  {Problem.Description}");
-        }
-
-        AnsiConsole.MarkupLine($"[gray]Difficulty:[/]   {Problem.Difficulty}");
-        AnsiConsole.MarkupLine($"[gray]Category:[/]     {Problem.Category.Description()}");
-
-        if (Problem.Link is not null)
-        {
-            AnsiConsole.MarkupLine($"[gray]NeetCode:[/]     {Problem.Link}");
-        }
-
-        AnsiConsole.WriteLine();
     }
 }

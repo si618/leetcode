@@ -1,6 +1,6 @@
-﻿namespace LeetCode.CSharp.Benchmarks;
+﻿namespace LeetCode.CSharp;
 
-[Config(typeof(RuntimeConfig))]
+[Config(typeof(BenchmarkConfig))]
 public abstract class Benchmark
 {
     protected int Int1 { get; set; }

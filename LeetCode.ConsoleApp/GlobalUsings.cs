@@ -1,7 +1,4 @@
-﻿global using BenchmarkDotNet.Configs;
-global using BenchmarkDotNet.Diagnosers;
-global using BenchmarkDotNet.Environments;
-global using BenchmarkDotNet.Loggers;
+﻿global using BenchmarkDotNet.Loggers;
 global using BenchmarkDotNet.Reports;
 global using BenchmarkDotNet.Running;
 global using LeetCode.ConsoleApp.Commands;
