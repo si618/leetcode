@@ -2,14 +2,18 @@
 
 internal static class Reflection
 {
-    public static ProblemDetail? GetProblem(string name) =>
-        typeof(Problem)
-            .GetMembers()
-            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-            .Select(GetProblemDetail)
-            .FirstOrDefault(p =>
-                p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
-                p.Description.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+    public static bool TryGetProblem(string name, out ProblemDetail problem)
+    {
+        var found = typeof(Problem)
+             .GetMembers()
+             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
+             .Select(GetProblemDetail)
+             .FirstOrDefault(p =>
+                 p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
+                 p.Description.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+        problem = found ?? null!;
+        return found is not null;
+    }
 
     public static IEnumerable<IGrouping<Category, ProblemDetail>> GetProblemsByCategory() =>
         typeof(Problem)
@@ -30,7 +34,7 @@ internal static class Reflection
             type.Name.EndsWith("Benchmark") ? type.Name[..^9] : type.Name);
 
     public static IEnumerable<Type> GetCSharpBenchmarkTypes() =>
-        typeof(CSharp.Benchmark).Assembly.GetTypes()
+        typeof(Benchmark).Assembly.GetTypes()
             .Where(type => type.Namespace is not null && !type.IsAbstract &&
                  type.Namespace.StartsWith("LeetCode.CSharp.Benchmarks"));
 
@@ -39,13 +43,13 @@ internal static class Reflection
             .Where(type => type.Namespace is not null &&
                 type.Namespace.StartsWith("LeetCode.FSharp.Benchmarks"));
 
-    public static IEnumerable<string> GetCSharpProblems() =>
+    private static IEnumerable<string> GetCSharpProblems() =>
         typeof(Problem)
             .GetMembers()
             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
             .Select(m => m.Name);
 
-    public static IEnumerable<string> GetFSharpProblems() =>
+    private static IEnumerable<string> GetFSharpProblems() =>
         typeof(FSharp.ListNode).Assembly.GetTypes()
             .Where(type => type.Namespace is not null &&
                            type.Namespace.StartsWith("LeetCode.FSharp.Problems"))

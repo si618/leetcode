@@ -17,15 +17,10 @@ internal sealed class WorkflowCommand : Command
         return 0;
     }
 
-    private static Type[] BuildTypes()
-    {
-        var types = new List<Type>();
-
-        types.AddRange(Reflection.GetCSharpBenchmarkTypes());
-        types.AddRange(Reflection.GetFSharpBenchmarkTypes());
-
-        return types.ToArray();
-    }
+    private static Type[] BuildTypes() =>
+        Reflection.GetCSharpBenchmarkTypes()
+            .Union(Reflection.GetFSharpBenchmarkTypes())
+            .ToArray();
 
     private static string[] BuildArgs() =>
         new[]
@@ -63,6 +58,7 @@ internal sealed class WorkflowCommand : Command
         var combinedReport = JsonNode.Parse(File.ReadAllText(reports.First()))!;
         var title = combinedReport["Title"]!;
         var benchmarks = combinedReport["Benchmarks"]!.AsArray();
+
         // Rename title whilst keeping original timestamp
         combinedReport["Title"] = $"{resultsFile}{title.GetValue<string>()[^16..]}";
 

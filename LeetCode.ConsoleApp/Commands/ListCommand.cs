@@ -11,7 +11,7 @@ internal sealed class ListCommand : Command
         return 0;
     }
 
-    public static void WriteProblemList()
+    private static void WriteProblemList()
     {
         var table = new Table();
 
@@ -24,8 +24,9 @@ internal sealed class ListCommand : Command
 
         var cSharpBenchmarks = Reflection.GetCSharpBenchmarks().ToArray();
         var fSharpBenchmarks = Reflection.GetFSharpBenchmarks().ToArray();
+        var categories = Reflection.GetProblemsByCategory();
 
-        foreach (var category in Reflection.GetProblemsByCategory())
+        foreach (var category in categories)
         {
             foreach (var problem in category.ToArray())
             {

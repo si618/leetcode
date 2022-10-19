@@ -22,7 +22,7 @@ internal sealed class SpectreReportBuilder
 
         if (!Summaries.Any())
         {
-            AnsiConsole.MarkupLine("[orange1]Warning:[/] No summaries found");
+            AnsiConsole.MarkupLine("[orange1]Warning:[/] No benchmark summaries found");
             return new Text(string.Empty);
         }
 
@@ -38,7 +38,7 @@ internal sealed class SpectreReportBuilder
             if (summary.Table.FullContent.Length == 0)
             {
                 AnsiConsole.MarkupLine(
-                $"[orange1]Warning:[/] No benchmarks found [yellow]'{summary.Title}'[/]");
+                $"[orange1]Warning:[/] No benchmark reports found [yellow]'{summary.Title}'[/]");
                 continue;
             }
 
@@ -50,8 +50,8 @@ internal sealed class SpectreReportBuilder
 
     private IEnumerable<string> BuildHeaders(Table table)
     {
-        // Columns currently supported in benchmarks (via BenchmarkConfig) in their expected order
-        var supportedHeaders = new []
+        // Default column benchmarks via BenchmarkConfig and summaries in their expected order
+        var defaultHeaders = new[]
         {
             "Lang", "Method", "Mean", "Median", "Error", "StdDev", "Op/s", "Gen0", "Gen1", "Gen2",
             "Allocated"
@@ -64,10 +64,16 @@ internal sealed class SpectreReportBuilder
             .Select(c => c.Header)
             .ToList();
 
-        // This could be a BenchmarkDotNet custom column instead of manual injection
+        // This could be a BenchmarkDotNet custom column instead of manual insertion
         summaryHeaders.Insert(0, "Lang");
 
-        var headers = supportedHeaders.Intersect(summaryHeaders).ToArray();
+        // First take the intersection of defaults and summaries, which ensures all columns are
+        // included in their expected order, then append any remaining columns in summaries
+        var headers = defaultHeaders
+            .Intersect(summaryHeaders)
+            .Union(summaryHeaders)
+            .Distinct()
+            .ToArray();
 
         foreach (var header in headers)
         {

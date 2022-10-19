@@ -105,10 +105,12 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
         Console.SetOut(TextWriter.Null);
 
+        var parsedFilter = ParseFilterForBenchmark(args[1]);
+
         var summaries = new List<Summary>();
         AnsiConsole.Status()
             .Spinner(Spinner.Known.Dots)
-            .Start(WaitingMessage(settings, parsedFilter: args[1]), _ =>
+            .Start(WaitingMessage(settings, parsedFilter), _ =>
                 summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
 
         Console.SetOut(Console.Out);
@@ -116,17 +118,33 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         return summaries;
     }
 
+    private static string ParseFilterForBenchmark(string filter)
+    {
+        var benchmark = filter.Trim('*');
+        var found = Reflection.GetCSharpBenchmarks()
+            .FirstOrDefault(b => b.Equals(benchmark, StringComparison.OrdinalIgnoreCase));
+        return found ?? filter;
+    }
+
     private static string WaitingMessage(BenchmarkSettings settings, string parsedFilter)
     {
-        var message = !settings.CSharp && !settings.FSharp
-            ? "Running C# and F# benchmarks"
-            : settings.CSharp
-                ? "Running C# benchmarks"
-                : "Running F# benchmarks";
-
-        if (settings.Filter?.Length > 0)
+        string message;
+        if (Reflection.TryGetProblem(parsedFilter, out var problem))
         {
-            message += $" matching [blue]{parsedFilter}[/]";
+            message = $"Running {problem!.Language(" and ")} benchmarks for {problem.Name}";
+        }
+        else
+        {
+            message = !settings.CSharp && !settings.FSharp
+                ? "Running C# and F# benchmarks"
+                : settings.CSharp
+                    ? "Running C# benchmarks"
+                    : "Running F# benchmarks";
+
+            if (settings.Filter?.Length > 0)
+            {
+                message += $" matching [blue]{settings.Filter!}[/]";
+            }
         }
 
         return message;

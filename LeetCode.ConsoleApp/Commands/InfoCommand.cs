@@ -8,7 +8,12 @@ internal sealed class InfoCommand : Command<ProblemSettings>
     {
         ConsoleWriter.WriteHeader(appendLine: true);
 
-        AnsiConsole.MarkupLine(settings.Problem.ToMarkup());
+        if (!Reflection.TryGetProblem(settings.Name, out var problem))
+        {
+            throw new InvalidOperationException("Problem settings validation failed");
+        }
+
+        AnsiConsole.Write(problem.ToMarkupTable());
 
         return 0;
     }

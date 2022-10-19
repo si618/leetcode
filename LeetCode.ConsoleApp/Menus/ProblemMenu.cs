@@ -20,7 +20,7 @@ internal sealed class ProblemMenu : MenuBase
 
         ConsoleWriter.WriteHeader(appendLine: true);
 
-        AnsiConsole.MarkupLine(Problem.ToMarkup());
+        AnsiConsole.Write(Problem.ToMarkupTable());
 
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()

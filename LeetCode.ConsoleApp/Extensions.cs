@@ -40,26 +40,33 @@ public static class Extensions
             $"Missing difficulty {difficulty}")
     };
 
-    internal static string ToMarkup(this ProblemDetail problem)
+    internal static Table ToMarkupTable(this ProblemDetail problem)
     {
-        var markup = new StringBuilder();
+        var table = new Table
+        {
+            Border = TableBorder.None,
+            ShowHeaders = false
+        };
 
-        markup.AppendLine($"[gray]Benchmark:[/]    {problem.Name}");
+        table.AddColumn(new TableColumn("Property").PadRight(3));
+        table.AddColumn("Value");
+
+        table.AddRow("[gray]Benchmark[/]", problem.Name);
 
         if (problem.Name != problem.Description)
         {
-            markup.AppendLine($"[gray]Description:[/]  {problem.Description}");
+            table.AddRow("[gray]Description[/]", problem.Description);
         }
 
-        markup.AppendLine($"[gray]Category:[/]     {problem.Category.Description()}");
-        markup.AppendLine($"[gray]Difficulty:[/]   {problem.Difficulty.ToMarkup()}");
-        markup.AppendLine($"[gray]Language:[/]     {problem.LanguageMarkup()}");
+        table.AddRow("[gray]Category[/]", problem.Category.Description());
+        table.AddRow("[gray]Difficulty[/]", problem.Difficulty.ToMarkup());
+        table.AddRow("[gray]Language[/]", problem.LanguageMarkup());
 
         if (problem.Link is not null)
         {
-            markup.AppendLine($"[gray]NeetCode:[/]     {problem.Link}");
+            table.AddRow("[gray]NeetCode[/]", problem.Link.ToString());
         }
 
-        return markup.ToString();
+        return table;
     }
 }
