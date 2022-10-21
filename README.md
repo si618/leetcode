@@ -7,11 +7,11 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 ### Building
 
 ``` bash
-> git --version
-git version 2.37.1
-
 > dotnet --list-sdks
-6.0.401 [/usr/share/dotnet/sdk]
+6.0.402 [/usr/share/dotnet/sdk]
+
+> git --version
+git version 2.37.3
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
@@ -30,7 +30,11 @@ Problem information and benchmarks can be run from the console application
 > cd ./LeetCode.ConsoleApp
 > dotnet run
 USAGE:
-    LeetCode.ConsoleApp.dll [OPTIONS] <COMMAND>
+    LeetCode.exe [OPTIONS] <COMMAND>
+
+EXAMPLES:
+    LeetCode.exe benchmark LRUCache --csharp
+    LeetCode.exe info MergeTwoLists
 
 OPTIONS:
     -h, --help       Prints help information
@@ -39,8 +43,9 @@ OPTIONS:
 COMMANDS:
     app          Run interactive console application
     benchmark    Run benchmarks against leetcode problems
-    problem      Show information about a problem
+    info         Show information about a problem
     list         List information about problems
+    workflow     Run benchmarks for GitHub workflow
 
 > dotnet run app
     __                __   ______            __
@@ -48,6 +53,11 @@ COMMANDS:
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
+
+> List Problems
+  Run Benchmarks
+  About
+  Exit
 ```
 
 ### Running benchmarks from docker
@@ -56,15 +66,18 @@ COMMANDS:
 # Build docker image
 > docker compose up
 
-# List solved problems without running benchmarks
-> docker run --rm leetcode --problems
+# Run console app
+> docker run --rm -it leetcode app
 
-# Show problem details without running benchmarks
-> docker run --rm leetcode --problem 'LRU Cache'
+# List solved problems
+> docker run --rm leetcode list
+
+# Show problem details
+> docker run --rm leetcode info 'climbing stairs'
 
 # Run all F# benchmarks
-> docker run leetcode --filter *FSharp.Benchmarks*
+> docker run leetcode benchmark --fsharp
 
 # Run single C# benchmark
-> docker run leetcode --filter *CSharp.Benchmark.LRUCache
+> docker run leetcode benchmark LRUCache --csharp
 ```
