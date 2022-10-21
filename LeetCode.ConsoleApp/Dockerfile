@@ -22,4 +22,4 @@ RUN dotnet restore LeetCode.ConsoleApp.csproj
 RUN dotnet build LeetCode.ConsoleApp.csproj -c Release
 
 # Benchmarks require release configuration and run against both net6.0 and net7.0 SDKs
-ENTRYPOINT ["dotnet", "run", "LeetCode.ConsoleApp.csproj", "-f", "net6.0", "-c", "Release"]
+ENTRYPOINT ["dotnet", "run", "-f", "net6.0", "-c", "Release"]
