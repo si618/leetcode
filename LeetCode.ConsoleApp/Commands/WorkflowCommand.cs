@@ -6,12 +6,12 @@ internal sealed class WorkflowCommand : Command
     {
         ConsoleWriter.WriteHeader(appendLine: true);
 
-        if (BenchmarkCommand.IsDebugConfiguration())
+        if (BenchmarkRunner.IsDebugConfiguration())
         {
             return 1;
         }
 
-        BenchmarkCommand.RunBenchmarks(BuildTypes(), BuildArgs());
+        BenchmarkRunner.RunBenchmarks(BuildTypes(), BuildArgs());
         CombineBenchmarkResults();
 
         return 0;

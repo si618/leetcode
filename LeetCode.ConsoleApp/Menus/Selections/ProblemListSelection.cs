@@ -9,6 +9,7 @@ internal sealed record ProblemListSelection : Selection
     public override int Execute()
     {
         AnsiConsole.Clear();
+
         ConsoleWriter.WriteHeader(appendLine: false);
 
         var problems = Reflection
@@ -37,6 +38,7 @@ internal sealed record ProblemListSelection : Selection
         AnsiConsole.Write(table);
 
         // TODO Capture X (or whatever) to return to main menu instead of forcing selection
+        // It would also be good to filter by keyboard input
         var problem = AnsiConsole.Prompt(prompt);
 
         new ProblemMenu(problem).Render();

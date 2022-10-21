@@ -22,10 +22,13 @@ internal sealed class BenchmarkMenu : MenuBase
     public override int Render()
     {
         AnsiConsole.Clear();
+
         ConsoleWriter.WriteHeader(appendLine: true);
 
-        // TODO Spinner and run benchmarks
-        // TODO Render table of results
+        if (BenchmarkRunner.IsDebugConfiguration(true))
+        {
+            return 1;
+        }
 
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()

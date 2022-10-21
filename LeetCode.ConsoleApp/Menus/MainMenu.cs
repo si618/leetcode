@@ -14,6 +14,10 @@ internal sealed class MainMenu : MenuBase
     }
     public override int Render()
     {
+        AnsiConsole.Clear();
+
+        ConsoleWriter.WriteHeader(appendLine: true);
+
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()
             .AddChoices(GetMenuItems())

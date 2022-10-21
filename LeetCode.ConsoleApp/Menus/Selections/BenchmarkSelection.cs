@@ -18,7 +18,16 @@ internal sealed record BenchmarkSelection : Selection
     public override int Execute()
     {
         AnsiConsole.Clear();
+
         ConsoleWriter.WriteHeader(appendLine: true);
+
+        var settings = new BenchmarkSettings { Filter = Problem.Name };
+        var args = BenchmarkRunner.BuildArgs(settings);
+        var summaries = BenchmarkRunner.BuildSummaries(settings, args);
+        var builder = new SpectreReportBuilder(summaries);
+        var report = builder.Build();
+
+        AnsiConsole.Write(report);
 
         var menu = new BenchmarkMenu(Problem);
         var selected = menu.MenuItems.First();

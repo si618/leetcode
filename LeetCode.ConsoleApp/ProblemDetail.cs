@@ -10,14 +10,20 @@ internal record ProblemDetail(
     bool FSharp)
 {
     public string Language(string join = " ") =>
-        string.Join(join,
-                CSharp ? "C#" : string.Empty,
-                FSharp ? "F#" : string.Empty)
-            .Trim();
+        CSharp && FSharp
+            ? string.Join(join, "C#", "F#")
+            : CSharp
+                ? "C#"
+                : FSharp
+                    ? "F#"
+                    : string.Empty;
 
     public string LanguageMarkup(string join = " ") =>
-        string.Join(join,
-                CSharp ? "[blue]C#[/]" : string.Empty,
-                FSharp ? "[teal]F#[/]" : string.Empty)
-            .Trim();
+        CSharp && FSharp
+            ? string.Join(join, "[blue]C#[/]", "[teal]F#[/]")
+            : CSharp
+                ? "[blue]C#[/]"
+                : FSharp
+                    ? "[teal]F#[/]"
+                    : string.Empty;
 }

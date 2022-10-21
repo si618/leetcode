@@ -8,10 +8,16 @@ internal sealed record BenchmarkLogSelection : Selection
 
     public override int Execute()
     {
-        AnsiConsole.Cursor.Hide();
+        AnsiConsole.Clear();
+
+        ConsoleWriter.WriteHeader(appendLine: true);
 
         AnsiConsole.WriteLine();
+
         AnsiConsole.MarkupLine("[gray](Press any key to return to main menu)[/]");
+
+        AnsiConsole.Cursor.Hide();
+
         Console.ReadKey();
 
         return 0;

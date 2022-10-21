@@ -21,6 +21,7 @@ internal sealed class ProblemMenu : MenuBase
         ConsoleWriter.WriteHeader(appendLine: true);
 
         AnsiConsole.Write(Problem.ToMarkupTable());
+        AnsiConsole.WriteLine();
 
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()
