@@ -12,25 +12,13 @@ internal sealed class WorkflowCommand : Command
         }
 
         var settings = new BenchmarkSettings();
-        var args = BuildWorkflowArgs();
+        var args = new List<string> { "--exporters", "json" };
         args.AddRange(settings.BuildArgs());
         BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), args.ToArray());
         CombineBenchmarkResults();
 
         return 0;
     }
-
-    private static Type[] BuildTypes() =>
-        Reflection.GetCSharpBenchmarkTypes()
-            .Union(Reflection.GetFSharpBenchmarkTypes())
-            .ToArray();
-
-    private static List<string> BuildWorkflowArgs() =>
-        new()
-        {
-            "--exporters", "json",
-            "--memory"
-        };
 
     private static void CombineBenchmarkResults(
         string resultsDir = "./BenchmarkDotNet.Artifacts/results",
@@ -88,6 +76,6 @@ internal sealed class WorkflowCommand : Command
     {
         // Make pretty as only one method per benchmark - or tweak index.html?
         var language = report.Contains("CSharp") ? "C#" : "F#";
-        benchmark!["FullName"] = $"{benchmark["Method"]} in {language}";
+        benchmark["FullName"] = $"{benchmark["Method"]} in {language}";
     }
 }
