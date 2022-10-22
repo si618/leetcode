@@ -58,14 +58,14 @@ jobs:
         id: list-problems
         run: |
           dotnet run \
-            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj \
             list
 
       - name: Run benchmarks
         id: run-benchmarks
         run: |
           dotnet run \
-            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj \
             --framework $DOTNET_FRAMEWORK \
             --configuration Release \
             workflow
