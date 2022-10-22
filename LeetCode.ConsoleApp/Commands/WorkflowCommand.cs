@@ -11,10 +11,8 @@ internal sealed class WorkflowCommand : Command
             return 1;
         }
 
-        var settings = new BenchmarkSettings() { Filter = "*FizzBuzz" };
-        var args = new List<string> { "--exporters", "json" };
-        args.AddRange(settings.BuildArgs());
-        BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), args.ToArray());
+        var settings = new BenchmarkSettings { Exporters = "json" };
+        BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), settings.BuildArgs());
         CombineBenchmarkResults();
 
         return 0;

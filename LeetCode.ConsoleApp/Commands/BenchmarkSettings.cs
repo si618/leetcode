@@ -18,6 +18,10 @@ internal sealed class BenchmarkSettings : CommandSettings
     [CommandOption("--debug")]
     public bool Debug { get; init; }
 
+    [Description("BenchmarkDotNet Exporters: GitHub/StackOverflow/RPlot/CSV/JSON/HTML/XML")]
+    [CommandOption("--exporters")]
+    public string? Exporters { get; init; }
+
     public override ValidationResult Validate() =>
         CSharp && FSharp
             ? ValidationResult.Error("--csharp and --fsharp options are mutually exclusive")
