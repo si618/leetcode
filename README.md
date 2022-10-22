@@ -3,7 +3,7 @@
 
 [Benchmarked](https://si618.github.io/leetcode/dev/bench) C# submissions for [LeetCode](https://leetcode.com) problems with naïve F# solutions on my functional programming journey.
 
-After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm now following the author's guidance and supporting his work by becoming a lifetime pro 🙇‍
+After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm now following the author's guidance and supporting his work by becoming a lifetime member 🙇‍
 ### Building
 
 ``` bash
@@ -24,7 +24,7 @@ Cloning into 'leetcode'...
 
 ### Console Application
 
-Problem information and benchmarks can be run from the console application
+Problem information and benchmarks can be run from the console application.
 
 ``` bash
 > cd ./LeetCode.ConsoleApp
