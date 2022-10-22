@@ -5,4 +5,4 @@ services:
     image: leetcode
     build:
       context: .
-      dockerfile: LeetCode.ConsoleApp/Dockerfile
+      dockerfile: LeetCode/Dockerfile

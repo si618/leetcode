@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp.Menus;
+﻿namespace LeetCode.Menus;
 
 internal sealed class BenchmarkMenu : MenuBase
 {

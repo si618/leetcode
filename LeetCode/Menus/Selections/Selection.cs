@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp.Menus.Selections;
+﻿namespace LeetCode.Menus.Selections;
 
 internal abstract record Selection(string Name, int Order)
 {

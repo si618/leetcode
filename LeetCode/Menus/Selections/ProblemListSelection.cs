@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp.Menus.Selections;
+﻿namespace LeetCode.Menus.Selections;
 
 internal sealed record ProblemListSelection : Selection
 {

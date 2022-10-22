@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp;
+﻿namespace LeetCode;
 
 internal static class Reflection
 {

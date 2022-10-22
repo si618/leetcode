@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp;
+﻿namespace LeetCode;
 
 internal record Problem(
     string Name,

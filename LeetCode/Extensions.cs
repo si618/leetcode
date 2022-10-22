@@ -1,4 +1,4 @@
-﻿namespace LeetCode.ConsoleApp;
+﻿namespace LeetCode;
 
 public static class Extensions
 {

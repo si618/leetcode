@@ -1,6 +1,4 @@
-﻿namespace LeetCode.ConsoleApp;
-
-using System.Net.WebSockets;
+﻿namespace LeetCode;
 
 internal sealed class SpectreReportBuilder
 {

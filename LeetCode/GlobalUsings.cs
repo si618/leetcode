@@ -1,11 +1,10 @@
 ﻿global using BenchmarkDotNet.Loggers;
 global using BenchmarkDotNet.Reports;
 global using BenchmarkDotNet.Running;
-global using LeetCode.ConsoleApp.Commands;
-global using LeetCode.ConsoleApp.Menus;
-global using LeetCode.ConsoleApp.Menus.Selections;
+global using LeetCode.Commands;
+global using LeetCode.Menus;
+global using LeetCode.Menus.Selections;
 global using LeetCode.CSharp;
-global using LeetCode.CSharp.Problems;
 global using Spectre.Console;
 global using Spectre.Console.Cli;
 global using Spectre.Console.Rendering;
