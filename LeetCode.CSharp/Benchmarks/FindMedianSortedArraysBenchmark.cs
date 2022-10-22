@@ -1,5 +1,5 @@
-﻿namespace LeetCode.CSharp.Benchmarks;
-
+﻿// namespace LeetCode.CSharp.Benchmarks;
+//
 // public class FindMedianSortedArraysBenchmark : Benchmark
 // {
 //     //[Benchmark]
