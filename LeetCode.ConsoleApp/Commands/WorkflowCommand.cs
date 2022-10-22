@@ -11,7 +11,7 @@ internal sealed class WorkflowCommand : Command
             return 1;
         }
 
-        var settings = new BenchmarkSettings();
+        var settings = new BenchmarkSettings() { Filter = "*FizzBuzz" };
         var args = new List<string> { "--exporters", "json" };
         args.AddRange(settings.BuildArgs());
         BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), args.ToArray());
@@ -52,7 +52,7 @@ internal sealed class WorkflowCommand : Command
         var combinedReport = JsonNode.Parse(File.ReadAllText(firstReport))!;
         var title = combinedReport["Title"]!;
         var benchmarks = combinedReport["Benchmarks"]!.AsArray();
-        SetBenchmarkName(firstReport, benchmarks);
+        SetBenchmarkName(firstReport, combinedReport["Benchmarks"]![0]!);
 
         // Rename title whilst keeping original timestamp
         combinedReport["Title"] = $"{resultsFile}{title.GetValue<string>()[^16..]}";
@@ -60,10 +60,10 @@ internal sealed class WorkflowCommand : Command
         foreach (var report in reports.Skip(1))
         {
             var node = JsonNode.Parse(File.ReadAllText(report))!["Benchmarks"]!;
+            SetBenchmarkName(report, node[0]!);
 
             foreach (var benchmark in node.AsArray())
             {
-                SetBenchmarkName(report, benchmark!);
                 // Double parse avoids "The node already has a parent" exception
                 benchmarks.Add(JsonNode.Parse(benchmark!.ToJsonString())!);
             }
