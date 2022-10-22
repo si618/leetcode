@@ -19,6 +19,8 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 
         AnsiConsole.Write(report);
 
+        AnsiConsole.WriteLine();
+
         return 0;
     }
 }

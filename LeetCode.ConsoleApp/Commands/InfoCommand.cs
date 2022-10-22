@@ -15,6 +15,8 @@ internal sealed class InfoCommand : Command<ProblemSettings>
 
         AnsiConsole.Write(problem.ToMarkupTable());
 
+        AnsiConsole.WriteLine();
+
         return 0;
     }
 }
