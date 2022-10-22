@@ -72,12 +72,17 @@ internal static class BenchmarkRunner
         if (warnRatherThanFail)
         {
             AnsiConsole.MarkupLine(
-            "[orange1]Warning:[/] App should be in [yellow]RELEASE[/] configuration to run benchmarks");
+                "[orange1]Warning:[/] App should be in [yellow]RELEASE[/] configuration to run benchmarks");
+
+            AnsiConsole.WriteLine();
+
             return false;
         }
 
         AnsiConsole.MarkupLine(
-        "[red]Error:[/] App must be in [yellow]RELEASE[/] configuration to run benchmarks");
+            "[red]Error:[/] App must be in [yellow]RELEASE[/] configuration to run benchmarks");
+
+        AnsiConsole.WriteLine();
 
         return true;
     }
