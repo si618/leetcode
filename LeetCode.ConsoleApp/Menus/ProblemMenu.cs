@@ -2,9 +2,9 @@
 
 internal sealed class ProblemMenu : MenuBase
 {
-    private ProblemDetail Problem { get; init; }
+    private Problem Problem { get; init; }
 
-    public ProblemMenu(ProblemDetail problem)
+    public ProblemMenu(Problem problem)
     {
         Problem = problem;
         MenuItems = new List<Selection>

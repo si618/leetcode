@@ -69,10 +69,10 @@ COMMANDS:
 # Run console app
 > docker run --rm -it leetcode app
 
-# List solved problems
+# List information about problems
 > docker run --rm leetcode list
 
-# Show problem details
+# Show information about a problem
 > docker run --rm leetcode info 'climbing stairs'
 
 # Run all F# benchmarks

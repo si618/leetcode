@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.ConsoleApp;
 
-internal record ProblemDetail(
+internal record Problem(
     string Name,
     string Description,
     Category Category,

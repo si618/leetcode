@@ -40,7 +40,7 @@ public static class Extensions
             $"Missing difficulty {difficulty}")
     };
 
-    internal static Table ToMarkupTable(this ProblemDetail problem)
+    internal static Table ToMarkupTable(this Problem problem)
     {
         var table = new Table
         {

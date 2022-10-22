@@ -2,14 +2,14 @@
 
 internal sealed class BenchmarkMenu : MenuBase
 {
-    private IEnumerable<ProblemDetail> Problems { get; init; }
+    private IEnumerable<Problem> Problems { get; init; }
 
-    public BenchmarkMenu(ProblemDetail problem)
-        : this(new List<ProblemDetail> { problem })
+    public BenchmarkMenu(Problem problem)
+        : this(new List<Problem> { problem })
     {
     }
 
-    public BenchmarkMenu(IEnumerable<ProblemDetail> problems)
+    public BenchmarkMenu(IEnumerable<Problem> problems)
     {
         Problems = problems.ToArray();
         MenuItems = new List<Selection>

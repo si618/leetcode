@@ -2,14 +2,14 @@
 
 internal sealed record BenchmarkSelection : Selection
 {
-    private ProblemDetail Problem { get; }
+    private Problem Problem { get; }
 
-    internal BenchmarkSelection(ProblemDetail problem, int order)
+    internal BenchmarkSelection(Problem problem, int order)
         : this(problem, "Run Benchmark", order)
     {
     }
 
-    internal BenchmarkSelection(ProblemDetail problem, string name, int order)
+    internal BenchmarkSelection(Problem problem, string name, int order)
         : base(name, order)
     {
         Problem = problem;

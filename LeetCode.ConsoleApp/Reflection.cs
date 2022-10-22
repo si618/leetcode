@@ -2,12 +2,12 @@
 
 internal static class Reflection
 {
-    public static bool TryGetProblem(string name, out ProblemDetail problem)
+    public static bool TryGetProblem(string name, out Problem problem)
     {
-        var found = typeof(Problem)
+        var found = typeof(CSharp.Problems.Problem)
              .GetMembers()
              .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-             .Select(GetProblemDetail)
+             .Select(GetProblem)
              .FirstOrDefault(p =>
                  p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
                  p.Description.Equals(name, StringComparison.InvariantCultureIgnoreCase));
@@ -15,11 +15,11 @@ internal static class Reflection
         return found is not null;
     }
 
-    public static IEnumerable<IGrouping<Category, ProblemDetail>> GetProblemsByCategory() =>
-        typeof(Problem)
+    public static IEnumerable<IGrouping<Category, Problem>> GetProblemsByCategory() =>
+        typeof(CSharp.Problems.Problem)
             .GetMembers()
             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-            .Select(GetProblemDetail)
+            .Select(GetProblem)
             .OrderBy(s => s.Category)
             .ThenBy(s => s.Difficulty)
             .ThenBy(s => s.Description)
@@ -44,7 +44,7 @@ internal static class Reflection
                 type.Namespace.StartsWith("LeetCode.FSharp.Benchmarks"));
 
     private static IEnumerable<string> GetCSharpProblems() =>
-        typeof(Problem)
+        typeof(CSharp.Problems.Problem)
             .GetMembers()
             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
             .Select(m => m.Name);
@@ -55,7 +55,7 @@ internal static class Reflection
                            type.Namespace.StartsWith("LeetCode.FSharp.Problems"))
             .Select(type => type.Name);
 
-    private static ProblemDetail GetProblemDetail(MemberInfo memberInfo)
+    private static Problem GetProblem(MemberInfo memberInfo)
     {
         ArgumentNullException.ThrowIfNull(nameof(memberInfo));
 
@@ -68,7 +68,7 @@ internal static class Reflection
             throw new ArgumentException("Member info is not a problem", nameof(memberInfo));
         }
 
-        return new ProblemDetail(
+        return new Problem(
             memberInfo.Name,
             attribute!.Description,
             attribute.Category,

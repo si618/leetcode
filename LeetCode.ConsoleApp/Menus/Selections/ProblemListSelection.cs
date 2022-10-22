@@ -17,14 +17,14 @@ internal sealed record ProblemListSelection : Selection
             .SelectMany(g => g)
             .ToArray();
 
-        var padding = new ProblemDetailPadding(
+        var padding = new ProblemPadding(
         problems.Max(problem => problem.Description.Length),
         problems.Max(problem => problem.Category.Description().Length));
 
-        var prompt = new SelectionPrompt<ProblemDetail>()
+        var prompt = new SelectionPrompt<Problem>()
             .AddChoices(problems)
             .PageSize(16)
-            .UseConverter(problem => ConvertProblemDetail(problem, padding))
+            .UseConverter(problem => ConvertProblem(problem, padding))
             .MoreChoicesText("[gray](Move up and down to reveal more problems or X to exit)[/]");
 
         var table = new Table
@@ -46,9 +46,9 @@ internal sealed record ProblemListSelection : Selection
         return 0;
     }
 
-    private sealed record ProblemDetailPadding(int DescriptionPad, int CategoryPad);
+    private sealed record ProblemPadding(int DescriptionPad, int CategoryPad);
 
-    private static string ConvertProblemDetail(ProblemDetail problem, ProblemDetailPadding padding)
+    private static string ConvertProblem(Problem problem, ProblemPadding padding)
         => new StringBuilder()
             .Append($"{problem.Description.PadRight(padding.DescriptionPad + 3)}")
             .Append($"{problem.Category.Description().PadRight(padding.CategoryPad + 3)}")
