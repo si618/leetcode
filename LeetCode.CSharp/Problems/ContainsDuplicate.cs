@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -25,7 +25,7 @@ public sealed partial class Problem
         return false;
     }
 
-    [Test]
+    [Fact]
     public void ContainsDuplicateTest()
     {
         var ex1 = new[] { 1, 2, 3, 1 };

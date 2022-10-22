@@ -5,21 +5,18 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.CSharp", "LeetCode.CSharp\LeetCode.CSharp.csproj", "{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.CSharp", "Benchmarks.CSharp\Benchmarks.CSharp.csproj", "{C9A81814-CC1F-4337-B887-DAD25B17A0EE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A54809E0-DF67-495C-BE99-0294DED27DC6}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
-		Benchmark.ps1 = Benchmark.ps1
 		Directory.Build.props = Directory.Build.props
 		README.md = README.md
 		.github\workflows\workflow.yml = .github\workflows\workflow.yml
 		.github\dependabot.yml = .github\dependabot.yml
 		docker-compose.yml = docker-compose.yml
+		Run.ps1 = Run.ps1
+		nuget.config = nuget.config
 	EndProjectSection
-EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Benchmarks.FSharp", "Benchmarks.FSharp\Benchmarks.FSharp.fsproj", "{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "LeetCode.FSharp", "LeetCode.FSharp\LeetCode.FSharp.fsproj", "{B8401765-DECF-4417-985E-A090E67A2BE8}"
 EndProject
@@ -35,14 +32,6 @@ Global
 		{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27AD5CF0-9D7E-4358-808D-1737F7C3C0F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9A81814-CC1F-4337-B887-DAD25B17A0EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F5D4EE7-12D3-4DAB-9174-28C60D2D1CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8401765-DECF-4417-985E-A090E67A2BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8401765-DECF-4417-985E-A090E67A2BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8401765-DECF-4417-985E-A090E67A2BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU

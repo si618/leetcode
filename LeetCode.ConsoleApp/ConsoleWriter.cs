@@ -1,19 +1,34 @@
 ﻿namespace LeetCode.ConsoleApp;
 
-using System.Text;
-
-public static class ConsoleWriter
+internal static class ConsoleWriter
 {
+    public static void WriteHeader(bool appendLine = false)
+    {
+        const string header =
+@"    __                __   ______            __
+   / /   ___   ___   / /_ / ____/____   ____/ /___
+  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
+ / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
+/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/";
+
+        var output = MakeRainbow(header);
+
+        if (appendLine)
+        {
+            output.AppendLine();
+        }
+
+        Console.Write(output);
+    }
+
     /// <summary>
-    /// Output <paramref name="text"/> to console after converting to colourful rainbow.
+    /// Output <paramref name="text"/> to console after converting to a colourful rainbow pattern.
     /// </summary>
     /// <remarks>
     /// Converted with thanks from: https://github.com/andot/lolcat/blob/master/Out-Rainbow.psm1
     /// </remarks>
-    private static void WriteRainbow(string text)
+    private static StringBuilder MakeRainbow(string text, double spread = 3, double frequency = .1)
     {
-        const double spread = 3.0;
-        const double frequency = .1;
         const char esc = (char)27;
 
         var random = new Random();
@@ -55,69 +70,6 @@ public static class ConsoleWriter
             output.AppendLine();
         }
 
-        Console.Write(output.ToString());
-    }
-
-    public static void WriteHeader()
-    {
-        const string header =
-@"    __                __   ______            __
-   / /   ___   ___   / /_ / ____/____   ____/ /___
-  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
- / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
-/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
-"; ;
-        WriteRainbow(header);
-    }
-
-    public static void WriteProblems()
-    {
-        AnsiConsole.WriteLine("Solved C# Problems");
-
-        var countOfProblems = 0;
-        var nl = Environment.NewLine;
-        var benchmarks = Reflection.GetCSharpBenchmarks().ToArray();
-
-        foreach (var category in Reflection.GetProblemsByCategory())
-        {
-            AnsiConsole.WriteLine($"{nl}{category.Key.Description()}{nl}");
-
-            foreach (var problem in category.ToArray())
-            {
-                var missing = benchmarks.Contains(problem.Name)
-                    ? string.Empty
-                    : " * Missing Benchmark *";
-                AnsiConsole.WriteLine($"  [{problem.Difficulty}] {problem.Description}");
-            }
-
-            countOfProblems += category.Count();
-        }
-
-        AnsiConsole.WriteLine($"{nl}Total Problems: {countOfProblems}{nl}");
-    }
-
-    public static void WriteProblemDetail(string name)
-    {
-        var problem = Reflection.GetProblem(name);
-        if (problem is null)
-        {
-            AnsiConsole.WriteLine($"Unknown '{name}' Problem");
-            return;
-        }
-
-        AnsiConsole.WriteLine($"Benchmark:    {problem.Name}");
-
-        if (problem.Name != problem.Description)
-        {
-            AnsiConsole.WriteLine($"Description:  {problem.Description}");
-        }
-
-        AnsiConsole.WriteLine($"Difficulty:   {problem.Difficulty}");
-        AnsiConsole.WriteLine($"Category:     {problem.Category.Description()}");
-
-        if (problem.Link is not null)
-        {
-            AnsiConsole.WriteLine($"NeetCode:     {problem.Link}");
-        }
+        return output;
     }
 }

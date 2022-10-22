@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -33,7 +33,7 @@ public sealed partial class Problem
         return maxProfit;
     }
 
-    [Test]
+    [Fact]
     public void MaxProfitTest()
     {
         MaxProfit(new[] { 7, 1, 5, 3, 6, 4 }).Should().Be(5);

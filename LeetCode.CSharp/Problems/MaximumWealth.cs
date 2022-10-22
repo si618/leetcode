@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -9,7 +9,7 @@ public sealed partial class Problem
         return accounts.Select(account => account.Sum()).Max();
     }
 
-    [Test]
+    [Fact]
     public void MaximumWealthTest()
     {
         var ex1 = new[]

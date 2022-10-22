@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -15,7 +15,7 @@ public sealed partial class Problem
             .ToArray();
     }
 
-    [Test]
+    [Fact]
     public void KWeakestRowsTest()
     {
         var ex1 = new[]

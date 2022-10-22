@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -33,7 +33,7 @@ public sealed partial class Problem
         return maxDiameter;
     }
 
-    [Test]
+    [Fact]
     public void DiameterOfBinaryTreeTest()
     {
         var root1 = new TreeNode(1,

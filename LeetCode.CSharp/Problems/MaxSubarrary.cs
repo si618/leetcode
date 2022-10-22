@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -26,7 +26,7 @@ public sealed partial class Problem
         return maxSub;
     }
 
-    [Test]
+    [Fact]
     public void MaxSubarrayTest()
     {
         var ex1 = new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };

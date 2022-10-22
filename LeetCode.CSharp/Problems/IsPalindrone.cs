@@ -1,4 +1,4 @@
-namespace LeetCode;
+namespace LeetCode.CSharp.Problems;
 
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ public sealed partial class Problem
         return !firstHalf.Where((t, i) => t != secondHalf[i]).Any();
     }
 
-    [Test]
+    [Fact]
     public void IsPalindromeTest()
     {
         var single = new ListNode(1);

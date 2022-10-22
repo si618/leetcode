@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -47,7 +47,7 @@ public sealed partial class Problem
         return result.next!;
     }
 
-    [Test]
+    [Fact]
     public void AddTwoNumbersTest()
     {
         var ex11 = new ListNode(new[] { 2, 4, 3 });

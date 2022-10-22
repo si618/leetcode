@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -42,7 +42,7 @@ public sealed partial class Problem
         return row[0];
     }
 
-    [Test]
+    [Fact]
     public void UniquePathsTest()
     {
         UniquePaths(7, 3).Should().Be(28);

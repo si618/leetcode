@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -9,7 +9,7 @@ public sealed partial class Problem
     //    return 0;
     //}
 
-    //[Test]
+    //[Fact]
     //public void FindMedianSortedArraysTest()
     //{
     //    var ex1nums1 = new[] { 1, 3 };

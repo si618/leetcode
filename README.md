@@ -7,11 +7,11 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 ### Building
 
 ``` bash
-> git --version
-git version 2.37.1
-
 > dotnet --list-sdks
-6.0.401 [/usr/share/dotnet/sdk]
+6.0.402 [/usr/share/dotnet/sdk]
+
+> git --version
+git version 2.37.3
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
@@ -22,70 +22,62 @@ Cloning into 'leetcode'...
 
 ```
 
-### Running benchmarks locally
+### Console Application
+
+Problem information and benchmarks can be run from the console application
 
 ``` bash
-# Run all C# and F# benchmarks
-> ./Benchmark.ps1
+> cd ./LeetCode.ConsoleApp
+> dotnet run
+USAGE:
+    LeetCode.exe [OPTIONS] <COMMAND>
+
+EXAMPLES:
+    LeetCode.exe benchmark LRUCache --csharp
+    LeetCode.exe info MergeTwoLists
+
+OPTIONS:
+    -h, --help       Prints help information
+    -v, --version    Prints version information
+
+COMMANDS:
+    app          Run interactive console application
+    benchmark    Run benchmarks against leetcode problems
+    info         Show information about a problem
+    list         List information about problems
+    workflow     Run benchmarks for GitHub workflow
+
+> dotnet run app
     __                __   ______            __
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
 /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
 
-// Validating benchmarks:
-// ***** BenchmarkRunner: Start   *****
-...
-
-# List solved C# problems without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 --problems
-
-# Show problem details without running benchmarks
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 --problem 'LRU Cache'
-
-# Run all F# benchmarks
-> dotnet run --project Benchmarks.FSharp/Benchmarks.FSharp.fsproj -f net6.0 -c Release --filter *Benchmarks*
-
-# Run single C# benchmark
-> dotnet run --project Benchmarks.CSharp/Benchmarks.CSharp.csproj -f net6.0 -c Release --filter *LRUCache
+> List Problems
+  Run Benchmarks
+  About
+  Exit
 ```
 
 ### Running benchmarks from docker
 
 ``` bash
-# Build docker images for C# and F# benchmark projects
+# Build docker image
 > docker compose up
 
-# List solved C# problems without running benchmarks
-> docker run --rm benchmarks-csharp --problems
+# Run console app
+> docker run --rm -it leetcode app
 
-# Show problem details without running benchmarks
-> docker run --rm benchmarks-csharp --problem 'LRU Cache'
+# List solved problems
+> docker run --rm leetcode list
+
+# Show problem details
+> docker run --rm leetcode info 'climbing stairs'
 
 # Run all F# benchmarks
-> docker run benchmarks-fsharp --filter *Benchmarks*
+> docker run leetcode benchmark --fsharp
 
 # Run single C# benchmark
-> docker run benchmarks-csharp --filter *LRUCache
-```
-
-C# benchmarks have options to list summary of problems as well as problem details.
-
-```
-> .\Benchmarks.CSharp.exe --help
-Description:
-  Benchmark C# LeetCode problems using BenchmarkDotNet
-  See: https://benchmarkdotnet.org/articles/guides/console-args.html
-
-Usage:
-  Benchmarks.CSharp [options] [[--] <additional arguments>...]]
-
-Options:
-  --problems           Show problem summary without running benchmarks
-  --problem <problem>  Show details for problem without running benchmarks
-  --version            Show version information
-  -?, -h, --help       Show help and usage information
-
-Additional Arguments:
-  Arguments passed to the application that is being run.
+> docker run leetcode benchmark LRUCache --csharp
 ```

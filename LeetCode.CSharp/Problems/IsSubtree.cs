@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -31,7 +31,7 @@ public sealed partial class Problem
         return IsSubtree(root.left, subRoot) || IsSubtree(root.right, subRoot);
     }
 
-    [Test]
+    [Fact]
     public void IsSubtreeTest()
     {
         var root1 = new TreeNode(new int?[] { 3, 4, 5, 1, 2 });

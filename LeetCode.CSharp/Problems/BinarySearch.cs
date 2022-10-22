@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -36,7 +36,7 @@ public sealed partial class Problem
         return -1;
     }
 
-    [Test]
+    [Fact]
     public void BinarySearchTest()
     {
         var nums = new[] { -1, 0, 3, 5, 9, 12 };

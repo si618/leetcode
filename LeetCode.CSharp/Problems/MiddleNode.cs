@@ -1,4 +1,4 @@
-namespace LeetCode;
+namespace LeetCode.CSharp.Problems;
 
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ public sealed partial class Problem
         return list.Skip(skip).First();
     }
 
-    [Test]
+    [Fact]
     public void MiddleNodeTest()
     {
         var single = new ListNode(1);

@@ -2,44 +2,74 @@
 
 internal static class Reflection
 {
-    public static ProblemDetail? GetProblem(string name) =>
-        typeof(Problem)
-            .GetMembers()
-            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-            .Select(m =>
-            {
-                var a = m.GetCustomAttribute(typeof(LeetCodeAttribute)) as LeetCodeAttribute;
-                return new ProblemDetail(m.Name, a!.Description, a.Category, a.Difficulty, a.Link);
-            })
-            .FirstOrDefault(p =>
-                p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
-                p.Description.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+    public static bool TryGetProblem(string name, out ProblemDetail problem)
+    {
+        var found = typeof(Problem)
+             .GetMembers()
+             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
+             .Select(GetProblemDetail)
+             .FirstOrDefault(p =>
+                 p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
+                 p.Description.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+        problem = found ?? null!;
+        return found is not null;
+    }
 
     public static IEnumerable<IGrouping<Category, ProblemDetail>> GetProblemsByCategory() =>
         typeof(Problem)
             .GetMembers()
             .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
-            .Select(m =>
-            {
-                var a = m.GetCustomAttribute(typeof(LeetCodeAttribute)) as LeetCodeAttribute;
-                return new ProblemDetail(m.Name, a!.Description, a.Category, a.Difficulty, a.Link);
-            })
+            .Select(GetProblemDetail)
             .OrderBy(s => s.Category)
             .ThenBy(s => s.Difficulty)
             .ThenBy(s => s.Description)
             .GroupBy(s => s.Category, s => s);
 
     public static IEnumerable<string> GetCSharpBenchmarks() =>
-        GetSharpBenchmarks("LeetCode.CSharpBenchmarks");
+        GetCSharpBenchmarkTypes().Select(type =>
+            type.Name.EndsWith("Benchmark") ? type.Name[..^9] : type.Name);
 
     public static IEnumerable<string> GetFSharpBenchmarks() =>
-        GetSharpBenchmarks("LeetCode.FSharpBenchmarks");
+        GetFSharpBenchmarkTypes().Select(type =>
+            type.Name.EndsWith("Benchmark") ? type.Name[..^9] : type.Name);
 
-    private static IEnumerable<string> GetSharpBenchmarks(string name) =>
-        AppDomain.CurrentDomain.GetAssemblies()
-            .Where(a => !a.IsDynamic)
-            .SelectMany(a => a.GetTypes())
-            .First(t => t.FullName!.Equals(name))
-            .GetMethods()
+    public static IEnumerable<Type> GetCSharpBenchmarkTypes() =>
+        typeof(Benchmark).Assembly.GetTypes()
+            .Where(type => type.Namespace is not null && !type.IsAbstract &&
+                 type.Namespace.StartsWith("LeetCode.CSharp.Benchmarks"));
+
+    public static IEnumerable<Type> GetFSharpBenchmarkTypes() =>
+        typeof(FSharp.ListNode).Assembly.GetTypes()
+            .Where(type => type.Namespace is not null &&
+                type.Namespace.StartsWith("LeetCode.FSharp.Benchmarks"));
+
+    private static IEnumerable<string> GetCSharpProblems() =>
+        typeof(Problem)
+            .GetMembers()
+            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
             .Select(m => m.Name);
+
+    private static IEnumerable<string> GetFSharpProblems() =>
+        typeof(FSharp.ListNode).Assembly.GetTypes()
+            .Where(type => type.Namespace is not null &&
+                           type.Namespace.StartsWith("LeetCode.FSharp.Problems"))
+            .Select(type => type.Name);
+
+    private static ProblemDetail GetProblemDetail(MemberInfo memberInfo)
+    {
+        ArgumentNullException.ThrowIfNull(nameof(memberInfo));
+
+        var csharp = GetCSharpProblems().Contains(memberInfo.Name);
+        var fsharp = GetFSharpProblems().Contains(memberInfo.Name);
+        var attribute = memberInfo.GetCustomAttribute<LeetCodeAttribute>();
+
+        return new ProblemDetail(
+            memberInfo.Name,
+            attribute!.Description,
+            attribute.Category,
+            attribute.Difficulty,
+            attribute.Link,
+            csharp,
+            fsharp);
+    }
 }

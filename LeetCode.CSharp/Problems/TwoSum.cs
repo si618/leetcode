@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -27,7 +27,7 @@ public sealed partial class Problem
         throw new ArgumentOutOfRangeException(nameof(target));
     }
 
-    [Test]
+    [Fact]
     public void TwoSumTest()
     {
         var ex1 = new[] { 2, 7, 11, 15 };

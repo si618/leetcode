@@ -1,14 +1,8 @@
 version: '3.4'
 
 services:
-  benchmarks-csharp:
-    image: benchmarks-csharp
+  leetcode:
+    image: leetcode
     build:
       context: .
-      dockerfile: Benchmarks.CSharp/Dockerfile
-
-  benchmarks-fsharp:
-    image: benchmarks-fsharp
-    build:
-      context: .
-      dockerfile: Benchmarks.FSharp/Dockerfile
+      dockerfile: LeetCode.ConsoleApp/Dockerfile

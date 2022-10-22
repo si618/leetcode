@@ -2,7 +2,10 @@ name: Build and Benchmark
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, reopened]
 
 env:
   DOTNET_NOLOGO: true
@@ -51,51 +54,29 @@ jobs:
           dotnet-version: |
             6.0.x
 
-      - name: List C# problems
-        id: problems-csharp
+      - name: List problems
+        id: list-problems
         run: |
           dotnet run \
-            --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
-            --framework $DOTNET_FRAMEWORK \
-            --problems
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj
+            list
 
-      - name: Run C# benchmark
-        id: benchmark-csharp
+      - name: Run benchmarks
+        id: run-benchmarks
         run: |
           dotnet run \
-            --project ./Benchmarks.CSharp/Benchmarks.CSharp.csproj \
-            --framework $DOTNET_FRAMEWORK \
-            --configuration Release \
-            --filter LeetCode.CSharpBenchmarks* \
-            --exporters json \
-            --memory
-
-      - name: Run F# benchmark
-        id: benchmark-fsharp
-        run: |
-          dotnet run \
-            --project ./Benchmarks.FSharp/Benchmarks.FSharp.fsproj \
+            --project ./LeetCode.ConsoleApp/LeetCode.ConsoleApp.csproj
             --framework $DOTNET_FRAMEWORK \
             --configuration Release \
-            --filter LeetCode.FSharpBenchmarks* \
-            --exporters json \
-            --memory
+            workflow
 
-      - name: Store C# benchmark result
-        uses: rhysd/github-action-benchmark@v1
+      - name: Store benchmark results
+        id: store-benchmarks
+        if: ${{ github.event_name == 'push' }}
+        uses: benchmark-action/github-action-benchmark@v1.14.0
         with:
-          name: C# Benchmarks
+          name: Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.CSharpBenchmarks-report-full-compressed.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.Benchmarks.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-push: false
-
-      - name: Store F# benchmark result
-        uses: rhysd/github-action-benchmark@v1
-        with:
-          name: F# Benchmarks
-          tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/LeetCode.FSharpBenchmarks-report-full-compressed.json
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          skip-fetch-gh-pages: true
           auto-push: true

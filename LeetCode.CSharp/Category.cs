@@ -1,71 +1,44 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp;
 
 /// <summary>NeetCode category</summary>
 public enum Category
 {
-    /// <summary>Not in NeetCode</summary>
-    NotInNeetCode = 0,
     /// <summary>Arrays & Hashing</summary>
-    ArraysAndHashing = 1,
+    ArraysAndHashing,
     /// <summary>Two Pointers</summary>
-    TwoPointers = 2,
+    TwoPointers,
     /// <summary>Sliding Window</summary>
-    SlidingWindow = 3,
+    SlidingWindow,
     /// <summary>Stack</summary>
-    Stack = 4,
+    Stack,
     /// <summary>Binary Search</summary>
-    BinarySearch = 5,
+    BinarySearch,
     /// <summary>Linked List</summary>
-    LinkedList = 6,
+    LinkedList,
     /// <summary>Trees</summary>
-    Trees = 7,
+    Trees,
     /// <summary>Tries</summary>
-    Tries = 8,
+    Tries,
     /// <summary>Heap / Priority Queue</summary>
-    HeapPriorityQueue = 9,
+    HeapPriorityQueue,
     /// <summary>Back Tracking</summary>
-    BackTracking = 10,
+    BackTracking,
     /// <summary>Graphs</summary>
-    Graphs = 11,
+    Graphs,
     /// <summary>Advanced Graphs</summary>
-    AdvancedGraphs = 12,
+    AdvancedGraphs,
     /// <summary>1-D Dynamic Programming</summary>
-    OneDDynamicProgramming = 13,
+    OneDDynamicProgramming,
     /// <summary>2-D Dynamic Programming</summary>
-    TwoDDynamicProgramming = 14,
+    TwoDDynamicProgramming,
     /// <summary>Greedy</summary>
-    Greedy = 15,
+    Greedy,
     /// <summary>Intervals</summary>
-    Intervals = 16,
+    Intervals,
     /// <summary>Math and Geometry</summary>
-    MathAndGeometry = 17,
+    MathAndGeometry,
     /// <summary>Bit Manipulation</summary>
-    BitManipulation = 18
-}
-
-public static class CategoryExtensions
-{
-    public static string Description(this Category category) => category switch
-    {
-        Category.NotInNeetCode => "Not listed in NeetCode",
-        Category.ArraysAndHashing => "Arrays & Hashing",
-        Category.TwoPointers => "Two Pointers",
-        Category.SlidingWindow => "Sliding Window",
-        Category.Stack => "Stack",
-        Category.BinarySearch => "Binary Search",
-        Category.LinkedList => "Linked List",
-        Category.Trees => "Trees",
-        Category.Tries => "Tries",
-        Category.HeapPriorityQueue => "Heap / Priority Queue",
-        Category.BackTracking => "Back Tracking",
-        Category.Graphs => "Graphs",
-        Category.AdvancedGraphs => "Advanced Graphs",
-        Category.OneDDynamicProgramming => "1-D Dynamic Programming",
-        Category.TwoDDynamicProgramming => "2-D Dynamic Programming",
-        Category.Greedy => "Greedy",
-        Category.Intervals => "Intervals",
-        Category.MathAndGeometry => "Maths & Geometry",
-        Category.BitManipulation => "Bit Manipulation",
-        _ => throw new InvalidOperationException($"Missing description for {category}")
-    };
+    BitManipulation,
+    /// <summary>Not in NeetCode</summary>
+    NotInNeetCode
 }

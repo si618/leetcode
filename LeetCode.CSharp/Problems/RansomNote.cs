@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -32,7 +32,7 @@ public sealed partial class Problem
         return true;
     }
 
-    [Test]
+    [Fact]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RansomNoteTest()
     {

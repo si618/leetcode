@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -28,7 +28,7 @@ public sealed partial class Problem
         return root;
     }
 
-    [Test]
+    [Fact]
     public void InvertTreeTest()
     {
         var root1 = new TreeNode(4,

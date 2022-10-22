@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -39,7 +39,7 @@ public sealed partial class Problem
         return subsets;
     }
 
-    [Test]
+    [Fact]
     public void SubsetsTest()
     {
         var ex1 = new[] { 1, 2, 3 };

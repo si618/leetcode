@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+﻿namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -38,7 +38,7 @@ public sealed partial class Problem
         }
     }
 
-    [Test]
+    [Fact]
     public void KthLargestTest()
     {
         var ex1 = new KthLargest(3, new[] { 4, 5, 8, 2 });
