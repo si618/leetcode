@@ -6,12 +6,13 @@ internal sealed class WorkflowCommand : Command
     {
         ConsoleWriter.WriteHeader(appendLine: true);
 
-        if (BenchmarkRunner.IsDebugConfiguration())
+        if (BenchmarkRunner.IsDebugConfiguration(true))
         {
             return 1;
         }
 
-        BenchmarkRunner.RunBenchmarks(BuildTypes(), BuildArgs());
+        var settings = new BenchmarkSettings { CSharp = true, FSharp = true };
+        BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), settings.BuildArgs());
         CombineBenchmarkResults();
 
         return 0;
@@ -47,8 +48,11 @@ internal sealed class WorkflowCommand : Command
             File.Delete(resultsPath);
         }
 
+        const string ns = "LeetCode.XSharp.Benchmarks.";
         var reports = Directory
             .GetFiles(resultsDir, searchPattern, SearchOption.TopDirectoryOnly)
+            .OrderBy(report => report)
+            .ThenBy(report => report[..ns.Length])
             .ToArray();
         if (!reports.Any())
         {
@@ -64,9 +68,14 @@ internal sealed class WorkflowCommand : Command
 
         foreach (var report in reports.Skip(1))
         {
-            var array = JsonNode.Parse(File.ReadAllText(report))!["Benchmarks"]!.AsArray();
-            foreach (var benchmark in array)
+            var node = JsonNode.Parse(File.ReadAllText(report))!["Benchmarks"]!.AsArray();
+
+            // Make pretty as only one method per benchmark - or tweak index.html
+            var language = report.Contains("CSharp") ? "C#" : "F#";
+
+            foreach (var benchmark in node.AsArray())
             {
+                benchmark!["FullName"] = $"{benchmark["Method"]} in {language}";
                 // Double parse avoids "The node already has a parent" exception
                 benchmarks.Add(JsonNode.Parse(benchmark!.ToJsonString())!);
             }

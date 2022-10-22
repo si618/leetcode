@@ -2,53 +2,12 @@
 
 internal static class BenchmarkRunner
 {
-    public static string[] BuildArgs(BenchmarkSettings settings)
+    public static IEnumerable<Summary> BuildSummaries(BenchmarkSettings settings)
     {
-        var args = new List<string> { "--filter" };
-
-        // No filter means run all benchmarks for specified options
-        if (string.IsNullOrEmpty(settings.Filter))
-        {
-            if (settings.CSharp)
-            {
-                args.Add("LeetCode.CSharp*");
-            }
-            else if (settings.FSharp)
-            {
-                args.Add("LeetCode.FSharp*");
-            }
-            else
-            {
-                args.Add("LeetCode*");
-            }
-        }
-        else
-        {
-            if (settings.Filter.Contains('*'))
-            {
-                // User added wildcard so use whatever was passed
-                args.Add(settings.Filter);
-            }
-            else if (settings.Filter.Contains('.'))
-            {
-                // User added namespace but no wildcard so add suffix
-                args.Add($"{settings.Filter}*");
-            }
-            else
-            {
-                // No wildcard or namespace so add wildcard prefix
-                args.Add($"*{settings.Filter}");
-            }
-        }
-
-        return args.ToArray();
-    }
-
-    public static IEnumerable<Summary> BuildSummaries(BenchmarkSettings settings, string[] args)
-    {
+        var args = settings.BuildArgs();
         if (args.Length != 2)
         {
-            throw new ArgumentOutOfRangeException(nameof(args));
+            throw new ArgumentOutOfRangeException(nameof(settings), "Invalid arguments");
         }
 
         Console.SetOut(TextWriter.Null);

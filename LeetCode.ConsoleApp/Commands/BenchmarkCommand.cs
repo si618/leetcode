@@ -13,8 +13,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
             return 1;
         }
 
-        var args = BenchmarkRunner.BuildArgs(settings);
-        var summaries = BenchmarkRunner.BuildSummaries(settings, args);
+        var summaries = BenchmarkRunner.BuildSummaries(settings);
         var builder = new SpectreReportBuilder(summaries);
         var report = builder.Build();
 

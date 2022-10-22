@@ -22,8 +22,7 @@ internal sealed record BenchmarkSelection : Selection
         ConsoleWriter.WriteHeader(appendLine: true);
 
         var settings = new BenchmarkSettings { Filter = Problem.Name };
-        var args = BenchmarkRunner.BuildArgs(settings);
-        var summaries = BenchmarkRunner.BuildSummaries(settings, args);
+        var summaries = BenchmarkRunner.BuildSummaries(settings);
         var builder = new SpectreReportBuilder(summaries);
         var report = builder.Build();
 

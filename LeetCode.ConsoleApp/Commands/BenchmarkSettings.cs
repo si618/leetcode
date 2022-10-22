@@ -46,6 +46,48 @@ internal sealed class BenchmarkSettings : CommandSettings
             .ToArray();
     }
 
+    public string[] BuildArgs()
+    {
+        var args = new List<string> { "--filter" };
+
+        // No filter means run all benchmarks for specified options
+        if (string.IsNullOrEmpty(Filter))
+        {
+            if (CSharp)
+            {
+                args.Add("LeetCode.CSharp*");
+            }
+            else if (FSharp)
+            {
+                args.Add("LeetCode.FSharp*");
+            }
+            else
+            {
+                args.Add("LeetCode*");
+            }
+        }
+        else
+        {
+            if (Filter.Contains('*'))
+            {
+                // User added wildcard so use whatever was passed
+                args.Add(Filter);
+            }
+            else if (Filter.Contains('.'))
+            {
+                // User added namespace but no wildcard so add suffix
+                args.Add($"{Filter}*");
+            }
+            else
+            {
+                // No wildcard or namespace so add wildcard prefix
+                args.Add($"*{Filter}");
+            }
+        }
+
+        return args.ToArray();
+    }
+
     private bool BenchmarkFound() =>
         Reflection
             .GetCSharpBenchmarks()
