@@ -89,6 +89,12 @@ internal sealed class BenchmarkSettings : CommandSettings
             }
         }
 
+        if (!string.IsNullOrEmpty(Exporters))
+        {
+            args.Add("--exporters");
+            args.Add(Exporters);
+        }
+
         return args.ToArray();
     }
 
