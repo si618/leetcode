@@ -11,7 +11,7 @@ internal sealed class WorkflowCommand : Command
             return 1;
         }
 
-        var settings = new BenchmarkSettings { CSharp = true, FSharp = true };
+        var settings = new BenchmarkSettings();
         var args = BuildWorkflowArgs();
         args.AddRange(settings.BuildArgs());
         BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), args.ToArray());
@@ -60,28 +60,34 @@ internal sealed class WorkflowCommand : Command
             throw new FileNotFoundException($"Reports not found '{searchPattern}'");
         }
 
-        var combinedReport = JsonNode.Parse(File.ReadAllText(reports.First()))!;
+        var firstReport = reports.First();
+        var combinedReport = JsonNode.Parse(File.ReadAllText(firstReport))!;
         var title = combinedReport["Title"]!;
         var benchmarks = combinedReport["Benchmarks"]!.AsArray();
+        SetBenchmarkName(firstReport, benchmarks);
 
         // Rename title whilst keeping original timestamp
         combinedReport["Title"] = $"{resultsFile}{title.GetValue<string>()[^16..]}";
 
         foreach (var report in reports.Skip(1))
         {
-            var node = JsonNode.Parse(File.ReadAllText(report))!["Benchmarks"]!.AsArray();
-
-            // Make pretty as only one method per benchmark - or tweak index.html
-            var language = report.Contains("CSharp") ? "C#" : "F#";
+            var node = JsonNode.Parse(File.ReadAllText(report))!["Benchmarks"]!;
 
             foreach (var benchmark in node.AsArray())
             {
-                benchmark!["FullName"] = $"{benchmark["Method"]} in {language}";
+                SetBenchmarkName(report, benchmark!);
                 // Double parse avoids "The node already has a parent" exception
                 benchmarks.Add(JsonNode.Parse(benchmark!.ToJsonString())!);
             }
         }
 
         File.WriteAllText(resultsPath, combinedReport.ToString());
+    }
+
+    private static void SetBenchmarkName(string report, JsonNode benchmark)
+    {
+        // Make pretty as only one method per benchmark - or tweak index.html?
+        var language = report.Contains("CSharp") ? "C#" : "F#";
+        benchmark!["FullName"] = $"{benchmark["Method"]} in {language}";
     }
 }
