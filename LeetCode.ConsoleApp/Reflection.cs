@@ -63,6 +63,11 @@ internal static class Reflection
         var fsharp = GetFSharpProblems().Contains(memberInfo.Name);
         var attribute = memberInfo.GetCustomAttribute<LeetCodeAttribute>();
 
+        if (!csharp && !fsharp || attribute is null)
+        {
+            throw new ArgumentException("Member info is not a problem", nameof(memberInfo));
+        }
+
         return new ProblemDetail(
             memberInfo.Name,
             attribute!.Description,
