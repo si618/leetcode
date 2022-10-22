@@ -12,7 +12,9 @@ internal sealed class WorkflowCommand : Command
         }
 
         var settings = new BenchmarkSettings { CSharp = true, FSharp = true };
-        BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), settings.BuildArgs());
+        var args = BuildWorkflowArgs();
+        args.AddRange(settings.BuildArgs());
+        BenchmarkRunner.RunBenchmarks(settings.BenchmarkTypes(), args.ToArray());
         CombineBenchmarkResults();
 
         return 0;
@@ -23,10 +25,9 @@ internal sealed class WorkflowCommand : Command
             .Union(Reflection.GetFSharpBenchmarkTypes())
             .ToArray();
 
-    private static string[] BuildArgs() =>
-        new[]
+    private static List<string> BuildWorkflowArgs() =>
+        new()
         {
-            "--filter", "LeetCode.*",
             "--exporters", "json",
             "--memory"
         };
