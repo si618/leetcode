@@ -24,7 +24,7 @@ Cloning into 'leetcode'...
 
 ### Console application
 
-Problem information can be shown as well as benchmarks run from the console application.
+An interactive console application can run benchmarks and show problem information.
 
 ``` bash
 > cd ./LeetCode
@@ -60,7 +60,7 @@ COMMANDS:
   Exit
 ```
 
-### Running benchmarks from docker
+### Run application from docker
 
 ``` bash
 # Build docker image
@@ -70,14 +70,14 @@ COMMANDS:
 > docker run --rm -it leetcode app
 
 # List information about problems
-> docker run --rm leetcode list
+> docker run --rm -it leetcode list
 
 # Show information about a problem
-> docker run --rm leetcode info 'climbing stairs'
+> docker run --rm -it leetcode info 'climbing stairs'
 
 # Run all F# benchmarks
-> docker run leetcode benchmark --fsharp
+> docker run --rm -it leetcode benchmark --fsharp
 
 # Run single C# benchmark
-> docker run leetcode benchmark LRUCache --csharp
+> docker run --rm -it leetcode benchmark LRUCache --csharp
 ```
