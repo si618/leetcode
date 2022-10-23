@@ -2,16 +2,14 @@
 
 internal static class ConsoleWriter
 {
-    public static void WriteHeader(bool appendLine = false)
+    public static void WriteHeader(bool clearConsole = false, bool appendLine = false)
     {
-        const string header =
-@"    __                __   ______            __
-   / /   ___   ___   / /_ / ____/____   ____/ /___
-  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
- / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
-/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/";
+        if (clearConsole)
+        {
+            AnsiConsole.Clear();
+        }
 
-        var output = MakeRainbow(header);
+        var output = MakeRainbow(Resources.Header);
 
         if (appendLine)
         {

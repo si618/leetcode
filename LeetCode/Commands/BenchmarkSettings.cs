@@ -2,7 +2,7 @@
 
 internal sealed class BenchmarkSettings : CommandSettings
 {
-    [Description("Filter by LeetCode.[C|F]Sharp.Benchmarks.<Name> (* wildcards accepted)")]
+    [Description("Filter by LeetCode.<C|F>Sharp.Benchmarks.<Name> (* wildcards accepted)")]
     [CommandArgument(0, "[filter]")]
     public string? Filter { get; init; }
 
@@ -22,12 +22,21 @@ internal sealed class BenchmarkSettings : CommandSettings
     [CommandOption("--exporters")]
     public string? Exporters { get; init; }
 
-    public override ValidationResult Validate() =>
-        CSharp && FSharp
-            ? ValidationResult.Error("--csharp and --fsharp options are mutually exclusive")
-            : string.IsNullOrEmpty(Filter) || BenchmarkFound()
-                ? ValidationResult.Success()
-                : ValidationResult.Error($"Benchmark not found '{Filter}'");
+    public override ValidationResult Validate()
+    {
+        if (CSharp && FSharp)
+        {
+            return ValidationResult.Error(Resources.BenchmarkSettings_Error_MutuallyExclusive);
+        }
+
+        if (!string.IsNullOrEmpty(Filter) && !BenchmarkFound())
+        {
+            return ValidationResult.Error(
+                string.Format(Resources.BenchmarkSettings_Error_BenchmarkNotFound, Filter));
+        }
+
+        return ValidationResult.Success();
+    }
 
     public Type[] BenchmarkTypes()
     {
