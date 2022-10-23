@@ -66,7 +66,7 @@ COMMANDS:
 # Build docker image
 > docker compose up
 
-# Run console app
+# Run interactive console application
 > docker run --rm -it leetcode app
 
 # List information about problems
