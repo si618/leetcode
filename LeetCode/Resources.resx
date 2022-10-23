@@ -276,4 +276,7 @@
     <data name="Problem_Language_Separator" xml:space="preserve">
         <value>and</value>
     </data>
+    <data name="Console_ReturnToMainMenu_Markup" xml:space="preserve">
+        <value>[gray](Press any key to return to main menu)[/]</value>
+    </data>
 </root>

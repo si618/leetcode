@@ -37,7 +37,7 @@ internal static class BenchmarkRunner
         {
             var language = problem.Language($" {Resources.Problem_Language_Separator} ");
             var benchmark = problem.CSharp & problem.FSharp
-                ? Resources.Benchmark_Plural : Resources.Benchmark_Singular;
+                ? Resources.Benchmark_Plural.ToLower() : Resources.Benchmark_Singular.ToLower();
             message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Markup,
                 language, benchmark, problem.Name);
         }

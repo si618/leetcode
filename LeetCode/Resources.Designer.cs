@@ -402,6 +402,15 @@ namespace LeetCode {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [gray](Press any key to return to main menu)[/].
+        /// </summary>
+        internal static string Console_ReturnToMainMenu_Markup {
+            get {
+                return ResourceManager.GetString("Console_ReturnToMainMenu_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [green]Easy[/].
         /// </summary>
         internal static string Difficulty_Easy_Markup {

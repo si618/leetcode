@@ -2,6 +2,7 @@
 
 internal sealed class ListCommand : Command
 {
+    [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
     public override int Execute([NotNull] CommandContext context)
     {
         ConsoleWriter.WriteHeader(appendLine: false);

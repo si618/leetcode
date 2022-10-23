@@ -2,9 +2,9 @@
 
 internal abstract class MenuBase
 {
-    public IEnumerable<Selection> MenuItems { get; protected init; } = Array.Empty<Selection>();
+    protected IEnumerable<Selection> Choices { get; init; } = Array.Empty<Selection>();
 
-    public IEnumerable<Selection> GetMenuItems() => MenuItems.OrderBy(m => m.Order);
+    protected IEnumerable<Selection> GetChoices() => Choices.OrderBy(m => m.Order);
 
     public abstract int Render();
 }

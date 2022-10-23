@@ -7,7 +7,7 @@ internal sealed class ProblemMenu : MenuBase
     public ProblemMenu(Problem problem)
     {
         Problem = problem;
-        MenuItems = new List<Selection>
+        Choices = new List<Selection>
         {
             new BenchmarkSelection(Problem, 1),
             new ExitSelection(2)
@@ -21,17 +21,13 @@ internal sealed class ProblemMenu : MenuBase
         AnsiConsole.Write(Problem.Markup());
         AnsiConsole.WriteLine();
 
-        var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()
-            .AddChoices(GetMenuItems())
+            .AddChoices(GetChoices())
             .UseConverter(m => m.Name);
 
-        var exitCode = 0;
-        while (selected.Name != ExitSelection.Exit)
-        {
-            selected = AnsiConsole.Prompt(prompt);
-            exitCode = selected.Execute();
-        }
+        var selected = AnsiConsole.Prompt(prompt);
+        var exitCode = selected.Execute();
+
         return exitCode;
     }
 }

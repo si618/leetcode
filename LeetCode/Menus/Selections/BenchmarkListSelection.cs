@@ -10,9 +10,9 @@ internal sealed record BenchmarkListSelection : Selection
     {
         ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
-        AnsiConsole.Write("TODO: Multi selection prompt to run all or selected benchmarks in C# or F#");
+        AnsiConsole.WriteLine("TODO: Multi selection prompt to run all or selected benchmarks in C# or F#");
 
-        Console.ReadLine();
+        ConsoleWriter.WaitForKeyPress();
 
         return 0;
     }

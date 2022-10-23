@@ -19,6 +19,11 @@ internal sealed record BenchmarkSelection : Selection
     {
         ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
+        if (BenchmarkRunner.IsDebugConfiguration(true))
+        {
+            return 1;
+        }
+
         var settings = new BenchmarkSettings { Filter = Problem.Name };
         var summaries = BenchmarkRunner.BuildSummaries(settings);
         var builder = new SpectreReportBuilder(summaries);
@@ -26,17 +31,7 @@ internal sealed record BenchmarkSelection : Selection
 
         AnsiConsole.Write(report);
 
-        var menu = new BenchmarkMenu(Problem);
-        var selected = menu.MenuItems.First();
-        var prompt = new SelectionPrompt<Selection>()
-            .AddChoices(menu.GetMenuItems())
-            .UseConverter(m => m.Name);
-
-        while (selected.Name != ExitSelection.Exit)
-        {
-            selected = AnsiConsole.Prompt(prompt);
-            selected.Execute();
-        }
+        ConsoleWriter.WaitForKeyPress();
 
         return 0;
     }

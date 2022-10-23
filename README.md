@@ -4,7 +4,7 @@
 [Benchmarked](https://si618.github.io/leetcode/dev/bench) C# submissions for [LeetCode](https://leetcode.com) problems with naïve F# solutions on my functional programming journey.
 
 After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm now following the author's guidance and supporting his work by becoming a lifetime member 🙇‍
-### Build and Test
+### Build and test
 
 ``` bash
 > dotnet --list-sdks
@@ -22,9 +22,9 @@ Cloning into 'leetcode'...
 
 ```
 
-### Console Application
+### Console application
 
-Problem information and benchmarks can be run from the console application.
+Problem information can be shown as well as benchmarks run from the console application.
 
 ``` bash
 > cd ./LeetCode

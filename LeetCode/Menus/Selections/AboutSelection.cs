@@ -12,13 +12,7 @@ internal sealed record AboutSelection : Selection
 
         AnsiConsole.WriteLine("About stuff goes here");
 
-        AnsiConsole.WriteLine();
-
-        AnsiConsole.MarkupLine("[gray](Press any key to return to main menu)[/]");
-
-        AnsiConsole.Cursor.Hide();
-
-        Console.ReadKey();
+        ConsoleWriter.WaitForKeyPress();
 
         return 0;
     }
