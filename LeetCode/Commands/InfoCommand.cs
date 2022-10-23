@@ -13,7 +13,7 @@ internal sealed class InfoCommand : Command<ProblemSettings>
             throw new InvalidOperationException("Problem settings validation failed");
         }
 
-        AnsiConsole.Write(problem.ToMarkupTable());
+        AnsiConsole.Write(problem.Markup());
 
         AnsiConsole.WriteLine();
 

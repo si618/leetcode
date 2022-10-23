@@ -15,10 +15,10 @@ internal sealed class ListCommand : Command
     {
         var table = new Table();
 
-        table.AddColumn("Problem", config => config.NoWrap = true);
-        table.AddColumn("Category");
-        table.AddColumn("Difficulty");
-        table.AddColumn("Language");
+        table.AddColumn(Resources.Problem_Name, config => config.NoWrap = true);
+        table.AddColumn(Resources.Problem_Category);
+        table.AddColumn(Resources.Problem_Difficulty);
+        table.AddColumn(Resources.Problem_Language);
         table.SimpleBorder();
         table.BorderColor(Color.Grey);
 
@@ -32,18 +32,19 @@ internal sealed class ListCommand : Command
             {
                 var missing = cSharpBenchmarks.Contains(problem.Name)
                     ? string.Empty
-                    : " [red]* Missing C# Benchmark *[/]";
+                    : " " + Resources.ListCommand_Missing_CSharpBenchmark_Markup;
+
                 if (problem.FSharp && !fSharpBenchmarks.Contains(problem.Name))
                 {
                     missing = string.IsNullOrEmpty(missing)
-                        ? " [red]* Missing F# Benchmark *[/]"
-                        : " [red]* Missing C# and F# Benchmarks *[/]";
+                        ? " " + Resources.ListCommand_Missing_FSharpBenchmark_Markup
+                        : " " + Resources.ListCommand_Missing_BothBenchmarks_Markup;
                 }
 
                 table.AddRow(
                     problem.Description + missing,
                     problem.Category.Description(),
-                    problem.Difficulty.ToMarkup(),
+                    problem.Difficulty.Markup(),
                     problem.LanguageMarkup());
             }
         }

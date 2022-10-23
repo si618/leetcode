@@ -8,9 +8,7 @@ internal sealed record AboutSelection : Selection
 
     public override int Execute()
     {
-        AnsiConsole.Clear();
-
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
         AnsiConsole.WriteLine("About stuff goes here");
 

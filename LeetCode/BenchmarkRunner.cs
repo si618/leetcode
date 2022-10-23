@@ -7,6 +7,7 @@ internal static class BenchmarkRunner
         var args = settings.BuildArgs();
         if (args.Length != 2)
         {
+            // ReSharper disable once LocalizableElement - Exceptions in English
             throw new ArgumentOutOfRangeException(nameof(settings), "Invalid arguments");
         }
 
@@ -31,23 +32,27 @@ internal static class BenchmarkRunner
     private static string WaitingMessage(BenchmarkSettings settings, string parsedFilter)
     {
         var message = new StringBuilder();
+
         if (Reflection.TryGetProblem(parsedFilter, out var problem))
         {
-            var language = problem.Language(" and ");
-            var plural = language.Contains("and") ? "s" : string.Empty;
-            message.Append($"Running {language} benchmark{plural} for [yellow]{problem.Name}[/]");
+            var language = problem.Language($" {Resources.Problem_Language_Separator} ");
+            var benchmark = problem.CSharp & problem.FSharp
+                ? Resources.Benchmark_Plural : Resources.Benchmark_Singular;
+            message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Markup,
+                language, benchmark, problem.Name);
         }
         else
         {
             message.Append(!settings.CSharp && !settings.FSharp
-                ? "Running C# and F# benchmarks"
+                ? Resources.BenchmarkRunner_Running_BothBenchmarks
                 : settings.CSharp
-                    ? "Running C# benchmarks"
-                    : "Running F# benchmarks");
+                    ? Resources.BenchmarkRunner_Running_CSharpBenchmarks
+                    : Resources.BenchmarkRunner_Running_FSharpBenchmarks);
 
             if (settings.Filter?.Length > 0)
             {
-                message.Append($" matching [yellow]{settings.Filter!}[/]");
+                message.AppendFormat(
+                    Resources.BenchmarkRunner_Running_FilterSuffix_Markup, settings.Filter!);
             }
         }
 

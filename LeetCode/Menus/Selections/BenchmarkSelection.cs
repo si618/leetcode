@@ -17,9 +17,7 @@ internal sealed record BenchmarkSelection : Selection
 
     public override int Execute()
     {
-        AnsiConsole.Clear();
-
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
         var settings = new BenchmarkSettings { Filter = Problem.Name };
         var summaries = BenchmarkRunner.BuildSummaries(settings);

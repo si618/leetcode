@@ -14,10 +14,6 @@ internal sealed class MainMenu : MenuBase
     }
     public override int Render()
     {
-        AnsiConsole.Clear();
-
-        ConsoleWriter.WriteHeader(appendLine: true);
-
         var selected = MenuItems.First();
         var prompt = new SelectionPrompt<Selection>()
             .AddChoices(GetMenuItems())
@@ -26,8 +22,7 @@ internal sealed class MainMenu : MenuBase
         var exitCode = 0;
         while (selected.Name != ExitSelection.Exit)
         {
-            AnsiConsole.Clear();
-            ConsoleWriter.WriteHeader(appendLine: true);
+            ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
             selected = AnsiConsole.Prompt(prompt);
             exitCode = selected.Execute();
         }

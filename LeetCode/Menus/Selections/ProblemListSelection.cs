@@ -8,9 +8,7 @@ internal sealed record ProblemListSelection : Selection
 
     public override int Execute()
     {
-        AnsiConsole.Clear();
-
-        ConsoleWriter.WriteHeader(appendLine: false);
+        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
         var problems = Reflection
             .GetProblemsByCategory()
@@ -52,6 +50,6 @@ internal sealed record ProblemListSelection : Selection
         => new StringBuilder()
             .Append($"{problem.Description.PadRight(padding.DescriptionPad + 3)}")
             .Append($"{problem.Category.Description().PadRight(padding.CategoryPad + 3)}")
-            .Append($"{problem.Difficulty.ToMarkup()}")
+            .Append($"{problem.Difficulty.Markup()}")
             .ToString();
 }

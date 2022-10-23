@@ -9,7 +9,7 @@ internal static class ConsoleWriter
             AnsiConsole.Clear();
         }
 
-        var output = MakeRainbow(Resources.Header);
+        var output = MakeRainbow(Resources.LeetCode_Figlet);
 
         if (appendLine)
         {

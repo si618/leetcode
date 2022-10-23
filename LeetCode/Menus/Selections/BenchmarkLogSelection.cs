@@ -8,9 +8,7 @@ internal sealed record BenchmarkLogSelection : Selection
 
     public override int Execute()
     {
-        AnsiConsole.Clear();
-
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
         AnsiConsole.WriteLine();
 

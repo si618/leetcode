@@ -60,6 +60,69 @@ namespace LeetCode {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Benchmarks.
+        /// </summary>
+        internal static string Benchmark_Plural {
+            get {
+                return ResourceManager.GetString("Benchmark_Plural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benchmark.
+        /// </summary>
+        internal static string Benchmark_Singular {
+            get {
+                return ResourceManager.GetString("Benchmark_Singular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running C# and F# benchmarks.
+        /// </summary>
+        internal static string BenchmarkRunner_Running_BothBenchmarks {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_Running_BothBenchmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running C# benchmarks.
+        /// </summary>
+        internal static string BenchmarkRunner_Running_CSharpBenchmarks {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_Running_CSharpBenchmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  matching [yellow]{0}[/].
+        /// </summary>
+        internal static string BenchmarkRunner_Running_FilterSuffix_Markup {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_Running_FilterSuffix_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running F# benchmarks.
+        /// </summary>
+        internal static string BenchmarkRunner_Running_FSharpBenchmarks {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_Running_FSharpBenchmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running {0} {1} for [yellow]{2}[/].
+        /// </summary>
+        internal static string BenchmarkRunner_SingleProblem_Markup {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_SingleProblem_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Benchmark not found &apos;{0}&apos;.
         /// </summary>
         internal static string BenchmarkSettings_Error_BenchmarkNotFound {
@@ -74,6 +137,177 @@ namespace LeetCode {
         internal static string BenchmarkSettings_Error_MutuallyExclusive {
             get {
                 return ResourceManager.GetString("BenchmarkSettings_Error_MutuallyExclusive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced Graphs.
+        /// </summary>
+        internal static string Category_AdvancedGraphs {
+            get {
+                return ResourceManager.GetString("Category_AdvancedGraphs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arrays &amp; Hashing.
+        /// </summary>
+        internal static string Category_ArraysAndHashing {
+            get {
+                return ResourceManager.GetString("Category_ArraysAndHashing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back Tracking.
+        /// </summary>
+        internal static string Category_BackTracking {
+            get {
+                return ResourceManager.GetString("Category_BackTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Binary Search.
+        /// </summary>
+        internal static string Category_BinarySearch {
+            get {
+                return ResourceManager.GetString("Category_BinarySearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bit Manipulation.
+        /// </summary>
+        internal static string Category_BitManipulation {
+            get {
+                return ResourceManager.GetString("Category_BitManipulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphs.
+        /// </summary>
+        internal static string Category_Graphs {
+            get {
+                return ResourceManager.GetString("Category_Graphs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greedy.
+        /// </summary>
+        internal static string Category_Greedy {
+            get {
+                return ResourceManager.GetString("Category_Greedy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heap / Priority Queue.
+        /// </summary>
+        internal static string Category_HeapPriorityQueue {
+            get {
+                return ResourceManager.GetString("Category_HeapPriorityQueue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intervals.
+        /// </summary>
+        internal static string Category_Intervals {
+            get {
+                return ResourceManager.GetString("Category_Intervals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linked List.
+        /// </summary>
+        internal static string Category_LinkedList {
+            get {
+                return ResourceManager.GetString("Category_LinkedList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maths &amp; Geometry.
+        /// </summary>
+        internal static string Category_MathAndGeometry {
+            get {
+                return ResourceManager.GetString("Category_MathAndGeometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not in NeetCode.
+        /// </summary>
+        internal static string Category_NotInNeetCode {
+            get {
+                return ResourceManager.GetString("Category_NotInNeetCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1-D Dynamic Programming.
+        /// </summary>
+        internal static string Category_OneDDynamicProgramming {
+            get {
+                return ResourceManager.GetString("Category_OneDDynamicProgramming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sliding Window.
+        /// </summary>
+        internal static string Category_SlidingWindow {
+            get {
+                return ResourceManager.GetString("Category_SlidingWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stack.
+        /// </summary>
+        internal static string Category_Stack {
+            get {
+                return ResourceManager.GetString("Category_Stack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trees.
+        /// </summary>
+        internal static string Category_Trees {
+            get {
+                return ResourceManager.GetString("Category_Trees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tries.
+        /// </summary>
+        internal static string Category_Tries {
+            get {
+                return ResourceManager.GetString("Category_Tries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2-D Dynamic Programming.
+        /// </summary>
+        internal static string Category_TwoDDynamicProgramming {
+            get {
+                return ResourceManager.GetString("Category_TwoDDynamicProgramming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two Pointers.
+        /// </summary>
+        internal static string Category_TwoPointers {
+            get {
+                return ResourceManager.GetString("Category_TwoPointers", resourceCulture);
             }
         }
         
@@ -168,15 +402,186 @@ namespace LeetCode {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [green]Easy[/].
+        /// </summary>
+        internal static string Difficulty_Easy_Markup {
+            get {
+                return ResourceManager.GetString("Difficulty_Easy_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [red]Hard[/].
+        /// </summary>
+        internal static string Difficulty_Hard_Markup {
+            get {
+                return ResourceManager.GetString("Difficulty_Hard_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [orange1]Medium[/].
+        /// </summary>
+        internal static string Difficulty_Medium_Markup {
+            get {
+                return ResourceManager.GetString("Difficulty_Medium_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to     __                __   ______            __
         ///   / /   ___   ___   / /_ / ____/____   ____/ /___
         ///  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
         /// / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
         /// /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/.
         /// </summary>
-        internal static string Header {
+        internal static string LeetCode_Figlet {
             get {
-                return ResourceManager.GetString("Header", resourceCulture);
+                return ResourceManager.GetString("LeetCode_Figlet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [red]* Missing C# and F# Benchmarks *[/].
+        /// </summary>
+        internal static string ListCommand_Missing_BothBenchmarks_Markup {
+            get {
+                return ResourceManager.GetString("ListCommand_Missing_BothBenchmarks_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [red]* Missing C# Benchmark *[/].
+        /// </summary>
+        internal static string ListCommand_Missing_CSharpBenchmark_Markup {
+            get {
+                return ResourceManager.GetString("ListCommand_Missing_CSharpBenchmark_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [red]* Missing F# Benchmark *[/].
+        /// </summary>
+        internal static string ListCommand_Missing_FSharpBenchmark_Markup {
+            get {
+                return ResourceManager.GetString("ListCommand_Missing_FSharpBenchmark_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray]Benchmark[/].
+        /// </summary>
+        internal static string Problem_Benchmark_Markup {
+            get {
+                return ResourceManager.GetString("Problem_Benchmark_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        internal static string Problem_Category {
+            get {
+                return ResourceManager.GetString("Problem_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray]Category[/].
+        /// </summary>
+        internal static string Problem_Category_Markup {
+            get {
+                return ResourceManager.GetString("Problem_Category_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray]Description[/].
+        /// </summary>
+        internal static string Problem_Description_Markup {
+            get {
+                return ResourceManager.GetString("Problem_Description_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Difficulty.
+        /// </summary>
+        internal static string Problem_Difficulty {
+            get {
+                return ResourceManager.GetString("Problem_Difficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray]Difficulty[/].
+        /// </summary>
+        internal static string Problem_Difficulty_Markup {
+            get {
+                return ResourceManager.GetString("Problem_Difficulty_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string Problem_Language {
+            get {
+                return ResourceManager.GetString("Problem_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray]Language[/].
+        /// </summary>
+        internal static string Problem_Language_Markup {
+            get {
+                return ResourceManager.GetString("Problem_Language_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to and.
+        /// </summary>
+        internal static string Problem_Language_Separator {
+            get {
+                return ResourceManager.GetString("Problem_Language_Separator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray]Name[/].
+        /// </summary>
+        internal static string Problem_Link_Markup {
+            get {
+                return ResourceManager.GetString("Problem_Link_Markup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problem.
+        /// </summary>
+        internal static string Problem_Name {
+            get {
+                return ResourceManager.GetString("Problem_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No problem argument passed.
+        /// </summary>
+        internal static string ProblemSettings_Error_NoArgumentPassed {
+            get {
+                return ResourceManager.GetString("ProblemSettings_Error_NoArgumentPassed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problem not found &apos;{0}&apos;.
+        /// </summary>
+        internal static string ProblemSettings_Error_ProblemNotFound {
+            get {
+                return ResourceManager.GetString("ProblemSettings_Error_ProblemNotFound", resourceCulture);
             }
         }
     }

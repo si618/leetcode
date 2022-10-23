@@ -16,11 +16,9 @@ internal sealed class ProblemMenu : MenuBase
 
     public override int Render()
     {
-        AnsiConsole.Clear();
+        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
-        ConsoleWriter.WriteHeader(appendLine: true);
-
-        AnsiConsole.Write(Problem.ToMarkupTable());
+        AnsiConsole.Write(Problem.Markup());
         AnsiConsole.WriteLine();
 
         var selected = MenuItems.First();

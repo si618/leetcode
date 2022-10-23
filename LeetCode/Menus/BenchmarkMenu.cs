@@ -21,9 +21,7 @@ internal sealed class BenchmarkMenu : MenuBase
 
     public override int Render()
     {
-        AnsiConsole.Clear();
-
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
 
         if (BenchmarkRunner.IsDebugConfiguration(true))
         {

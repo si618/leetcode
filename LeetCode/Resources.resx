@@ -98,7 +98,7 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-    <data name="Header" xml:space="preserve">
+    <data name="LeetCode_Figlet" xml:space="preserve">
         <value>    __                __   ______            __
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
@@ -140,5 +140,140 @@
     </data>
     <data name="BenchmarkSettings_Error_BenchmarkNotFound" xml:space="preserve">
         <value>Benchmark not found '{0}'</value>
+    </data>
+    <data name="Category_ArraysAndHashing" xml:space="preserve">
+        <value>Arrays &amp; Hashing</value>
+    </data>
+    <data name="Category_TwoPointers" xml:space="preserve">
+        <value>Two Pointers</value>
+    </data>
+    <data name="Category_SlidingWindow" xml:space="preserve">
+        <value>Sliding Window</value>
+    </data>
+    <data name="Category_Stack" xml:space="preserve">
+        <value>Stack</value>
+    </data>
+    <data name="Category_BinarySearch" xml:space="preserve">
+        <value>Binary Search</value>
+    </data>
+    <data name="Category_LinkedList" xml:space="preserve">
+        <value>Linked List</value>
+    </data>
+    <data name="Category_Trees" xml:space="preserve">
+        <value>Trees</value>
+    </data>
+    <data name="Category_Tries" xml:space="preserve">
+        <value>Tries</value>
+    </data>
+    <data name="Category_HeapPriorityQueue" xml:space="preserve">
+        <value>Heap / Priority Queue</value>
+    </data>
+    <data name="Category_BackTracking" xml:space="preserve">
+        <value>Back Tracking</value>
+    </data>
+    <data name="Category_Graphs" xml:space="preserve">
+        <value>Graphs</value>
+    </data>
+    <data name="Category_AdvancedGraphs" xml:space="preserve">
+        <value>Advanced Graphs</value>
+    </data>
+    <data name="Category_OneDDynamicProgramming" xml:space="preserve">
+        <value>1-D Dynamic Programming</value>
+    </data>
+    <data name="Category_TwoDDynamicProgramming" xml:space="preserve">
+        <value>2-D Dynamic Programming</value>
+    </data>
+    <data name="Category_Greedy" xml:space="preserve">
+        <value>Greedy</value>
+    </data>
+    <data name="Category_Intervals" xml:space="preserve">
+        <value>Intervals</value>
+    </data>
+    <data name="Category_MathAndGeometry" xml:space="preserve">
+        <value>Maths &amp; Geometry</value>
+    </data>
+    <data name="Category_BitManipulation" xml:space="preserve">
+        <value>Bit Manipulation</value>
+    </data>
+    <data name="Category_NotInNeetCode" xml:space="preserve">
+        <value>Not in NeetCode</value>
+    </data>
+    <data name="Difficulty_Easy_Markup" xml:space="preserve">
+        <value>[green]Easy[/]</value>
+    </data>
+    <data name="Difficulty_Medium_Markup" xml:space="preserve">
+        <value>[orange1]Medium[/]</value>
+    </data>
+    <data name="Difficulty_Hard_Markup" xml:space="preserve">
+        <value>[red]Hard[/]</value>
+    </data>
+    <data name="Problem_Link_Markup" xml:space="preserve">
+        <value>[gray]Name[/]</value>
+    </data>
+    <data name="Problem_Description_Markup" xml:space="preserve">
+        <value>[gray]Description[/]</value>
+    </data>
+    <data name="Problem_Category_Markup" xml:space="preserve">
+        <value>[gray]Category[/]</value>
+    </data>
+    <data name="Problem_Language_Markup" xml:space="preserve">
+        <value>[gray]Language[/]</value>
+    </data>
+    <data name="Problem_Difficulty_Markup" xml:space="preserve">
+        <value>[gray]Difficulty[/]</value>
+    </data>
+    <data name="Problem_Benchmark_Markup" xml:space="preserve">
+        <value>[gray]Benchmark[/]</value>
+    </data>
+    <data name="ListCommand_Missing_CSharpBenchmark_Markup" xml:space="preserve">
+        <value>[red]* Missing C# Benchmark *[/]</value>
+    </data>
+    <data name="ListCommand_Missing_FSharpBenchmark_Markup" xml:space="preserve">
+        <value>[red]* Missing F# Benchmark *[/]</value>
+    </data>
+    <data name="ListCommand_Missing_BothBenchmarks_Markup" xml:space="preserve">
+        <value>[red]* Missing C# and F# Benchmarks *[/]</value>
+    </data>
+    <data name="Problem_Name" xml:space="preserve">
+        <value>Problem</value>
+    </data>
+    <data name="Problem_Category" xml:space="preserve">
+        <value>Category</value>
+    </data>
+    <data name="Problem_Difficulty" xml:space="preserve">
+        <value>Difficulty</value>
+    </data>
+    <data name="Problem_Language" xml:space="preserve">
+        <value>Language</value>
+    </data>
+    <data name="ProblemSettings_Error_NoArgumentPassed" xml:space="preserve">
+        <value>No problem argument passed</value>
+    </data>
+    <data name="ProblemSettings_Error_ProblemNotFound" xml:space="preserve">
+        <value>Problem not found '{0}'</value>
+    </data>
+    <data name="BenchmarkRunner_SingleProblem_Markup" xml:space="preserve">
+        <value>Running {0} {1} for [yellow]{2}[/]</value>
+    </data>
+    <data name="Benchmark_Singular" xml:space="preserve">
+        <value>Benchmark</value>
+    </data>
+    <data name="Benchmark_Plural" xml:space="preserve">
+        <value>Benchmarks</value>
+    </data>
+    <data name="BenchmarkRunner_Running_CSharpBenchmarks" xml:space="preserve">
+        <value>Running C# benchmarks</value>
+    </data>
+    <data name="BenchmarkRunner_Running_FSharpBenchmarks" xml:space="preserve">
+        <value>Running F# benchmarks</value>
+    </data>
+    <data name="BenchmarkRunner_Running_BothBenchmarks" xml:space="preserve">
+        <value>Running C# and F# benchmarks</value>
+    </data>
+    <data name="BenchmarkRunner_Running_FilterSuffix_Markup" xml:space="preserve">
+        <value> matching [yellow]{0}[/]</value>
+    </data>
+    <data name="Problem_Language_Separator" xml:space="preserve">
+        <value>and</value>
     </data>
 </root>
