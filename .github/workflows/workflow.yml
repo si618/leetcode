@@ -37,7 +37,7 @@ jobs:
 
       - name: Run dotnet test
         id: test
-        run: dotnet test --configuration Release
+        run: dotnet test --configuration Release --no-restore
 
   benchmark:
     needs: [ build ]
