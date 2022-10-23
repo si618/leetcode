@@ -39,8 +39,7 @@ internal sealed class WorkflowCommand : Command
         const string ns = "LeetCode.XSharp.Benchmarks.";
         var reports = Directory
             .GetFiles(resultsDir, searchPattern, SearchOption.TopDirectoryOnly)
-            .OrderBy(report => report)
-            .ThenBy(report => report[..ns.Length])
+            .OrderBy(report => report[ns.Length..])
             .ToArray();
         if (!reports.Any())
         {
