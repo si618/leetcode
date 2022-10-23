@@ -33,7 +33,7 @@ jobs:
 
       - name: Run dotnet format
         id: format
-        run: dotnet format --verbosity diagnostic --verify-no-changes
+        run: dotnet format --verbosity diagnostic --verify-no-changes --no-restore
 
       - name: Run dotnet test
         id: test
