@@ -1,12 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/Benchmarks.CSharp"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "docker"
-    directory: "/Benchmarks.FSharp"
+    directory: "/LeetCode"
     schedule:
       interval: "weekly"
 
