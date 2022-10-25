@@ -16,7 +16,7 @@ internal sealed class ProblemMenu : MenuBase
 
     public override int Render()
     {
-        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true);
 
         AnsiConsole.Write(Problem.Markup());
         AnsiConsole.WriteLine();

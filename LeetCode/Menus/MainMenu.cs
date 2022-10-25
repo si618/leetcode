@@ -22,7 +22,7 @@ internal sealed class MainMenu : MenuBase
         var exitCode = 0;
         while (selected.Name != ExitSelection.Exit)
         {
-            ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
+            ConsoleWriter.WriteHeader(clearConsole: true);
 
             selected = AnsiConsole.Prompt(prompt);
 

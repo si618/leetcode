@@ -5,6 +5,7 @@ global using LeetCode.Commands;
 global using LeetCode.CSharp;
 global using LeetCode.Menus;
 global using LeetCode.Menus.Selections;
+global using Lolcat;
 global using Spectre.Console;
 global using Spectre.Console.Cli;
 global using Spectre.Console.Rendering;

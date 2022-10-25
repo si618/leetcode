@@ -5,7 +5,7 @@ internal sealed class WorkflowCommand : Command
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
     public override int Execute([NotNull] CommandContext context)
     {
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader();
 
         if (BenchmarkRunner.IsDebugConfiguration(true))
         {

@@ -7,7 +7,7 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         [NotNull] CommandContext context,
         [NotNull] BenchmarkSettings settings)
     {
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader();
 
         if (BenchmarkRunner.IsDebugConfiguration(settings.Debug))
         {

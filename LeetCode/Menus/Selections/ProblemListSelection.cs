@@ -8,7 +8,7 @@ internal sealed record ProblemListSelection : Selection
 
     public override int Execute()
     {
-        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true);
 
         var problems = Reflection
             .GetProblemsByCategory()

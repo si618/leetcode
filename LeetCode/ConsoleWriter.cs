@@ -2,23 +2,18 @@
 
 internal static class ConsoleWriter
 {
-    private static readonly RainbowWriter RainbowWriter = new(useSpectreMarkup: true);
+    private static readonly Rainbow Lolcat = new(new RainbowStyle(EscapeSequence.Spectre));
 
-    public static void WriteHeader(bool clearConsole = false, bool appendLine = false)
+    public static void WriteHeader(bool clearConsole = false)
     {
         if (clearConsole)
         {
             AnsiConsole.Clear();
         }
 
-        var output = RainbowWriter.Write(Resources.LeetCode_Figlet);
+        var output = Lolcat.Convert(Resources.LeetCode_Figlet);
 
         AnsiConsole.Markup(output);
-
-        if (appendLine)
-        {
-            AnsiConsole.WriteLine();
-        }
     }
 
     public static void WaitForKeyPress()

@@ -7,7 +7,7 @@ internal sealed class InfoCommand : Command<ProblemSettings>
         [NotNull] CommandContext context,
         [NotNull] ProblemSettings settings)
     {
-        ConsoleWriter.WriteHeader(appendLine: true);
+        ConsoleWriter.WriteHeader();
 
         if (!Reflection.TryGetProblem(settings.Name, out var problem))
         {

@@ -17,7 +17,7 @@ internal sealed record BenchmarkSelection : Selection
 
     public override int Execute()
     {
-        ConsoleWriter.WriteHeader(clearConsole: true, appendLine: true);
+        ConsoleWriter.WriteHeader(clearConsole: true);
 
         if (BenchmarkRunner.IsDebugConfiguration(true))
         {
