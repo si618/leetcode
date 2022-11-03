@@ -11,7 +11,7 @@ internal static class ConsoleWriter
             AnsiConsole.Clear();
         }
 
-        var output = Lolcat.Convert(Resources.LeetCode_Figlet);
+        var output = Lolcat.Markup(Resources.LeetCode_Figlet);
 
         AnsiConsole.Markup(output);
     }

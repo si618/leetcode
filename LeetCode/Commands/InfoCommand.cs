@@ -7,17 +7,25 @@ internal sealed class InfoCommand : Command<ProblemSettings>
         [NotNull] CommandContext context,
         [NotNull] ProblemSettings settings)
     {
-        ConsoleWriter.WriteHeader();
-
-        if (!Reflection.TryGetProblem(settings.Name, out var problem))
+        try
         {
-            throw new InvalidOperationException("Problem settings validation failed");
+            ConsoleWriter.WriteHeader();
+
+            if (!Reflection.TryGetProblem(settings.Name, out var problem))
+            {
+                throw new InvalidOperationException("Problem settings validation failed");
+            }
+
+            AnsiConsole.Write(problem.Markup());
+
+            AnsiConsole.WriteLine();
+
+            return 0;
         }
-
-        AnsiConsole.Write(problem.Markup());
-
-        AnsiConsole.WriteLine();
-
-        return 0;
+        catch (Exception ex)
+        {
+            AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything);
+            return -99;
+        }
     }
 }

@@ -7,21 +7,29 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
         [NotNull] CommandContext context,
         [NotNull] BenchmarkSettings settings)
     {
-        ConsoleWriter.WriteHeader();
-
-        if (BenchmarkRunner.IsDebugConfiguration(settings.Debug))
+        try
         {
-            return 1;
+            ConsoleWriter.WriteHeader();
+
+            if (BenchmarkRunner.IsDebugConfiguration(settings.Debug))
+            {
+                return 1;
+            }
+
+            var summaries = BenchmarkRunner.BuildSummaries(settings);
+            var builder = new SpectreReportBuilder(summaries);
+            var report = builder.Build();
+
+            AnsiConsole.Write(report);
+
+            AnsiConsole.WriteLine();
+
+            return 0;
         }
-
-        var summaries = BenchmarkRunner.BuildSummaries(settings);
-        var builder = new SpectreReportBuilder(summaries);
-        var report = builder.Build();
-
-        AnsiConsole.Write(report);
-
-        AnsiConsole.WriteLine();
-
-        return 0;
+        catch (Exception ex)
+        {
+            AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything);
+            return -99;
+        }
     }
 }

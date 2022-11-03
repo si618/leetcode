@@ -5,11 +5,19 @@ internal sealed class ListCommand : Command
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
     public override int Execute([NotNull] CommandContext context)
     {
-        ConsoleWriter.WriteHeader();
+        try
+        {
+            ConsoleWriter.WriteHeader();
 
-        WriteProblemList();
+            WriteProblemList();
 
-        return 0;
+            return 0;
+        }
+        catch (Exception ex)
+        {
+            AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything);
+            return -99;
+        }
     }
 
     private static void WriteProblemList()

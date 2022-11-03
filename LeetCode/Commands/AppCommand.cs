@@ -4,8 +4,16 @@ internal sealed class AppCommand : Command
 {
     public override int Execute(CommandContext context)
     {
-        new MainMenu().Render();
+        try
+        {
+            new MainMenu().Render();
 
-        return 0;
+            return 0;
+        }
+        catch (Exception ex)
+        {
+            AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything);
+            return -99;
+        }
     }
 }

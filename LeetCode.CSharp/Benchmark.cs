@@ -4,10 +4,11 @@
 public abstract class Benchmark
 {
     protected int Int1 { get; set; }
+    protected int Int2 { get; set; }
 
     protected int[] IntArray1 { get; set; } = Array.Empty<int>();
     protected int[] IntArray2 { get; set; } = Array.Empty<int>();
-    protected int[][] IntArrayMulti { get; set; } = Array.Empty<int[]>();
+    protected int[][] IntArrayMulti1 { get; set; } = Array.Empty<int[]>();
     protected int?[] IntArrayNullable { get; set; } = Array.Empty<int?>();
 
     protected ListNode ListNode1 { get; set; } = new();
@@ -18,6 +19,8 @@ public abstract class Benchmark
 
     protected TreeNode TreeNode1 { get; set; } = new();
     protected TreeNode TreeNode2 { get; set; } = new();
+
+    protected static readonly Random Random = new(42);
 
     /// <summary>
     /// Build a pseudo random string
@@ -34,7 +37,6 @@ public abstract class Benchmark
     /// <returns>Pseudo random string</returns>
     protected static string BuildPseudoRandomString(int size, int frequencyOfSpace = 0)
     {
-        var random = new Random(42);
         var stringBuilder = new StringBuilder(size);
         var range = 26 + frequencyOfSpace;
         var previous = char.MinValue;
@@ -42,7 +44,7 @@ public abstract class Benchmark
         for (var i = 0; i < size; i++)
         {
             // Avoid double spaces by checking the previously generated character
-            var next = previous == ' ' ? random.Next(0, 26) : random.Next(0, range);
+            var next = previous == ' ' ? Random.Next(0, 26) : Random.Next(0, range);
 
             // Any character past z is considered a space
             var value = next >= 26 ? ' ' : (char)('a' + next);

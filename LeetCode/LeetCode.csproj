@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
-      <PackageReference Include="lolcat" Version="1.0.19-beta" />
+      <PackageReference Include="lolcat" Version="1.0.35" />
       <PackageReference Include="Spectre.Console" Version="0.45.0" />
       <PackageReference Include="Spectre.Console.Analyzer" Version="0.45.0">
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
