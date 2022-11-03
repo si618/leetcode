@@ -33,6 +33,8 @@ internal sealed record ProblemListSelection : Selection
         table.AddColumns("Problem", "Category", "Difficulty");
         table.Columns[0].Width = padding.DescriptionPad;
         table.Columns[1].Width = padding.CategoryPad;
+
+        AnsiConsole.Cursor.MoveUp();
         AnsiConsole.Write(table);
 
         // TODO Capture X (or whatever) to return to main menu instead of forcing selection

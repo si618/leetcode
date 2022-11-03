@@ -11,9 +11,9 @@ internal static class ConsoleWriter
             AnsiConsole.Clear();
         }
 
-        var output = Lolcat.Markup(Resources.LeetCode_Figlet);
+        var output = Lolcat.MarkupLine(Resources.LeetCode_Figlet);
 
-        AnsiConsole.Markup(output);
+        AnsiConsole.MarkupLine(output);
     }
 
     public static void WaitForKeyPress()
