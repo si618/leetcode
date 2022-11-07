@@ -11,6 +11,8 @@ public abstract class Benchmark
     protected int[][] IntArrayMulti1 { get; set; } = Array.Empty<int[]>();
     protected int?[] IntArrayNullable { get; set; } = Array.Empty<int?>();
 
+    protected List<Interval> Intervals1 { get; } = new();
+
     protected ListNode ListNode1 { get; set; } = new();
     protected ListNode ListNode2 { get; set; } = new();
 

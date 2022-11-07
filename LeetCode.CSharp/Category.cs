@@ -33,7 +33,7 @@ public enum Category
     TwoDDynamicProgramming,
     /// <summary>Greedy</summary>
     Greedy,
-    /// <summary>Intervals</summary>
+    /// <summary>Intervals1</summary>
     Intervals,
     /// <summary>Math and Geometry</summary>
     MathAndGeometry,
