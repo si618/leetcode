@@ -8,7 +8,7 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 
 ``` bash
 > dotnet --list-sdks
-6.0.402 [/usr/share/dotnet/sdk]
+7.0.100 [/usr/share/dotnet/sdk]
 
 > git --version
 git version 2.37.3
