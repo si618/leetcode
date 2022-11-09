@@ -10,8 +10,7 @@ env:
   DOTNET_NOLOGO: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  # TODO: Change back to net7.0 once dotnet format issue is resolved
-  DOTNET_FRAMEWORK: net6.0
+  DOTNET_VERSION: 7.0.x
 
 jobs:
   build:
@@ -23,9 +22,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-          # TODO: Add net7.0 back once dotnet format issue is resolved
-          dotnet-version: |
-            6.0.x
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Run dotnet build
         id: build
@@ -49,9 +46,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-          # TODO: Add net7.0 back once dotnet format issue is resolved
-          dotnet-version: |
-            6.0.x
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: List problems
         id: list-problems
@@ -65,7 +60,6 @@ jobs:
         run: |
           dotnet run \
             --project ./LeetCode/LeetCode.csproj \
-            --framework $DOTNET_FRAMEWORK \
             --configuration Release \
             workflow
 

@@ -4,9 +4,6 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
-COPY --from=mcr.microsoft.com/dotnet/sdk:6.0 /usr/share/dotnet/sdk /usr/share/dotnet/sdk
-COPY --from=mcr.microsoft.com/dotnet/sdk:6.0 /usr/share/dotnet/shared /usr/share/dotnet/shared
-
 # Needed for target framework
 COPY Directory.Build.props ./
 
@@ -19,7 +16,7 @@ COPY . .
 WORKDIR /src/LeetCode
 
 RUN dotnet restore LeetCode.csproj
-RUN dotnet build LeetCode.csproj -c Release
+RUN dotnet build LeetCode.csproj -c release
 
-# Benchmarks require release configuration and run against both net6.0 and net7.0 SDKs
-ENTRYPOINT ["dotnet", "run", "-f", "net6.0", "-c", "Release"]
+# Benchmarks require release configuration
+ENTRYPOINT ["dotnet", "run", "-c", "release"]
