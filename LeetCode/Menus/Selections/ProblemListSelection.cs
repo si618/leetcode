@@ -2,7 +2,7 @@
 
 internal sealed record ProblemListSelection : Selection
 {
-    internal ProblemListSelection(int order) : base("List Problems", order)
+    internal ProblemListSelection(int order) : base(Resources.Selection_ProblemList, order)
     {
     }
 
@@ -23,14 +23,14 @@ internal sealed record ProblemListSelection : Selection
             .AddChoices(problems)
             .PageSize(16)
             .UseConverter(problem => ConvertProblem(problem, padding))
-            .MoreChoicesText("[gray](Move up and down to reveal more problems or X to exit)[/]");
+            .MoreChoicesText(Resources.Selection_Benchmark_MoreChoicesText);
 
         var table = new Table
         {
             Border = TableBorder.Simple,
             UseSafeBorder = true
         };
-        table.AddColumns("Problem", "Category", "Difficulty");
+        table.AddColumns(Resources.Problem_Name, Resources.Problem_Category, Resources.Problem_Difficulty);
         table.Columns[0].Width = padding.DescriptionPad;
         table.Columns[1].Width = padding.CategoryPad;
 

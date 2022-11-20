@@ -9,6 +9,8 @@ internal sealed class ListCommand : Command
         {
             ConsoleWriter.WriteHeader();
 
+            Console.CursorTop -= 1;
+
             WriteProblemList();
 
             return 0;

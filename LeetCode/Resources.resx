@@ -103,7 +103,8 @@
    / /   ___   ___   / /_ / ____/____   ____/ /___
   / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
  / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
-/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/</value>
+/_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
+</value>
     </data>
     <data name="Command_App_Description" xml:space="preserve">
         <value>Run interactive console application</value>
@@ -278,5 +279,35 @@
     </data>
     <data name="Console_ReturnToMainMenu_Markup" xml:space="preserve">
         <value>[gray](Press any key to return to main menu)[/]</value>
+    </data>
+    <data name="Selection_Benchmark_MoreChoicesText" xml:space="preserve">
+        <value>[gray](Move up and down to reveal more problems)[/]</value>
+    </data>
+    <data name="Selection_ProblemList" xml:space="preserve">
+        <value>List Problems</value>
+    </data>
+    <data name="Selection_Exit" xml:space="preserve">
+        <value>Exit</value>
+    </data>
+    <data name="Selection_RunBenchmark" xml:space="preserve">
+        <value>Run Benchmark</value>
+    </data>
+    <data name="Selection_RunBenchmarks" xml:space="preserve">
+        <value>Run Benchmarks</value>
+    </data>
+    <data name="Selection_About" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="About" xml:space="preserve">
+        <value>Benchmarked LeetCode problems written in C# and F#</value>
+    </data>
+    <data name="Selection_Benchmark_InstructionsText" xml:space="preserve">
+        <value>[grey](Press [blue]&lt;space&gt;[/] to toggle, [green]&lt;enter&gt;[/] to run)[/]</value>
+    </data>
+    <data name="Selection_Benchmark_Title" xml:space="preserve">
+        <value>Select benchmarks to run</value>
+    </data>
+    <data name="BenchmarkRunner_Running_SelectedBenchmarks" xml:space="preserve">
+        <value>Running selected benchmarks</value>
     </data>
 </root>

@@ -5,7 +5,7 @@ internal sealed record BenchmarkSelection : Selection
     private Problem Problem { get; }
 
     internal BenchmarkSelection(Problem problem, int order)
-        : this(problem, "Run Benchmark", order)
+        : this(problem, Resources.Selection_RunBenchmark, order)
     {
     }
 

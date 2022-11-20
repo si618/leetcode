@@ -5,7 +5,7 @@ internal static class BenchmarkRunner
     public static IEnumerable<Summary> BuildSummaries(BenchmarkSettings settings)
     {
         var args = settings.BuildArgs();
-        if (args.Length != 2)
+        if (args.Length < 2)
         {
             // ReSharper disable once LocalizableElement - Exceptions in English
             throw new ArgumentOutOfRangeException(nameof(settings), "Invalid arguments");
@@ -13,12 +13,10 @@ internal static class BenchmarkRunner
 
         Console.SetOut(TextWriter.Null);
 
-        var parsedFilter = ParseFilterForBenchmark(args[1]);
-
         var summaries = new List<Summary>();
         AnsiConsole.Status()
             .Spinner(Spinner.Known.Dots)
-            .Start(WaitingMessage(settings, parsedFilter), _ =>
+            .Start(WaitingMessage(settings, args), _ =>
                 summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
 
         Console.SetOut(Console.Out);
@@ -28,36 +26,6 @@ internal static class BenchmarkRunner
 
     public static IEnumerable<Summary> RunBenchmarks(Type[] types, string[] args) =>
         BenchmarkSwitcher.FromTypes(types).Run(args);
-
-    private static string WaitingMessage(BenchmarkSettings settings, string parsedFilter)
-    {
-        var message = new StringBuilder();
-
-        if (Reflection.TryGetProblem(parsedFilter, out var problem))
-        {
-            var language = problem.Language($" {Resources.Problem_Language_Separator} ");
-            var benchmark = problem.CSharp & problem.FSharp
-                ? Resources.Benchmark_Plural.ToLower() : Resources.Benchmark_Singular.ToLower();
-            message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Markup,
-                language, benchmark, problem.Name);
-        }
-        else
-        {
-            message.Append(!settings.CSharp && !settings.FSharp
-                ? Resources.BenchmarkRunner_Running_BothBenchmarks
-                : settings.CSharp
-                    ? Resources.BenchmarkRunner_Running_CSharpBenchmarks
-                    : Resources.BenchmarkRunner_Running_FSharpBenchmarks);
-
-            if (settings.Filter?.Length > 0)
-            {
-                message.AppendFormat(
-                    Resources.BenchmarkRunner_Running_FilterSuffix_Markup, settings.Filter!);
-            }
-        }
-
-        return message.ToString();
-    }
 
     internal static bool IsDebugConfiguration(bool warnRatherThanFail = false)
     {
@@ -90,6 +58,41 @@ internal static class BenchmarkRunner
         AnsiConsole.WriteLine();
 
         return true;
+    }
+
+    private static string WaitingMessage(BenchmarkSettings settings, IReadOnlyList<string> args)
+    {
+        var message = new StringBuilder();
+
+        if (args.Count > 2)
+        {
+            message.Append(Resources.BenchmarkRunner_Running_SelectedBenchmarks);
+        }
+        else if (Reflection.TryGetProblem(ParseFilterForBenchmark(args[1].ToString()),
+                 out var problem))
+        {
+            var language = problem.Language($" {Resources.Problem_Language_Separator} ");
+            var benchmark = problem.CSharp & problem.FSharp
+                ? Resources.Benchmark_Plural.ToLower() : Resources.Benchmark_Singular.ToLower();
+            message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Markup,
+                language, benchmark, problem.Name);
+        }
+        else
+        {
+            message.Append(!settings.CSharp && !settings.FSharp
+                ? Resources.BenchmarkRunner_Running_BothBenchmarks
+                : settings.CSharp
+                    ? Resources.BenchmarkRunner_Running_CSharpBenchmarks
+                    : Resources.BenchmarkRunner_Running_FSharpBenchmarks);
+
+            if (settings.Filter?.Length > 0)
+            {
+                message.AppendFormat(
+                    Resources.BenchmarkRunner_Running_FilterSuffix_Markup, settings.Filter!);
+            }
+        }
+
+        return message.ToString();
     }
 
     private static string ParseFilterForBenchmark(string filter)

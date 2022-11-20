@@ -81,28 +81,35 @@ internal sealed class BenchmarkSettings : CommandSettings
         }
         else
         {
-            if (Filter.Contains('*'))
+            var benchmarks = Filter.Split(' ');
+
+            foreach (var benchmark in benchmarks)
             {
-                // User added wildcard so use whatever was passed
-                args.Add(Filter);
-            }
-            else if (Filter.Contains('.'))
-            {
-                // User added namespace but no wildcard so add suffix
-                args.Add($"{Filter}*");
-            }
-            else
-            {
-                // No wildcard or namespace so add wildcard prefix
-                args.Add($"*{Filter}");
+                if (benchmark.Contains('*'))
+                {
+                    // User added wildcard so use whatever was passed
+                    args.Add(benchmark);
+                }
+                else if (benchmark.Contains('.'))
+                {
+                    // User added namespace but no wildcard so add suffix
+                    args.Add($"{benchmark}*");
+                }
+                else
+                {
+                    // No wildcard or namespace so add wildcard prefix
+                    args.Add($"*{benchmark}");
+                }
             }
         }
 
-        if (!string.IsNullOrEmpty(Exporters))
+        if (string.IsNullOrEmpty(Exporters))
         {
-            args.Add("--exporters");
-            args.Add(Exporters);
+            return args.ToArray();
         }
+
+        args.Add("--exporters");
+        args.Add(Exporters);
 
         return args.ToArray();
     }

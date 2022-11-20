@@ -20,7 +20,7 @@ internal sealed class MainMenu : MenuBase
             .UseConverter(m => m.Name);
 
         var exitCode = 0;
-        while (selected.Name != ExitSelection.Exit)
+        while (selected.Name != Resources.Selection_Exit)
         {
             ConsoleWriter.WriteHeader(clearConsole: true);
 

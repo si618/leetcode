@@ -60,6 +60,15 @@ namespace LeetCode {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Benchmarked LeetCode problems written in C# and F#.
+        /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Benchmarks.
         /// </summary>
         internal static string Benchmark_Plural {
@@ -110,6 +119,15 @@ namespace LeetCode {
         internal static string BenchmarkRunner_Running_FSharpBenchmarks {
             get {
                 return ResourceManager.GetString("BenchmarkRunner_Running_FSharpBenchmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running selected benchmarks.
+        /// </summary>
+        internal static string BenchmarkRunner_Running_SelectedBenchmarks {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_Running_SelectedBenchmarks", resourceCulture);
             }
         }
         
@@ -442,7 +460,8 @@ namespace LeetCode {
         ///   / /   ___   ___   / /_ / ____/____   ____/ /___
         ///  / /   / _ \ / _ \ / __// /    / __ \ / __  // _ \
         /// / /___/  __//  __// /_ / /___ / /_/ // /_/ //  __/
-        /// /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/.
+        /// /_____/\___/ \___/ \__/ \____/ \____/ \__,_/ \___/
+        ///.
         /// </summary>
         internal static string LeetCode_Figlet {
             get {
@@ -591,6 +610,78 @@ namespace LeetCode {
         internal static string ProblemSettings_Error_ProblemNotFound {
             get {
                 return ResourceManager.GetString("ProblemSettings_Error_ProblemNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string Selection_About {
+            get {
+                return ResourceManager.GetString("Selection_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [grey](Press [blue]&lt;space&gt;[/] to toggle, [green]&lt;enter&gt;[/] to run)[/].
+        /// </summary>
+        internal static string Selection_Benchmark_InstructionsText {
+            get {
+                return ResourceManager.GetString("Selection_Benchmark_InstructionsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [gray](Move up and down to reveal more problems)[/].
+        /// </summary>
+        internal static string Selection_Benchmark_MoreChoicesText {
+            get {
+                return ResourceManager.GetString("Selection_Benchmark_MoreChoicesText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select benchmarks to run.
+        /// </summary>
+        internal static string Selection_Benchmark_Title {
+            get {
+                return ResourceManager.GetString("Selection_Benchmark_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string Selection_Exit {
+            get {
+                return ResourceManager.GetString("Selection_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List Problems.
+        /// </summary>
+        internal static string Selection_ProblemList {
+            get {
+                return ResourceManager.GetString("Selection_ProblemList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run Benchmark.
+        /// </summary>
+        internal static string Selection_RunBenchmark {
+            get {
+                return ResourceManager.GetString("Selection_RunBenchmark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run Benchmarks.
+        /// </summary>
+        internal static string Selection_RunBenchmarks {
+            get {
+                return ResourceManager.GetString("Selection_RunBenchmarks", resourceCulture);
             }
         }
     }

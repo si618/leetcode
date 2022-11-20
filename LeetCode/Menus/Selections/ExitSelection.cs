@@ -2,14 +2,14 @@
 
 internal sealed record ExitSelection : Selection
 {
-    public const string Exit = "Exit";
-
-    internal ExitSelection(int order) : base(Exit, order)
+    internal ExitSelection(int order) : base(Resources.Selection_Exit, order)
     {
     }
 
     public override int Execute()
     {
+        ConsoleWriter.AnimateHeader();
+
         return 0;
     }
 }

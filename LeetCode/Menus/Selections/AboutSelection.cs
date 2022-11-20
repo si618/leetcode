@@ -2,7 +2,7 @@
 
 internal sealed record AboutSelection : Selection
 {
-    internal AboutSelection(int order) : base("About", order)
+    internal AboutSelection(int order) : base(Resources.Selection_About, order)
     {
     }
 
@@ -10,7 +10,7 @@ internal sealed record AboutSelection : Selection
     {
         ConsoleWriter.WriteHeader(clearConsole: true);
 
-        AnsiConsole.WriteLine("About stuff goes here");
+        AnsiConsole.WriteLine(Resources.About);
 
         ConsoleWriter.WaitForKeyPress();
 
