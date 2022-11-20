@@ -3,10 +3,10 @@
 public sealed partial class Problem
 {
     [LeetCode(
-    "Number of 1 Bits",
-    Difficulty.Easy,
-    Category.BitManipulation,
-    "https://www.youtube.com/watch?v=5Km3utixwZs")]
+        "Number of 1 Bits",
+        Difficulty.Easy,
+        Category.BitManipulation,
+        "https://www.youtube.com/watch?v=5Km3utixwZs")]
     public static int HammingWeight(uint n)
     {
         // return System.Numerics.BitOperations.PopCount(n);
