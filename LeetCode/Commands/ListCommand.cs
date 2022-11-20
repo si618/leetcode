@@ -9,7 +9,7 @@ internal sealed class ListCommand : Command
         {
             ConsoleWriter.WriteHeader();
 
-            Console.CursorTop -= 1;
+            AnsiConsole.Cursor.Move(CursorDirection.Up, 1);
 
             WriteProblemList();
 

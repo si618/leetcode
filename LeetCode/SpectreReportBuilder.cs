@@ -29,6 +29,8 @@ internal sealed class SpectreReportBuilder
             SpectreLogger.Logger.WriteLine(infoLine);
         }
 
+        AnsiConsole.WriteLine();
+
         var headers = BuildHeaders(table).ToArray();
 
         foreach (var summary in Summaries)

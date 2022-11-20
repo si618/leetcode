@@ -6,6 +6,7 @@ internal static class ConsoleWriter
     private static readonly AnimationStyle AnimationStyle = new(
         Duration: TimeSpan.FromSeconds(1.42),
         PadToWindowSize: false,
+        Speed: 42,
         StopOnResize: true);
 
     public static void WriteHeader(bool clearConsole = false)

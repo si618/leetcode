@@ -11,6 +11,8 @@ internal static class BenchmarkRunner
             throw new ArgumentOutOfRangeException(nameof(settings), "Invalid arguments");
         }
 
+        AnsiConsole.Cursor.Move(CursorDirection.Up, 1);
+
         Console.SetOut(TextWriter.Null);
 
         var summaries = new List<Summary>();
@@ -20,6 +22,8 @@ internal static class BenchmarkRunner
                 summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
 
         Console.SetOut(Console.Out);
+
+        AnsiConsole.Cursor.Move(CursorDirection.Down, 1);
 
         return summaries;
     }
