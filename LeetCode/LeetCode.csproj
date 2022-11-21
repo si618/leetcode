@@ -7,14 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
-      <PackageReference Include="lolcat" Version="1.1.8" />
-      <PackageReference Include="Spectre.Console" Version="0.45.0" />
-      <PackageReference Include="Spectre.Console.Analyzer" Version="0.45.0">
+      <PackageReference Include="BenchmarkDotNet" />
+      <PackageReference Include="lolcat" />
+      <PackageReference Include="Spectre.Console" />
+      <PackageReference Include="Spectre.Console.Analyzer">
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
-      <PackageReference Include="Spectre.Console.Cli" Version="0.45.0" />
+      <PackageReference Include="Spectre.Console.Cli" />
     </ItemGroup>
 
     <ItemGroup>

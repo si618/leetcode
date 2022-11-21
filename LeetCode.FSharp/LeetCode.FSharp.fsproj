@@ -16,22 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
-    <PackageReference Include="FsUnit.xUnit" Version="5.1.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
-    <PackageReference Include="coverlet.collector" Version="3.2.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="xunit" Version="2.4.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="7.0.0" />
+    <PackageReference Include="BenchmarkDotNet" />
+    <PackageReference Include="FsUnit.xUnit" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Remove="FSharp.Core" />
   </ItemGroup>
 
   <ItemGroup>
