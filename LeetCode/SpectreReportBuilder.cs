@@ -119,7 +119,7 @@ internal sealed class SpectreReportBuilder
                 }
             }
 
-            table.AddRow(columns.ToArray());
+            table.AddRow(columns);
         }
     }
 }
