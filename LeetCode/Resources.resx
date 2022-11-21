@@ -310,4 +310,7 @@
     <data name="BenchmarkRunner_Running_SelectedBenchmarks" xml:space="preserve">
         <value>Running selected benchmarks</value>
     </data>
+    <data name="BenchmarkRunner_SingleProblem_Name" xml:space="preserve">
+        <value> [gray](method: {0})[/]</value>
+    </data>
 </root>

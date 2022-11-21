@@ -8,6 +8,9 @@ public static class Extensions
     public static string Markup(this Difficulty difficulty) =>
         $"Difficulty_{difficulty}_Markup".GetResource();
 
+    internal static bool HasSimilarNameAndDescription(this Problem problem) =>
+        problem.Description.ReplaceWhitespace(string.Empty) == problem.Name;
+
     internal static Table Markup(this Problem problem)
     {
         var table = new Table
@@ -37,6 +40,10 @@ public static class Extensions
 
         return table;
     }
+
+    private static readonly Regex MatchWhitespace = new(@"\s+");
+    private static string ReplaceWhitespace(this string input, string replacement) =>
+        MatchWhitespace.Replace(input, replacement);
 
     private static string GetResource(this string name) =>
         Resources.ResourceManager.GetString(name) ??

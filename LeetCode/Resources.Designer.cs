@@ -141,6 +141,15 @@ namespace LeetCode {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  [gray](method: {0})[/].
+        /// </summary>
+        internal static string BenchmarkRunner_SingleProblem_Name {
+            get {
+                return ResourceManager.GetString("BenchmarkRunner_SingleProblem_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Benchmark not found &apos;{0}&apos;.
         /// </summary>
         internal static string BenchmarkSettings_Error_BenchmarkNotFound {

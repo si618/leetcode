@@ -72,14 +72,17 @@ internal static class BenchmarkRunner
         {
             message.Append(Resources.BenchmarkRunner_Running_SelectedBenchmarks);
         }
-        else if (Reflection.TryGetProblem(ParseFilterForBenchmark(args[1].ToString()),
-                 out var problem))
+        else if (Reflection.TryGetProblem(ParseFilterForBenchmark(args[1]), out var problem))
         {
             var language = problem.Language($" {Resources.Problem_Language_Separator} ");
             var benchmark = problem.CSharp & problem.FSharp
                 ? Resources.Benchmark_Plural.ToLower() : Resources.Benchmark_Singular.ToLower();
             message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Markup,
-                language, benchmark, problem.Name);
+                language, benchmark, problem.Description);
+            if (!problem.HasSimilarNameAndDescription())
+            {
+                message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Name, problem.Name);
+            }
         }
         else
         {

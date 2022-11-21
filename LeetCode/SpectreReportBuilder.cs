@@ -98,6 +98,7 @@ internal sealed class SpectreReportBuilder
         {
             var columns = new string[headers.Count];
             columns[0] = language;
+
             for (var i = 1; i < headers.Count; i++)
             {
                 columns[i] = string.Empty;
@@ -106,7 +107,6 @@ internal sealed class SpectreReportBuilder
             for (var columnIndex = 0; columnIndex < summary.Table.ColumnCount; columnIndex++)
             {
                 var column = summary.Table.Columns[columnIndex];
-
                 if (!column.NeedToShow)
                 {
                     continue;
