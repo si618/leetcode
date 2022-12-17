@@ -17,8 +17,5 @@ public class SubsetsBenchmark : Benchmark
     public IList<IList<int>> Subsets() => Problem.Subsets(new[] { 1, 2, 3 });
 
     [GlobalCleanup(Target = nameof(Subsets))]
-    public void SubsetsCleanup()
-    {
-        IntArray1 = Array.Empty<int>();
-    }
+    public void SubsetsCleanup() => IntArray1 = Array.Empty<int>();
 }
