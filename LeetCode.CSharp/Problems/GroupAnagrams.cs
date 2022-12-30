@@ -15,10 +15,14 @@ public sealed partial class Problem
 
         foreach (var str in strs)
         {
-            // Create key by sorting input string
-            var chars = str.ToCharArray();
-            Array.Sort(chars);
-            var key = new string(chars);
+            var hash = new char[26];
+
+            foreach (var c in str)
+            {
+                hash[c - 'a']++;
+            }
+
+            var key = new string(hash);
 
             if (dictionary.TryGetValue(key, out var list))
             {
