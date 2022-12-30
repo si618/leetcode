@@ -18,11 +18,12 @@ public abstract class Benchmark
 
     protected string String1 { get; set; } = string.Empty;
     protected string String2 { get; set; } = string.Empty;
+    protected string[] StringArray1 { get; set; } = Array.Empty<string>();
 
     protected TreeNode TreeNode1 { get; set; } = new();
     protected TreeNode TreeNode2 { get; set; } = new();
 
-    protected static readonly Random Random = new(42);
+    internal static readonly Random Random = new(42);
 
     /// <summary>
     /// Build a pseudo random string
@@ -37,7 +38,7 @@ public abstract class Benchmark
     /// <param name="size">The size of the string to return</param>
     /// <param name="frequencyOfSpace">How frequently should space occur</param>
     /// <returns>Pseudo random string</returns>
-    protected static string BuildPseudoRandomString(int size, int frequencyOfSpace = 0)
+    internal static string BuildPseudoRandomString(int size, int frequencyOfSpace = 0)
     {
         var stringBuilder = new StringBuilder(size);
         var range = 26 + frequencyOfSpace;
