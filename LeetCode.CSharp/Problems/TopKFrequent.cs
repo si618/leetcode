@@ -34,7 +34,7 @@ public sealed partial class Problem
         //     .Select(n => n.Key)
         //     .ToArray();
 
-        var sortedFrequency = new PriorityQueue<int, int>(nums.Length);
+        var sortedFrequency = new PriorityQueue<int, int>(frequency.Count);
 
         foreach (var kvp in frequency)
         {
