@@ -2,8 +2,6 @@
 
 public class NumIslandsBenchmark : Benchmark
 {
-    private char[][] CharArrayMulti { get; set; } = { new[] { char.MinValue } };
-
     [GlobalSetup(Target = nameof(NumIslands))]
     public void NumIslandsSetup()
     {

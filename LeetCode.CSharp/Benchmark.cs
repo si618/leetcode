@@ -3,6 +3,8 @@
 [Config(typeof(BenchmarkConfig))]
 public abstract class Benchmark
 {
+    protected char[][] CharArrayMulti { get; set; } = { new[] { char.MinValue } };
+
     protected int Int1 { get; set; }
     protected int Int2 { get; set; }
 
