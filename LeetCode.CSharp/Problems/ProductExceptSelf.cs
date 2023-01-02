@@ -8,25 +8,27 @@ public sealed partial class Problem
         "https://www.youtube.com/watch?v=bNvIQI2wAjk")]
     public static int[] ProductExceptSelf(int[] nums)
     {
-        if (nums.Length == 0) return nums;
+        var length = nums.Length;
+        if (length == 0) return nums;
 
         var prefix = 1;
-        var postfix = 1;
-        var result = new int[nums.Length];
+        var productArray = new int[length];
 
-        for (var i = 0; i < nums.Length; i++)
+        for (var i = 0; i < length; i++)
         {
-            result[i] = prefix;
+            productArray[i] = prefix;
             prefix *= nums[i];
         }
 
-        for (var i = nums.Length - 1; i >= 0; i--)
+        var postfix = 1;
+
+        for (var i = length - 1; i >= 0; i--)
         {
-            result[i] *= postfix;
+            productArray[i] *= postfix;
             postfix *= nums[i];
         }
 
-        return result;
+        return productArray;
     }
 
     [Fact]
