@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Happy Number",
+    [LeetCode("Happy Number",
         Difficulty.Easy,
         Category.MathAndGeometry,
         "https://www.youtube.com/watch?v=ljz85bxOYJ0")]

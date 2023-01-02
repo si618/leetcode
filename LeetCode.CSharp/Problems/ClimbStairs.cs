@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Climbing Stairs",
+    [LeetCode("Climbing Stairs",
         Difficulty.Easy,
         Category.OneDDynamicProgramming,
         "https://www.youtube.com/watch?v=Y0lT9Fck7qI")]

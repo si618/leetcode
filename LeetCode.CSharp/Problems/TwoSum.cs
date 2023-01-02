@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Two Sum",
+    [LeetCode("Two Sum",
         Difficulty.Easy,
         Category.ArraysAndHashing,
         "https://www.youtube.com/watch?v=KLlXCFG5TnA")]

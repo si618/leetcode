@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Number of Islands",
+    [LeetCode("Number of Islands",
         Difficulty.Medium,
         Category.Graphs,
         "https://www.youtube.com/watch?v=pV2kpPD66nE")]

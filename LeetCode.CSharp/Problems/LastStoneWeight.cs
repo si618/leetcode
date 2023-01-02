@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Last Stone Weight",
+    [LeetCode("Last Stone Weight",
         Difficulty.Easy,
         Category.HeapPriorityQueue,
         "https://www.youtube.com/watch?v=B-QCq79-Vfw")]

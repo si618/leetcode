@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Reverse Bits",
+    [LeetCode("Reverse Bits",
         Difficulty.Easy,
         Category.BitManipulation,
         "https://www.youtube.com/watch?v=UcoN6UjAI64")]

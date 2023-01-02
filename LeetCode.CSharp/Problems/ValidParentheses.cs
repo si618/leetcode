@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Valid Parentheses",
+    [LeetCode("Valid Parentheses",
         Difficulty.Easy,
         Category.Stack,
         "https://www.youtube.com/watch?v=WTzjTskDFMg")]

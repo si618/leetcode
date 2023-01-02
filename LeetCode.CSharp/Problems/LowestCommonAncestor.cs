@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Lowest Common Ancestor of a Binary Search Tree",
+    [LeetCode("Lowest Common Ancestor of a Binary Search Tree",
         Difficulty.Easy,
         Category.Trees,
         "https://www.youtube.com/watch?v=gs2LMfuOR9k")]

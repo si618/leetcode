@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Can Attend Meetings",
+    [LeetCode("Can Attend Meetings",
         Difficulty.Easy,
         Category.Intervals,
         "https://www.youtube.com/watch?v=PaJxqZVPhbg")]

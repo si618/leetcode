@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Binary Search",
+    [LeetCode("Binary Search",
         Difficulty.Easy,
         Category.BinarySearch,
         "https://www.youtube.com/watch?v=s4DPM8ct1pI")]

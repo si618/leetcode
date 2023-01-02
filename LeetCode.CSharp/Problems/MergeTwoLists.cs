@@ -2,8 +2,7 @@ namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Merge Two Sorted Lists",
+    [LeetCode("Merge Two Sorted Lists",
         Difficulty.Easy,
         Category.LinkedList,
         "https://www.youtube.com/watch?v=XIdigk956u0")]

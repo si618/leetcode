@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Group Anagrams",
+    [LeetCode("Group Anagrams",
         Difficulty.Medium,
         Category.ArraysAndHashing,
         "https://www.youtube.com/watch?v=vzdNOK2oB2E")]

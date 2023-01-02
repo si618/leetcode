@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Balanced Binary Tree",
+    [LeetCode("Balanced Binary Tree",
         Difficulty.Easy,
         Category.Trees,
         "https://www.youtube.com/watch?v=QfJsau0ItOY")]

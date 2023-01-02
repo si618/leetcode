@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Maximum Subarray",
+    [LeetCode("Maximum Subarray",
         Difficulty.Medium,
         Category.Greedy,
         "https://www.youtube.com/watch?v=5WZl3MMT0Eg")]

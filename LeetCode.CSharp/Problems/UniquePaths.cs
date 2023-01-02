@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Unique Paths",
+    [LeetCode("Unique Paths",
         Difficulty.Medium,
         Category.TwoDDynamicProgramming,
         "https://www.youtube.com/watch?v=IlEsdxuD4lY")]

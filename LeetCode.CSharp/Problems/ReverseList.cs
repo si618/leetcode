@@ -2,8 +2,7 @@ namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Reverse Linked List",
+    [LeetCode("Reverse Linked List",
         Difficulty.Easy,
         Category.LinkedList,
         "https://www.youtube.com/watch?v=G0_I-ZF0S38")]

@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Contains Duplicate",
+    [LeetCode("Contains Duplicate",
         Difficulty.Easy,
         Category.ArraysAndHashing,
         "https://www.youtube.com/watch?v=3OamzN90kPg")]

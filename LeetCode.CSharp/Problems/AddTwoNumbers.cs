@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Add Two Numbers",
+    [LeetCode("Add Two Numbers",
         Difficulty.Easy,
         Category.LinkedList,
         "https://www.youtube.com/watch?v=wgFPrzTjm7s")]

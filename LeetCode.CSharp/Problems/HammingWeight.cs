@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Number of 1 Bits",
+    [LeetCode("Number of 1 Bits",
         Difficulty.Easy,
         Category.BitManipulation,
         "https://www.youtube.com/watch?v=5Km3utixwZs")]

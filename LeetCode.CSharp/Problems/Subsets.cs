@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Subsets",
+    [LeetCode("Subsets",
         Difficulty.Medium,
         Category.BackTracking,
         "https://www.youtube.com/watch?v=REOH22Xwdkk")]

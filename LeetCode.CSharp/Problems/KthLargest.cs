@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Kth Largest Element in a Stream",
+    [LeetCode("Kth Largest Element in a Stream",
         Difficulty.Easy,
         Category.HeapPriorityQueue,
         "https://www.youtube.com/watch?v=hOjcdrqMoQ8")]

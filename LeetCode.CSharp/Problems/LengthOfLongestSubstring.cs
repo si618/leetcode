@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Longest Substring Without Repeating Characters",
+    [LeetCode("Longest Substring Without Repeating Characters",
         Difficulty.Medium,
         Category.SlidingWindow,
         "https://www.youtube.com/watch?v=wiGpQwVHdE0")]

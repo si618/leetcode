@@ -5,8 +5,7 @@ using System.Linq;
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Palindrome Linked List",
+    [LeetCode("Palindrome Linked List",
         Difficulty.Easy,
         Category.TwoPointers,
         "https://www.youtube.com/watch?v=jJXJ16kPFWg")]

@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Number of Steps to Reduce a Number to Zero",
+    [LeetCode("Number of Steps to Reduce a Number to Zero",
         Difficulty.Easy,
         Category.NotInNeetCode)]
     public static int NumberOfSteps(int num)

@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Insert Interval",
+    [LeetCode("Insert Interval",
         Difficulty.Medium,
         Category.Intervals,
         "https://www.youtube.com/watch?v=A8NUOmlwOlM")]

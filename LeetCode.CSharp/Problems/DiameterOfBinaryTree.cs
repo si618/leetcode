@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Diameter of Binary Tree",
+    [LeetCode("Diameter of Binary Tree",
         Difficulty.Easy,
         Category.Trees,
         "https://www.youtube.com/watch?v=bkxqA8Rfv04")]

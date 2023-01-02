@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Top K Frequent Elements",
+    [LeetCode("Top K Frequent Elements",
         Difficulty.Medium,
         Category.ArraysAndHashing,
         "https://www.youtube.com/watch?v=YPTqKIgVk-k")]

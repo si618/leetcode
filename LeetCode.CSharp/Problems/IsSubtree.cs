@@ -2,8 +2,7 @@
 
 public sealed partial class Problem
 {
-    [LeetCode(
-        "Subtree of Another Tree",
+    [LeetCode("Subtree of Another Tree",
         Difficulty.Easy,
         Category.Trees,
         "https://www.youtube.com/watch?v=E36O5SWp-LE")]
