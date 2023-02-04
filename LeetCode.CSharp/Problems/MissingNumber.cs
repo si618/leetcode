@@ -3,10 +3,10 @@
 public sealed partial class Problem
 {
     [LeetCode(
-    "Missing Number",
-    Difficulty.Easy,
-    Category.BitManipulation,
-    "https://www.youtube.com/watch?v=WnPLSRLSANE")]
+        "Missing Number",
+        Difficulty.Easy,
+        Category.BitManipulation,
+        "https://www.youtube.com/watch?v=WnPLSRLSANE")]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int MissingNumber(int[] nums) =>
         nums.Length + Enumerable.Range(0, nums.Length).Sum(i => i - nums[i]);
