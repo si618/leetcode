@@ -17,7 +17,7 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageVersion Include="Spectre.Console" Version="0.47.0" />
     <PackageVersion Include="Spectre.Console.Analyzer" Version="0.46.0" />
-    <PackageVersion Include="Spectre.Console.Cli" Version="0.46.0" />
+    <PackageVersion Include="Spectre.Console.Cli" Version="0.47.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5">
       <PrivateAssets>all</PrivateAssets>
