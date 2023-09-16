@@ -33,7 +33,8 @@ internal static class BenchmarkRunner
 
     internal static bool IsDebugConfiguration(bool warnRatherThanFail = false)
     {
-        var debug = false;
+        // ReSharper disable once JoinDeclarationAndInitializer
+        bool debug;
 
 #if DEBUG
         debug = true;

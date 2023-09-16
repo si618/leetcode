@@ -3,12 +3,11 @@
   <Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')"/>
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Simon McKenna</Authors>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <!-- Broken by dotnet format https://github.com/dotnet/format/issues/1800 -->
-    <!--<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>-->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 

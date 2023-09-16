@@ -68,7 +68,7 @@ public sealed partial class Problem
         var strs = new string[100_000];
         for (var i = 0; i < strs.Length; i++)
         {
-            strs[i] = Benchmark.BuildPseudoRandomString(Benchmark.Random.Next(100), 0);
+            strs[i] = Benchmark.BuildPseudoRandomString(Benchmark.Random.Next(100));
         }
 
         GroupAnagrams(ex1).Should().BeEquivalentTo(ex1Expected);

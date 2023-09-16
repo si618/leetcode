@@ -21,10 +21,7 @@ public sealed partial class Problem
 
             foreach (var c in word)
             {
-                if (!current.Children.ContainsKey(c))
-                {
-                    current.Children.Add(c, new TrieChild());
-                }
+                current.Children.TryAdd(c, new TrieChild());
                 current = current.Children[c];
             }
 

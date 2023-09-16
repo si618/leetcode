@@ -23,9 +23,9 @@ public sealed partial class Problem
 
         foreach (var c in s)
         {
-            if (pairs.ContainsKey(c))
+            if (pairs.TryGetValue(c, out var pair))
             {
-                if (!stack.TryPop(out var top) || pairs[c] != top)
+                if (!stack.TryPop(out var top) || pair != top)
                 {
                     return false;
                 }
