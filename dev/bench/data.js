@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1697195368505,
+  "lastUpdate": 1698297324598,
   "repoUrl": "https://github.com/si618/leetcode",
   "entries": {
     "Benchmarks": [
@@ -20964,6 +20964,342 @@ window.BENCHMARK_DATA = {
             "value": 9561.797368367514,
             "unit": "ns",
             "range": "± 43.60076707730842"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6c8d34e62062128dbc9329198ad8311b9f2f3c69",
+          "message": "Bump xunit.runner.visualstudio from 2.5.1 to 2.5.3 (#65)\n\nBumps [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit) from 2.5.1 to 2.5.3.\r\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\r\n- [Commits](https://github.com/xunit/visualstudio.xunit/compare/2.5.1...2.5.3)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: xunit.runner.visualstudio\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\r\nCo-authored-by: Simon McKenna <sshnug.si+github@gmail.com>",
+          "timestamp": "2023-10-26T15:21:30+10:30",
+          "tree_id": "7037cbf2fc2f8a2e44993a8283bd8e1ba788cda0",
+          "url": "https://github.com/si618/leetcode/commit/6c8d34e62062128dbc9329198ad8311b9f2f3c69"
+        },
+        "date": 1698297323470,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "AddTwoNumbers in C#",
+            "value": 772980.857421875,
+            "unit": "ns",
+            "range": "± 8003.591305428343"
+          },
+          {
+            "name": "BinarySearch in C#",
+            "value": 38.00233261074339,
+            "unit": "ns",
+            "range": "± 0.010667526692997501"
+          },
+          {
+            "name": "CanAttendMeetings in C#",
+            "value": 224.32120493253072,
+            "unit": "ns",
+            "range": "± 2.204646694360933"
+          },
+          {
+            "name": "ClimbStairs in C#",
+            "value": 679892.5589192709,
+            "unit": "ns",
+            "range": "± 2434.3536762454873"
+          },
+          {
+            "name": "ContainsDuplicate in C#",
+            "value": 4546060.141484375,
+            "unit": "ns",
+            "range": "± 487411.0524399831"
+          },
+          {
+            "name": "CountBits in C#",
+            "value": 16813.703052520752,
+            "unit": "ns",
+            "range": "± 319.8891752353827"
+          },
+          {
+            "name": "Decode in C#",
+            "value": 168112.7719916802,
+            "unit": "ns",
+            "range": "± 8582.052828948674"
+          },
+          {
+            "name": "DiameterOfBinaryTree in C#",
+            "value": 6009252.2328125,
+            "unit": "ns",
+            "range": "± 108257.05582800439"
+          },
+          {
+            "name": "Encode in C#",
+            "value": 4863511.036830357,
+            "unit": "ns",
+            "range": "± 12753.640860347852"
+          },
+          {
+            "name": "FizzBuzz in C#",
+            "value": 17606.770179748535,
+            "unit": "ns",
+            "range": "± 334.5746461099466"
+          },
+          {
+            "name": "GroupAnagrams in C#",
+            "value": 3205413.983276367,
+            "unit": "ns",
+            "range": "± 98830.89995639373"
+          },
+          {
+            "name": "HammingWeight in C#",
+            "value": 13.794084481398265,
+            "unit": "ns",
+            "range": "± 0.04437593071934055"
+          },
+          {
+            "name": "Insert in C#",
+            "value": 29637.767681884765,
+            "unit": "ns",
+            "range": "± 399.3342561765167"
+          },
+          {
+            "name": "InvertTree in C#",
+            "value": 7670716.813541667,
+            "unit": "ns",
+            "range": "± 69962.59251179584"
+          },
+          {
+            "name": "IsAnagram in C#",
+            "value": 1.2468703867246707,
+            "unit": "ns",
+            "range": "± 0.00109174284109762"
+          },
+          {
+            "name": "IsBalanced in C#",
+            "value": 18850952.314583335,
+            "unit": "ns",
+            "range": "± 62582.82059311033"
+          },
+          {
+            "name": "IsHappy in C#",
+            "value": 465.537153524511,
+            "unit": "ns",
+            "range": "± 9.620785385184307"
+          },
+          {
+            "name": "IsPalindrome in C#",
+            "value": 256874.5038016183,
+            "unit": "ns",
+            "range": "± 1347.7701181719488"
+          },
+          {
+            "name": "IsSameTree in C#",
+            "value": 9337379.325,
+            "unit": "ns",
+            "range": "± 165179.44557239467"
+          },
+          {
+            "name": "IsSubtree in C#",
+            "value": 9535820.402083334,
+            "unit": "ns",
+            "range": "± 177779.3164514183"
+          },
+          {
+            "name": "IsValidSudoku in C#",
+            "value": 6686.959600721087,
+            "unit": "ns",
+            "range": "± 42.394035360262656"
+          },
+          {
+            "name": "KthLargest in C#",
+            "value": 3.152512788772583,
+            "unit": "ns",
+            "range": "± 0.002597303885250593"
+          },
+          {
+            "name": "KWeakestRows in C#",
+            "value": 2784995.4333147323,
+            "unit": "ns",
+            "range": "± 407.3576208455532"
+          },
+          {
+            "name": "LastStoneWeight in C#",
+            "value": 147943079.18333334,
+            "unit": "ns",
+            "range": "± 888124.6651839344"
+          },
+          {
+            "name": "LengthOfLongestSubstring in C#",
+            "value": 49380486.64335664,
+            "unit": "ns",
+            "range": "± 34086.78285395408"
+          },
+          {
+            "name": "LowestCommonAncestor in C#",
+            "value": 1.6490231483028486,
+            "unit": "ns",
+            "range": "± 0.002375794254523772"
+          },
+          {
+            "name": "LRUCache in C#",
+            "value": 27.424594974517824,
+            "unit": "ns",
+            "range": "± 0.27773534665220134"
+          },
+          {
+            "name": "MaxDepth in C#",
+            "value": 56100745.08888888,
+            "unit": "ns",
+            "range": "± 237597.17597155477"
+          },
+          {
+            "name": "MaximumWealth in C#",
+            "value": 1119136.9440104167,
+            "unit": "ns",
+            "range": "± 693.4992305505234"
+          },
+          {
+            "name": "MaxProfit in C#",
+            "value": 17717035.947916668,
+            "unit": "ns",
+            "range": "± 52104.764091290366"
+          },
+          {
+            "name": "MaxSubarray in C#",
+            "value": 2588830.339285714,
+            "unit": "ns",
+            "range": "± 1620.4285476449688"
+          },
+          {
+            "name": "MergeTwoLists in C#",
+            "value": 4842932.130580357,
+            "unit": "ns",
+            "range": "± 40714.83989037971"
+          },
+          {
+            "name": "MiddleNode in C#",
+            "value": 15526110.017857144,
+            "unit": "ns",
+            "range": "± 254165.6955389529"
+          },
+          {
+            "name": "MinCostClimbingStairs in C#",
+            "value": 6041264.175,
+            "unit": "ns",
+            "range": "± 42675.63446020315"
+          },
+          {
+            "name": "MissingNumber in C#",
+            "value": 2194621.1219308036,
+            "unit": "ns",
+            "range": "± 636.3227467333677"
+          },
+          {
+            "name": "NumberOfSteps in C#",
+            "value": 39.85954359599522,
+            "unit": "ns",
+            "range": "± 0.06976881189908143"
+          },
+          {
+            "name": "NumIslands in C#",
+            "value": 63955888.166666664,
+            "unit": "ns",
+            "range": "± 800141.9343378684"
+          },
+          {
+            "name": "PlusOne in C#",
+            "value": 6132502.6015625,
+            "unit": "ns",
+            "range": "± 91037.86968497871"
+          },
+          {
+            "name": "ProductExceptSelf in C#",
+            "value": 421020.1325683594,
+            "unit": "ns",
+            "range": "± 327.9809903844285"
+          },
+          {
+            "name": "RansomNote in C#",
+            "value": 19484524.772916667,
+            "unit": "ns",
+            "range": "± 57798.41382556308"
+          },
+          {
+            "name": "ReverseBits in C#",
+            "value": 26.085076554616293,
+            "unit": "ns",
+            "range": "± 0.03750229555684284"
+          },
+          {
+            "name": "ReverseList in C#",
+            "value": 4.48553405503432,
+            "unit": "ns",
+            "range": "± 0.04324348732438268"
+          },
+          {
+            "name": "RomanToInt in C#",
+            "value": 414.1850737253825,
+            "unit": "ns",
+            "range": "± 1.9194495571897658"
+          },
+          {
+            "name": "SingleNumber in C#",
+            "value": 4024654.796875,
+            "unit": "ns",
+            "range": "± 2229.1083655816983"
+          },
+          {
+            "name": "Subsets in C#",
+            "value": 545.5074763615926,
+            "unit": "ns",
+            "range": "± 6.510552198727269"
+          },
+          {
+            "name": "TopKFrequent in C#",
+            "value": 4679444.432477678,
+            "unit": "ns",
+            "range": "± 4317.080251344237"
+          },
+          {
+            "name": "Trie in C#",
+            "value": 63757079.27407408,
+            "unit": "ns",
+            "range": "± 930025.9462669025"
+          },
+          {
+            "name": "TwoSum in C#",
+            "value": 25306572.2265625,
+            "unit": "ns",
+            "range": "± 2800.617176176313"
+          },
+          {
+            "name": "UniquePaths in C#",
+            "value": 2687770.27109375,
+            "unit": "ns",
+            "range": "± 23835.269012174478"
+          },
+          {
+            "name": "ValidParentheses in C#",
+            "value": 501849.1929086539,
+            "unit": "ns",
+            "range": "± 1130.6625641697838"
+          },
+          {
+            "name": "ContainsDuplicate in F#",
+            "value": 5529215.2353940215,
+            "unit": "ns",
+            "range": "± 135894.02260461007"
+          },
+          {
+            "name": "FizzBuzz in F#",
+            "value": 11257.663990020752,
+            "unit": "ns",
+            "range": "± 124.25233777988385"
           }
         ]
       }
