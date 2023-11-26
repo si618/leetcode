@@ -1,4 +1,5 @@
 ﻿.vs
-BenchmarkDotNet.Artifacts
 bin
 obj
+*.DotSettings.user
+BenchmarkDotNet.Artifacts

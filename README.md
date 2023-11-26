@@ -8,10 +8,10 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 
 ``` bash
 > dotnet --list-sdks
-7.0.100 [/usr/share/dotnet/sdk]
+8.0.100 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.37.3
+git version 2.43.0
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
@@ -60,24 +60,24 @@ COMMANDS:
   Exit
 ```
 
-### Run application from docker
+### Run application from [podman](https://podman.io/) or [docker](https://docker.com/)
 
 ``` bash
-# Build docker image
-> docker compose up
+# Build docker or podman image
+> podman compose up
 
 # Run interactive console application
-> docker run --rm -it leetcode app
+> podman run --rm -it leetcode app
 
 # List information about problems
-> docker run --rm -it leetcode list
+> podman run --rm -it leetcode list
 
 # Show information about a problem
-> docker run --rm -it leetcode info 'climbing stairs'
+> podman run --rm -it leetcode info 'climbing stairs'
 
 # Run all F# benchmarks
-> docker run --rm -it leetcode benchmark --fsharp
+> podman run --rm -it leetcode benchmark --fsharp
 
 # Run single C# benchmark
-> docker run --rm -it leetcode benchmark LRUCache --csharp
+> podman run --rm -it leetcode benchmark LRUCache --csharp
 ```
