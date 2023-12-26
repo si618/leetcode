@@ -4,13 +4,19 @@ updates:
     directory: "/LeetCode"
     schedule:
       interval: "weekly"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
       interval: "weekly"
+
+groups:
+  xunit:
+    patterns:
+    - "xunit*"
+  spectre:
+    patterns:
+    - "Spectre*"
