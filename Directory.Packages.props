@@ -14,7 +14,7 @@
     <PackageVersion Include="FsUnit.xUnit" Version="6.0.0" />
     <PackageVersion Include="FSharp.Core" Version="8.0.100" />
     <PackageVersion Include="lolcat" Version="1.1.64" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageVersion Include="Spectre.Console" Version="0.48.0" />
     <PackageVersion Include="Spectre.Console.Analyzer" Version="0.48.0" />
     <PackageVersion Include="Spectre.Console.Cli" Version="0.48.0" />
