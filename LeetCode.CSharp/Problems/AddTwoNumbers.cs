@@ -48,7 +48,7 @@ public sealed partial class Problem
 
     [Theory]
     [InlineData(new[] { 2, 4, 3 }, new[] { 5, 6, 4 }, new[] { 7, 0, 8 })]
-    [InlineData(new int[] {}, new int[] {}, new int[] {})]
+    [InlineData(new int[] { }, new int[] { }, new int[] { })]
     [InlineData(
         new[] { 9, 9, 9, 9, 9, 9, 9 },
         new[] { 9, 9, 9, 9 },
