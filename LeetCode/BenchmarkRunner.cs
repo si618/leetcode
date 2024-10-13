@@ -87,7 +87,7 @@ internal static class BenchmarkRunner
         }
         else
         {
-            message.Append(!settings.CSharp && !settings.FSharp
+            message.Append(settings is { CSharp: false, FSharp: false }
                 ? Resources.BenchmarkRunner_Running_BothBenchmarks
                 : settings.CSharp
                     ? Resources.BenchmarkRunner_Running_CSharpBenchmarks

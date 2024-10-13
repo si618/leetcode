@@ -22,8 +22,8 @@ public sealed partial class Problem
     public void MiddleNodeTest()
     {
         var single = new ListNode(1);
-        var even = new ListNode(new[] { 1, 2, 3, 4 });
-        var odd = new ListNode(new[] { 1, 2, 3, 4, 5 });
+        var even = new ListNode([1, 2, 3, 4]);
+        var odd = new ListNode([1, 2, 3, 4, 5]);
 
         MiddleNode(single).Should().BeSameAs(single);
         MiddleNode(even).Should().BeSameAs(even.next!.next);

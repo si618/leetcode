@@ -4,34 +4,30 @@ public sealed partial class Problem
 {
     [LeetCode("The K Weakest Rows in a Matrix", Difficulty.Easy, Category.NotInNeetCode)]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
-    public static int[] KWeakestRows(int[][] mat, int k)
-    {
-        return mat
-            .Select((row, index) =>
-                (Strength: row.Count(x => x == 1), Index: index))
+    public static int[] KWeakestRows(int[][] mat, int k) =>
+        mat.Select((row, index) => (Strength: row.Count(x => x == 1), Index: index))
             .OrderBy(x => x.Strength)
             .Take(k)
             .Select(x => x.Index)
             .ToArray();
-    }
 
     [Fact]
     public void KWeakestRowsTest()
     {
-        var ex1 = new[]
+        var ex1 = new int[][]
         {
-            new[] { 1, 1, 0, 0, 0 },
-            new[] { 1, 1, 1, 1, 0 },
-            new[] { 1, 0, 0, 0, 0 },
-            new[] { 1, 1, 0, 0, 0 },
-            new[] { 1, 1, 1, 1, 1 }
+            [1, 1, 0, 0, 0],
+            [1, 1, 1, 1, 0],
+            [1, 0, 0, 0, 0],
+            [1, 1, 0, 0, 0],
+            [1, 1, 1, 1, 1]
         };
-        var ex2 = new[]
+        var ex2 = new int[][]
         {
-            new[] { 1, 0, 0, 0 },
-            new[] { 1, 1, 1, 1 },
-            new[] { 1, 0, 0, 0 },
-            new[] { 1, 0, 0, 0 }
+            [1, 0, 0, 0],
+            [1, 1, 1, 1],
+            [1, 0, 0, 0],
+            [1, 0, 0, 0]
         };
 
         KWeakestRows(ex1, 3).Should().Equal(2, 0, 3);

@@ -35,11 +35,11 @@ public sealed partial class Problem
     [Fact]
     public void LowestCommonAncestorTest()
     {
-        var root1 = new TreeNode(new int?[] { 6, 2, 8, 0, 4, 7, 9, null, null, 3, 5 });
+        var root1 = new TreeNode([6, 2, 8, 0, 4, 7, 9, null, null, 3, 5]);
         var p1 = root1.left!;
         var q1 = root1.right!;
         var q2 = p1.right!;
-        var root3 = new TreeNode(new int?[] { 2, 1 });
+        var root3 = new TreeNode([2, 1]);
         var q3 = root3.left!;
 
         LowestCommonAncestor(root1, p1, q1).Should().Be(root1);

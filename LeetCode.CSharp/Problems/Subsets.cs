@@ -11,6 +11,10 @@ public sealed partial class Problem
         var subsets = new List<IList<int>>();
         var subset = new List<int>();
 
+        DepthFirstSearch(0);
+
+        return subsets;
+
         // NeetCode explanation: https://youtu.be/REOH22Xwdkk?t=163
         void DepthFirstSearch(int index)
         {
@@ -32,10 +36,6 @@ public sealed partial class Problem
             // For clarity - minimal difference found in benchmark
             DepthFirstSearch(index + 1);
         }
-
-        DepthFirstSearch(0);
-
-        return subsets;
     }
 
     [Fact]

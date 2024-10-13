@@ -9,7 +9,7 @@ internal sealed record BenchmarkSelection : Selection
     {
     }
 
-    internal BenchmarkSelection(Problem problem, string name, int order)
+    private BenchmarkSelection(Problem problem, string name, int order)
         : base(name, order)
     {
         Problem = problem;

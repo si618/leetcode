@@ -36,20 +36,18 @@ public sealed partial class Problem
             }
         }
 
-        return !stack.Any();
+        return stack.Count == 0;
     }
 
-    [Fact]
-    public void ValidParenthesesTest()
-    {
-        ValidParentheses("()").Should().BeTrue();
-        ValidParentheses("()[]{}").Should().BeTrue();
-        ValidParentheses("([{}])").Should().BeTrue();
-        ValidParentheses("{[[((()))]]}").Should().BeTrue();
-        ValidParentheses("(())[[[]]]{{{{}}}}").Should().BeTrue();
-        ValidParentheses("").Should().BeFalse();
-        ValidParentheses("(").Should().BeFalse();
-        ValidParentheses("(]").Should().BeFalse();
-        ValidParentheses("][").Should().BeFalse();
-    }
+    [Theory]
+    [InlineData("()", true)]
+    [InlineData("()[]{}", true)]
+    [InlineData("([{}])", true)]
+    [InlineData("{[[((()))]]}", true)]
+    [InlineData("(())[[[]]]{{{{}}}}", true)]
+    [InlineData("", false)]
+    [InlineData("(", false)]
+    [InlineData("(]", false)]
+    [InlineData("][", false)]
+    public void ValidParenthesesTest(string s, bool expected) => ValidParentheses(s).Should().Be(expected);
 }

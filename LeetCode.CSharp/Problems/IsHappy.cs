@@ -10,20 +10,6 @@ public sealed partial class Problem
     {
         var visited = new HashSet<int>();
 
-        int SumOfSquares(int i)
-        {
-            var result = 0;
-
-            while (i != 0)
-            {
-                var digit = i % 10;
-                digit *= digit;
-                result += digit;
-                i /= 10;
-            }
-            return result;
-        }
-
         while (!visited.Contains(n))
         {
             visited.Add(n);
@@ -37,6 +23,20 @@ public sealed partial class Problem
         }
 
         return false; // :(
+
+        static int SumOfSquares(int i)
+        {
+            var result = 0;
+
+            while (i != 0)
+            {
+                var digit = i % 10;
+                digit *= digit;
+                result += digit;
+                i /= 10;
+            }
+            return result;
+        }
     }
 
     [Fact]
