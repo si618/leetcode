@@ -19,7 +19,7 @@ public sealed partial class Problem
             {
                 if (nums[i] + nums[j] == target)
                 {
-                    return new[] { i, j };
+                    return [i, j];
                 }
             }
         }

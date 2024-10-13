@@ -8,10 +8,10 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 
 ``` bash
 > dotnet --list-sdks
-8.0.100 [/usr/share/dotnet/sdk]
+9.0.100-rc.1.24452.12 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.43.0
+git version 2.47.0
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...

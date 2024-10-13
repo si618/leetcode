@@ -51,7 +51,7 @@ internal sealed class WorkflowCommand : Command
             .GetFiles(resultsDir, searchPattern, SearchOption.TopDirectoryOnly)
             .OrderBy(report => report[ns.Length..])
             .ToArray();
-        if (!reports.Any())
+        if (reports.Length == 0)
         {
             throw new FileNotFoundException($"Reports not found '{searchPattern}'");
         }

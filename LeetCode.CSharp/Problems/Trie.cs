@@ -34,11 +34,11 @@ public sealed partial class Problem
 
             foreach (var c in word)
             {
-                if (!current.Children.ContainsKey(c))
+                if (!current.Children.TryGetValue(c, out var value))
                 {
                     return false;
                 }
-                current = current.Children[c];
+                current = value;
             }
 
             return current.EndOfWord;
@@ -50,11 +50,11 @@ public sealed partial class Problem
 
             foreach (var c in prefix)
             {
-                if (!current.Children.ContainsKey(c))
+                if (!current.Children.TryGetValue(c, out var value))
                 {
                     return false;
                 }
-                current = current.Children[c];
+                current = value;
             }
 
             return true;

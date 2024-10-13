@@ -3,24 +3,24 @@
 [Config(typeof(BenchmarkConfig))]
 public abstract class Benchmark
 {
-    protected char[][] CharArrayMulti { get; set; } = { new[] { char.MinValue } };
+    protected char[][] CharArrayMulti { get; set; } = [[char.MinValue]];
 
     protected int Int1 { get; set; }
     protected int Int2 { get; set; }
 
-    protected int[] IntArray1 { get; set; } = Array.Empty<int>();
-    protected int[] IntArray2 { get; set; } = Array.Empty<int>();
-    protected int[][] IntArrayMulti1 { get; set; } = Array.Empty<int[]>();
-    protected int?[] IntArrayNullable { get; set; } = Array.Empty<int?>();
+    protected int[] IntArray1 { get; set; } = [];
+    protected int[] IntArray2 { get; set; } = [];
+    protected int[][] IntArrayMulti1 { get; set; } = [];
+    protected int?[] IntArrayNullable { get; set; } = [];
 
-    protected List<Interval> Intervals1 { get; } = new();
+    protected List<Interval> Intervals1 { get; } = [];
 
     protected ListNode ListNode1 { get; set; } = new();
     protected ListNode ListNode2 { get; set; } = new();
 
     protected string String1 { get; set; } = string.Empty;
     protected string String2 { get; set; } = string.Empty;
-    protected string[] StringArray1 { get; set; } = Array.Empty<string>();
+    protected string[] StringArray1 { get; set; } = [];
 
     protected TreeNode TreeNode1 { get; set; } = new();
     protected TreeNode TreeNode2 { get; set; } = new();

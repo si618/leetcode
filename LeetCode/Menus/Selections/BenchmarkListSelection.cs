@@ -25,8 +25,7 @@ internal sealed record BenchmarkListSelection : Selection
         }
 
         var selectedProblems = AnsiConsole.Prompt(prompt);
-
-        if (!selectedProblems.Any())
+        if (selectedProblems.Count == 0)
         {
             return 0;
         }

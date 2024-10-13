@@ -11,28 +11,13 @@ public sealed partial class Problem
     {
         var set = new HashSet<int>();
 
-        foreach (var num in nums)
-        {
-            if (set.Contains(num))
-            {
-                return true;
-            }
-
-            set.Add(num);
-        }
-
-        return false;
+        return nums.Any(num => !set.Add(num));
     }
 
-    [Fact]
-    public void ContainsDuplicateTest()
-    {
-        var ex1 = new[] { 1, 2, 3, 1 };
-        var ex2 = new[] { 1, 2, 3, 4 };
-        var ex3 = new[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 };
-
-        ContainsDuplicate(ex1).Should().BeTrue();
-        ContainsDuplicate(ex2).Should().BeFalse();
-        ContainsDuplicate(ex3).Should().BeTrue();
-    }
+    [Theory]
+    [InlineData(new[] { 1, 2, 3, 1 }, true)]
+    [InlineData(new[] { 1, 2, 3, 4 }, false)]
+    [InlineData(new[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 }, true)]
+    public void ContainsDuplicateTest(int[] nums, bool expected) =>
+        ContainsDuplicate(nums).Should().Be(expected);
 }

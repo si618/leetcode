@@ -24,10 +24,8 @@ public sealed partial class Problem
         return oneStep;
     }
 
-    [Fact]
-    public void ClimbStairsTest()
-    {
-        ClimbStairs(2).Should().Be(2);
-        ClimbStairs(3).Should().Be(3);
-    }
+    [Theory]
+    [InlineData(2, 2)]
+    [InlineData(3, 3)]
+    public void ClimbStairsTest(int n, int expected) => ClimbStairs(n).Should().Be(expected);
 }
