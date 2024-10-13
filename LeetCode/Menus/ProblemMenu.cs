@@ -7,11 +7,11 @@ internal sealed class ProblemMenu : MenuBase
     public ProblemMenu(Problem problem)
     {
         Problem = problem;
-        Choices = new List<Selection>
-        {
+        Choices =
+        [
             new BenchmarkSelection(Problem, 1),
             new ExitSelection(2)
-        };
+        ];
     }
 
     public override int Render()

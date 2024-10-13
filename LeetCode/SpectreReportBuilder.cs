@@ -1,13 +1,8 @@
 ﻿namespace LeetCode;
 
-internal sealed class SpectreReportBuilder
+internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
 {
-    private IEnumerable<Summary> Summaries { get; }
-
-    public SpectreReportBuilder(IEnumerable<Summary> summaries)
-    {
-        Summaries = summaries;
-    }
+    private IEnumerable<Summary> Summaries { get; } = summaries;
 
     public IRenderable Build()
     {

@@ -41,9 +41,9 @@ public sealed partial class Problem
     [Fact]
     public void MergeTwoListsTest()
     {
-        var ex11 = new ListNode(new[] { 1, 2, 4 });
-        var ex12 = new ListNode(new[] { 1, 3, 4 });
-        var ep1 = new ListNode(new[] { 1, 1, 2, 3, 4, 4 });
+        var ex11 = new ListNode([1, 2, 4]);
+        var ex12 = new ListNode([1, 3, 4]);
+        var ep1 = new ListNode([1, 1, 2, 3, 4, 4]);
         var ex3 = new ListNode();
 
         MergeTwoLists(ex11, ex12).Should().BeEquivalentTo(ep1);

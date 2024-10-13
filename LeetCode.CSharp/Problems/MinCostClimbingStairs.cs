@@ -22,10 +22,9 @@ public sealed partial class Problem
         return Math.Min(minCost[0], minCost[1]);
     }
 
-    [Fact]
-    public void MinCostClimbingStairsTest()
-    {
-        MinCostClimbingStairs(new[] { 10, 15, 20 }).Should().Be(15);
-        MinCostClimbingStairs(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }).Should().Be(6);
-    }
+    [Theory]
+    [InlineData(new[] { 10, 15, 20 }, 15)]
+    [InlineData(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }, 6)]
+    public void MinCostClimbingStairsTest(int[] cost, int expected) =>
+        MinCostClimbingStairs(cost).Should().Be(expected);
 }

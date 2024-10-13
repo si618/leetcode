@@ -13,6 +13,7 @@ indent_size = 4
 # CA1822: Mark members as static
 dotnet_diagnostic.ca1822.severity = silent
 
+csharp_style_expression_bodied_methods = true:suggestion
 csharp_style_namespace_declarations = file_scoped
 
 # Microsoft .NET properties

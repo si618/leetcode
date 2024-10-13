@@ -10,6 +10,10 @@ public sealed partial class Problem
     {
         var maxDiameter = 0;
 
+        DepthFirstSearch(root);
+
+        return maxDiameter;
+
         // Calculates height and stores maximum diameter
         int DepthFirstSearch(TreeNode? node)
         {
@@ -26,10 +30,6 @@ public sealed partial class Problem
             // Add 1 to include current node's height
             return Math.Max(left, right) + 1;
         }
-
-        DepthFirstSearch(root);
-
-        return maxDiameter;
     }
 
     [Fact]

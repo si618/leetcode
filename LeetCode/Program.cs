@@ -21,8 +21,8 @@ app.Configure(config =>
     config.AddCommand<WorkflowCommand>(Resources.Command_Workflow)
         .WithDescription(Resources.Command_Workflow_Description);
 
-    config.AddExample(new[] { Resources.Command_Benchmark, "LRUCache", "--csharp" });
-    config.AddExample(new[] { Resources.Command_Info, "MergeTwoLists" });
+    config.AddExample(Resources.Command_Benchmark, "LRUCache", "--csharp");
+    config.AddExample(Resources.Command_Info, "MergeTwoLists");
 });
 
 return await app.RunAsync(args);

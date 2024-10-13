@@ -40,8 +40,8 @@ public sealed partial class Problem
     [Fact]
     public void KthLargestTest()
     {
-        var ex1 = new KthLargest(3, new[] { 4, 5, 8, 2 });
-        var ex2 = new KthLargest(3, new[] { 4, 5 });
+        var ex1 = new KthLargest(3, [4, 5, 8, 2]);
+        var ex2 = new KthLargest(3, [4, 5]);
 
         using (new AssertionScope())
         {

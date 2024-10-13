@@ -26,13 +26,8 @@ public sealed partial class Problem
         return result;
     }
 
-    [Fact]
-    public void CountBitsTest()
-    {
-        const int ex1 = 2;
-        const int ex2 = 5;
-
-        CountBits(ex1).Should().Equal(0, 1, 1);
-        CountBits(ex2).Should().Equal(0, 1, 1, 2, 1, 2);
-    }
+    [Theory]
+    [InlineData(2, new[] { 0, 1, 1 })]
+    [InlineData(5, new[] { 0, 1, 1, 2, 1, 2 })]
+    public void CountBitsTest(int n, int[] expected) => CountBits(n).Should().Equal(expected);
 }

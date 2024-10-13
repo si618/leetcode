@@ -8,16 +8,6 @@ public sealed partial class Problem
         "https://www.youtube.com/watch?v=IlEsdxuD4lY")]
     public static int UniquePaths(int m, int n)
     {
-        int[] CreateRow()
-        {
-            var r = new int[n];
-            for (var i = 0; i < n; i++)
-            {
-                r[i] = 1;
-            }
-            return r;
-        }
-
         // Last row will only have one move (right) for each position
         var row = CreateRow();
 
@@ -39,12 +29,21 @@ public sealed partial class Problem
 
         // First item in current row is start which is the sum of all unique paths
         return row[0];
+
+        int[] CreateRow()
+        {
+            var r = new int[n];
+            for (var i = 0; i < n; i++)
+            {
+                r[i] = 1;
+            }
+            return r;
+        }
     }
 
-    [Fact]
-    public void UniquePathsTest()
-    {
-        UniquePaths(7, 3).Should().Be(28);
-        UniquePaths(3, 2).Should().Be(3);
-    }
+    [Theory]
+    [InlineData(3, 7, 28)]
+    [InlineData(3, 3, 6)]
+    public void UniquePathsTest(int m, int n, int expected) =>
+        UniquePaths(m, n).Should().Be(expected);
 }

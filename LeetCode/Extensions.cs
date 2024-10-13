@@ -1,6 +1,6 @@
 ﻿namespace LeetCode;
 
-public static class Extensions
+public static partial class Extensions
 {
     public static string Description(this Category category) =>
         $"Category_{category}".GetResource();
@@ -41,11 +41,13 @@ public static class Extensions
         return table;
     }
 
-    private static readonly Regex MatchWhitespace = new(@"\s+");
+    private static readonly Regex MatchWhitespace = MatchWhitespaceRegex();
     private static string ReplaceWhitespace(this string input, string replacement) =>
         MatchWhitespace.Replace(input, replacement);
 
     private static string GetResource(this string name) =>
         Resources.ResourceManager.GetString(name) ??
             throw new InvalidOperationException($"Missing resource '{name}'");
+    [GeneratedRegex(@"\s+")]
+    private static partial Regex MatchWhitespaceRegex();
 }
