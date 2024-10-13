@@ -9,5 +9,5 @@ public class BinarySearchBenchmark : Benchmark
     public int BinarySearch() => Problem.BinarySearch(IntArray1, 1_000);
 
     [GlobalCleanup(Target = nameof(BinarySearch))]
-    public void BinarySearchCleanup() => IntArray1 = Array.Empty<int>();
+    public void BinarySearchCleanup() => IntArray1 = [];
 }

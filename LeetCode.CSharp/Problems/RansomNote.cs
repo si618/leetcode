@@ -9,24 +9,24 @@ public sealed partial class Problem
 
         foreach (var mc in magazine)
         {
-            if (!frequency.ContainsKey(mc))
+            if (!frequency.TryGetValue(mc, out var value))
             {
                 frequency.Add(mc, 1);
             }
             else
             {
-                frequency[mc]++;
+                frequency[mc] = ++value;
             }
         }
 
         foreach (var rc in ransomNote)
         {
-            if (!frequency.ContainsKey(rc) || frequency[rc] == 0)
+            if (!frequency.TryGetValue(rc, out var value) || value == 0)
             {
                 return false;
             }
 
-            frequency[rc]--;
+            frequency[rc] = --value;
         }
 
         return true;

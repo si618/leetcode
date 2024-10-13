@@ -35,13 +35,10 @@ public sealed partial class Problem
         return -1;
     }
 
-    [Fact]
-    public void BinarySearchTest()
-    {
-        var nums = new[] { -1, 0, 3, 5, 9, 12 };
-
-        BinarySearch(nums, 9).Should().Be(4);
-        BinarySearch(nums, 2).Should().Be(-1);
-        BinarySearch(Array.Empty<int>(), 0).Should().Be(-1);
-    }
+    [Theory]
+    [InlineData(new[] { -1, 0, 3, 5, 9, 12 }, 9, 4)]
+    [InlineData(new[] { -1, 0, 3, 5, 9, 12 }, 2, -1)]
+    [InlineData(new int[] { }, 0, -1)]
+    public void BinarySearchTest(int[] nums, int target, int expected) =>
+        BinarySearch(nums, target).Should().Be(expected);
 }

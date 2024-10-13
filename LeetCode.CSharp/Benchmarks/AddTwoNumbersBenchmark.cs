@@ -19,8 +19,8 @@ public class AddTwoNumbersBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(AddTwoNumbers))]
     public void AddTwoNumbersCleanup()
     {
-        IntArray1 = Array.Empty<int>();
-        IntArray2 = Array.Empty<int>();
+        IntArray1 = [];
+        IntArray2 = [];
         ListNode1 = new ListNode(IntArray1);
         ListNode2 = new ListNode(IntArray2);
     }

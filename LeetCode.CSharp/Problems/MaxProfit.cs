@@ -36,7 +36,7 @@ public sealed partial class Problem
     [Fact]
     public void MaxProfitTest()
     {
-        MaxProfit(new[] { 7, 1, 5, 3, 6, 4 }).Should().Be(5);
-        MaxProfit(new[] { 7, 6, 4, 3, 1 }).Should().Be(0);
+        MaxProfit([7, 1, 5, 3, 6, 4]).Should().Be(5);
+        MaxProfit([7, 6, 4, 3, 1]).Should().Be(0);
     }
 }

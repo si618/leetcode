@@ -6,7 +6,7 @@ internal static class Reflection
     {
         var found = typeof(CSharp.Problems.Problem)
             .GetMembers()
-            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
+            .Where(m => m.GetCustomAttribute<LeetCodeAttribute>() is not null)
             .Select(GetProblem)
             .FirstOrDefault(p =>
                 p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
@@ -19,8 +19,6 @@ internal static class Reflection
 
     private static Problem GetProblem(MemberInfo memberInfo)
     {
-        ArgumentNullException.ThrowIfNull(nameof(memberInfo));
-
         var csharp = GetCSharpProblems().Contains(memberInfo.Name);
         var fsharp = GetFSharpProblems().Contains(memberInfo.Name);
         var attribute = memberInfo.GetCustomAttribute<LeetCodeAttribute>();
@@ -43,7 +41,7 @@ internal static class Reflection
     public static IEnumerable<IGrouping<Category, Problem>> GetProblemsByCategory() =>
         typeof(CSharp.Problems.Problem)
             .GetMembers()
-            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
+            .Where(m => m.GetCustomAttribute<LeetCodeAttribute>() is not null)
             .Select(GetProblem)
             .OrderBy(p => p.Category)
             .ThenBy(p => p.Difficulty)
@@ -71,7 +69,7 @@ internal static class Reflection
     private static IEnumerable<string> GetCSharpProblems() =>
         typeof(CSharp.Problems.Problem)
             .GetMembers()
-            .Where(m => m.GetCustomAttribute(typeof(LeetCodeAttribute)) is not null)
+            .Where(m => m.GetCustomAttribute<LeetCodeAttribute>() is not null)
             .Select(m => m.Name);
 
     private static IEnumerable<string> GetFSharpProblems() =>

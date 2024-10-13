@@ -4,28 +4,19 @@ internal sealed class SpectreLogger : ILogger
 {
     public static readonly SpectreLogger Logger = new();
 
-    public void Write(LogKind logKind, string text)
-    {
-        Markup(logKind, text, writeLine: false);
-    }
+    public void Write(LogKind logKind, string text) => Markup(logKind, text, writeLine: false);
 
-    public void WriteLine()
-    {
-        AnsiConsole.WriteLine();
-    }
+    public void WriteLine() => AnsiConsole.WriteLine();
 
-    public void WriteLine(LogKind logKind, string text)
-    {
-        Markup(logKind, text, writeLine: true);
-    }
+    public void WriteLine(LogKind logKind, string text) => Markup(logKind, text, writeLine: true);
 
     public void Flush()
     {
     }
 
-    public string Id { get; } = nameof(SpectreLogger);
+    public string Id => nameof(SpectreLogger);
 
-    public int Priority { get; } = 0;
+    public int Priority => 0;
 
     private static void Markup(LogKind logKind, string text, bool writeLine)
     {
@@ -39,6 +30,9 @@ internal sealed class SpectreLogger : ILogger
             case LogKind.Statistic:
             case LogKind.Info:
             case LogKind.Hint:
+                break;
+            case LogKind.Warning:
+                prefix = "[orange]Warning[/]: ";
                 break;
             case LogKind.Error:
                 prefix = "[red]Error[/]: ";
