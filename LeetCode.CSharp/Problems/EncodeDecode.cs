@@ -46,25 +46,17 @@ public sealed partial class Problem
         return result;
     }
 
-    [Fact]
-    public void EncodeTest()
-    {
-        var ex1 = new List<string> { "abc" };
-        var ex2 = new List<string> { "abc", "c : a" };
+    [Theory]
+    [InlineData(new string[] { }, "")]
+    [InlineData(new[] { "" }, "0:")]
+    [InlineData(new[] { "abc" }, "3:abc")]
+    [InlineData(new[] { "abc", "c : a" }, "3:abc5:c : a")]
+    public void EncodeTest(string[] strs, string expected) => Encode(strs).Should().Be(expected);
 
-        Encode(Array.Empty<string>()).Should().Be(string.Empty);
-        Encode(ex1).Should().Be("3:abc");
-        Encode(ex2).Should().Be("3:abc5:c : a");
-    }
-
-    [Fact]
-    public void DecodeTest()
-    {
-        const string ex1 = "3:abc";
-        const string ex2 = "3:abc5:c : a";
-
-        Decode(string.Empty).Should().BeEmpty();
-        Decode(ex1).Should().Equal("abc");
-        Decode(ex2).Should().Equal("abc", "c : a");
-    }
+    [Theory]
+    [InlineData("", new string[] { })]
+    [InlineData("0:", new[] { "" })]
+    [InlineData("3:abc", new[] { "abc" })]
+    [InlineData("3:abc5:c : a", new[] { "abc", "c : a" })]
+    public void DecodeTest(string str, string[] expected) => Decode(str).Should().Equal(expected);
 }
