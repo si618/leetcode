@@ -8,7 +8,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="FluentAssertions" Version="6.12.1" />
+    <PackageVersion Include="FluentAssertions" Version="6.12.2" />
     <PackageVersion Include="FsUnit.xUnit" Version="6.0.1" />
     <PackageVersion Include="FSharp.Core" Version="8.0.400" />
     <PackageVersion Include="lolcat" Version="1.1.64" />
