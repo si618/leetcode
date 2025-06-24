@@ -42,7 +42,7 @@ public sealed partial class Problem
     [Fact]
     public void IsHappyTest()
     {
-        IsHappy(19).Should().BeTrue();
-        IsHappy(2).Should().BeFalse();
+        IsHappy(19).ShouldBeTrue();
+        IsHappy(2).ShouldBeFalse();
     }
 }

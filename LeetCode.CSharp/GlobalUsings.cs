@@ -2,8 +2,7 @@
 global using BenchmarkDotNet.Columns;
 global using BenchmarkDotNet.Configs;
 global using BenchmarkDotNet.Diagnosers;
-global using FluentAssertions;
-global using FluentAssertions.Execution;
+global using Shouldly;
 global using LeetCode.CSharp.Problems;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Text;

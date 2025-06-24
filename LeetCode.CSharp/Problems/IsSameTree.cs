@@ -39,9 +39,9 @@ public sealed partial class Problem
         var p3 = new TreeNode(new int?[] { 1, 2, 1 });
         var q3 = new TreeNode(new int?[] { 1, 1, 2 });
 
-        IsSameTree(p1, q1).Should().BeTrue();
-        IsSameTree(p2, q2).Should().BeFalse();
-        IsSameTree(p3, q3).Should().BeFalse();
-        IsSameTree(null, null).Should().BeTrue();
+        IsSameTree(p1, q1).ShouldBeTrue();
+        IsSameTree(p2, q2).ShouldBeFalse();
+        IsSameTree(p3, q3).ShouldBeFalse();
+        IsSameTree(null, null).ShouldBeTrue();
     }
 }

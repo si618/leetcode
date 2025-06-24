@@ -43,8 +43,8 @@ public sealed partial class Problem
         const string r3 = "bg";
         const string m3 = "aabefjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj";
 
-        RansomNote(r1, m1).Should().BeFalse();
-        RansomNote(r2, m2).Should().BeFalse();
-        RansomNote(r3, m3).Should().BeTrue();
+        RansomNote(r1, m1).ShouldBeFalse();
+        RansomNote(r2, m2).ShouldBeFalse();
+        RansomNote(r3, m3).ShouldBeTrue();
     }
 }

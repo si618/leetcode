@@ -30,7 +30,7 @@ public sealed partial class Problem
             [1, 0, 0, 0]
         };
 
-        KWeakestRows(ex1, 3).Should().Equal(2, 0, 3);
-        KWeakestRows(ex2, 2).Should().Equal(0, 2);
+        KWeakestRows(ex1, 3).ShouldBe([2, 0, 3]);
+        KWeakestRows(ex2, 2).ShouldBe([0, 2]);
     }
 }

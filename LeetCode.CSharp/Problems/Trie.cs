@@ -73,11 +73,11 @@ public sealed partial class Problem
         var trie = new Trie();
 
         trie.Insert("apple");
-        trie.Search("apple").Should().BeTrue();
-        trie.Search("app").Should().BeFalse();
-        trie.StartsWith("app").Should().BeTrue();
+        trie.Search("apple").ShouldBeTrue();
+        trie.Search("app").ShouldBeFalse();
+        trie.StartsWith("app").ShouldBeTrue();
 
         trie.Insert("app");
-        trie.Search("app").Should().BeTrue();
+        trie.Search("app").ShouldBeTrue();
     }
 }

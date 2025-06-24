@@ -80,7 +80,7 @@ public sealed partial class Problem
             new[] { 12, 16 }
         };
 
-        Insert(ex1Intervals, ex1NewInterval).Should().BeEquivalentTo(ex1Expected);
-        Insert(ex2Intervals, ex2NewInterval).Should().BeEquivalentTo(ex2Expected);
+        Insert(ex1Intervals, ex1NewInterval).ShouldBe(ex1Expected);
+        Insert(ex2Intervals, ex2NewInterval).ShouldBe(ex2Expected);
     }
 }

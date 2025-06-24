@@ -32,8 +32,8 @@ public sealed partial class Problem
         var ex2 = new[] { 1 };
         var ex3 = new[] { 5, 4, -1, 7, 8 };
 
-        MaxSubarray(ex1).Should().Be(6);
-        MaxSubarray(ex2).Should().Be(1);
-        MaxSubarray(ex3).Should().Be(23);
+        MaxSubarray(ex1).ShouldBe(6);
+        MaxSubarray(ex2).ShouldBe(1);
+        MaxSubarray(ex3).ShouldBe(23);
     }
 }

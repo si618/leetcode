@@ -39,10 +39,10 @@ public sealed partial class Problem
         var root4 = new TreeNode([1, 2, 3, 4, 5, null, 6, 7, null, null, null, null, 8]);
         var root5 = new TreeNode();
 
-        IsBalanced(root1).Should().BeTrue();
-        IsBalanced(root2).Should().BeFalse();
-        IsBalanced(root3).Should().BeFalse();
-        IsBalanced(root4).Should().BeFalse();
-        IsBalanced(root5).Should().BeTrue();
+        IsBalanced(root1).ShouldBeTrue();
+        IsBalanced(root2).ShouldBeFalse();
+        IsBalanced(root3).ShouldBeFalse();
+        IsBalanced(root4).ShouldBeFalse();
+        IsBalanced(root5).ShouldBeTrue();
     }
 }

@@ -25,7 +25,7 @@ public sealed partial class Problem
         const uint ex1 = 0b00000010100101000001111010011100;
         const uint ex2 = 0b11111111111111111111111111111101;
 
-        ReverseBits(ex1).Should().Be(0b00111001011110000010100101000000);
-        ReverseBits(ex2).Should().Be(0b10111111111111111111111111111111);
+        ReverseBits(ex1).ShouldBe(0b00111001011110000010100101000000U);
+        ReverseBits(ex2).ShouldBe(0b10111111111111111111111111111111U);
     }
 }

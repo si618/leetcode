@@ -40,7 +40,7 @@ public sealed partial class Problem
             new(9, 15)
         };
 
-        CanAttendMeetings(ex1).Should().BeFalse();
-        CanAttendMeetings(ex2).Should().BeTrue();
+        CanAttendMeetings(ex1).ShouldBeFalse();
+        CanAttendMeetings(ex2).ShouldBeTrue();
     }
 }

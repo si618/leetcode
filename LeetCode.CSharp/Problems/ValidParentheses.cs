@@ -49,5 +49,5 @@ public sealed partial class Problem
     [InlineData("(", false)]
     [InlineData("(]", false)]
     [InlineData("][", false)]
-    public void ValidParenthesesTest(string s, bool expected) => ValidParentheses(s).Should().Be(expected);
+    public void ValidParenthesesTest(string s, bool expected) => ValidParentheses(s).ShouldBe(expected);
 }

@@ -113,12 +113,9 @@ public sealed partial class Problem
             ['0', '0', '0', '1', '1']
         };
 
-        using (new AssertionScope())
-        {
-            NumIslands(null).Should().Be(0);
-            NumIslands([]).Should().Be(0);
-            NumIslands(ex1).Should().Be(1);
-            NumIslands(ex2).Should().Be(3);
-        }
+        NumIslands(null).ShouldBe(0);
+        NumIslands([]).ShouldBe(0);
+        NumIslands(ex1).ShouldBe(1);
+        NumIslands(ex2).ShouldBe(3);
     }
 }

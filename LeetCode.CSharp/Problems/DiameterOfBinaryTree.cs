@@ -41,8 +41,8 @@ public sealed partial class Problem
             right: new TreeNode(3));
         var root2 = new TreeNode(1, left: new TreeNode(2));
 
-        DiameterOfBinaryTree(new TreeNode()).Should().Be(0);
-        DiameterOfBinaryTree(root1).Should().Be(3);
-        DiameterOfBinaryTree(root2).Should().Be(1);
+        DiameterOfBinaryTree(new TreeNode()).ShouldBe(0);
+        DiameterOfBinaryTree(root1).ShouldBe(3);
+        DiameterOfBinaryTree(root2).ShouldBe(1);
     }
 }

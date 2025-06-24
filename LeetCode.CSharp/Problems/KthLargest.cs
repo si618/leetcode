@@ -43,22 +43,16 @@ public sealed partial class Problem
         var ex1 = new KthLargest(3, [4, 5, 8, 2]);
         var ex2 = new KthLargest(3, [4, 5]);
 
-        using (new AssertionScope())
-        {
-            ex1.Add(3).Should().Be(4, "3 shouldn't replace 4");
-            ex1.Add(5).Should().Be(5, "5 should replace 4");
-            ex1.Add(10).Should().Be(5, "10 should replace 5");
-            ex1.Add(9).Should().Be(8, "9 should replace 8");
-            ex1.Add(4).Should().Be(8, "4 shouldn't replace 8");
-        }
-        using (new AssertionScope())
-        {
-            ex2.Add(3).Should().Be(3, "3 should be added");
-            ex2.Add(5).Should().Be(4, "5 should replace 3");
-            ex2.Add(10).Should().Be(5, "10 should replace 5");
-            ex2.Add(9).Should().Be(5, "9 should replace 5");
-            ex2.Add(4).Should().Be(5, "4 shouldn't replace 5");
-        }
+        ex1.Add(3).ShouldBe(4, "3 shouldn't replace 4");
+        ex1.Add(5).ShouldBe(5, "5 should replace 4");
+        ex1.Add(10).ShouldBe(5, "10 should replace 5");
+        ex1.Add(9).ShouldBe(8, "9 should replace 8");
+        ex1.Add(4).ShouldBe(8, "4 shouldn't replace 8");
 
+        ex2.Add(3).ShouldBe(3, "3 should be added");
+        ex2.Add(5).ShouldBe(4, "5 should replace 3");
+        ex2.Add(10).ShouldBe(5, "10 should replace 5");
+        ex2.Add(9).ShouldBe(5, "9 should replace 5");
+        ex2.Add(4).ShouldBe(5, "4 shouldn't replace 5");
     }
 }

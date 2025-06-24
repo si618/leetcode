@@ -27,5 +27,5 @@ public sealed partial class Problem
     [Theory]
     [InlineData(2, 2)]
     [InlineData(3, 3)]
-    public void ClimbStairsTest(int n, int expected) => ClimbStairs(n).Should().Be(expected);
+    public void ClimbStairsTest(int n, int expected) => ClimbStairs(n).ShouldBe(expected);
 }

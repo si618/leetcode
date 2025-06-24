@@ -71,9 +71,9 @@ public sealed partial class Problem
             strs[i] = Benchmark.BuildPseudoRandomString(Benchmark.Random.Next(100));
         }
 
-        GroupAnagrams(ex1).Should().BeEquivalentTo(ex1Expected);
-        GroupAnagrams(ex2).Should().BeEquivalentTo(ex2Expected);
-        GroupAnagrams(ex3).Should().BeEquivalentTo(ex3Expected);
-        GroupAnagrams(ex4).Should().BeEquivalentTo(ex4Expected);
+        GroupAnagrams(ex1).ShouldBe(ex1Expected);
+        GroupAnagrams(ex2).ShouldBe(ex2Expected);
+        GroupAnagrams(ex3).ShouldBe(ex3Expected);
+        GroupAnagrams(ex4).ShouldBe(ex4Expected);
     }
 }

@@ -29,5 +29,5 @@ public sealed partial class Problem
     [Theory]
     [InlineData(2, new[] { 0, 1, 1 })]
     [InlineData(5, new[] { 0, 1, 1, 2, 1, 2 })]
-    public void CountBitsTest(int n, int[] expected) => CountBits(n).Should().Equal(expected);
+    public void CountBitsTest(int n, int[] expected) => CountBits(n).ShouldBe(expected);
 }

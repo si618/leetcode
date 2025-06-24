@@ -42,8 +42,8 @@ public sealed partial class Problem
         var root3 = new TreeNode([2, 1]);
         var q3 = root3.left!;
 
-        LowestCommonAncestor(root1, p1, q1).Should().Be(root1);
-        LowestCommonAncestor(root1, p1, q2).Should().Be(p1);
-        LowestCommonAncestor(root3, root3, q3).Should().Be(root3);
+        LowestCommonAncestor(root1, p1, q1).ShouldBe(root1);
+        LowestCommonAncestor(root1, p1, q2).ShouldBe(p1);
+        LowestCommonAncestor(root3, root3, q3).ShouldBe(root3);
     }
 }

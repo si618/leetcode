@@ -26,5 +26,5 @@ public sealed partial class Problem
     [InlineData(new[] { 10, 15, 20 }, 15)]
     [InlineData(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }, 6)]
     public void MinCostClimbingStairsTest(int[] cost, int expected) =>
-        MinCostClimbingStairs(cost).Should().Be(expected);
+        MinCostClimbingStairs(cost).ShouldBe(expected);
 }

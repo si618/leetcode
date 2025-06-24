@@ -49,8 +49,8 @@ public sealed partial class Problem
         var ex2 = new[] { 4, 3, 2, 1 };
         var ex3 = new[] { 9 };
 
-        PlusOne(ex1).Should().Equal(1, 2, 4);
-        PlusOne(ex2).Should().Equal(4, 3, 2, 2);
-        PlusOne(ex3).Should().Equal(1, 0);
+        PlusOne(ex1).ShouldBe([1, 2, 4]);
+        PlusOne(ex2).ShouldBe([4, 3, 2, 2]);
+        PlusOne(ex3).ShouldBe([1, 0]);
     }
 }

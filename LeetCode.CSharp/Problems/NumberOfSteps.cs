@@ -29,8 +29,8 @@ public sealed partial class Problem
     [Fact]
     public void NumberOfStepsTest()
     {
-        NumberOfSteps(14).Should().Be(6);
-        NumberOfSteps(8).Should().Be(4);
-        NumberOfSteps(123).Should().Be(12);
+        NumberOfSteps(14).ShouldBe(6);
+        NumberOfSteps(8).ShouldBe(4);
+        NumberOfSteps(123).ShouldBe(12);
     }
 }

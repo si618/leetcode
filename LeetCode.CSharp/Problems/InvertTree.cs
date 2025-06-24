@@ -39,9 +39,9 @@ public sealed partial class Problem
         var root2 = new TreeNode(2, left: new TreeNode(1), right: new TreeNode(3));
         var exp2 = new TreeNode(2, left: new TreeNode(3), right: new TreeNode(1));
 
-        InvertTree(root1).Should().BeEquivalentTo(exp1);
-        InvertTree(root2).Should().BeEquivalentTo(exp2);
-        InvertTree(new TreeNode()).Should().BeEquivalentTo(new TreeNode());
-        InvertTree(null).Should().BeNull();
+        InvertTree(root1).ShouldBeEquivalentTo(exp1);
+        InvertTree(root2).ShouldBeEquivalentTo(exp2);
+        InvertTree(new TreeNode()).ShouldBeEquivalentTo(new TreeNode());
+        InvertTree(null).ShouldBeNull();
     }
 }

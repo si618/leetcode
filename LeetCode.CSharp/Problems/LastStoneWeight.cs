@@ -36,7 +36,7 @@ public sealed partial class Problem
         var ex1 = new[] { 2, 7, 4, 1, 8, 1 };
         var ex2 = new[] { 1 };
 
-        LastStoneWeight(ex1).Should().Be(1);
-        LastStoneWeight(ex2).Should().Be(1);
+        LastStoneWeight(ex1).ShouldBe(1);
+        LastStoneWeight(ex2).ShouldBe(1);
     }
 }

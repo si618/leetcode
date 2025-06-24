@@ -147,13 +147,10 @@ public sealed partial class Problem
         var forthGet = lru.Get(3);
         var fifthGet = lru.Get(4);
 
-        using (new AssertionScope())
-        {
-            firstGet.Should().Be(1);
-            secondGet.Should().Be(-1);
-            thirdGet.Should().Be(-1);
-            forthGet.Should().Be(3);
-            fifthGet.Should().Be(4);
-        }
+        firstGet.ShouldBe(1);
+        secondGet.ShouldBe(-1);
+        thirdGet.ShouldBe(-1);
+        forthGet.ShouldBe(3);
+        fifthGet.ShouldBe(4);
     }
 }

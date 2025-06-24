@@ -16,7 +16,7 @@ public sealed partial class Problem
     //    var ex1nums2 = new[] { 2 };
     //    var ex2nums1 = new[] { 1, 2 };
     //    var ex2nums2 = new[] { 3, 4 };
-    //    FindMedianSortedArrays(ex1nums1, ex1nums2).Should().Be(2d);
-    //    FindMedianSortedArrays(ex2nums1, ex2nums2).Should().Be(2.5d);
+    //    FindMedianSortedArrays(ex1nums1, ex1nums2).ShouldBe(2d);
+    //    FindMedianSortedArrays(ex2nums1, ex2nums2).ShouldBe(2.5d);
     //}
 }

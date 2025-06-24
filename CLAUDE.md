@@ -61,6 +61,6 @@ This is a LeetCode problem solutions repository with benchmarking capabilities, 
 
 **Console Application**: Built with Spectre.Console, provides an interactive menu system and CLI commands (app, benchmark, info, list, workflow) for running benchmarks and viewing problem information.
 
-**Testing**: Uses xUnit with FluentAssertions for test assertions. Tests are co-located with problem implementations for easy access.
+**Testing**: Uses xUnit with Shouldly for test assertions. Tests are co-located with problem implementations for easy access.
 
 **Package Management**: Uses Directory.Packages.props for centralized NuGet package version management across all projects.

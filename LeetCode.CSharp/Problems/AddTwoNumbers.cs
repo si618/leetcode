@@ -59,7 +59,7 @@ public sealed partial class Problem
         var listNode2 = new ListNode(list2);
         var expectedNode = new ListNode(expectedList);
         var result = AddTwoNumbers(listNode1, listNode2);
-        result.Should().NotBeNull();
+        result.ShouldNotBeNull();
         AssertEqual(result, expectedNode);
 
         return;
@@ -77,7 +77,7 @@ public sealed partial class Problem
                     Assert.Fail("Either both nodes or neither node should be null");
                     return;
                 }
-                l1.val.Should().Be(l2.val);
+                l1.val.ShouldBe(l2.val);
                 l1 = l1.next;
                 l2 = l2.next;
             }

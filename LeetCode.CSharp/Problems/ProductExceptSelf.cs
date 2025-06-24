@@ -40,8 +40,8 @@ public sealed partial class Problem
         var ex2Expected = new[] { 0, 0, 9, 0, 0 };
         var ex3 = Array.Empty<int>();
 
-        ProductExceptSelf(ex1).Should().Equal(ex1Expected);
-        ProductExceptSelf(ex2).Should().Equal(ex2Expected);
-        ProductExceptSelf(ex3).Should().Equal(ex3);
+        ProductExceptSelf(ex1).ShouldBe(ex1Expected);
+        ProductExceptSelf(ex2).ShouldBe(ex2Expected);
+        ProductExceptSelf(ex3).ShouldBe(ex3);
     }
 }
