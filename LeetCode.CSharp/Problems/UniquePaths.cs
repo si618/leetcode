@@ -45,5 +45,5 @@ public sealed partial class Problem
     [InlineData(3, 7, 28)]
     [InlineData(3, 3, 6)]
     public void UniquePathsTest(int m, int n, int expected) =>
-        UniquePaths(m, n).Should().Be(expected);
+        UniquePaths(m, n).ShouldBe(expected);
 }

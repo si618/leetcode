@@ -101,8 +101,8 @@ public sealed partial class Problem
             ['.', '.', '.', '.', '.', '.', '.', '.', '.']
         };
 
-        IsValidSudoku(ex1).Should().BeTrue();
-        IsValidSudoku(ex2).Should().BeFalse();
-        IsValidSudoku(ex3).Should().BeFalse();
+        IsValidSudoku(ex1).ShouldBeTrue();
+        IsValidSudoku(ex2).ShouldBeFalse();
+        IsValidSudoku(ex3).ShouldBeFalse();
     }
 }

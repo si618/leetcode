@@ -31,8 +31,8 @@ public sealed partial class Problem
         var ep2 = new ListNode(2, new ListNode(1));
         ListNode? ex3 = null;
 
-        ReverseList(ex1).Should().BeEquivalentTo(ep1);
-        ReverseList(ex2).Should().BeEquivalentTo(ep2);
-        ReverseList(ex3).Should().BeNull();
+        ReverseList(ex1).ShouldBeEquivalentTo(ep1);
+        ReverseList(ex2).ShouldBeEquivalentTo(ep2);
+        ReverseList(ex3).ShouldBeNull();
     }
 }

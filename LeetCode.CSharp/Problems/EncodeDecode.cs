@@ -51,12 +51,12 @@ public sealed partial class Problem
     [InlineData(new[] { "" }, "0:")]
     [InlineData(new[] { "abc" }, "3:abc")]
     [InlineData(new[] { "abc", "c : a" }, "3:abc5:c : a")]
-    public void EncodeTest(string[] strs, string expected) => Encode(strs).Should().Be(expected);
+    public void EncodeTest(string[] strs, string expected) => Encode(strs).ShouldBe(expected);
 
     [Theory]
     [InlineData("", new string[] { })]
     [InlineData("0:", new[] { "" })]
     [InlineData("3:abc", new[] { "abc" })]
     [InlineData("3:abc5:c : a", new[] { "abc", "c : a" })]
-    public void DecodeTest(string str, string[] expected) => Decode(str).Should().Equal(expected);
+    public void DecodeTest(string str, string[] expected) => Decode(str).ShouldBe(expected);
 }

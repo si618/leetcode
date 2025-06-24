@@ -22,7 +22,7 @@ public sealed partial class Problem
             [3, 5]
         };
 
-        MaximumWealth(ex1).Should().Be(6);
-        MaximumWealth(ex2).Should().Be(10);
+        MaximumWealth(ex1).ShouldBe(6);
+        MaximumWealth(ex2).ShouldBe(10);
     }
 }

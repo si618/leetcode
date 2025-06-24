@@ -16,8 +16,8 @@ public sealed partial class Problem
         var ex2 = new[] { 4, 1, 2, 1, 2 };
         var ex3 = new[] { 1 };
 
-        SingleNumber(ex1).Should().Be(1);
-        SingleNumber(ex2).Should().Be(4);
-        SingleNumber(ex3).Should().Be(1);
+        SingleNumber(ex1).ShouldBe(1);
+        SingleNumber(ex2).ShouldBe(4);
+        SingleNumber(ex3).ShouldBe(1);
     }
 }

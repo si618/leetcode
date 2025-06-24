@@ -15,9 +15,9 @@ public sealed partial class Problem
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void IsAnagramTest()
     {
-        IsAnagram("anagram", "nagaram").Should().BeTrue();
-        IsAnagram("rat", "cat").Should().BeFalse();
-        IsAnagram("ratty", "rat").Should().BeFalse();
-        IsAnagram("rat", "aat").Should().BeFalse();
+        IsAnagram("anagram", "nagaram").ShouldBeTrue();
+        IsAnagram("rat", "cat").ShouldBeFalse();
+        IsAnagram("ratty", "rat").ShouldBeFalse();
+        IsAnagram("rat", "aat").ShouldBeFalse();
     }
 }

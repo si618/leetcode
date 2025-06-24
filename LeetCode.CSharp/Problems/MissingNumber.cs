@@ -18,8 +18,8 @@ public sealed partial class Problem
         var ex2 = new[] { 0, 1 };
         var ex3 = new[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
 
-        MissingNumber(ex1).Should().Be(2);
-        MissingNumber(ex2).Should().Be(2);
-        MissingNumber(ex3).Should().Be(8);
+        MissingNumber(ex1).ShouldBe(2);
+        MissingNumber(ex2).ShouldBe(2);
+        MissingNumber(ex3).ShouldBe(8);
     }
 }

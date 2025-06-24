@@ -60,7 +60,7 @@ public sealed partial class Problem
             new List<int>()
         };
 
-        Subsets(ex1).Should().BeEquivalentTo(ep1);
-        Subsets(ex2).Should().BeEquivalentTo(ep2);
+        Subsets(ex1).ShouldBe(ep1);
+        Subsets(ex2).ShouldBe(ep2);
     }
 }

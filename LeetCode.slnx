@@ -4,6 +4,7 @@
     <File Path=".github\dependabot.yml" />
     <File Path=".github\workflows\workflow.yml" />
     <File Path=".gitignore" />
+    <File Path="CLAUDE.md" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
     <File Path="docker-compose.yml" />

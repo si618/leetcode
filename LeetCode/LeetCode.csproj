@@ -7,6 +7,26 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Using Include="BenchmarkDotNet.Loggers" />
+      <Using Include="BenchmarkDotNet.Reports" />
+      <Using Include="BenchmarkDotNet.Running" />
+      <Using Include="LeetCode.Commands" />
+      <Using Include="LeetCode.CSharp" />
+      <Using Include="LeetCode.Menus" />
+      <Using Include="LeetCode.Menus.Selections" />
+      <Using Include="Lolcat" />
+      <Using Include="Spectre.Console" />
+      <Using Include="Spectre.Console.Cli" />
+      <Using Include="Spectre.Console.Rendering" />
+      <Using Include="System.ComponentModel" />
+      <Using Include="System.Diagnostics.CodeAnalysis" />
+      <Using Include="System.Reflection" />
+      <Using Include="System.Text" />
+      <Using Include="System.Text.Json.Nodes" />
+      <Using Include="System.Text.RegularExpressions" />
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" />
       <PackageReference Include="lolcat" />
       <PackageReference Include="Spectre.Console" />

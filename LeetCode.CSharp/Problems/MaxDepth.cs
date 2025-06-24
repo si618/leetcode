@@ -24,8 +24,8 @@ public sealed partial class Problem
             right: new TreeNode(20, left: new TreeNode(15), right: new TreeNode(7)));
         var root2 = new TreeNode(1, left: null, right: new TreeNode(2));
 
-        MaxDepth(null).Should().Be(0);
-        MaxDepth(root1).Should().Be(3);
-        MaxDepth(root2).Should().Be(2);
+        MaxDepth(null).ShouldBe(0);
+        MaxDepth(root1).ShouldBe(3);
+        MaxDepth(root2).ShouldBe(2);
     }
 }

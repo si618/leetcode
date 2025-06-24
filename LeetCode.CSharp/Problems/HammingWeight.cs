@@ -24,8 +24,8 @@ public sealed partial class Problem
     [Fact]
     public void HammingWeightTest()
     {
-        HammingWeight(0b00000000000000000000000000001011).Should().Be(3);
-        HammingWeight(0b00000000000000000000000010000000).Should().Be(1);
-        HammingWeight(0b11111111111111111111111111111101).Should().Be(31);
+        HammingWeight(0b00000000000000000000000000001011).ShouldBe(3);
+        HammingWeight(0b00000000000000000000000010000000).ShouldBe(1);
+        HammingWeight(0b11111111111111111111111111111101).ShouldBe(31);
     }
 }

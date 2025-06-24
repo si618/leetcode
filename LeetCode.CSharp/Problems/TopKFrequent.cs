@@ -65,8 +65,8 @@ public sealed partial class Problem
         var ex2 = new[] { 1 };
         var ex3 = Array.Empty<int>();
 
-        TopKFrequent(ex1, 2).Should().Equal(ex1Expected);
-        TopKFrequent(ex2, 1).Should().Equal(ex2);
-        TopKFrequent(ex3, 0).Should().Equal(ex3);
+        TopKFrequent(ex1, 2).ShouldBe(ex1Expected);
+        TopKFrequent(ex2, 1).ShouldBe(ex2);
+        TopKFrequent(ex3, 0).ShouldBe(ex3);
     }
 }

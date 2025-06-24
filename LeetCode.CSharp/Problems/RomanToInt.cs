@@ -43,9 +43,9 @@ public sealed partial class Problem
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RomanToIntTest()
     {
-        RomanToInt("III").Should().Be(3);
-        RomanToInt("LVIII").Should().Be(58);
-        RomanToInt("MCMXCIV").Should().Be(1994);
-        RomanToInt("MMXXII").Should().Be(2022);
+        RomanToInt("III").ShouldBe(3);
+        RomanToInt("LVIII").ShouldBe(58);
+        RomanToInt("MCMXCIV").ShouldBe(1994);
+        RomanToInt("MMXXII").ShouldBe(2022);
     }
 }

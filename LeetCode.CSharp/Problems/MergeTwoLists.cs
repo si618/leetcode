@@ -46,8 +46,8 @@ public sealed partial class Problem
         var ep1 = new ListNode([1, 1, 2, 3, 4, 4]);
         var ex3 = new ListNode();
 
-        MergeTwoLists(ex11, ex12).Should().BeEquivalentTo(ep1);
-        MergeTwoLists(null, null).Should().BeNull();
-        MergeTwoLists(null, ex3).Should().BeEquivalentTo(ex3);
+        MergeTwoLists(ex11, ex12).ShouldBeEquivalentTo(ep1);
+        MergeTwoLists(null, null).ShouldBeNull();
+        MergeTwoLists(null, ex3).ShouldBeEquivalentTo(ex3);
     }
 }

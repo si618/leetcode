@@ -42,10 +42,10 @@ public sealed partial class Problem
         var notEven = new ListNode(new[] { 2, 1, 2, 1 });
         var notOdd = new ListNode(new[] { 2, 1, 3, 2, 1 });
 
-        IsPalindrome(single).Should().BeTrue();
-        IsPalindrome(even).Should().BeTrue();
-        IsPalindrome(odd).Should().BeTrue();
-        IsPalindrome(notEven).Should().BeFalse();
-        IsPalindrome(notOdd).Should().BeFalse();
+        IsPalindrome(single).ShouldBeTrue();
+        IsPalindrome(even).ShouldBeTrue();
+        IsPalindrome(odd).ShouldBeTrue();
+        IsPalindrome(notEven).ShouldBeFalse();
+        IsPalindrome(notOdd).ShouldBeFalse();
     }
 }

@@ -31,8 +31,8 @@ public sealed partial class Problem
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void LengthOfLongestSubstringTest()
     {
-        LengthOfLongestSubstring("abcabcbb").Should().Be(3);
-        LengthOfLongestSubstring("bbbbb").Should().Be(1);
-        LengthOfLongestSubstring("pwwkew").Should().Be(3);
+        LengthOfLongestSubstring("abcabcbb").ShouldBe(3);
+        LengthOfLongestSubstring("bbbbb").ShouldBe(1);
+        LengthOfLongestSubstring("pwwkew").ShouldBe(3);
     }
 }

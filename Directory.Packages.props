@@ -8,7 +8,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="FluentAssertions" Version="7.2.0" />
     <PackageVersion Include="FsUnit.xUnit" Version="6.0.1" />
     <PackageVersion Include="FSharp.Core" Version="8.0.400" />
     <PackageVersion Include="lolcat" Version="1.1.120" />
@@ -17,6 +16,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
+    <PackageVersion Include="Shouldly" Version="4.2.1" />
     <PackageVersion Include="Spectre.Console" Version="0.50.0" />
     <PackageVersion Include="Spectre.Console.Analyzer" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>

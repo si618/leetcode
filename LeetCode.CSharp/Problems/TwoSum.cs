@@ -34,10 +34,10 @@ public sealed partial class Problem
         var ex3 = new[] { 3, 3 };
         var ex4 = new[] { 3 };
 
-        TwoSum(ex1, 9).Should().Equal(0, 1);
-        TwoSum(ex2, 6).Should().Equal(1, 2);
-        TwoSum(ex3, 6).Should().Equal(0, 1);
+        TwoSum(ex1, 9).ShouldBe([0, 1]);
+        TwoSum(ex2, 6).ShouldBe([1, 2]);
+        TwoSum(ex3, 6).ShouldBe([0, 1]);
         var action = () => TwoSum(ex4, 0);
-        action.Should().Throw<ArgumentOutOfRangeException>();
+        action.ShouldThrow<ArgumentOutOfRangeException>();
     }
 }
