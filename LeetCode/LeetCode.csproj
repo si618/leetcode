@@ -18,7 +18,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj" />
+      <ProjectReference Include="..\LeetCode.CSharp\LeetCode.CSharp.csproj">
+        <IncludeAssets>compile;build</IncludeAssets>
+        <ExcludeAssets>runtime</ExcludeAssets>
+      </ProjectReference>
       <ProjectReference Include="..\LeetCode.FSharp\LeetCode.FSharp.fsproj" />
     </ItemGroup>
 
