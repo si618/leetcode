@@ -3,12 +3,13 @@
 
 [Benchmarked](https://si618.github.io/leetcode/dev/bench) C# submissions for [LeetCode](https://leetcode.com) problems with naïve F# solutions on my functional programming journey.
 
-After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm now following the author's guidance and supporting his work by becoming a lifetime member 🙇‍
+After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm now following the author's guidance and supporting his work by becoming a lifetime member. 🙇‍
+
 ### Build and test
 
 ``` bash
 > dotnet --list-sdks
-9.0.100-rc.1.24452.12 [/usr/share/dotnet/sdk]
+9.0.301 [/usr/share/dotnet/sdk]
 
 > git --version
 git version 2.47.0
@@ -19,7 +20,6 @@ Cloning into 'leetcode'...
 > cd leetcode
 > dotnet build
 > dotnet test --no-restore
-
 ```
 
 ### Console application
