@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <GenerateProgramFile>true</GenerateProgramFile>
+    <GenerateProgramFile>false</GenerateProgramFile>
     <RootNamespace>LeetCode.FSharp</RootNamespace>
+    <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,17 +14,17 @@
     <Compile Include="ListNode.fs" />
     <Compile Include="Benchmarks\ContainsDuplicateBenchmark.fs" />
     <Compile Include="Benchmarks\FizzBuzzBenchmark.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" />
-    <PackageReference Include="FSharp.Core" />
     <PackageReference Include="FsUnit.xUnit" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="coverlet.collector" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
-    <PackageReference Remove="FSharp.Core" />
+    <PackageReference Remove="Nerdbank.GitVersioning" />
   </ItemGroup>
 
   <ItemGroup>
