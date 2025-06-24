@@ -6,6 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="BenchmarkDotNet.Attributes" />
+    <Using Include="BenchmarkDotNet.Columns" />
+    <Using Include="BenchmarkDotNet.Configs" />
+    <Using Include="BenchmarkDotNet.Diagnosers" />
+    <Using Include="LeetCode.CSharp.Problems" />
+    <Using Include="Shouldly" />
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+    <Using Include="System.Text" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" />
     <PackageReference Include="coverlet.collector" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
