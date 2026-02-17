@@ -21,7 +21,7 @@ public sealed partial class Problem
                 result.AddRange(intervals[i..]);
 
                 // Best case of non-overlapping new interval ends before intervals start
-                return result.ToArray();
+                return [.. result];
             }
 
             var intervalEnd = intervals[i][1];
@@ -35,18 +35,18 @@ public sealed partial class Problem
             else
             {
                 // New interval is overlapping so merge with current interval
-                newInterval = new[]
-                {
+                newInterval =
+                [
                     Math.Min(intervalStart, newIntervalStart),
                     Math.Max(intervalEnd, newIntervalEnd)
-                };
+                ];
             }
         }
 
         // New interval must be the last interval in list
         result.Add(newInterval);
 
-        return result.ToArray();
+        return [.. result];
     }
 
     [Fact]

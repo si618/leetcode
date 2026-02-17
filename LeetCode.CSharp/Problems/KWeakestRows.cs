@@ -5,11 +5,10 @@ public sealed partial class Problem
     [LeetCode("The K Weakest Rows in a Matrix", Difficulty.Easy, Category.NotInNeetCode)]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int[] KWeakestRows(int[][] mat, int k) =>
-        mat.Select((row, index) => (Strength: row.Count(x => x == 1), Index: index))
+        [.. mat.Select((row, index) => (Strength: row.Count(x => x == 1), Index: index))
             .OrderBy(x => x.Strength)
             .Take(k)
-            .Select(x => x.Index)
-            .ToArray();
+            .Select(x => x.Index)];
 
     [Fact]
     public void KWeakestRowsTest()

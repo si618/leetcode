@@ -13,7 +13,7 @@ When working with this codebase, always follow modern .NET and C# best practices
 - Prefer `Span<T>` and `Memory<T>` for performance-critical code
 - Use collection expressions and LINQ for data manipulation
 - Apply proper error handling with exceptions and Result patterns
-- Write clean, readable code with meaningful variable names
+- Write clean, readable code with meaningful variable names and comprehensible tests
 - Use nullable reference types and enable all relevant compiler warnings
 
 ## Commands
@@ -55,12 +55,26 @@ This is a LeetCode problem solutions repository with benchmarking capabilities, 
 
 ### Key architectural patterns:
 
-**Problem Organization**: All C# problems are implemented as static methods in the `Problem` partial class, decorated with `[LeetCode]` attributes containing metadata (description, difficulty, category, NeetCode video link). Each problem includes inline xUnit tests using `[Fact]` attributes.
+**Problem Organization**:
 
-**Benchmark Structure**: Each problem has a corresponding benchmark class in the Benchmarks folder that inherits from a base `Benchmark` class. Benchmarks use BenchmarkDotNet with GlobalSetup/GlobalCleanup for test data preparation.
+All C# problems are implemented as static methods in the `Problem` partial class, decorated with `[LeetCode]`
+attributes containing metadata (description, difficulty, category, NeetCode video link). Each problem includes inline
+xUnit tests using `[Fact]` attributes.
 
-**Console Application**: Built with Spectre.Console, provides an interactive menu system and CLI commands (app, benchmark, info, list, workflow) for running benchmarks and viewing problem information.
+**Benchmark Structure**:
 
-**Testing**: Uses xUnit with Shouldly for test assertions. Tests are co-located with problem implementations for easy access.
+Each problem has a corresponding benchmark class in the Benchmarks folder that inherits from a base `Benchmark` class.
+Benchmarks use BenchmarkDotNet with GlobalSetup/GlobalCleanup for test data preparation.
 
-**Package Management**: Uses Directory.Packages.props for centralized NuGet package version management across all projects.
+**Console Application**:
+
+Built with Spectre.Console, provides an interactive menu system and CLI commands (app, benchmark, info, list, workflow)
+for running benchmarks and viewing problem information.
+
+**Testing**:
+
+Uses xUnit with Shouldly for test assertions. Tests are co-located with problem implementations for easy access.
+
+**Package Management**:
+
+Uses Directory.Packages.props for centralized NuGet package version management across all projects.

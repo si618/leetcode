@@ -2,7 +2,7 @@
 
 internal sealed class ProblemMenu : MenuBase
 {
-    private Problem Problem { get; init; }
+    private Problem Problem { get; }
 
     public ProblemMenu(Problem problem)
     {
@@ -14,7 +14,7 @@ internal sealed class ProblemMenu : MenuBase
         ];
     }
 
-    public override int Render()
+    public int Render()
     {
         ConsoleWriter.WriteHeader(clearConsole: true);
 

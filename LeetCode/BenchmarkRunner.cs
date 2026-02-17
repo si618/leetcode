@@ -65,11 +65,11 @@ internal static class BenchmarkRunner
         return true;
     }
 
-    private static string WaitingMessage(BenchmarkSettings settings, IReadOnlyList<string> args)
+    private static string WaitingMessage(BenchmarkSettings settings, string[] args)
     {
         var message = new StringBuilder();
 
-        if (args.Count > 2)
+        if (args.Length > 2)
         {
             message.Append(Resources.BenchmarkRunner_Running_SelectedBenchmarks);
         }

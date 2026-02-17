@@ -5,7 +5,7 @@ public class InvertTreeBenchmark : Benchmark
     [GlobalSetup(Target = nameof(InvertTree))]
     public void InvertTreeSetup()
     {
-        IntArrayNullable = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
+        IntArrayNullable = [.. Enumerable.Range(1, 1_000_000).Cast<int?>()];
         TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
     }
 
@@ -15,7 +15,7 @@ public class InvertTreeBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(InvertTree))]
     public void InvertTreeCleanup()
     {
-        IntArrayNullable = Array.Empty<int?>();
+        IntArrayNullable = [];
         TreeNode1 = new TreeNode();
     }
 }

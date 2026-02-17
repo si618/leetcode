@@ -29,11 +29,11 @@ public sealed partial class Problem
             }
             else
             {
-                dictionary.Add(key, new List<string> { str });
+                dictionary.Add(key, [str]);
             }
         }
 
-        return dictionary.Values.ToList();
+        return [.. dictionary.Values];
     }
 
     [Fact]
@@ -65,6 +65,7 @@ public sealed partial class Problem
             new() { "doc" }
         };
 
+        // ReSharper disable once CollectionNeverQueried.Local
         var strs = new string[100_000];
         for (var i = 0; i < strs.Length; i++)
         {

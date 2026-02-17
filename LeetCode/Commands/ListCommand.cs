@@ -43,13 +43,13 @@ internal sealed class ListCommand : Command
             {
                 var missing = cSharpBenchmarks.Contains(problem.Name)
                     ? string.Empty
-                    : " " + Resources.ListCommand_Missing_CSharpBenchmark_Markup;
+                    : $" {Resources.ListCommand_Missing_CSharpBenchmark_Markup}";
 
                 if (problem.FSharp && !fSharpBenchmarks.Contains(problem.Name))
                 {
                     missing = string.IsNullOrEmpty(missing)
-                        ? " " + Resources.ListCommand_Missing_FSharpBenchmark_Markup
-                        : " " + Resources.ListCommand_Missing_BothBenchmarks_Markup;
+                        ? $" {Resources.ListCommand_Missing_FSharpBenchmark_Markup}"
+                        : $" {Resources.ListCommand_Missing_BothBenchmarks_Markup}";
                 }
 
                 table.AddRow(

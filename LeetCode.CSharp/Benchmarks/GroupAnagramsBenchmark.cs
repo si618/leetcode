@@ -17,5 +17,5 @@ public class GroupAnagramsBenchmark : Benchmark
     public IList<IList<string>> GroupAnagrams() => Problem.GroupAnagrams(StringArray1);
 
     [GlobalCleanup(Target = nameof(GroupAnagrams))]
-    public void GroupAnagramsCleanup() => StringArray1 = Array.Empty<string>();
+    public void GroupAnagramsCleanup() => StringArray1 = [];
 }

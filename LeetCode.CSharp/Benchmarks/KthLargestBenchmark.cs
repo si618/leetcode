@@ -7,7 +7,7 @@ public class KthLargestBenchmark : Benchmark
     [GlobalSetup(Target = nameof(KthLargest))]
     public void KthLargestSetup()
     {
-        IntArray1 = Enumerable.Range(1, 100_000_000).ToArray();
+        IntArray1 = [.. Enumerable.Range(1, 100_000_000)];
         _kthLargest = new Problem.KthLargest(50_000_000, IntArray1);
     }
 
@@ -17,7 +17,7 @@ public class KthLargestBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(KthLargest))]
     public void KthLargestCleanup()
     {
-        IntArray1 = Array.Empty<int>();
+        IntArray1 = [];
         _kthLargest = null!;
     }
 }

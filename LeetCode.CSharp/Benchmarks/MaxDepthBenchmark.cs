@@ -5,7 +5,7 @@ public class MaxDepthBenchmark : Benchmark
     [GlobalSetup(Target = nameof(MaxDepth))]
     public void MaxDepthSetup()
     {
-        IntArrayNullable = Enumerable.Range(1, 10_000_000).Cast<int?>().ToArray();
+        IntArrayNullable = [.. Enumerable.Range(1, 10_000_000).Cast<int?>()];
         TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
     }
 
@@ -15,7 +15,7 @@ public class MaxDepthBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(MaxDepth))]
     public void MaxDepthCleanup()
     {
-        IntArrayNullable = Array.Empty<int?>();
+        IntArrayNullable = [];
         TreeNode1 = new TreeNode();
     }
 }

@@ -5,7 +5,7 @@ public class LowestCommonAncestorBenchmark : Benchmark
     [GlobalSetup(Target = nameof(LowestCommonAncestor))]
     public void LowestCommonAncestorSetup()
     {
-        IntArrayNullable = Enumerable.Range(1, 10_000_000).Cast<int?>().ToArray();
+        IntArrayNullable = [.. Enumerable.Range(1, 10_000_000).Cast<int?>()];
         TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
         TreeNode2 = TreeNode1.left!;
         while (TreeNode2.left is not null)
@@ -21,7 +21,7 @@ public class LowestCommonAncestorBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(LowestCommonAncestor))]
     public void LowestCommonAncestorCleanup()
     {
-        IntArrayNullable = Array.Empty<int?>();
+        IntArrayNullable = [];
         TreeNode1 = new TreeNode();
         TreeNode2 = new TreeNode();
     }

@@ -34,7 +34,7 @@ internal sealed class WorkflowCommand : Command
         string resultsFile = "LeetCode.Benchmarks",
         string searchPattern = "LeetCode.*.json")
     {
-        var resultsPath = Path.Combine(resultsDir, resultsFile + ".json");
+        var resultsPath = Path.Combine(resultsDir, $"{resultsFile}.json");
 
         if (!Directory.Exists(resultsDir))
         {

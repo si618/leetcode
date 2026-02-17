@@ -4,15 +4,15 @@ internal sealed class MainMenu : MenuBase
 {
     public MainMenu()
     {
-        Choices = new List<Selection>
-        {
+        Choices =
+        [
             new ProblemListSelection(1),
             new BenchmarkListSelection(2),
             new AboutSelection(3),
             new ExitSelection(4)
-        };
+        ];
     }
-    public override int Render()
+    public int Render()
     {
         var selected = Choices.First();
         var prompt = new SelectionPrompt<Selection>()
