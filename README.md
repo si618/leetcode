@@ -1,4 +1,5 @@
 ## LeetCode via NeetCode
+
 [![Build and Benchmark](https://github.com/si618/leetcode/actions/workflows/workflow.yml/badge.svg)](https://github.com/si618/leetcode/actions/workflows/workflow.yml)
 
 [Benchmarked](https://si618.github.io/leetcode/dev/bench) C# submissions for [LeetCode](https://leetcode.com) problems with naïve F# solutions on my functional programming journey.
@@ -9,10 +10,10 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 
 ``` bash
 > dotnet --list-sdks
-9.0.301 [/usr/share/dotnet/sdk]
+10.0.103 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.47.0
+git version 2.53.0
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
