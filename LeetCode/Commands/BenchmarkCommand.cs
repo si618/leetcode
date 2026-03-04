@@ -5,7 +5,8 @@ internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
     public override int Execute(
         [NotNull] CommandContext context,
-        [NotNull] BenchmarkSettings settings)
+        [NotNull] BenchmarkSettings settings,
+        CancellationToken cancellationToken)
     {
         try
         {
