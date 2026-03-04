@@ -71,7 +71,7 @@ jobs:
       - name: Store benchmark results
         id: store-benchmarks
         if: ${{ github.event_name == 'push' }}
-        uses: benchmark-action/github-action-benchmark@v1.20.3
+        uses: benchmark-action/github-action-benchmark@v1.21.0
         with:
           name: Benchmarks
           tool: benchmarkdotnet
