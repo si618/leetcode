@@ -4,6 +4,7 @@
         <Product>LeetCode via NeetCode</Product>
         <AssemblyName>LeetCode</AssemblyName>
         <OutputType>Exe</OutputType>
+        <GenerateTestingPlatformEntryPoint>false</GenerateTestingPlatformEntryPoint>
     </PropertyGroup>
 
     <ItemGroup>

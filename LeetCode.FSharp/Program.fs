@@ -1,4 +1,3 @@
-// Entry point for F# test project
-[<EntryPoint>]
-let main argv =
-    0
+module LeetCode.FSharp.Program
+
+// No entry point needed - xUnit generates one automatically
