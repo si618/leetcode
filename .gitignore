@@ -1,7 +1,7 @@
-﻿.plan
+﻿.idea
+.plan
 .vs
 *.DotSettings.user
 bin
 obj
 BenchmarkDotNet.Artifacts
-/.idea/.idea.LeetCode/.idea/material_theme_project_new.xml
