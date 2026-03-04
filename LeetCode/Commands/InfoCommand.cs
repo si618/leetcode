@@ -5,7 +5,8 @@ internal sealed class InfoCommand : Command<ProblemSettings>
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
     public override int Execute(
         [NotNull] CommandContext context,
-        [NotNull] ProblemSettings settings)
+        [NotNull] ProblemSettings settings,
+        CancellationToken cancellationToken)
     {
         try
         {

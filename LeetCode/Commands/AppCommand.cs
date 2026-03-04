@@ -2,7 +2,7 @@
 
 internal sealed class AppCommand : Command
 {
-    public override int Execute(CommandContext context)
+    public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
         try
         {
