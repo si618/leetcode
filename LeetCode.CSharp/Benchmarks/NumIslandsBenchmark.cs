@@ -23,8 +23,5 @@ public class NumIslandsBenchmark : Benchmark
     public int NumIslands() => Problem.NumIslands(CharArrayMulti);
 
     [GlobalCleanup(Target = nameof(NumIslands))]
-    public void NumIslandsCleanup()
-    {
-        CharArrayMulti = new[] { new[] { char.MinValue } };
-    }
+    public void NumIslandsCleanup() => CharArrayMulti = [[char.MinValue]];
 }

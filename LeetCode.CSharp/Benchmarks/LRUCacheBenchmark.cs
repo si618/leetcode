@@ -22,8 +22,5 @@ public class LRUCacheBenchmark : Benchmark
 
     [GlobalCleanup(Target = nameof(LRUCache))]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public void LRUCacheCleanup()
-    {
-        _lruCache = null!;
-    }
+    public void LRUCacheCleanup() => _lruCache = null!;
 }

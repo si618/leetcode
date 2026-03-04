@@ -21,7 +21,7 @@ public sealed partial class Problem
             if (index >= nums.Length)
             {
                 // Add copy to result as reached end of leaf nodes
-                subsets.Add(new List<int>(subset));
+                subsets.Add([.. subset]);
                 return;
             }
 

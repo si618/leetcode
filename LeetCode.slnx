@@ -4,6 +4,7 @@
     <File Path=".github\dependabot.yml" />
     <File Path=".github\workflows\workflow.yml" />
     <File Path=".gitignore" />
+    <File Path="AGENTS.md" />
     <File Path="CLAUDE.md" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
@@ -15,5 +16,5 @@
   </Folder>
   <Project Path="LeetCode.CSharp\LeetCode.CSharp.csproj" />
   <Project Path="LeetCode.FSharp\LeetCode.FSharp.fsproj" />
-  <Project Path="LeetCode\LeetCode.csproj" Type="Classic C#" />
+  <Project Path="LeetCode\LeetCode.csproj" Type="C#" />
 </Solution>

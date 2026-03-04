@@ -43,7 +43,7 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
         return table;
     }
 
-    private IEnumerable<string> BuildHeaders(Table table)
+    private string[] BuildHeaders(Table table)
     {
         // Default column benchmarks via BenchmarkConfig and summaries in their expected order
         var defaultHeaders = new[]
@@ -83,7 +83,7 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
         return headers;
     }
 
-    private static void BuildSummary(Summary summary, Table table, IList<string> headers)
+    private static void BuildSummary(Summary summary, Table table, string[] headers)
     {
         var csharp = summary.Title.Contains(".CSharp.");
         var colour = csharp ? "[blue]" : "[teal]";
@@ -91,10 +91,10 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
 
         foreach (var line in summary.Table.FullContent)
         {
-            var columns = new string[headers.Count];
+            var columns = new string[headers.Length];
             columns[0] = language;
 
-            for (var i = 1; i < headers.Count; i++)
+            for (var i = 1; i < headers.Length; i++)
             {
                 columns[i] = string.Empty;
             }

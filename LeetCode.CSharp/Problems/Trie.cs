@@ -63,7 +63,7 @@ public sealed partial class Problem
 
     public record TrieChild
     {
-        public Dictionary<char, TrieChild> Children { get; } = new();
+        public Dictionary<char, TrieChild> Children { get; } = [];
         public bool EndOfWord { get; set; }
     }
 

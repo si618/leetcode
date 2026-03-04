@@ -19,7 +19,7 @@ public sealed partial class Problem
         private readonly int _capacity;
 
         // Value is node rather than int to update double linked list (left and right nodes)
-        private readonly Dictionary<int, Node> _cache = new();
+        private readonly Dictionary<int, Node> _cache = [];
 
         // Left node is pointer least recently used
         private readonly Node _left = new();
@@ -45,14 +45,8 @@ public sealed partial class Problem
             var previous = node.Previous;
             var next = node.Next;
 
-            if (previous is not null)
-            {
-                previous.Next = next;
-            }
-            if (next is not null)
-            {
-                next.Previous = previous;
-            }
+            previous?.Next = next;
+            next?.Previous = previous;
         }
 
         /// <summary>

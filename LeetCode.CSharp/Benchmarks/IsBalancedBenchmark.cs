@@ -5,7 +5,7 @@ public class IsBalancedBenchmark : Benchmark
     [GlobalSetup(Target = nameof(IsBalanced))]
     public void IsBalancedSetup()
     {
-        IntArrayNullable = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
+        IntArrayNullable = [.. Enumerable.Range(1, 1_000_000).Cast<int?>()];
         TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
     }
 
@@ -15,7 +15,7 @@ public class IsBalancedBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(IsBalanced))]
     public void IsBalancedCleanup()
     {
-        IntArrayNullable = Array.Empty<int?>();
+        IntArrayNullable = [];
         TreeNode1 = new TreeNode();
     }
 }

@@ -39,7 +39,7 @@ public sealed partial class Problem
 
         list.Reverse();
 
-        return list.ToArray();
+        return [.. list];
     }
 
     [Fact]
@@ -48,9 +48,11 @@ public sealed partial class Problem
         var ex1 = new[] { 1, 2, 3 };
         var ex2 = new[] { 4, 3, 2, 1 };
         var ex3 = new[] { 9 };
+        var ex4 = new[] { 9, 9 };
 
         PlusOne(ex1).ShouldBe([1, 2, 4]);
         PlusOne(ex2).ShouldBe([4, 3, 2, 2]);
         PlusOne(ex3).ShouldBe([1, 0]);
+        PlusOne(ex4).ShouldBe([1, 0, 0]);
     }
 }

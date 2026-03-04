@@ -5,7 +5,7 @@ public class IsSubtreeBenchmark : Benchmark
     [GlobalSetup(Target = nameof(IsSubtree))]
     public void IsSubtreeSetup()
     {
-        IntArrayNullable = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
+        IntArrayNullable = [.. Enumerable.Range(1, 1_000_000).Cast<int?>()];
         TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
         TreeNode2 = TreeNode.Deserialize(IntArrayNullable)!;
     }
@@ -16,7 +16,7 @@ public class IsSubtreeBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(IsSubtree))]
     public void IsSubtreeCleanup()
     {
-        IntArrayNullable = Array.Empty<int?>();
+        IntArrayNullable = [];
         TreeNode1 = new TreeNode();
         TreeNode2 = new TreeNode();
     }

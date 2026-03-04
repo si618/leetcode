@@ -17,7 +17,7 @@ public class EncodeBenchmark : Benchmark
     public string Encode() => Problem.Encode(StringArray1);
 
     [GlobalCleanup(Target = nameof(Encode))]
-    public void EncodeCleanup() => StringArray1 = Array.Empty<string>();
+    public void EncodeCleanup() => StringArray1 = [];
 }
 
 public class DecodeBenchmark : Benchmark
@@ -36,12 +36,12 @@ public class DecodeBenchmark : Benchmark
     }
 
     [Benchmark]
-    public List<string> Decode() => Problem.Decode(String1).ToList();
+    public List<string> Decode() => [.. Problem.Decode(String1)];
 
     [GlobalCleanup(Target = nameof(Decode))]
     public void DecodeCleanup()
     {
         String1 = string.Empty;
-        StringArray1 = Array.Empty<string>();
+        StringArray1 = [];
     }
 }

@@ -5,7 +5,7 @@ public class IsSameTreeBenchmark : Benchmark
     [GlobalSetup(Target = nameof(IsSameTree))]
     public void IsSameTreeSetup()
     {
-        IntArrayNullable = Enumerable.Range(1, 1_000_000).Cast<int?>().ToArray();
+        IntArrayNullable = [.. Enumerable.Range(1, 1_000_000).Cast<int?>()];
         TreeNode1 = TreeNode.Deserialize(IntArrayNullable)!;
         TreeNode2 = TreeNode.Deserialize(IntArrayNullable)!;
     }
@@ -16,7 +16,7 @@ public class IsSameTreeBenchmark : Benchmark
     [GlobalCleanup(Target = nameof(IsSameTree))]
     public void IsSameTreeCleanup()
     {
-        IntArrayNullable = Array.Empty<int?>();
+        IntArrayNullable = [];
         TreeNode1 = new TreeNode();
         TreeNode2 = new TreeNode();
     }

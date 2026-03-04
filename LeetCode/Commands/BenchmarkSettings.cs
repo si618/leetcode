@@ -53,10 +53,9 @@ internal sealed class BenchmarkSettings : CommandSettings
             types.AddRange(Reflection.GetFSharpBenchmarkTypes());
         }
 
-        return types
+        return [.. types
             .OrderBy(t => t.Name)
-            .ThenBy(t => t.Namespace)
-            .ToArray();
+            .ThenBy(t => t.Namespace)];
     }
 
     public string[] BuildArgs()
@@ -105,13 +104,13 @@ internal sealed class BenchmarkSettings : CommandSettings
 
         if (string.IsNullOrEmpty(Exporters))
         {
-            return args.ToArray();
+            return [.. args];
         }
 
         args.Add("--exporters");
         args.Add(Exporters);
 
-        return args.ToArray();
+        return [.. args];
     }
 
     private bool BenchmarkFound() =>
