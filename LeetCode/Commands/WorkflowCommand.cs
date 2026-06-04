@@ -3,7 +3,7 @@ namespace LeetCode.Commands;
 internal sealed class WorkflowCommand : Command
 {
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
-    public override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
+    protected override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
     {
         try
         {
