@@ -1,4 +1,4 @@
-ïnamespace LeetCode.Commands;
+namespace LeetCode.Commands;
 
 internal sealed class AppCommand : Command
 {
