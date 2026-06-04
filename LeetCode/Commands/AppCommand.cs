@@ -1,8 +1,8 @@
-﻿namespace LeetCode.Commands;
+namespace LeetCode.Commands;
 
 internal sealed class AppCommand : Command
 {
-    public override int Execute(CommandContext context, CancellationToken cancellationToken)
+    protected override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
         try
         {

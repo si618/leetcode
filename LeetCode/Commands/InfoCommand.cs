@@ -1,9 +1,9 @@
-﻿namespace LeetCode.Commands;
+namespace LeetCode.Commands;
 
 internal sealed class InfoCommand : Command<ProblemSettings>
 {
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
-    public override int Execute(
+    protected override int Execute(
         [NotNull] CommandContext context,
         [NotNull] ProblemSettings settings,
         CancellationToken cancellationToken)

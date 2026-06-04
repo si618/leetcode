@@ -1,9 +1,9 @@
-﻿namespace LeetCode.Commands;
+namespace LeetCode.Commands;
 
 internal sealed class WorkflowCommand : Command
 {
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
-    public override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
+    protected override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
     {
         try
         {
@@ -63,7 +63,7 @@ internal sealed class WorkflowCommand : Command
         SetBenchmarkName(firstReport, combinedReport["Benchmarks"]![0]!);
 
         // Rename title whilst keeping original timestamp
-        combinedReport["Title"] = $"{resultsFile}{title.GetValue<string>()[^16..]}";
+        combinedReport["Title"] = $"{resultsFile}{title.GetValue<string>()[^16..]}";;
 
         foreach (var report in reports.Skip(1))
         {

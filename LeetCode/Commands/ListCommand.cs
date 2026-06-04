@@ -1,9 +1,9 @@
-﻿namespace LeetCode.Commands;
+namespace LeetCode.Commands;
 
 internal sealed class ListCommand : Command
 {
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
-    public override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
+    protected override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
     {
         try
         {
