@@ -1,4 +1,4 @@
-namespace LeetCode.Commands;
+ïnamespace LeetCode.Commands;
 
 internal sealed class BenchmarkCommand : Command<BenchmarkSettings>
 {
