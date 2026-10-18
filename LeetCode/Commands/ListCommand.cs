@@ -3,7 +3,7 @@
 internal sealed class ListCommand : Command
 {
     [SuppressMessage("ReSharper", "RedundantNullableFlowAttribute")]
-    protected override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
+    public override int Execute([NotNull] CommandContext context, CancellationToken cancellationToken)
     {
         try
         {
