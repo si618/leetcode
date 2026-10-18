@@ -53,8 +53,7 @@ When you bump the .NET SDK or target framework, update these together:
 - `Directory.Build.props`: `TargetFramework`.
 - `LeetCode/Dockerfile`: the `sdk` and `runtime` image tags.
 - `README.md`: the minimum SDK, and the `dotnet --list-sdks` and `git --version` output under "Build and test".
-  Check for a newer git
-  release at the same time.
+  Check for a newer git release at the same time.
 
 ## Architecture
 
