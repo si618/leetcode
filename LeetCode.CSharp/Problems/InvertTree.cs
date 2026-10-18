@@ -42,6 +42,6 @@ public sealed partial class Problem
         InvertTree(root1).ShouldBeEquivalentTo(exp1);
         InvertTree(root2).ShouldBeEquivalentTo(exp2);
         InvertTree(new TreeNode()).ShouldBeEquivalentTo(new TreeNode());
-        InvertTree(null).ShouldBeNull();
+        InvertTree(root: null).ShouldBeNull();
     }
 }

@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
@@ -15,15 +17,8 @@ public sealed partial class Problem
 
         foreach (var num in nums)
         {
-            // ContainsKey will warn on CA1854 and benchmarking showed virtually no difference
-            if (frequency.TryGetValue(num, out _))
-            {
-                frequency[num]++;
-            }
-            else
-            {
-                frequency.Add(num, 1);
-            }
+            // One lookup per number, instead of a lookup and then an add or update
+            CollectionsMarshal.GetValueRefOrAddDefault(frequency, num, out _)++;
         }
 
         // Benchmarking showed linq solution around twice as slow but slightly more memory efficient

@@ -6,19 +6,10 @@ internal sealed class ProblemSettings : CommandSettings
     [CommandArgument(0, "[name]")]
     public string Name { get; init; } = string.Empty;
 
-    public override ValidationResult Validate()
-    {
-        if (string.IsNullOrWhiteSpace(Name))
-        {
-            return ValidationResult.Error(Resources.ProblemSettings_Error_NoArgumentPassed);
-        }
-
-        if (!Reflection.TryGetProblem(Name, out _))
-        {
-            return ValidationResult.Error(
-                string.Format(Resources.ProblemSettings_Error_ProblemNotFound, Name));
-        }
-
-        return ValidationResult.Success();
-    }
+    public override ValidationResult Validate() => string.IsNullOrWhiteSpace(Name)
+            ? ValidationResult.Error(Resources.ProblemSettings_Error_NoArgumentPassed)
+            : !Reflection.TryGetProblem(Name, out _)
+            ? ValidationResult.Error(
+                string.Format(CultureInfo.CurrentCulture, Resources.ProblemSettings_Error_ProblemNotFound, Name))
+            : ValidationResult.Success();
 }

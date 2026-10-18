@@ -21,12 +21,7 @@ public sealed partial class Problem
         }
 
         // Both must now be non-null
-        if (p.val != q.val)
-        {
-            return false;
-        }
-
-        return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
+        return p.val == q.val && IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
     }
 
     [Fact]
@@ -42,6 +37,6 @@ public sealed partial class Problem
         IsSameTree(p1, q1).ShouldBeTrue();
         IsSameTree(p2, q2).ShouldBeFalse();
         IsSameTree(p3, q3).ShouldBeFalse();
-        IsSameTree(null, null).ShouldBeTrue();
+        IsSameTree(p: null, q: null).ShouldBeTrue();
     }
 }

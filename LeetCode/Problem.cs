@@ -1,6 +1,6 @@
 namespace LeetCode;
 
-internal record Problem(
+internal sealed record Problem(
     string Name,
     string Description,
     Category Category,

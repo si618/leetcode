@@ -35,7 +35,7 @@ internal sealed record BenchmarkListSelection : Selection
             .Where(problem => selectedProblems.Contains(problem.Description))
             .Select(problem => problem.Name);
 
-        var settings = new BenchmarkSettings { Filter = string.Join(" ", names) };
+        var settings = new BenchmarkSettings { Filter = string.Join(' ', names) };
         var summaries = BenchmarkRunner.BuildSummaries(settings);
         var builder = new SpectreReportBuilder(summaries);
         var report = builder.Build();

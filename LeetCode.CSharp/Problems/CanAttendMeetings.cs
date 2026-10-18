@@ -32,12 +32,12 @@ public sealed partial class Problem
         {
             new(0, 30),
             new(5, 10),
-            new(15, 20)
+            new(15, 20),
         };
         var ex2 = new List<Interval>
         {
             new(5, 8),
-            new(9, 15)
+            new(9, 15),
         };
 
         CanAttendMeetings(ex1).ShouldBeFalse();

@@ -8,10 +8,7 @@ public sealed partial class Problem
         "https://www.youtube.com/watch?v=oobqoCJlHA0")]
     public class Trie
     {
-        public Trie()
-        {
-            Root = new TrieChild();
-        }
+        public Trie() => Root = new TrieChild();
 
         private TrieChild Root { get; }
 

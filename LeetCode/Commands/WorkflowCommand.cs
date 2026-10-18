@@ -46,17 +46,17 @@ internal sealed class WorkflowCommand : Command
             File.Delete(resultsPath);
         }
 
-        const string ns = "LeetCode.XSharp.Benchmarks.";
+        const string BenchmarkNamespace = "LeetCode.XSharp.Benchmarks.";
         var reports = Directory
             .GetFiles(resultsDir, searchPattern, SearchOption.TopDirectoryOnly)
-            .OrderBy(report => report[ns.Length..])
+            .OrderBy(report => report[BenchmarkNamespace.Length..], StringComparer.Ordinal)
             .ToArray();
         if (reports.Length == 0)
         {
             throw new FileNotFoundException($"Reports not found '{searchPattern}'");
         }
 
-        var firstReport = reports.First();
+        var firstReport = reports[0];
         var combinedReport = JsonNode.Parse(File.ReadAllText(firstReport))!;
         var title = combinedReport["Title"]!;
         var benchmarks = combinedReport["Benchmarks"]!.AsArray();
@@ -83,7 +83,7 @@ internal sealed class WorkflowCommand : Command
     private static void SetBenchmarkName(string report, JsonNode benchmark)
     {
         // Make pretty as only one method per benchmark - or tweak index.html?
-        var language = report.Contains("CSharp") ? "C#" : "F#";
+        var language = report.Contains("CSharp", StringComparison.Ordinal) ? "C#" : "F#";
         benchmark["FullName"] = $"{benchmark["Method"]} in {language}";
     }
 }

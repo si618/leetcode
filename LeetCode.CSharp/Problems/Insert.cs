@@ -38,7 +38,7 @@ public sealed partial class Problem
                 newInterval =
                 [
                     Math.Min(intervalStart, newIntervalStart),
-                    Math.Max(intervalEnd, newIntervalEnd)
+                    Math.Max(intervalEnd, newIntervalEnd),
                 ];
             }
         }
@@ -55,29 +55,29 @@ public sealed partial class Problem
         var ex1Intervals = new[]
         {
             new[] { 1, 3 },
-            new[] { 6, 9 }
+            [6, 9],
         };
         var ex1NewInterval = new[] { 2, 5 };
         var ex1Expected = new[]
         {
             new[] { 1, 5 },
-            new[] { 6, 9 }
+            [6, 9],
         };
 
         var ex2Intervals = new[]
         {
             new[] { 1, 2 },
-            new[] { 3, 5 },
-            new[] { 6, 7 },
-            new[] { 8, 10 },
-            new[] { 12, 16 }
+            [3, 5],
+            [6, 7],
+            [8, 10],
+            [12, 16],
         };
         var ex2NewInterval = new[] { 4, 8 };
         var ex2Expected = new[]
         {
             new[] { 1, 2 },
-            new[] { 3, 10 },
-            new[] { 12, 16 }
+            [3, 10],
+            [12, 16],
         };
 
         Insert(ex1Intervals, ex1NewInterval).ShouldBe(ex1Expected);

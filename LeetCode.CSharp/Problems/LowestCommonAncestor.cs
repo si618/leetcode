@@ -12,7 +12,10 @@ public sealed partial class Problem
 
         while (true)
         {
-            ArgumentNullException.ThrowIfNull(current);
+            if (current is null)
+            {
+                throw new ArgumentException("Both nodes must be in the tree", nameof(root));
+            }
 
             if (p.val < current.val && q.val < current.val)
             {

@@ -77,12 +77,12 @@ internal static class BenchmarkRunner
         {
             var language = problem.Language($" {Resources.Problem_Language_Separator} ");
             var benchmark = problem.CSharp & problem.FSharp
-                ? Resources.Benchmark_Plural.ToLower() : Resources.Benchmark_Singular.ToLower();
-            message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Markup,
+                ? Resources.Benchmark_Plural.ToLowerInvariant() : Resources.Benchmark_Singular.ToLowerInvariant();
+            message.AppendFormat(CultureInfo.CurrentCulture, Resources.BenchmarkRunner_SingleProblem_Markup,
                 language, benchmark, problem.Description);
             if (!problem.HasSimilarNameAndDescription())
             {
-                message.AppendFormat(Resources.BenchmarkRunner_SingleProblem_Name, problem.Name);
+                message.AppendFormat(CultureInfo.CurrentCulture, Resources.BenchmarkRunner_SingleProblem_Name, problem.Name);
             }
         }
         else
@@ -95,8 +95,8 @@ internal static class BenchmarkRunner
 
             if (settings.Filter?.Length > 0)
             {
-                message.AppendFormat(
-                    Resources.BenchmarkRunner_Running_FilterSuffix_Markup, settings.Filter!);
+                message.AppendFormat(CultureInfo.CurrentCulture,
+                    Resources.BenchmarkRunner_Running_FilterSuffix_Markup, settings.Filter);
             }
         }
 

@@ -22,21 +22,12 @@ internal sealed class BenchmarkSettings : CommandSettings
     [CommandOption("--exporters")]
     public string? Exporters { get; init; }
 
-    public override ValidationResult Validate()
-    {
-        if (CSharp && FSharp)
-        {
-            return ValidationResult.Error(Resources.BenchmarkSettings_Error_MutuallyExclusive);
-        }
-
-        if (!string.IsNullOrEmpty(Filter) && !BenchmarkFound())
-        {
-            return ValidationResult.Error(
-                string.Format(Resources.BenchmarkSettings_Error_BenchmarkNotFound, Filter));
-        }
-
-        return ValidationResult.Success();
-    }
+    public override ValidationResult Validate() => CSharp && FSharp
+            ? ValidationResult.Error(Resources.BenchmarkSettings_Error_MutuallyExclusive)
+            : !string.IsNullOrEmpty(Filter) && !BenchmarkFound()
+            ? ValidationResult.Error(
+                string.Format(CultureInfo.CurrentCulture, Resources.BenchmarkSettings_Error_BenchmarkNotFound, Filter))
+            : ValidationResult.Success();
 
     public Type[] BenchmarkTypes()
     {
@@ -54,8 +45,8 @@ internal sealed class BenchmarkSettings : CommandSettings
         }
 
         return [.. types
-            .OrderBy(t => t.Name)
-            .ThenBy(t => t.Namespace)];
+            .OrderBy(t => t.Name, StringComparer.Ordinal)
+            .ThenBy(t => t.Namespace, StringComparer.Ordinal)];
     }
 
     public string[] BuildArgs()
@@ -84,12 +75,12 @@ internal sealed class BenchmarkSettings : CommandSettings
 
             foreach (var benchmark in benchmarks)
             {
-                if (benchmark.Contains('*'))
+                if (benchmark.Contains('*', StringComparison.Ordinal))
                 {
                     // User added wildcard so use whatever was passed
                     args.Add(benchmark);
                 }
-                else if (benchmark.Contains('.'))
+                else if (benchmark.Contains('.', StringComparison.Ordinal))
                 {
                     // User added namespace but no wildcard so add suffix
                     args.Add($"{benchmark}*");
@@ -116,6 +107,6 @@ internal sealed class BenchmarkSettings : CommandSettings
     private bool BenchmarkFound() =>
         Reflection
             .GetCSharpBenchmarks()
-            .Union(Reflection.GetFSharpBenchmarks())
+            .Union(Reflection.GetFSharpBenchmarks(), StringComparer.Ordinal)
             .Contains(Filter, StringComparer.InvariantCultureIgnoreCase);
 }

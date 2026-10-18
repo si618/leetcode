@@ -9,7 +9,7 @@ public sealed partial class Problem
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class LRUCache
     {
-        private record Node(int Key = 0, int Value = 0)
+        private sealed record Node(int Key = 0, int Value = 0)
         {
             public Node? Previous { get; set; }
 

@@ -28,7 +28,7 @@ internal sealed record ProblemListSelection : Selection
         var table = new Table
         {
             Border = TableBorder.Simple,
-            UseSafeBorder = true
+            UseSafeBorder = true,
         };
         table.AddColumns(Resources.Problem_Name, Resources.Problem_Category, Resources.Problem_Difficulty);
         table.Columns[0].Width = padding.DescriptionPad;
@@ -50,8 +50,8 @@ internal sealed record ProblemListSelection : Selection
 
     private static string ConvertProblem(Problem problem, ProblemPadding padding)
         => new StringBuilder()
-            .Append($"{problem.Description.PadRight(padding.DescriptionPad + 3)}")
-            .Append($"{problem.Category.Description().PadRight(padding.CategoryPad + 3)}")
-            .Append($"{problem.Difficulty.Markup()}")
+            .Append(problem.Description.PadRight(padding.DescriptionPad + 3))
+            .Append(problem.Category.Description().PadRight(padding.CategoryPad + 3))
+            .Append(problem.Difficulty.Markup())
             .ToString();
 }

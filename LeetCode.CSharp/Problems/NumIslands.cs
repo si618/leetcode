@@ -6,6 +6,8 @@ public sealed partial class Problem
         Difficulty.Medium,
         Category.Graphs,
         "https://www.youtube.com/watch?v=pV2kpPD66nE")]
+    [SuppressMessage("Design", "MA0051:Method is too long",
+        Justification = "The local functions share the search state and count towards the length")]
     public static int NumIslands(char[][]? grid)
     {
         if (grid is null || grid.Length == 0)
@@ -13,7 +15,7 @@ public sealed partial class Problem
             return 0;
         }
 
-        const char sea = '0';
+        const char Sea = '0';
         var rows = grid.Length;
         var columns = grid[0].Length;
         var visited = new HashSet<(int, int)>();
@@ -23,7 +25,7 @@ public sealed partial class Problem
             Up = (1, 0),
             Left = (-1, 0),
             Right = (0, 1),
-            Down = (0, -1)
+            Down = (0, -1),
         };
 
         var islands = 0;
@@ -32,7 +34,7 @@ public sealed partial class Problem
         {
             for (var column = 0; column < columns; column++)
             {
-                if (grid[row][column] == sea)
+                if (grid[row][column] == Sea)
                 {
                     continue;
                 }
@@ -61,7 +63,7 @@ public sealed partial class Problem
                 return;
             }
 
-            if (grid[row][column] == sea)
+            if (grid[row][column] == Sea)
             {
                 return;
             }
@@ -103,17 +105,17 @@ public sealed partial class Problem
             ['1', '1', '1', '1', '0'],
             ['1', '1', '0', '1', '0'],
             ['1', '1', '0', '0', '0'],
-            ['0', '0', '0', '0', '0']
+            ['0', '0', '0', '0', '0'],
         };
         var ex2 = new char[][]
         {
             ['1', '1', '0', '0', '0'],
             ['1', '1', '0', '0', '0'],
             ['0', '0', '1', '0', '0'],
-            ['0', '0', '0', '1', '1']
+            ['0', '0', '0', '1', '1'],
         };
 
-        NumIslands(null).ShouldBe(0);
+        NumIslands(grid: null).ShouldBe(0);
         NumIslands([]).ShouldBe(0);
         NumIslands(ex1).ShouldBe(1);
         NumIslands(ex2).ShouldBe(3);

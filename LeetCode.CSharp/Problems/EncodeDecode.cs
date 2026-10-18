@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
@@ -31,7 +33,7 @@ public sealed partial class Problem
             }
 
             // Assumes string is correctly encoded
-            var length = int.Parse(str.AsSpan(i, j - i));
+            var length = int.Parse(str.AsSpan(i, j - i), CultureInfo.InvariantCulture);
 
             // Move past delimiter
             j++;

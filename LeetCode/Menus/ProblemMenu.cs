@@ -10,7 +10,7 @@ internal sealed class ProblemMenu : MenuBase
         Choices =
         [
             new BenchmarkSelection(Problem, 1),
-            new ExitSelection(2)
+            new ExitSelection(2),
         ];
     }
 

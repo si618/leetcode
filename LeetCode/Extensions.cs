@@ -1,5 +1,7 @@
 namespace LeetCode;
 
+[SuppressMessage("Naming", "CA1708:Identifiers should differ by more than case",
+    Justification = "False positive on the compiler-generated names of C# 14 extension blocks")]
 public static partial class Extensions
 {
     extension(Category category)
@@ -16,15 +18,14 @@ public static partial class Extensions
 
     extension(Problem problem)
     {
-        internal bool HasSimilarNameAndDescription() =>
-            problem.Description.ReplaceWhitespace(string.Empty) == problem.Name;
+        internal bool HasSimilarNameAndDescription() => string.Equals(problem.Description.ReplaceWhitespace(string.Empty), problem.Name, StringComparison.Ordinal);
 
         internal Table Markup()
         {
             var table = new Table
             {
                 Border = TableBorder.None,
-                ShowHeaders = false
+                ShowHeaders = false,
             };
 
             table.AddColumn(new TableColumn("-").PadRight(3));
@@ -32,7 +33,7 @@ public static partial class Extensions
 
             table.AddRow(Resources.Problem_Benchmark_Markup, problem.Name);
 
-            if (problem.Name != problem.Description)
+            if (!string.Equals(problem.Name, problem.Description, StringComparison.Ordinal))
             {
                 table.AddRow(Resources.Problem_Description_Markup, problem.Description);
             }
@@ -56,12 +57,10 @@ public static partial class Extensions
             MatchWhitespace.Replace(input, replacement);
 
         private string GetResource() =>
-            Resources.ResourceManager.GetString(input) ??
+            Resources.ResourceManager.GetString(input, CultureInfo.InvariantCulture) ??
             throw new InvalidOperationException($"Missing resource '{input}'");
     }
 
-    private static readonly Regex MatchWhitespace = MatchWhitespaceRegex();
-
-    [GeneratedRegex(@"\s+")]
-    private static partial Regex MatchWhitespaceRegex();
+    [GeneratedRegex(@"\s+", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
+    private static partial Regex MatchWhitespace { get; }
 }

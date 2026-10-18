@@ -5,7 +5,7 @@ public sealed class BenchmarkConfig : ManualConfig
     public BenchmarkConfig()
     {
         // FsUnit.xUnit has DEBUG reference
-        WithOption(ConfigOptions.DisableOptimizationsValidator, true);
+        WithOption(ConfigOptions.DisableOptimizationsValidator, value: true);
 
         AddDiagnoser(MemoryDiagnoser.Default);
 

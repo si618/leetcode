@@ -17,7 +17,7 @@ public sealed partial class Problem
         {
             { ')', '(' },
             { ']', '[' },
-            { '}', '{' }
+            { '}', '{' },
         };
         var stack = new Stack<char>();
 

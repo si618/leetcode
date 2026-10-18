@@ -1,7 +1,5 @@
 namespace LeetCode.CSharp.Problems;
 
-using System.Collections.Generic;
-
 public sealed partial class Problem
 {
     [LeetCode("Roman to Integer", Difficulty.Easy, Category.NotInNeetCode)]
@@ -15,7 +13,7 @@ public sealed partial class Problem
             { 'L', 50 },
             { 'C', 100 },
             { 'D', 500 },
-            { 'M', 1_000 }
+            { 'M', 1_000 },
         };
         var result = 0;
         var length = s.Length - 1;

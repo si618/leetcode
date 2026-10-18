@@ -9,5 +9,5 @@ public enum Difficulty
     /// <summary>Medium</summary>
     Medium,
     /// <summary>Hard</summary>
-    Hard
+    Hard,
 }

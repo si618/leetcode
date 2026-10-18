@@ -32,7 +32,7 @@ public class ListNode
         {
             var node = new ListNode(list[i])
             {
-                next = lastNode
+                next = lastNode,
             };
             lastNode = node;
         }
