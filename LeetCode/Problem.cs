@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+namespace LeetCode;
 
 internal record Problem(
     string Name,

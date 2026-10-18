@@ -1,4 +1,4 @@
-﻿namespace LeetCode.FSharp.Benchmarks
+namespace LeetCode.FSharp.Benchmarks
 
 open BenchmarkDotNet.Attributes
 open LeetCode.FSharp.Problems

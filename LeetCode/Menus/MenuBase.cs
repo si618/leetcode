@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Menus;
+namespace LeetCode.Menus;
 
 internal abstract class MenuBase
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Benchmarks;
+namespace LeetCode.CSharp.Benchmarks;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public class LRUCacheBenchmark : Benchmark

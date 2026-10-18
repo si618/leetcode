@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Menus;
+namespace LeetCode.Menus;
 
 internal sealed class ProblemMenu : MenuBase
 {

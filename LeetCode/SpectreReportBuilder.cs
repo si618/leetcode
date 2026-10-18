@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+namespace LeetCode;
 
 internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
 {

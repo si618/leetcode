@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp;
+namespace LeetCode.CSharp;
 
 /// <summary>NeetCode category</summary>
 public enum Category

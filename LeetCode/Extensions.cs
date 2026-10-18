@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+namespace LeetCode;
 
 public static partial class Extensions
 {

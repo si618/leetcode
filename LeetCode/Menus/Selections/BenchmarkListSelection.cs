@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Menus.Selections;
+namespace LeetCode.Menus.Selections;
 
 internal sealed record BenchmarkListSelection : Selection
 {

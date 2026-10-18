@@ -1,4 +1,4 @@
-﻿using LeetCode;
+using LeetCode;
 
 var app = new CommandApp();
 

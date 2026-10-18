@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp;
+namespace LeetCode.CSharp;
 
 public sealed class BenchmarkConfig : ManualConfig
 {

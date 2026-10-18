@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 using System.Collections.Generic;
 
