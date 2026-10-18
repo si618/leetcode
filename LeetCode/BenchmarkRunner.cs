@@ -13,15 +13,22 @@ internal static class BenchmarkRunner
 
         ConsoleWriter.MoveCursor(CursorDirection.Up);
 
+        // Silence BenchmarkDotNet's console logging while the spinner runs
+        var consoleOut = Console.Out;
         Console.SetOut(TextWriter.Null);
 
         var summaries = new List<Summary>();
-        AnsiConsole.Status()
-            .Spinner(Spinner.Known.Dots)
-            .Start(WaitingMessage(settings, args), _ =>
-                summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
-
-        Console.SetOut(Console.Out);
+        try
+        {
+            AnsiConsole.Status()
+                .Spinner(Spinner.Known.Dots)
+                .Start(WaitingMessage(settings, args), _ =>
+                    summaries.AddRange(RunBenchmarks(settings.BenchmarkTypes(), args)));
+        }
+        finally
+        {
+            Console.SetOut(consoleOut);
+        }
 
         ConsoleWriter.MoveCursor(CursorDirection.Down);
 
