@@ -28,6 +28,20 @@ internal static class ConsoleWriter
         AnsiConsole.WriteLine();
     }
 
+    /// <summary>
+    /// Moves the cursor, unless output is redirected. Spectre.Console then falls back to
+    /// Console.SetCursorPosition, which throws when the cursor would leave the buffer.
+    /// </summary>
+    public static void MoveCursor(CursorDirection direction, int steps = 1)
+    {
+        if (Console.IsOutputRedirected)
+        {
+            return;
+        }
+
+        AnsiConsole.Cursor.Move(direction, steps);
+    }
+
     public static void WaitForKeyPress()
     {
         AnsiConsole.WriteLine();
