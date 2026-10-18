@@ -8,20 +8,34 @@ After stumbling across the excellent [NeetCode](https://neetcode.io) website I'm
 
 ### Build and test
 
+Install the .NET 10 SDK, version 10.0.400 or later. `global.json` rolls forward to the newest feature band you have.
+
 ``` bash
 > dotnet --list-sdks
-10.0.103 [/usr/share/dotnet/sdk]
+10.0.402 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.53.0
+git version 2.56.0
 
 > git clone https://github.com/si618/leetcode.git
 Cloning into 'leetcode'...
 
 > cd leetcode
 > dotnet build
-> dotnet test --no-restore
+> dotnet test
 ```
+
+Tests run on xUnit v3 with [Microsoft.Testing.Platform](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-intro), and sit beside the solution they test.
+
+``` bash
+# Run a single test
+> dotnet test --project LeetCode.CSharp --filter-method "*TwoSumTest"
+
+# Write TRX results and Cobertura coverage to artifacts/test-results, as CI does
+> dotnet test --report-xunit-trx --results-directory artifacts/test-results --coverage --coverage-output-format cobertura
+```
+
+Build output goes to `artifacts/`, not to `bin/` and `obj/` in each project.
 
 ### Console application
 
