@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp;
+namespace LeetCode.CSharp;
 
 [Config(typeof(BenchmarkConfig))]
 public abstract class Benchmark

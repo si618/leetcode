@@ -1,8 +1,5 @@
 namespace LeetCode.CSharp.Problems;
 
-using System.Collections.Generic;
-using System.Linq;
-
 public sealed partial class Problem
 {
     [LeetCode("Middle of the Linked List", Difficulty.Easy, Category.NotInNeetCode)]

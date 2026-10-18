@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+namespace LeetCode;
 
 internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
 {
@@ -10,7 +10,7 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
         {
             Border = TableBorder.Ascii2,
             BorderStyle = new Style(foreground: Color.Grey),
-            UseSafeBorder = true
+            UseSafeBorder = true,
         };
 
         if (!Summaries.Any())
@@ -49,13 +49,13 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
         var defaultHeaders = new[]
         {
             "Lang", "Method", "Mean", "Median", "Error", "StdDev", "Op/s", "Gen0", "Gen1", "Gen2",
-            "Allocated"
+            "Allocated",
         };
 
         var summaryHeaders = Summaries
             .SelectMany(s => s.Table.Columns)
             .Where(c => c.NeedToShow)
-            .DistinctBy(c => c.Header)
+            .DistinctBy(c => c.Header, StringComparer.Ordinal)
             .Select(c => c.Header)
             .ToList();
 
@@ -65,9 +65,9 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
         // First take the intersection of defaults and summaries, which ensures all columns are
         // included in their expected order, then append any remaining columns in summaries
         var headers = defaultHeaders
-            .Intersect(summaryHeaders)
-            .Union(summaryHeaders)
-            .Distinct()
+            .Intersect(summaryHeaders, StringComparer.Ordinal)
+            .Union(summaryHeaders, StringComparer.Ordinal)
+            .Distinct(StringComparer.Ordinal)
             .ToArray();
 
         foreach (var header in headers)
@@ -85,7 +85,7 @@ internal sealed class SpectreReportBuilder(IEnumerable<Summary> summaries)
 
     private static void BuildSummary(Summary summary, Table table, string[] headers)
     {
-        var csharp = summary.Title.Contains(".CSharp.");
+        var csharp = summary.Title.Contains(".CSharp.", StringComparison.Ordinal);
         var colour = csharp ? "[blue]" : "[teal]";
         var language = csharp ? $"{colour}C#[/]" : $"{colour}F#[/]";
 

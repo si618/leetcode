@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Menus.Selections;
+namespace LeetCode.Menus.Selections;
 
 internal sealed record BenchmarkSelection : Selection
 {
@@ -10,10 +10,7 @@ internal sealed record BenchmarkSelection : Selection
     }
 
     private BenchmarkSelection(Problem problem, string name, int order)
-        : base(name, order)
-    {
-        Problem = problem;
-    }
+        : base(name, order) => Problem = problem;
 
     public override int Execute()
     {

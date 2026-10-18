@@ -1,4 +1,4 @@
-﻿namespace LeetCode.FSharp.Problems
+namespace LeetCode.FSharp.Problems
 
 open FsUnit.Xunit
 open LeetCode.CSharp

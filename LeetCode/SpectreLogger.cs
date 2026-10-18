@@ -1,4 +1,4 @@
-﻿namespace LeetCode;
+namespace LeetCode;
 
 internal sealed class SpectreLogger : ILogger
 {
@@ -38,16 +38,16 @@ internal sealed class SpectreLogger : ILogger
                 prefix = "[red]Error[/]: ";
                 break;
             default:
-                throw new ArgumentOutOfRangeException(nameof(logKind), logKind, null);
+                throw new ArgumentOutOfRangeException(nameof(logKind), logKind, message: null);
         }
 
         if (writeLine)
         {
-            AnsiConsole.MarkupLineInterpolated($"{prefix}{text}");
+            AnsiConsole.MarkupLineInterpolated(CultureInfo.CurrentCulture, $"{prefix}{text}");
         }
         else
         {
-            AnsiConsole.MarkupInterpolated($"{prefix}{text}");
+            AnsiConsole.MarkupInterpolated(CultureInfo.CurrentCulture, $"{prefix}{text}");
         }
     }
 }

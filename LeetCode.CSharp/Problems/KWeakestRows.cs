@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -19,14 +19,14 @@ public sealed partial class Problem
             [1, 1, 1, 1, 0],
             [1, 0, 0, 0, 0],
             [1, 1, 0, 0, 0],
-            [1, 1, 1, 1, 1]
+            [1, 1, 1, 1, 1],
         };
         var ex2 = new int[][]
         {
             [1, 0, 0, 0],
             [1, 1, 1, 1],
             [1, 0, 0, 0],
-            [1, 0, 0, 0]
+            [1, 0, 0, 0],
         };
 
         KWeakestRows(ex1, 3).ShouldBe([2, 0, 3]);

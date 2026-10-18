@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Benchmarks;
+namespace LeetCode.CSharp.Benchmarks;
 
 public class InsertBenchmark : Benchmark
 {
@@ -19,7 +19,7 @@ public class InsertBenchmark : Benchmark
         IntArray2 =
         [
             IntArrayMulti1[9_999][0] + 1,
-            IntArrayMulti1[9_999][0] + 10
+            IntArrayMulti1[9_999][0] + 10,
         ];
     }
 

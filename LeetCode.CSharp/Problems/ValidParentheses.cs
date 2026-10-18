@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -17,7 +17,7 @@ public sealed partial class Problem
         {
             { ')', '(' },
             { ']', '[' },
-            { '}', '{' }
+            { '}', '{' },
         };
         var stack = new Stack<char>();
 

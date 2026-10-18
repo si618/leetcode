@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -9,7 +9,10 @@ public sealed partial class Problem
     public static int[] ProductExceptSelf(int[] nums)
     {
         var length = nums.Length;
-        if (length == 0) return nums;
+        if (length == 0)
+        {
+            return nums;
+        }
 
         var prefix = 1;
         var productArray = new int[length];

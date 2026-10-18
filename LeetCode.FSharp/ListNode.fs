@@ -1,3 +1,3 @@
-﻿namespace LeetCode.FSharp
+namespace LeetCode.FSharp
 
 type ListNode = { value: int; next: ListNode }

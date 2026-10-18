@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Benchmarks;
+namespace LeetCode.CSharp.Benchmarks;
 
 public class IsValidSudokuBenchmark : Benchmark
 {
@@ -13,7 +13,7 @@ public class IsValidSudokuBenchmark : Benchmark
         ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
         ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
         ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
-        ['.', '.', '.', '.', '8', '.', '.', '7', '9']
+        ['.', '.', '.', '.', '8', '.', '.', '7', '9'],
     ];
 
     [Benchmark]

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -23,7 +23,7 @@ public sealed partial class Problem
 
             if (string.IsNullOrEmpty(value))
             {
-                value = i.ToString();
+                value = i.ToString(System.Globalization.CultureInfo.InvariantCulture);
             }
 
             result.Add(value);

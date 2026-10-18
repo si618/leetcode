@@ -1,7 +1,8 @@
-﻿.idea
+.idea
 .plan
 .vs
 *.DotSettings.user
 bin
 obj
+artifacts/
 BenchmarkDotNet.Artifacts

@@ -1,9 +1,9 @@
-﻿namespace LeetCode.CSharp;
+namespace LeetCode.CSharp;
 
 /// <summary>NeetCode category</summary>
 public enum Category
 {
-    /// <summary>Arrays & Hashing</summary>
+    /// <summary>Arrays &amp; Hashing</summary>
     ArraysAndHashing,
     /// <summary>Two Pointers</summary>
     TwoPointers,
@@ -40,5 +40,5 @@ public enum Category
     /// <summary>Bit Manipulation</summary>
     BitManipulation,
     /// <summary>Not in NeetCode</summary>
-    NotInNeetCode
+    NotInNeetCode,
 }

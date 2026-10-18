@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -10,7 +10,7 @@ public sealed partial class Problem
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static IList<IList<string>> GroupAnagrams(string[] strs)
     {
-        var dictionary = new Dictionary<string, IList<string>>();
+        var dictionary = new Dictionary<string, IList<string>>(StringComparer.Ordinal);
 
         foreach (var str in strs)
         {
@@ -44,7 +44,7 @@ public sealed partial class Problem
         {
             new() { "eat", "tea", "ate" },
             new() { "tan", "nat" },
-            new() { "bat" }
+            new() { "bat" },
         };
         var ex2 = new[] { "" };
         var ex2Expected = new List<List<string>> { new() { "" } };
@@ -62,7 +62,7 @@ public sealed partial class Problem
             new() { "buy" },
             new() { "bar" },
             new() { "max" },
-            new() { "doc" }
+            new() { "doc" },
         };
 
         // ReSharper disable once CollectionNeverQueried.Local

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Menus;
+namespace LeetCode.Menus;
 
 internal sealed class MainMenu : MenuBase
 {
@@ -9,7 +9,7 @@ internal sealed class MainMenu : MenuBase
             new ProblemListSelection(1),
             new BenchmarkListSelection(2),
             new AboutSelection(3),
-            new ExitSelection(4)
+            new ExitSelection(4),
         ];
     }
     public int Render()
@@ -20,7 +20,7 @@ internal sealed class MainMenu : MenuBase
             .UseConverter(m => m.Name);
 
         var exitCode = 0;
-        while (selected.Name != Resources.Selection_Exit)
+        while (!string.Equals(selected.Name, Resources.Selection_Exit, StringComparison.Ordinal))
         {
             ConsoleWriter.WriteHeader(clearConsole: true);
 

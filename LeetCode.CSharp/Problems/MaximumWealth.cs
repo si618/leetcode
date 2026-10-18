@@ -1,11 +1,11 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
     [LeetCode("Richest Customer Wealth", Difficulty.Easy, Category.NotInNeetCode)]
     [SuppressMessage("ReSharper", "ParameterTypeCanBeEnumerable.Global")]
     public static int MaximumWealth(int[][] accounts) =>
-        accounts.Select(account => account.Sum()).Max();
+        accounts.Max(account => account.Sum());
 
     [Fact]
     public void MaximumWealthTest()
@@ -13,13 +13,13 @@ public sealed partial class Problem
         var ex1 = new int[][]
         {
             [1, 2, 3],
-            [3, 2, 1]
+            [3, 2, 1],
         };
         var ex2 = new int[][]
         {
             [1, 5],
             [7, 3],
-            [3, 5]
+            [3, 5],
         };
 
         MaximumWealth(ex1).ShouldBe(6);

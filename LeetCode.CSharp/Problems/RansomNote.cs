@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -36,15 +36,15 @@ public sealed partial class Problem
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public void RansomNoteTest()
     {
-        const string m1 = "a";
-        const string r1 = "b";
-        const string m2 = "aa";
-        const string r2 = "ab";
-        const string r3 = "bg";
-        const string m3 = "aabefjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj";
+        const string M1 = "a";
+        const string R1 = "b";
+        const string M2 = "aa";
+        const string R2 = "ab";
+        const string R3 = "bg";
+        const string M3 = "aabefjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj";
 
-        RansomNote(r1, m1).ShouldBeFalse();
-        RansomNote(r2, m2).ShouldBeFalse();
-        RansomNote(r3, m3).ShouldBeTrue();
+        RansomNote(R1, M1).ShouldBeFalse();
+        RansomNote(R2, M2).ShouldBeFalse();
+        RansomNote(R3, M3).ShouldBeTrue();
     }
 }

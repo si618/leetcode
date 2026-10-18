@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Commands;
+namespace LeetCode.Commands;
 
 internal sealed class ListCommand : Command
 {
@@ -9,7 +9,7 @@ internal sealed class ListCommand : Command
         {
             ConsoleWriter.WriteHeader();
 
-            AnsiConsole.Cursor.Move(CursorDirection.Up, 1);
+            ConsoleWriter.MoveCursor(CursorDirection.Up);
 
             WriteProblemList();
 

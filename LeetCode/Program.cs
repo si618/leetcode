@@ -1,4 +1,4 @@
-﻿using LeetCode;
+using LeetCode;
 
 var app = new CommandApp();
 
@@ -25,4 +25,4 @@ app.Configure(config =>
     config.AddExample(Resources.Command_Info, "MergeTwoLists");
 });
 
-return await app.RunAsync(args);
+return await app.RunAsync(args, Xunit.TestContext.Current.CancellationToken).ConfigureAwait(false);

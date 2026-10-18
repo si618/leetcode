@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -7,7 +7,7 @@ public sealed partial class Problem
         Category.ArraysAndHashing,
         "https://www.youtube.com/watch?v=9UtInBqnCgA")]
     public static bool IsAnagram(string s, string t) =>
-        s.Length == t.Length && s.OrderBy(c => c).SequenceEqual(t.OrderBy(c => c));
+        s.Length == t.Length && s.Order().SequenceEqual(t.Order());
 
     [Fact]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]

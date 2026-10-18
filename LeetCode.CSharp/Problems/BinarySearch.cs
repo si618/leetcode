@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -14,7 +14,7 @@ public sealed partial class Problem
         while (leftPtr <= rightPtr)
         {
             // Find mid-point without risk of overflowing
-            var midPtr = leftPtr + (rightPtr - leftPtr) / 2;
+            var midPtr = leftPtr + ((rightPtr - leftPtr) / 2);
             var midVal = nums[midPtr];
 
             if (midVal > target)

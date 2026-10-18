@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -16,7 +16,7 @@ public sealed partial class Problem
         {
             _k = k;
             nums
-                .OrderBy(n => n)
+                .Order()
                 .TakeLast(k)
                 .ToList()
                 .ForEach(n => _queue.Enqueue(n, n));

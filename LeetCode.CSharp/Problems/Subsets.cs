@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -51,13 +51,13 @@ public sealed partial class Problem
             new List<int> { 2, 3 },
             new List<int> { 2 },
             new List<int> { 3 },
-            new List<int>()
+            new List<int>(),
         };
         var ex2 = new[] { 0 };
         var ep2 = new List<IList<int>>
         {
             new List<int>{ 0 },
-            new List<int>()
+            new List<int>(),
         };
 
         Subsets(ex1).ShouldBe(ep1);

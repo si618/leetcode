@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -6,15 +6,7 @@ public sealed partial class Problem
         Difficulty.Easy,
         Category.Trees,
         "https://www.youtube.com/watch?v=hTM3phVI6YQ")]
-    public static int MaxDepth(TreeNode? root)
-    {
-        if (root is null)
-        {
-            return 0;
-        }
-
-        return Math.Max(MaxDepth(root.left), MaxDepth(root.right)) + 1;
-    }
+    public static int MaxDepth(TreeNode? root) => root is null ? 0 : Math.Max(MaxDepth(root.left), MaxDepth(root.right)) + 1;
 
     [Fact]
     public void MaxDepthTest()
@@ -24,7 +16,7 @@ public sealed partial class Problem
             right: new TreeNode(20, left: new TreeNode(15), right: new TreeNode(7)));
         var root2 = new TreeNode(1, left: null, right: new TreeNode(2));
 
-        MaxDepth(null).ShouldBe(0);
+        MaxDepth(root: null).ShouldBe(0);
         MaxDepth(root1).ShouldBe(3);
         MaxDepth(root2).ShouldBe(2);
     }

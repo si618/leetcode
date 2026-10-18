@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp;
+namespace LeetCode.CSharp;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public class ListNode
@@ -32,7 +32,7 @@ public class ListNode
         {
             var node = new ListNode(list[i])
             {
-                next = lastNode
+                next = lastNode,
             };
             lastNode = node;
         }

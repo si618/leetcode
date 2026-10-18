@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Menus;
+namespace LeetCode.Menus;
 
 internal sealed class ProblemMenu : MenuBase
 {
@@ -10,7 +10,7 @@ internal sealed class ProblemMenu : MenuBase
         Choices =
         [
             new BenchmarkSelection(Problem, 1),
-            new ExitSelection(2)
+            new ExitSelection(2),
         ];
     }
 

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.CSharp.Problems;
+namespace LeetCode.CSharp.Problems;
 
 public sealed partial class Problem
 {
@@ -40,6 +40,6 @@ public sealed partial class Problem
 
         IsSubtree(root1, subRoot1).ShouldBeTrue();
         IsSubtree(root2, subRoot2).ShouldBeFalse();
-        IsSubtree(null, null).ShouldBeTrue();
+        IsSubtree(root: null, subRoot: null).ShouldBeTrue();
     }
 }
