@@ -45,6 +45,17 @@ dotnet run info MergeTwoLists
 dotnet run list
 ```
 
+## Updating .NET versions
+
+When you bump the .NET SDK or target framework, update these together:
+
+- `global.json`: the minimum SDK `version`.
+- `Directory.Build.props`: `TargetFramework`.
+- `LeetCode/Dockerfile`: the `sdk` and `runtime` image tags.
+- `README.md`: the minimum SDK, and the `dotnet --list-sdks` and `git --version` output under "Build and test".
+  Check for a newer git
+  release at the same time.
+
 ## Architecture
 
 This is a LeetCode problem solutions repository with benchmarking capabilities, structured as follows:
