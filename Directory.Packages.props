@@ -8,7 +8,7 @@
     <PackageVersion Include="FsUnit.xUnit" Version="8.0.0" />
     <PackageVersion Include="FSharp.Core" Version="10.1.402" />
     <PackageVersion Include="lolcat" Version="1.2.2" />
-    <PackageVersion Include="Meziantou.Analyzer" Version="3.0.305" />
+    <PackageVersion Include="Meziantou.Analyzer" Version="3.0.316" />
     <PackageVersion Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.12.0" />
     <PackageVersion Include="Nerdbank.GitVersioning" Version="3.10.94" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
